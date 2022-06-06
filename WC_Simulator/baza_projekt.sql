@@ -1,4 +1,5 @@
 create database wc_simulator;
+-- drop database wc_simulator;
 
 use wc_simulator;
 
@@ -13,13 +14,13 @@ desc user;
 
 create table tournament(
 	id_tournament int unsigned auto_increment primary key,
-    id_user int unsigned
+    id_user int unsigned  not null
 );
 desc tournament;
 
 create table player(
 	id_player int unsigned auto_increment primary key,
-    id_team int unsigned,
+    id_team int unsigned not null,
     name varchar(50) not null,
     position enum("Bramkarz", "Obrońca", "Pomocnik", "Napastnik") not null
 );
@@ -29,14 +30,14 @@ create table single_group(
 	id_group int unsigned auto_increment primary key,
     id_first_pl_team int unsigned,
     id_second_pl_team int unsigned,
-    id_tournament int unsigned,
+    id_tournament int unsigned not null,
     letter enum("A", "B", "C", "D", "E", "F", "G", "H") not null
 );
 desc single_group;
 
 create table team(
 	id_team int unsigned auto_increment primary key,
-    id_group int unsigned,
+    id_group int unsigned not null,
     name varchar(35) not null,
     coach varchar(30) not null,
     def_factor float not null,
@@ -59,12 +60,12 @@ create table single_match(
 	id_match int unsigned auto_increment primary key,
     id_first_team int unsigned,
     id_second_team int unsigned,
-    id_tournament int unsigned,
-    match_code int unsigned,
+    id_tournament int unsigned not null,
+    match_code int unsigned not null,
     referee enum("Abdulrahman Al-Jassim", "Chris Beath", "Alireza Faghani", "Ma Ning",
 				"Szymon Marciniak", "Mohammed Abdulla Hassan Mohamed") not null,
-    goals_first_team int not null,
-    goals_second_team int not null
+    goals_first_team int,
+    goals_second_team int
 );
 desc single_match;
 
