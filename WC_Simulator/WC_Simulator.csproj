@@ -103,5 +103,8 @@
     <Folder Include="Model\" />
     <Folder Include="View\UserControls\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="baza_projekt.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
