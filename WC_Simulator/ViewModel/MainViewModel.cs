@@ -4,7 +4,13 @@ namespace WC_Simulator.ViewModel
 {
     internal class MainViewModel : BaseViewModel
     {
-        public BaseViewModel CurrentViewModel { get; }
+        private BaseViewModel _currentViewModel;
+
+        public BaseViewModel CurrentViewModel
+        {
+            get { return _currentViewModel; }
+            set { _currentViewModel = value; }
+        }
 
         public MainViewModel()
         {
