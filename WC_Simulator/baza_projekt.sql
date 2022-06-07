@@ -45,25 +45,12 @@ create table team(
 );
 desc team;
 
-create table schedule(
-	match_code int unsigned auto_increment primary key,
-    stage enum("Faza grupowa", "1/8 finału", "Ćwierćfinały", "Półfinały", "Finał", "Mecz o 3. miejsce") not null,
-    time time not null,
-    location enum("Al Bayt Stadium, Al-Chaur", "Lusail Stadium, Lusajl", "Stadium 974, Doha", "Al Thumama Stadium, Doha",
-				"Education City Stadium, Ar-Rajjan", "Ahmed bin Ali Stadium, Ar-Rajjan", 
-                "Khalifa International Stadium, Ar-Rajjan", "Al Janoub Stadium, Al-Wakra") not null,
-    date date not null
-);
-desc schedule;
-
 create table single_match(
 	id_match int unsigned auto_increment primary key,
     id_first_team int unsigned,
     id_second_team int unsigned,
     id_tournament int unsigned not null,
     match_code int unsigned not null,
-    referee enum("Abdulrahman Al-Jassim", "Chris Beath", "Alireza Faghani", "Ma Ning",
-				"Szymon Marciniak", "Mohammed Abdulla Hassan Mohamed") not null,
     goals_first_team int,
     goals_second_team int
 );
