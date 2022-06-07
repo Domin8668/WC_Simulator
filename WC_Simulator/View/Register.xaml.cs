@@ -18,7 +18,7 @@ namespace WC_Simulator.View
     /// <summary>
     /// Interaction logic for Register.xaml
     /// </summary>
-    public partial class Register : Page
+    public partial class Register : UserControl
     {
         public Register()
         {

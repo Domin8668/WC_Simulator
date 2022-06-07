@@ -18,7 +18,7 @@ namespace WC_Simulator.View
     /// <summary>
     /// Interaction logic for ResetPassword.xaml
     /// </summary>
-    public partial class ResetPassword : Page
+    public partial class ResetPassword : UserControl
     {
         public ResetPassword()
         {
