@@ -30,7 +30,7 @@ namespace WC_Simulator.DAL.Entities
             Att_factor = float.Parse(reader["att_factor"].ToString());
         }
 
-        public Team(uint id_team, uint id_group, string name, string coach, float def_factor, float att_factor)
+        public Team(uint id_group, string name, string coach, float def_factor, float att_factor)
         {
             Id_team = null;
             Id_group = id_group;
