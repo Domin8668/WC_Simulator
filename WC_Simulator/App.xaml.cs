@@ -14,15 +14,6 @@ namespace WC_Simulator
     /// </summary>
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            MainWindow = new View.MainWindow()
-            {
-                DataContext = new MainViewModel()
-            };
-            MainWindow.Show();
 
-            base.OnStartup(e);
-        }
     }
 }

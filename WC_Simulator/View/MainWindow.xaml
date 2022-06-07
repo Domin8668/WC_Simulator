@@ -8,5 +8,8 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Symulator Mistrzostw Świata" Height="600" Width="800" ResizeMode="NoResize" WindowState="Maximized">
-    <ContentControl Content="{Binding CurrentViewModel}"/>
+    <Window.Resources>
+        <vm:MainViewModel x:Key="mainVM"/>
+    </Window.Resources>
+    <ContentControl DataContext="{StaticResource mainVM}" Content="{Binding CurrentViewModel}"/>
 </Window>
