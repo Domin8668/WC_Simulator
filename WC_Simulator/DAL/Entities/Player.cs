@@ -10,7 +10,7 @@ namespace WC_Simulator.DAL.Entities
     class Player
     {
 
-        #region Własności
+        #region Properties
         public uint? Id_player { get; set; }
         public uint Id_team { get; set; }
         public string Name { get; set; }
@@ -24,7 +24,7 @@ namespace WC_Simulator.DAL.Entities
         }
         #endregion
 
-        #region Konstruktory
+        #region Constructors
 
         //bardzo przydatny konstruktor tworzy obiekt na podstawie MySQLDataReader
         public Player(MySqlDataReader reader)
@@ -54,7 +54,7 @@ namespace WC_Simulator.DAL.Entities
 
         #endregion
 
-        #region Metody
+        #region Methods
 
         public override string ToString()
         {
