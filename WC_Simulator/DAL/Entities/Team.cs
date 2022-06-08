@@ -10,7 +10,7 @@ namespace WC_Simulator.DAL.Entities
     class Team
     {
 
-        #region Własności
+        #region Properties
         public uint? Id_team { get; set; }
         public uint Id_group { get; set; }
         public string Name { get; set; }
@@ -19,7 +19,7 @@ namespace WC_Simulator.DAL.Entities
         public float Att_factor { get; set; }
         #endregion
 
-        #region Konstruktory
+        #region Constructors
         public Team(MySqlDataReader reader)
         {
             Id_team = uint.Parse(reader["id_team"].ToString());
@@ -52,7 +52,7 @@ namespace WC_Simulator.DAL.Entities
 
         #endregion
 
-        #region Metody
+        #region Methods
 
         public override string ToString()
         {
@@ -61,7 +61,7 @@ namespace WC_Simulator.DAL.Entities
 
         public string ToInsert()
         {
-            return $"('{Id_team}', '{Id_group}', {Name}, '{Coach}', '{Def_factor}', '{Att_factor}')";
+            return $"('{Id_team}', '{Id_group}', '{Name}', '{Coach}', '{Def_factor}', '{Att_factor}')";
         }
         public override bool Equals(object obj)
         {

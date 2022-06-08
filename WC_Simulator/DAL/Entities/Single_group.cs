@@ -9,7 +9,7 @@ namespace WC_Simulator.DAL.Entities
 {
     class Single_group
     {
-        #region Własności
+        #region Properties
         public uint? Id_group { get; set; }
         public uint Id_first_pl_team { get; set; }
         public uint Id_second_pl_team { get; set; }
@@ -28,7 +28,7 @@ namespace WC_Simulator.DAL.Entities
         }
         #endregion
 
-        #region Konstruktory
+        #region Constructors
         public Single_group(MySqlDataReader reader)
         {
             Id_group = uint.Parse(reader["id_group"].ToString());
@@ -58,7 +58,7 @@ namespace WC_Simulator.DAL.Entities
 
         #endregion
 
-        #region Metody
+        #region Methods
 
         public override string ToString()
         {

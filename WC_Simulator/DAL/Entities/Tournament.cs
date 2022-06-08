@@ -10,12 +10,12 @@ namespace WC_Simulator.DAL.Entities
     class Tournament
     {
 
-        #region Własności
+        #region Properties
         public uint? Id_tournament { get; set; }
         public uint Id_user { get; set; }
         #endregion
 
-        #region Konstruktory
+        #region Constructors
         public Tournament(MySqlDataReader reader)
         {
             Id_tournament = uint.Parse(reader["id_tournament"].ToString());
@@ -36,7 +36,7 @@ namespace WC_Simulator.DAL.Entities
 
         #endregion
 
-        #region Metody
+        #region Methods
 
         // chyba nieużywane u nas
         //public override string ToString()

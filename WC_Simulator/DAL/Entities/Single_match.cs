@@ -10,7 +10,7 @@ namespace WC_Simulator.DAL.Entities
     class Single_match
     {
 
-        #region Własności
+        #region Properties
         public uint? Id_match { get; set; }
         public uint Id_first_team { get; set; }
         public uint Id_second_team { get; set; }
@@ -20,7 +20,7 @@ namespace WC_Simulator.DAL.Entities
         public uint Goals_second_team { get; set; }
         #endregion
 
-        #region Konstruktory
+        #region Constructors
         public Single_match(MySqlDataReader reader)
         {
             Id_match = uint.Parse(reader["id_match"].ToString());
@@ -56,7 +56,7 @@ namespace WC_Simulator.DAL.Entities
 
         #endregion
 
-        #region Metody
+        #region Methods
 
         public override string ToString()
         {
