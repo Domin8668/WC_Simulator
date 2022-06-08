@@ -8,21 +8,43 @@
         xmlns:vs="clr-namespace:WC_Simulator.View"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" Title="Symulator Mistrzostw Świata"
-        Height="1080" Width="1920" ResizeMode="NoResize" WindowState="Maximized">
+        ResizeMode="NoResize" WindowState="Maximized">
     <Window.Resources>
         <vms:MainViewModel x:Key="mainVM"/>
     </Window.Resources>
-    <ContentControl DataContext="{StaticResource mainVM}" Content="{Binding CurrentViewModel}">
-        <ContentControl.Resources>
-            <DataTemplate DataType="{x:Type vms:LoginViewModel}">
-                <vs:Login/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type vms:RegisterViewModel}">
-                <vs:Register/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type vms:ResetPasswordViewModel}">
-                <vs:ResetPassword/>
-            </DataTemplate>
-        </ContentControl.Resources>
-    </ContentControl>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <ContentControl Grid.Column="2" Grid.Row="1"
+                        Grid.ColumnSpan="4" Grid.RowSpan="5"
+                        DataContext="{StaticResource mainVM}" Content="{Binding CurrentViewModel}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type vms:LoginViewModel}">
+                    <vs:Login/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type vms:RegisterViewModel}">
+                    <vs:Register/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type vms:ResetPasswordViewModel}">
+                    <vs:ResetPassword/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
+    </Grid>
 </Window>
