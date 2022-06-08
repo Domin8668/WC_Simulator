@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WC_Simulator.View
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for RegisterView.xaml
     /// </summary>
-    public partial class Login : UserControl
+    public partial class RegisterView : UserControl
     {
-        public Login()
+        public RegisterView()
         {
             InitializeComponent();
         }

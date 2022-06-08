@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WC_Simulator.View
 {
     /// <summary>
-    /// Interaction logic for ResetPassword.xaml
+    /// Interaction logic for LoginView.xaml
     /// </summary>
-    public partial class ResetPassword : UserControl
+    public partial class LoginView : UserControl
     {
-        public ResetPassword()
+        public LoginView()
         {
             InitializeComponent();
         }

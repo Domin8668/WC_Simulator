@@ -36,13 +36,13 @@
                         DataContext="{StaticResource mainVM}" Content="{Binding CurrentViewModel}">
             <ContentControl.Resources>
                 <DataTemplate DataType="{x:Type vms:LoginViewModel}">
-                    <vs:Login/>
+                    <vs:LoginView/>
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type vms:RegisterViewModel}">
-                    <vs:Register/>
+                    <vs:RegisterView/>
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type vms:ResetPasswordViewModel}">
-                    <vs:ResetPassword/>
+                    <vs:ResetPasswordView/>
                 </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>

@@ -14,7 +14,11 @@ namespace WC_Simulator.ViewModel
 
         public MainViewModel()
         {
-            CurrentViewModel = new LoginViewModel();
+            LoginViewModel login = new LoginViewModel();
+            RegisterViewModel register = new RegisterViewModel();
+            ResetPasswordViewModel resetPassword = new ResetPasswordViewModel();
+
+            CurrentViewModel = login;
         }
     }
 }
