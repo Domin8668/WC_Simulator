@@ -8,5 +8,6 @@ namespace WC_Simulator.Model
 {
     internal class Model
     {
+        // tu wrzucamy wszystko z bazy danych chyba
     }
 }
