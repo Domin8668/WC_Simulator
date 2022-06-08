@@ -7,6 +7,7 @@ namespace WC_Simulator.DAL
         private MySqlConnectionStringBuilder stringBuilder = new MySqlConnectionStringBuilder();
 
         private static DBConnection instance = null;
+
         public static DBConnection Instance
         {
             get
@@ -18,7 +19,6 @@ namespace WC_Simulator.DAL
         }
 
         public MySqlConnection Connection => new MySqlConnection(stringBuilder.ToString());
-
 
         private DBConnection()
         { 
