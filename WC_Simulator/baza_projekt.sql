@@ -6,9 +6,11 @@ use wc_simulator;
 create table user(
 	id_user int unsigned auto_increment primary key,
     login varchar(25) unique not null,
-    password varchar(32) not null,
+    password varbyte(32) not null,
     creation_date date not null,
-    last_log_date datetime not null
+    last_log_date datetime not null,
+    security_question varchar(25) not null,
+    security_answer varchar(25) not null
 );
 desc user;
 
