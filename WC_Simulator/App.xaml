@@ -2,8 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:WC_Simulator"
+             xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
+             xmlns:vs="clr-namespace:WC_Simulator.View"
+             xmlns:ucs="clr-namespace:WC_Simulator.View.Components"
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-         
+        <vms:MainViewModel x:Key="mainVM"/>
     </Application.Resources>
 </Application>
