@@ -6,11 +6,21 @@ namespace WC_Simulator.ViewModel
     internal class LoginViewModel : BaseViewModel
     {
         #region Variables
+
+        private User _currentUser;
+
+        #endregion
+
+        #region Constructor
+
+        public LoginViewModel()
+        {
+            _currentUser = new User();
+        }
+
         #endregion
 
         #region Properties
-
-        private User _currentUser;
 
         public User CurrentUser
         {
@@ -18,9 +28,6 @@ namespace WC_Simulator.ViewModel
             set { _currentUser = value; }
         }
 
-        #endregion
-
-        #region Constructor
         #endregion
 
         #region Dependencies
