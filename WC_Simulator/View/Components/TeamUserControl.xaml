@@ -4,9 +4,58 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WC_Simulator.View.Components"
+             xmlns:flags ="clr-namespace:WC_Simulator.Resources.Flags"
+             
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="800" d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <Style x:Key="textblock" TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="25"/>
+        </Style>
+    </UserControl.Resources>
+    
+    
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="600"/>
+        </Grid.RowDefinitions>
+
+        
+        
+
+        <!--Kraj info-->
+        <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
+            <Image x:Name="team_image" Height="80" Width="150" Source="../..//Resources/Flags/poland.png"
+                   HorizontalAlignment="Center"></Image>
+            <TextBlock x:Name="team_name"  Text="POLSKA " Style="{StaticResource textblock}" HorizontalAlignment="Center"/>
+
+        </StackPanel>
+        
+        <!--Trener info-->
+        <TextBlock x:Name="team_coach" Grid.Row="1" Text="Trener: Czesław MIchniewicz " Style="{StaticResource textblock}"
+                   HorizontalAlignment="Center"/>
+        
+        <!--Drużyna info-->
+        <ListView x:Name="team" Grid.Row="2" HorizontalAlignment="Center" Width="400">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Width="150" x:Name="player_in_column">
+                            <GridViewColumn.Header>
+                                <TextBlock Text="Nazwisko" Background="AliceBlue" FontSize="25" >
+                                </TextBlock>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>

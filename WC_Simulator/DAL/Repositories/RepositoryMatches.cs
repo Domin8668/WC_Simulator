@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace WC_Simulator.DAL.Repositories
 {
+    using MySql.Data.MySqlClient;
     using WC_Simulator.DAL;
+    using WC_Simulator.DAL.Entities;
     class RepositoryMatches
     {
         #region QUERIES
@@ -18,7 +20,68 @@ namespace WC_Simulator.DAL.Repositories
         #endregion
 
         #region CRUD
+        public static List<Single_match> LoadMatch()
+        {
+            List<Single_match> match = new List<Single_match>();
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand(ALL_MATCH, connection);
+                connection.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                    match.Add(new Single_match(reader));
+                connection.Close();
+            }
+            return match;
+        }
 
+        public static bool AddMatch(Single_match match)
+        {
+            bool state = false;
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand($"{ADD_MATCH} {match.ToInsert()}", connection);
+                connection.Open();
+                var id = command.ExecuteNonQuery();
+                state = true;
+                match.Id_match = (uint)command.LastInsertedId;
+                connection.Close();
+            }
+            return state;
+        }
+
+        public static bool UpdateMatch(Single_match match, uint idMatch)
+        {
+            bool state = false;
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                string UPDATE_MATCH = $"UPDATE Single_match SET id_match='{match.Id_match}', id_first_team='{match.Id_first_team}', " +
+                    $"id_second_team={match.Id_second_team}, id_tournament='{match.Id_tournament}', match_code='{match.Match_code}'," +
+                    $"goals_first_team='{match.Goals_first_team}', goals_second_team='{match.Goals_second_team}' WHERE id_group={idMatch}";
+
+                MySqlCommand command = new MySqlCommand(UPDATE_MATCH, connection);
+                connection.Open();
+                var n = command.ExecuteNonQuery();
+                if (n == 1) state = true;
+
+                connection.Close();
+            }
+            return state;
+        }
+
+        public static bool DeleteMatch(Single_match match)
+        {
+            bool state = false;
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand($"{DELETE_MATCH} {match.Id_match}", connection);
+                connection.Open();
+                var id = command.ExecuteNonQuery();
+                state = true;
+                connection.Close();
+            }
+            return state;
+        }
         #endregion
     }
 }
