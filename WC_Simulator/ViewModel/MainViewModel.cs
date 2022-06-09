@@ -1,4 +1,6 @@
 ﻿using WC_Simulator.ViewModel.BaseClasses;
+using WC_Simulator.Model;
+using System.Windows;
 
 namespace WC_Simulator.ViewModel
 {
@@ -6,8 +8,9 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
+        private MainModel _model;
         private BaseViewModel _currentViewModel;
-        private bool _isVisible;
+        private Visibility _menuVisibility;
 
         #endregion
 
@@ -16,11 +19,13 @@ namespace WC_Simulator.ViewModel
 
         public MainViewModel()
         {
+            Model = new MainModel();
             LoginViewModel login = new LoginViewModel();
             RegisterViewModel register = new RegisterViewModel();
             ResetPasswordViewModel resetPassword = new ResetPasswordViewModel();
 
             CurrentViewModel = login;
+            MenuVisibility = Visibility.Hidden;
         }
 
         #endregion
@@ -28,10 +33,23 @@ namespace WC_Simulator.ViewModel
 
         #region Properties
 
+        public MainModel Model
+        {
+            get { return _model; }
+            set { _model = value; }
+        }
+
+
         public BaseViewModel CurrentViewModel
         {
             get { return _currentViewModel; }
             set { _currentViewModel = value; }
+        }
+
+        public Visibility MenuVisibility
+        {
+            get { return _menuVisibility; }
+            set { _menuVisibility = value; }
         }
 
         #endregion
