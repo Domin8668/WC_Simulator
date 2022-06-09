@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace WC_Simulator.DAL.Repositories
 {
+    using MySql.Data.MySqlClient;
     using WC_Simulator.DAL;
+    using WC_Simulator.DAL.Entities;
     class RepositoryUsers
     {
         #region QUERIES
@@ -18,7 +20,68 @@ namespace WC_Simulator.DAL.Repositories
         #endregion
 
         #region CRUD
+        public static List<User> LoadUser()
+        {
+            List<User> user = new List<User>();
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand(ALL_USER, connection);
+                connection.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                    user.Add(new User(reader));
+                connection.Close();
+            }
+            return user;
+        }
 
+        public static bool AddUser(User user)
+        {
+            bool state = false;
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand($"{ADD_USER} {user.ToInsert()}", connection);
+                connection.Open();
+                var id = command.ExecuteNonQuery();
+                state = true;
+                user.Id_user = (uint)command.LastInsertedId;
+                connection.Close();
+            }
+            return state;
+        }
+
+        public static bool UpdateUser(User user, uint idUser)
+        {
+            bool state = false;
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                string UPDATE_USER = $"UPDATE User SET id_user='{user.Id_user}', login='{user.Login}', password='{user.Password}'" +
+                    $"creation_date='{user.Creation_date}', last_log_date='{user.Last_log_date}', security_question='{user.Security_question}'" +
+                    $"WHERE id_user={idUser}";
+
+                MySqlCommand command = new MySqlCommand(UPDATE_USER, connection);
+                connection.Open();
+                var n = command.ExecuteNonQuery();
+                if (n == 1) state = true;
+
+                connection.Close();
+            }
+            return state;
+        }
+
+        public static bool DeleteUser(User user)
+        {
+            bool state = false;
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand($"{DELETE_USER} {user.Id_user}", connection);
+                connection.Open();
+                var id = command.ExecuteNonQuery();
+                state = true;
+                connection.Close();
+            }
+            return state;
+        }
         #endregion
     }
 }
