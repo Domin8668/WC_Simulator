@@ -63,6 +63,10 @@ namespace WC_Simulator.DAL.Entities
             return true;
         }
 
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
         #endregion
 
     }
