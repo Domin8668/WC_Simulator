@@ -28,9 +28,9 @@ namespace WC_Simulator.DAL.Entities
             Last_log_date = DateTime.Parse(reader["last_log_date"].ToString());
         }
 
-        public User(string login, string password, DateTime creation_date, DateTime last_log_date)
+        public User(uint id_user, string login, string password, DateTime creation_date, DateTime last_log_date)
         {
-            Id_user = null;
+            Id_user = id_user;
             Login = login;
             Password = password;
             Creation_date = creation_date;
@@ -63,12 +63,6 @@ namespace WC_Simulator.DAL.Entities
             return true;
         }
 
-        //TODO: encrypt password
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
         #endregion
 
     }
