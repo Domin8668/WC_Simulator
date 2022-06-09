@@ -4,8 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WC_Simulator.View.Components"
-             xmlns:flags ="clr-namespace:WC_Simulator.Resources.Flags"
-             
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="400">
 
@@ -19,7 +17,7 @@
     
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="150"/>
@@ -27,12 +25,9 @@
             <RowDefinition Height="600"/>
         </Grid.RowDefinitions>
 
-        
-        
-
         <!--Kraj info-->
         <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
-            <Image x:Name="team_image" Height="80" Width="150" Source="../..//Resources/Flags/poland.png"
+            <Image x:Name="team_image" Width="150" Source="../..//Resources/Flags/poland.png"
                    HorizontalAlignment="Center"></Image>
             <TextBlock x:Name="team_name"  Text="POLSKA " Style="{StaticResource textblock}" HorizontalAlignment="Center"/>
 
