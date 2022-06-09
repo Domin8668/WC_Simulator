@@ -4,13 +4,15 @@ namespace WC_Simulator.ViewModel
 {
     internal class MainViewModel : BaseViewModel
     {
-        private BaseViewModel _currentViewModel;
+        #region Variables
 
-        public BaseViewModel CurrentViewModel
-        {
-            get { return _currentViewModel; }
-            set { _currentViewModel = value; }
-        }
+        private BaseViewModel _currentViewModel;
+        private bool _isVisible;
+
+        #endregion
+
+
+        #region Constructor
 
         public MainViewModel()
         {
@@ -20,5 +22,23 @@ namespace WC_Simulator.ViewModel
 
             CurrentViewModel = login;
         }
+
+        #endregion
+
+
+        #region Properties
+
+        public BaseViewModel CurrentViewModel
+        {
+            get { return _currentViewModel; }
+            set { _currentViewModel = value; }
+        }
+
+        #endregion
+
+
+        #region Commands
+
+        #endregion
     }
 }
