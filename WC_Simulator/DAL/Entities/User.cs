@@ -19,6 +19,16 @@ namespace WC_Simulator.DAL.Entities
         #endregion
 
         #region Constructors
+
+        public User()
+        {
+            Id_user = null;
+            Login = string.Empty;
+            Password = string.Empty;
+            Creation_date = new DateTime();
+            Last_log_date = new DateTime();
+        }
+
         public User(MySqlDataReader reader)
         {
             Id_user = uint.Parse(reader["id_user"].ToString());
