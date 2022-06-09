@@ -26,7 +26,7 @@ namespace WC_Simulator.DAL.Entities
         {
             Id_user = null;
             Login = string.Empty;
-            Password = string.Empty;
+            Password = new Byte[0];
             Creation_date = new DateTime();
             Last_log_date = new DateTime();
         }
