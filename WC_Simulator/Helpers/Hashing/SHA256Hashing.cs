@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Security;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace WC_Simulator.Helpers.Hashing
@@ -26,11 +27,11 @@ namespace WC_Simulator.Helpers.Hashing
             return result;
         }
 
-        public byte[] GetHash(string username, string password)
+        public byte[] GetHash(string username, SecureString password)
         {
             using (SHA256 mySHA256 = SHA256.Create())
             {
-                return mySHA256.ComputeHash(Encoding.ASCII.GetBytes(username + password));
+                return mySHA256.ComputeHash(Encoding.ASCII.GetBytes(username + new System.Net.NetworkCredential(string.Empty, password).Password));
             }
         }
     }
