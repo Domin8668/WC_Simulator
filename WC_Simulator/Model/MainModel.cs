@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WC_Simulator.Model
 {
-    internal class Model
+    internal class MainModel
     {
         // tu wrzucamy wszystko z bazy danych chyba
     }
