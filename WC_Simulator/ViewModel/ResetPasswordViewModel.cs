@@ -14,6 +14,11 @@ namespace WC_Simulator.ViewModel
 
         #region Constructor
 
+        public ResetPasswordViewModel()
+        {
+
+        }
+
         public ResetPasswordViewModel(MainModel Model)
         {
             this.Model = Model;

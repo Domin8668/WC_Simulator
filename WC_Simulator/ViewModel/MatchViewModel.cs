@@ -13,6 +13,11 @@ namespace WC_Simulator.ViewModel
 
         #region Constructor
 
+        public MatchViewModel()
+        {
+
+        }
+
         public MatchViewModel(MainModel Model)
         {
             this.Model = Model;
