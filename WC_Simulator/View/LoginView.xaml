@@ -8,7 +8,32 @@
              xmlns:ucs="clr-namespace:WC_Simulator.View.Components"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        
+    <UserControl.Resources>
+        <vms:LoginViewModel x:Key="loginViewModel"/>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource loginViewModel}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Column="1" Grid.ColumnSpan="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center">
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Left"
+                       Text="Login:"/>
+                <TextBox DockPanel.Dock="Left"/>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Left"
+                       Text="Hasło:"/>
+                <ucs:PasswordUserControl DockPanel.Dock="Left"
+                    Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </DockPanel>
+            </DockPanel>
     </Grid>
 </UserControl>

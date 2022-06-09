@@ -1,6 +1,9 @@
 ﻿using WC_Simulator.DAL.Entities;
 using WC_Simulator.ViewModel.BaseClasses;
 using WC_Simulator.Model;
+using System.Security;
+using System;
+using System.Runtime.InteropServices;
 
 namespace WC_Simulator.ViewModel
 {
@@ -10,10 +13,17 @@ namespace WC_Simulator.ViewModel
 
         private User _currentUser;
         private MainModel _model;
+        private SecureString _password;
 
         #endregion
 
+
         #region Constructor
+
+        public LoginViewModel()
+        {
+
+        }
 
         public LoginViewModel(MainModel Model)
         {
@@ -22,6 +32,7 @@ namespace WC_Simulator.ViewModel
         }
 
         #endregion
+
 
         #region Properties
 
@@ -35,6 +46,15 @@ namespace WC_Simulator.ViewModel
         {
             get { return _model; }
             set { _model = value; }
+        }
+
+        public SecureString Password
+        {
+            get { return _password; }
+            set { _password = value;
+                string password = new System.Net.NetworkCredential(string.Empty, Password).Password;
+                Console.WriteLine($"SecurePassword:{password}");
+            }
         }
 
         #endregion
