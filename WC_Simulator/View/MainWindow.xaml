@@ -7,6 +7,7 @@
         xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
         xmlns:vs="clr-namespace:WC_Simulator.View"
         xmlns:ucs="clr-namespace:WC_Simulator.View.Components"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" Title="Symulator Mistrzostw Świata"
         ResizeMode="NoResize" WindowState="Maximized">
@@ -36,6 +37,7 @@
                 <Button Content="Faza grupowa"/>
                 <Button Content="Faza pucharowa"/>
                 <Button Content="Tabela końcowa"/>
+                <Button Content="Pomoc"/>
             </ItemsControl>
             <TextBlock DockPanel.Dock="Top"
                        Text="Turnieje:"/>
