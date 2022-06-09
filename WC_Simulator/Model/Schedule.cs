@@ -25,11 +25,24 @@ namespace WC_Simulator.Model
             Prepare_matchlocations();
             Prepare_matchdates();
             Prepare_referees();
-            for(int i = 0; i < 64; i++)
+
+            ScheduleMatch[] november = new ScheduleMatch[40];
+            ScheduleMatch[] december = new ScheduleMatch[24];
+
+            for (int i = 0; i < 40; i++)
             {
-                schedule[i] = new ScheduleMatch(match_codes[i], match_stages[i], match_locations[i], match_referees[i], match_dates[i]);
+                november[i] = new ScheduleMatch(match_codes[i], match_stages[i], match_locations[i], match_referees[i], match_dates[i]);
             }
-           
+            var novqry = november.Select(p => p).OrderBy(p => p.Date).ThenBy(p => p.Time).ThenBy(p => p.Match_code);
+
+
+            for (int i = 0; i < 24; i++)
+            {
+                december[i] = new ScheduleMatch(match_codes[40 + i], match_stages[40 + i], match_locations[40 + i], match_referees[40 + i], match_dates[40 + i]);
+            }
+            var decqry = december.Select(p => p).OrderBy(p => p.Date).ThenBy(p => p.Time).ThenBy(p => p.Match_code);
+
+            schedule = novqry.Concat(decqry).ToArray();
         }
         #endregion
 
