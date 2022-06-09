@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Security;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WC_Simulator.View.Components
 {
@@ -20,9 +9,57 @@ namespace WC_Simulator.View.Components
     /// </summary>
     public partial class PasswordUserControl : UserControl
     {
+        #region Constructor
+
+        //public PasswordUserControl()
+        //{
+        //    InitializeComponent();
+        //}
+
+        #endregion
+
+
+        #region Dependecies
+
+        //public static readonly DependencyProperty PasswordProperty = DependencyProperty.Register(
+        //    "PBPassword",
+        //    typeof(SecureString),
+        //    typeof(PasswordUserControl),
+        //    new FrameworkPropertyMetadata(null)
+        //    );
+
+        #endregion
+
+
+        #region Properties
+
+        public SecureString Password
+        {
+            get { return (SecureString)GetValue(PasswordProperty); }
+            set { SetValue(PasswordProperty, value); }
+        }
+
+        #endregion
+
+
+        #region Events
+
+
+
+        #endregion
+
+        public static readonly DependencyProperty PasswordProperty =
+            DependencyProperty.Register("Password", typeof(SecureString), typeof(PasswordUserControl),
+                new PropertyMetadata(default(SecureString)));
+
         public PasswordUserControl()
         {
             InitializeComponent();
+
+            PasswordBox.PasswordChanged += (sender, args) =>
+            {
+                Password = ((PasswordBox)sender).SecurePassword;
+            };
         }
     }
 }
