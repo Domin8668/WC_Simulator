@@ -13,7 +13,7 @@ namespace WC_Simulator.DAL.Entities
         #region Properties
         public uint? Id_user { get; set; }
         public string Login { get; set; }
-        public string Password { get; set; }
+        public Byte[] Password { get; set; }
         public DateTime Creation_date { get; set; }
         public DateTime Last_log_date { get; set; }
         public string Security_question { get; set; }
@@ -26,7 +26,7 @@ namespace WC_Simulator.DAL.Entities
         {
             Id_user = null;
             Login = string.Empty;
-            Password = string.Empty;
+            Password = new Byte[0];
             Creation_date = new DateTime();
             Last_log_date = new DateTime();
         }
@@ -35,14 +35,14 @@ namespace WC_Simulator.DAL.Entities
         {
             Id_user = uint.Parse(reader["id_user"].ToString());
             Login = reader["login"].ToString();
-            Password = reader["password"].ToString();
+            Password = Encoding.ASCII.GetBytes(reader["password"].ToString());
             Creation_date = DateTime.Parse(reader["creation_date"].ToString());
             Last_log_date = DateTime.Parse(reader["last_log_date"].ToString());
             Security_question = reader["login"].ToString();
             Security_answer = reader["password"].ToString();
         }
 
-        public User(uint id_user, string login, string password, DateTime creation_date, DateTime last_log_date, string security_question, string security_answer)
+        public User(uint id_user, string login, Byte[] password, DateTime creation_date, DateTime last_log_date, string security_question, string security_answer)
         {
             Id_user = id_user;
             Login = login;
@@ -72,7 +72,7 @@ namespace WC_Simulator.DAL.Entities
             if (user is null) return false;
             if (Id_user != user.Id_user) return false;
             if (Login.ToLower() != user.Login.ToLower()) return false;
-            if (Password.ToLower() != user.Password.ToLower()) return false;
+            if (Password != user.Password) return false;
             if (Creation_date != user.Creation_date) return false;
             if (Last_log_date != user.Last_log_date) return false;
             if (Security_question.ToLower() != user.Security_question.ToLower()) return false;
