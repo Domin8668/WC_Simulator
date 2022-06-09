@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WC_Simulator.View
+namespace WC_Simulator.View.Components
 {
     /// <summary>
-    /// Interaction logic for MenuUserControl.xaml
+    /// Interaction logic for PasswordUserControl.xaml
     /// </summary>
-    public partial class MenuUserControl : UserControl
+    public partial class PasswordUserControl : UserControl
     {
-        public MenuUserControl()
+        public PasswordUserControl()
         {
             InitializeComponent();
         }
