@@ -103,6 +103,7 @@
     </ApplicationDefinition>
     <Compile Include="Helpers\Hashing\IHashing.cs" />
     <Compile Include="Helpers\Hashing\SHA256Hashing.cs" />
+    <Compile Include="Model\MainModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\ResetPasswordViewModel.cs" />
@@ -114,9 +115,6 @@
     </Compile>
     <Compile Include="View\Components\MatchUserControl.xaml.cs">
       <DependentUpon>MatchUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Components\MenuItemUserControl.xaml.cs">
-      <DependentUpon>MenuItemUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Components\PasswordUserControl.xaml.cs">
       <DependentUpon>PasswordUserControl.xaml</DependentUpon>
@@ -139,10 +137,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Components\MatchUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Components\MenuItemUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,7 +174,6 @@
     <Compile Include="DAL\Repositories\RepositoryTournaments.cs" />
     <Compile Include="DAL\Repositories\RepositoryUsers.cs" />
     <Compile Include="Model\ScheduleMatch.cs" />
-    <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Schedule.cs" />
     <Compile Include="ViewModel\BaseClasses\RelayCommand.cs" />
     <Compile Include="ViewModel\BaseClasses\BaseViewModel.cs" />
