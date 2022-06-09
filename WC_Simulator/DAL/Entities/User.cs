@@ -13,7 +13,7 @@ namespace WC_Simulator.DAL.Entities
         #region Properties
         public uint? Id_user { get; set; }
         public string Login { get; set; }
-        public Byte[] Password { get; set; }
+        public byte[] Password { get; set; }
         public DateTime Creation_date { get; set; }
         public DateTime Last_log_date { get; set; }
         public string Security_question { get; set; }
