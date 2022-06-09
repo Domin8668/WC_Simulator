@@ -14,6 +14,11 @@ namespace WC_Simulator.ViewModel
 
         #region Constructor
 
+        public RegisterViewModel()
+        {
+
+        }
+
         public RegisterViewModel(MainModel Model)
         {
             this.Model = Model;
