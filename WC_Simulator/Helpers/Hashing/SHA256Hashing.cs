@@ -32,5 +32,6 @@ namespace WC_Simulator.Helpers.Hashing
             {
                 return mySHA256.ComputeHash(Encoding.ASCII.GetBytes(userID + password));
             }
+        }
     }
 }
