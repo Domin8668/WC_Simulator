@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WC_Simulator.View
+namespace WC_Simulator.View.Components
 {
     /// <summary>
-    /// Interaction logic for MatchUserControl.xaml
+    /// Interaction logic for TeamUserControl.xaml
     /// </summary>
-    public partial class MatchUserControl : UserControl
+    public partial class TeamUserControl : UserControl
     {
-        public MatchUserControl()
+        public TeamUserControl()
         {
             InitializeComponent();
         }
