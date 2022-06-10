@@ -1,6 +1,8 @@
 ﻿using WC_Simulator.ViewModel.BaseClasses;
 using WC_Simulator.Model;
 using System.Windows;
+using WC_Simulator.DAL.Entities;
+using System;
 
 namespace WC_Simulator.ViewModel
 {
@@ -12,9 +14,12 @@ namespace WC_Simulator.ViewModel
         private BaseViewModel _currentViewModel;
         private Visibility _menuVisibility;
         private TeamViewModel _teamVM;
+        private ProfileViewModel _profileVM;
+        private User _user_current;
 
         #endregion
         //public ObservableCollection<string> col = new ObservableCollection<string> { "twoja stara", "twoj stary" };
+        //TeamVM = new TeamViewModel("Poland", "Michniewicz", col);
 
         #region Constructor
 
@@ -60,7 +65,17 @@ namespace WC_Simulator.ViewModel
             get { return _teamVM; }
             set { _teamVM = value; }
         }
+        public ProfileViewModel ProfileVM
+        {
+            get { return _profileVM; }
+            set { _profileVM = value; }
+        }
 
+        public User User_current
+        {
+            get { return _user_current; }
+            set { _user_current = value; }
+        }
 
         #endregion
 
