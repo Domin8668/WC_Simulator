@@ -7,7 +7,6 @@
              xmlns:vs="clr-namespace:WC_Simulator.View"
              xmlns:ucs="clr-namespace:WC_Simulator.View.Components"
              xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-             xmlns:bhs="clr-namespace:WC_Simulator.Helpers.Behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -27,16 +26,13 @@
                    VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <TextBlock Text="Login:"/>
-                <ucs:UsernameUserControl Username="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                <ucs:UsernameUserControl TBText="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                          MinWidth="50"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                 <TextBlock Text="Hasło:"/>
-                <PasswordBox MinWidth="50">
-                    <i:Interaction.Behaviors>
-                        <bhs:PasswordBoxBindingBehavior BoundPassword="{Binding SecurePassword, Mode=TwoWay}" />
-                    </i:Interaction.Behaviors>
-                </PasswordBox>
+                <ucs:BindablePasswordBox Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                         MinWidth="50"/>
             </StackPanel>
             <Button Content="Zaloguj się"
                     Command="{Binding Login}"/>

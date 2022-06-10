@@ -13,11 +13,5 @@ namespace WC_Simulator.View
         {
             InitializeComponent();
         }
-
-        //private void PBPasswordChanged(object sender, RoutedEventArgs e)
-        //{
-        //    if (DataContext != null)
-        //    { ((LoginViewModel)DataContext).SecurePassword = ((PasswordBox)sender).SecurePassword; }
-        //}
     }
 }
