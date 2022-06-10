@@ -26,19 +26,21 @@
         </Grid.RowDefinitions>
 
         <!--Kraj info-->
+        <!--../..//Resources/Flags/poland.png  tak podawac sciezke-->
         <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
-            <Image x:Name="team_image" Width="150" Source="../..//Resources/Flags/poland.png"
+            <Image x:Name="TeamImage" Width="150" Source="{Binding Path=TeamImageLink}" 
                    HorizontalAlignment="Center"></Image>
-            <TextBlock x:Name="team_name"  Text="POLSKA " Style="{StaticResource textblock}" HorizontalAlignment="Center"/>
-
+            <TextBlock x:Name="TeamName"  Text="{Binding Path=TeamNameText} " Style="{StaticResource textblock}" HorizontalAlignment="Center"/>
         </StackPanel>
         
         <!--Trener info-->
-        <TextBlock x:Name="team_coach" Grid.Row="1" Text="Trener: Czesław MIchniewicz " Style="{StaticResource textblock}"
+        <TextBlock x:Name="TeamCoach" Grid.Row="1" Text="{Binding Path=TeamCoachText, StringFormat=Trener: {0},Mode=TwoWay}" Style="{StaticResource textblock}"
                    HorizontalAlignment="Center"/>
         
         <!--Drużyna info-->
-        <ListView x:Name="team" Grid.Row="2" HorizontalAlignment="Center" Width="400">
+        <ListView x:Name="team" Grid.Row="2" HorizontalAlignment="Center" Width="400"
+                                                ItemsSource="{Binding Path=LvItems, Mode=TwoWay}"
+            >
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
