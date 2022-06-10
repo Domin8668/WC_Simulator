@@ -19,11 +19,6 @@ namespace WC_Simulator.ViewModel
 
         }
 
-        public ResetPasswordViewModel(MainModel Model)
-        {
-            this.Model = Model;
-        }
-
         #endregion
 
 

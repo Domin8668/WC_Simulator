@@ -11,21 +11,33 @@ namespace WC_Simulator.ViewModel
         private MainModel _model;
         private BaseViewModel _currentViewModel;
         private Visibility _menuVisibility;
+        private TeamViewModel _teamVM;
 
         #endregion
-
+        //public ObservableCollection<string> col = new ObservableCollection<string> { "twoja stara", "twoj stary" };
 
         #region Constructor
 
         public MainViewModel()
         {
             Model = new MainModel();
-            LoginViewModel login = new LoginViewModel(Model);
-            RegisterViewModel register = new RegisterViewModel(Model);
-            ResetPasswordViewModel resetPassword = new ResetPasswordViewModel(Model);
+            LoginViewModel login = new LoginViewModel
+            {
+                Model = Model
+            };
+            RegisterViewModel register = new RegisterViewModel
+            {
+                Model = Model
+            };
+            ResetPasswordViewModel resetPassword = new ResetPasswordViewModel
+            {
+                Model = Model
+            };
+            //TeamVM = new TeamViewModel("Poland", "Michniewicz", col);
 
             CurrentViewModel = login;
             MenuVisibility = Visibility.Visible;
+            MenuVisibility = Visibility.Hidden;
         }
 
         #endregion
@@ -51,6 +63,13 @@ namespace WC_Simulator.ViewModel
             get { return _menuVisibility; }
             set { _menuVisibility = value; }
         }
+
+        public TeamViewModel TeamVM
+        {
+            get { return _teamVM; }
+            set { _teamVM = value; }
+        }
+
 
         #endregion
 

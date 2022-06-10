@@ -17,6 +17,7 @@ namespace WC_Simulator.DAL.Entities
         public string Security_answer { get; set; }
         #endregion
 
+
         #region Constructors
 
         public User()
@@ -52,6 +53,7 @@ namespace WC_Simulator.DAL.Entities
 
         #endregion
 
+
         #region Methods
 
         public override string ToString()
@@ -63,6 +65,7 @@ namespace WC_Simulator.DAL.Entities
         {
             return $"('{Id_user}', '{Login}', '{Password}', '{DateTime.Now.ToString("yyyy-MM-dd")}', '{DateTime.Now.ToString("yyyy-MM-dd")}', '{Security_question}', '{Security_answer}')";
         }
+
         public override bool Equals(object obj)
         {
             var user = obj as User;

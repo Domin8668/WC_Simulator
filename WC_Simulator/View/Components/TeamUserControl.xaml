@@ -4,18 +4,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WC_Simulator.View.Components"
+             xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
+
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="400">
 
     <UserControl.Resources>
+        <vms:TeamViewModel x:Key="teamViewModel"/>
+
         <Style x:Key="textblock" TargetType="TextBlock">
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="25"/>
         </Style>
     </UserControl.Resources>
-    
-    
-    <Grid Background="AliceBlue">
+
+
+    <Grid DataContext="{StaticResource teamViewModel}" Background="AliceBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -26,21 +30,39 @@
         </Grid.RowDefinitions>
 
         <!--Kraj info-->
-        <!--../..//Resources/Flags/poland.png  tak podawac sciezke-->
-        <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
-            <Image x:Name="TeamImage" Width="150" Source="{Binding Path=TeamImageLink}" 
-                   HorizontalAlignment="Center"></Image>
-            <TextBlock x:Name="TeamName" Text="{Binding Path=TeamNameText}" Style="{StaticResource textblock}" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" Width="400">
+            <Image x:Name="TeamImage" Width="150" HorizontalAlignment="Center"
+                   Source="{Binding Path=Image, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            <TextBlock x:Name="TeamNameTextBox" Style="{StaticResource textblock}" 
+                  HorizontalAlignment="Center"
+                  Text="{Binding Path=TeamName, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
         </StackPanel>
-        
+
         <!--Trener info-->
-        <TextBlock x:Name="TeamCoach" Grid.Row="1" Text="{Binding Path=TeamCoachText, StringFormat=Trener: {0},Mode=TwoWay}" Style="{StaticResource textblock}"
-                   HorizontalAlignment="Center"/>
-        
+        <TextBlock x:Name="TeamCoach" Grid.Row="1" HorizontalAlignment="Center" 
+                  Text="{Binding Path=Coach, StringFormat=Trener: {0}, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"  
+                   Style="{StaticResource textblock}"/>
+
         <!--Drużyna info-->
         <ListView x:Name="team" Grid.Row="2" HorizontalAlignment="Center" Width="400"
-                                                ItemsSource="{Binding Path=LvItems, Mode=TwoWay}"
-            >
+                  ItemsSource="{Binding Path=TeamItems, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>

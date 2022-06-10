@@ -29,30 +29,30 @@ namespace WC_Simulator.View.Components
 
         #region Dependencies
 
-        public static readonly DependencyProperty TeamNameTextProperty = DependencyProperty.Register(
-            "TeamNameText",
+        public static readonly DependencyProperty TeamNameProperty = DependencyProperty.Register(
+            "TeamName",
             typeof(string),
             typeof(TeamUserControl),
             new FrameworkPropertyMetadata(null)
             );
 
-        public static readonly DependencyProperty TeamImageLinkProperty = DependencyProperty.Register(
-            "TeamImageLink",
+        public static readonly DependencyProperty ImageProperty = DependencyProperty.Register(
+            "Image",
             typeof(string),
             typeof(TeamUserControl),
             new FrameworkPropertyMetadata(null)
             );
 
-        public static readonly DependencyProperty TeamCoachTextProperty = DependencyProperty.Register(
-            "TeamCoachText",
+        public static readonly DependencyProperty CoachProperty = DependencyProperty.Register(
+            "Coach",
             typeof(string),
             typeof(TeamUserControl),
             new FrameworkPropertyMetadata(null)
             );
 
-        public static readonly DependencyProperty LvItemsProperty = DependencyProperty.Register(
-            "LvItems",
-            typeof(ObservableCollection<Player>),
+        public static readonly DependencyProperty TeamItemsProperty = DependencyProperty.Register(
+            "TeamItems",
+            typeof(ObservableCollection<string>),
             typeof(TeamUserControl),
             new FrameworkPropertyMetadata(null)
             );
@@ -61,33 +61,31 @@ namespace WC_Simulator.View.Components
 
         #region Properties
 
-        public string TeamNameText
+        public string TeamName
         {
-            get { return (string)GetValue(TeamNameTextProperty); }
-            set { SetValue(TeamNameTextProperty, value); }
+            get { return (string)GetValue(TeamNameProperty); }
+            set { SetValue(TeamNameProperty, value); }
         }
 
-        public string TeamImageLink
+        public string Image
         {
-            get { return (string)GetValue(TeamImageLinkProperty); }
-            set { SetValue(TeamImageLinkProperty, value); }
+            get { return (string)GetValue(ImageProperty); }
+            set { SetValue(ImageProperty, value); }
         }
 
-        public string TeamCoachText
+        public string Coach
         {
-            get { return (string)GetValue(TeamCoachTextProperty); }
-            set { SetValue(TeamCoachTextProperty, value); }
+            get { return (string)GetValue(CoachProperty); }
+            set { SetValue(CoachProperty, value); }
         }
 
-        public ObservableCollection<Player> LvItems
+        public ObservableCollection<string> TeamItems
         {
-            get { return (ObservableCollection<Player>)GetValue(LvItemsProperty); }
-            set { SetValue(LvItemsProperty, value); }
+            get { return (ObservableCollection<string>)GetValue(TeamItemsProperty); }
+            set { SetValue(TeamItemsProperty, value); }
         }
 
         #endregion
-
-
 
     }
 }

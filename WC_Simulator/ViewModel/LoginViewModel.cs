@@ -3,7 +3,10 @@ using WC_Simulator.ViewModel.BaseClasses;
 using WC_Simulator.Model;
 using System.Security;
 using System;
-using System.Runtime.InteropServices;
+using WC_Simulator.Helpers.Hashing;
+using System.Windows.Input;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace WC_Simulator.ViewModel
 {
@@ -13,8 +16,8 @@ namespace WC_Simulator.ViewModel
 
         private User _currentUser;
         private MainModel _model;
-        private SecureString _password;
-        private string _login;
+        private SecureString _securePassword;
+        private string _username;
 
         #endregion
 
@@ -23,13 +26,7 @@ namespace WC_Simulator.ViewModel
 
         public LoginViewModel()
         {
-
-        }
-
-        public LoginViewModel(MainModel Model)
-        {
             _currentUser = new User();
-            this.Model = Model;
         }
 
         #endregion
@@ -49,32 +46,97 @@ namespace WC_Simulator.ViewModel
             set { _model = value; }
         }
 
-        public SecureString Password
+        //public SecureString SecurePassword { private get; set; }
+
+        public SecureString SecurePassword
         {
-            get { return _password; }
-            set { _password = value;
+            get { return _securePassword; }
+            set
+            {
+                _securePassword = value;
                 // test wpisywania hasła:
-                string password = new System.Net.NetworkCredential(string.Empty, Password).Password;
+                string password = new System.Net.NetworkCredential(string.Empty, SecurePassword).Password;
                 Console.WriteLine($"Password: {password}");
-                OnPropertyChanged(nameof(Password));
+                //OnPropertyChanged(nameof(SecurePassword));
             }
         }
 
-        public string Login
+        public string Username
         {
-            get { return _login; }
+            get { return _username; }
             set
             {
-                _login = value;
+                _username = value;
                 // test wpisywania loginu:
-                Console.WriteLine($"Login: {Login}");
-                OnPropertyChanged(nameof(Login));
+                Console.WriteLine($"Nazwa: {Username}");
+                OnPropertyChanged(nameof(Username));
             }
         }
 
         #endregion
 
-        #region Dependencies
+
+        #region Commands
+
+        private void PBPasswordChanged(object sender, RoutedEventArgs e)
+        {
+            SecurePassword = ((PasswordBox)sender).SecurePassword;
+            OnPropertyChanged(nameof(SecurePassword));
+            string password = new System.Net.NetworkCredential(string.Empty, SecurePassword).Password;
+            Console.WriteLine($"Password: {password}");
+        }
+
+        private ICommand _login = null;
+
+        public ICommand Login
+        {
+            get
+            {
+                if (_login == null)
+                {
+                    _login = new RelayCommand(arg => {
+                        try
+                        {
+                            SHA256Hashing SHA256 = new SHA256Hashing();
+                            CurrentUser.Login = Username;
+                            MessageBox.Show($"Password: {new System.Net.NetworkCredential(string.Empty, SecurePassword).Password}");
+                            CurrentUser.Password = SHA256.GetHash(Username, SecurePassword);
+                            SecurePassword.AppendChar('*');
+                            Username = string.Empty;
+                            //SecurePassword.Clear();
+                            MessageBox.Show($"Username: {Username}\nPassword: {SecurePassword}");
+                        }
+                        catch(Exception)
+                        { 
+                            
+                        }
+                    },
+                    arg => true);
+                }
+                return _login;
+            }
+        }
+
+
+        // barebone ICommand to copy:
+        //private ICommand _login = null;
+
+
+        //public ICommand Login
+        //{
+        //    get
+        //    {
+        //        if (_login == null)
+        //        {
+        //            _login = new RelayCommand(arg => {
+
+        //            },
+        //            arg => true);
+        //        }
+        //        return _login;
+        //    }
+        //}
+
         #endregion
     }
 }
