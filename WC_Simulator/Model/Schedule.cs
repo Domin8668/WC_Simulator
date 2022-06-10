@@ -56,7 +56,7 @@ namespace WC_Simulator.Model
         }
         private void Prepare_matchstages()
         {
-            //group
+            // group
             for (int i = 0; i < 48; i++)
             {
                 match_stages[i] = 0;
@@ -76,7 +76,7 @@ namespace WC_Simulator.Model
             {
                 match_stages[i] = 3;
             }
-            // 3msc i final
+            // 3rd and final
             match_stages[62] = 4;
             match_stages[63] = 5;
         }
@@ -138,31 +138,31 @@ namespace WC_Simulator.Model
             int[] sixteen = new int[8] { 48, 51, 52, 54, 57, 59, 62, 63}; //matchcode o 16
             int[] seventeen = new int[8] { 0, 6, 9, 14, 18, 22, 26, 30}; //matchcode o 17, grupa
             int[] twenty = new int[10] { 3, 4, 8, 15, 19, 23, 27, 31, 60, 61 }; //matchcode o 20
-            //wylaczone sa dwie ostatnie kolejki fazy grupowej
+            // wylaczone sa dwie ostatnie kolejki fazy grupowej
 
             #region pierwsze dwie kolejki fazy grupwej
-            //11
+            // 11
             int day = 21;
             foreach(int element in eleven)
             {
                 match_dates[element] = new DateTime(2022, 11, day, 11,0,0);
                 day++;
             }
-            //14
+            // 14
             day = 21;
             foreach (int element in fourteen)
             {
                 match_dates[element] = new DateTime(2022, 11, day, 14,0,0);
                 day++;
             }
-            //17
+            // 17
             day = 21;
             foreach (var element in seventeen)
             {
                 match_dates[element] = new DateTime(2022, 11, day,17,0,0);
                 day++;
             }
-            //20
+            // 20
             for (int q = 0; q < 8; q++)
             {
                 match_dates[twenty[q]] = new DateTime(2022, 11, 21 + q, 20, 0, 0);
@@ -193,13 +193,13 @@ namespace WC_Simulator.Model
             #endregion
 
             #region 1/8
-            //pierwsza połówka
+            // pierwsza połówka
             match_dates[48] = new DateTime(2022, 12, 3, 16, 0, 0);
             match_dates[49] = new DateTime(2022, 12, 3, 20, 0, 0);
             match_dates[50] = new DateTime(2022, 12, 4, 20, 0, 0);
             match_dates[51] = new DateTime(2022, 12, 4, 16, 0, 0);
 
-            //druga połowka
+            // druga połówka
             day = 5;
             for (int i = 52; i < 56; i += 2)
             {
@@ -244,8 +244,8 @@ namespace WC_Simulator.Model
                 {
                     match_referees[i] = i - 35;
                 }
-            }//mozna zmienic jakies seedowanie xd
-            match_referees[63] = 0; //marciniak na finał auuuuu
+            }
+            match_referees[63] = 0;
         }
         #endregion
 
