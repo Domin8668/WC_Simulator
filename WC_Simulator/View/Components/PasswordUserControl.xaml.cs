@@ -11,22 +11,24 @@ namespace WC_Simulator.View.Components
     {
         #region Constructor
 
-        //public PasswordUserControl()
-        //{
-        //    InitializeComponent();
-        //}
+        public PasswordUserControl()
+        {
+            InitializeComponent();
+
+            PasswordBox.PasswordChanged += (sender, args) =>
+            {
+                Password = ((PasswordBox)sender).SecurePassword;
+            };
+        }
 
         #endregion
 
 
         #region Dependecies
 
-        //public static readonly DependencyProperty PasswordProperty = DependencyProperty.Register(
-        //    "PBPassword",
-        //    typeof(SecureString),
-        //    typeof(PasswordUserControl),
-        //    new FrameworkPropertyMetadata(null)
-        //    );
+        public static readonly DependencyProperty PasswordProperty =
+            DependencyProperty.Register("Password", typeof(SecureString), typeof(PasswordUserControl),
+                new PropertyMetadata(default(SecureString)));
 
         #endregion
 
@@ -48,18 +50,5 @@ namespace WC_Simulator.View.Components
 
         #endregion
 
-        public static readonly DependencyProperty PasswordProperty =
-            DependencyProperty.Register("Password", typeof(SecureString), typeof(PasswordUserControl),
-                new PropertyMetadata(default(SecureString)));
-
-        public PasswordUserControl()
-        {
-            InitializeComponent();
-
-            PasswordBox.PasswordChanged += (sender, args) =>
-            {
-                Password = ((PasswordBox)sender).SecurePassword;
-            };
-        }
     }
 }

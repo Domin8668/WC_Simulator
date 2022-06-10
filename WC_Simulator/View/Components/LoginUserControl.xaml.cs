@@ -20,9 +20,46 @@ namespace WC_Simulator.View.Components
     /// </summary>
     public partial class LoginUserControl : UserControl
     {
+
+        #region Constructor
+
         public LoginUserControl()
         {
             InitializeComponent();
+
+            TextBox.TextChanged += (sender, args) =>
+            {
+                Login = ((TextBox)sender).Text;
+            };
         }
+
+        #endregion
+
+
+        #region Dependecies
+
+        public static readonly DependencyProperty TextProperty =
+            DependencyProperty.Register("Login", typeof(string), typeof(LoginUserControl),
+                new PropertyMetadata(default(string)));
+
+        #endregion
+
+
+        #region Properties
+
+        public string Login
+        {
+            get { return (string)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
+        }
+
+        #endregion
+
+
+        #region Events
+
+
+
+        #endregion
     }
 }
