@@ -25,11 +25,6 @@ namespace WC_Simulator.View.Components
         public UsernameUserControl()
         {
             InitializeComponent();
-
-            TextBox.TextChanged += (sender, args) =>
-            {
-                Username = ((TextBox)sender).Text;
-            };
         }
 
         #endregion
@@ -37,19 +32,22 @@ namespace WC_Simulator.View.Components
 
         #region Dependecies
 
-        public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register("Username", typeof(string), typeof(UsernameUserControl),
-                new PropertyMetadata(default(string)));
+        public static readonly DependencyProperty TBTextProperty = DependencyProperty.Register(
+            "TBText",
+            typeof(string),
+            typeof(UsernameUserControl),
+            new FrameworkPropertyMetadata(null)
+            );
 
         #endregion
 
 
         #region Properties
 
-        public string Username
+        public string TBText
         {
-            get { return (string)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
+            get { return (string)GetValue(TBTextProperty); }
+            set { SetValue(TBTextProperty, value); }
         }
 
         #endregion

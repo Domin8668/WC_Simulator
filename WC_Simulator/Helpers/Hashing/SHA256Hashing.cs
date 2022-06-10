@@ -27,11 +27,11 @@ namespace WC_Simulator.Helpers.Hashing
             return result;
         }
 
-        public byte[] GetHash(string username, SecureString password)
+        public byte[] GetHash(string username, string password)
         {
             using (SHA256 mySHA256 = SHA256.Create())
             {
-                return mySHA256.ComputeHash(Encoding.ASCII.GetBytes(username + new System.Net.NetworkCredential(string.Empty, password).Password));
+                return mySHA256.ComputeHash(Encoding.ASCII.GetBytes(username + password));
             }
         }
     }

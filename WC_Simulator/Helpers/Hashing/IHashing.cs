@@ -6,6 +6,6 @@ namespace WC_Simulator.Helpers.Hashing
     {
         bool MatchHashes(byte[] hash1, byte[] hash2);
 
-        byte[] GetHash(string username, SecureString password);
+        byte[] GetHash(string username, string password);
     }
 }
