@@ -103,6 +103,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\Behaviors\PasswordBoxBindingBehavior.cs" />
     <Compile Include="Helpers\Hashing\IHashing.cs" />
     <Compile Include="Helpers\Hashing\SHA256Hashing.cs" />
     <Compile Include="Model\MainModel.cs" />
@@ -113,17 +114,14 @@
     <Compile Include="View\Components\GroupUserControl.xaml.cs">
       <DependentUpon>GroupUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Components\LoginUserControl.xaml.cs">
-      <DependentUpon>LoginUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Components\MatchUserControl.xaml.cs">
       <DependentUpon>MatchUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Components\PasswordUserControl.xaml.cs">
-      <DependentUpon>PasswordUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Components\TeamUserControl.xaml.cs">
       <DependentUpon>TeamUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Components\UsernameUserControl.xaml.cs">
+      <DependentUpon>UsernameUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MatchView.xaml.cs">
       <DependentUpon>MatchView.xaml</DependentUpon>
@@ -138,19 +136,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Components\LoginUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Components\MatchUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Components\PasswordUserControl.xaml">
+    <Page Include="View\Components\TeamUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Components\TeamUserControl.xaml">
+    <Page Include="View\Components\UsernameUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
