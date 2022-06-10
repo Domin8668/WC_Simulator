@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 
 namespace WC_Simulator.DAL.Entities
 {
@@ -26,7 +23,7 @@ namespace WC_Simulator.DAL.Entities
         {
             Id_user = null;
             Login = string.Empty;
-            Password = new Byte[0];
+            Password = new byte[0];
             Creation_date = new DateTime();
             Last_log_date = new DateTime();
         }
@@ -42,7 +39,7 @@ namespace WC_Simulator.DAL.Entities
             Security_answer = reader["password"].ToString();
         }
 
-        public User(uint id_user, string login, Byte[] password, DateTime creation_date, DateTime last_log_date, string security_question, string security_answer)
+        public User(uint id_user, string login, byte[] password, DateTime creation_date, DateTime last_log_date, string security_question, string security_answer)
         {
             Id_user = id_user;
             Login = login;
