@@ -111,6 +111,7 @@
     <Compile Include="ViewModel\MatchViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\ResetPasswordViewModel.cs" />
+    <Compile Include="ViewModel\TeamViewModel.cs" />
     <Compile Include="View\Components\GroupUserControl.xaml.cs">
       <DependentUpon>GroupUserControl.xaml</DependentUpon>
     </Compile>
@@ -228,6 +229,35 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="baza_projekt.sql" />
+    <Resource Include="Resources\Flags\argentina.png" />
+    <Resource Include="Resources\Flags\belgium.png" />
+    <Resource Include="Resources\Flags\brazil.png" />
+    <Resource Include="Resources\Flags\cameroon.png" />
+    <Resource Include="Resources\Flags\canada.png" />
+    <Resource Include="Resources\Flags\croatia.png" />
+    <Resource Include="Resources\Flags\denmark.png" />
+    <Resource Include="Resources\Flags\ecuador.png" />
+    <Resource Include="Resources\Flags\england.png" />
+    <Resource Include="Resources\Flags\france.png" />
+    <Resource Include="Resources\Flags\germany.png" />
+    <Resource Include="Resources\Flags\ghana.png" />
+    <Resource Include="Resources\Flags\iran.png" />
+    <Resource Include="Resources\Flags\japan.png" />
+    <Resource Include="Resources\Flags\korea.png" />
+    <Resource Include="Resources\Flags\mexico.png" />
+    <Resource Include="Resources\Flags\morocco.png" />
+    <Resource Include="Resources\Flags\netherlands.png" />
+    <Resource Include="Resources\Flags\portugal.png" />
+    <Resource Include="Resources\Flags\qatar.png" />
+    <Resource Include="Resources\Flags\saudiarabia.png" />
+    <Resource Include="Resources\Flags\senegal.png" />
+    <Resource Include="Resources\Flags\serbia.png" />
+    <Resource Include="Resources\Flags\spain.png" />
+    <Resource Include="Resources\Flags\switzerland.png" />
+    <Resource Include="Resources\Flags\tunisia.png" />
+    <Resource Include="Resources\Flags\uruguay.png" />
+    <Resource Include="Resources\Flags\usa.png" />
+    <Resource Include="Resources\Flags\wales.png" />
     <Resource Include="Resources\Flags\poland.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
