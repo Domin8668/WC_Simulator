@@ -12,7 +12,7 @@
     <UserControl.Resources>
         <vms:LoginViewModel x:Key="loginViewModel"/>
     </UserControl.Resources>
-    <Grid DataContext="{StaticResource loginViewModel}">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
