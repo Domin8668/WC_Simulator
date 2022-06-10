@@ -41,6 +41,7 @@ create table team(
 	id_team int unsigned auto_increment primary key,
     id_group int unsigned not null,
     name varchar(35) not null,
+    short_name varchar(3) not null,
     coach varchar(30) not null,
     def_factor float not null,
     att_factor float not null
