@@ -6,6 +6,7 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
+        private MainModel _model;
         private string _flag_img;
         private string _team_short_name;
         private string _result;
@@ -15,9 +16,9 @@ namespace WC_Simulator.ViewModel
 
         #region Constructor
 
-        public MatchViewModel()
+        public MatchViewModel(MainModel model)
         {
-
+            _model = model;
         }
 
         public MatchViewModel(string flag, string team, string res)

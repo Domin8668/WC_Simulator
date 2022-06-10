@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WC_Simulator.Model;
 
 namespace WC_Simulator.ViewModel
 {
@@ -11,6 +12,7 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
+        private MainModel _model;
         private string _teamname;
         private string _coach;
         private string _image;
@@ -20,9 +22,9 @@ namespace WC_Simulator.ViewModel
 
         #region Constructor
 
-        public TeamViewModel()
+        public TeamViewModel(MainModel model)
         {
-
+            Model = model;
         }
 
         public TeamViewModel(string teamname, string coachname, ObservableCollection<string> team)
@@ -36,6 +38,12 @@ namespace WC_Simulator.ViewModel
         #endregion
 
         #region Properties
+
+        public MainModel Model
+        {
+            get { return _model; }
+            set { _model = value; }
+        }
 
         public string TeamName
         {

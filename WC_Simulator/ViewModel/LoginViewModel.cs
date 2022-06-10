@@ -1,13 +1,9 @@
 ﻿using WC_Simulator.DAL.Entities;
 using WC_Simulator.ViewModel.BaseClasses;
 using WC_Simulator.Model;
-using System.Security;
 using System;
 using WC_Simulator.Helpers.Hashing;
 using System.Windows.Input;
-using System.Windows;
-using System.Windows.Controls;
-using System.Net;
 
 namespace WC_Simulator.ViewModel
 {
@@ -17,7 +13,7 @@ namespace WC_Simulator.ViewModel
 
         private User _currentUser;
         private MainModel _model;
-        private string _securePassword;
+        private string _password;
         private string _username;
 
         #endregion
@@ -27,6 +23,12 @@ namespace WC_Simulator.ViewModel
 
         public LoginViewModel()
         {
+            _currentUser = new User();
+        }
+
+        public LoginViewModel(MainModel model)
+        {
+            Model = model;
             _currentUser = new User();
         }
 
@@ -49,10 +51,10 @@ namespace WC_Simulator.ViewModel
 
         public string Password
         {
-            get { return _securePassword; }
+            get { return _password; }
             set
             {
-                _securePassword = value;
+                _password = value;
                 // test wpisywania hasła:
                 Console.WriteLine($"Password: {Password}");
                 OnPropertyChanged(nameof(Password));
@@ -92,6 +94,7 @@ namespace WC_Simulator.ViewModel
                             CurrentUser.Password = SHA256.GetHash(Username, Password);
                             Username = string.Empty;
                             Password = string.Empty;
+                            Model.ValidateUser();
                             //MessageBox.Show($"Username: {Username}\nPassword: {new NetworkCredential(string.Empty, Password).Password}");
                         }
                         catch(Exception)

@@ -14,9 +14,9 @@ namespace WC_Simulator.ViewModel
 
         #region Constructor
 
-        public RegisterViewModel()
+        public RegisterViewModel(MainModel model)
         {
-
+            Model = model;
         }
 
         #endregion
