@@ -20,12 +20,22 @@ namespace WC_Simulator.ViewModel
         public MainViewModel()
         {
             Model = new MainModel();
-            LoginViewModel login = new LoginViewModel(Model);
-            RegisterViewModel register = new RegisterViewModel(Model);
-            ResetPasswordViewModel resetPassword = new ResetPasswordViewModel(Model);
+            LoginViewModel login = new LoginViewModel
+            {
+                Model = Model
+            };
+            RegisterViewModel register = new RegisterViewModel
+            {
+                Model = Model
+            };
+            ResetPasswordViewModel resetPassword = new ResetPasswordViewModel
+            {
+                Model = Model
+            };
 
             CurrentViewModel = login;
             MenuVisibility = Visibility.Visible;
+            MenuVisibility = Visibility.Hidden;
         }
 
         #endregion

@@ -18,11 +18,6 @@ namespace WC_Simulator.ViewModel
 
         }
 
-        public MatchViewModel(MainModel Model)
-        {
-            this.Model = Model;
-        }
-
         #endregion
 
 
