@@ -9,5 +9,9 @@ namespace WC_Simulator.Model
     internal class MainModel
     {
         // tu wrzucamy wszystko z bazy danych chyba
+        internal void ValidateUser()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
