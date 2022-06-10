@@ -26,13 +26,14 @@
             <DockPanel DockPanel.Dock="Top">
                 <TextBlock DockPanel.Dock="Left"
                        Text="Login:"/>
-                <TextBox DockPanel.Dock="Left"/>
+                <ucs:LoginUserControl DockPanel.Dock="Left"
+                                      Login="{Binding Login, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </DockPanel>
             <DockPanel DockPanel.Dock="Top">
                 <TextBlock DockPanel.Dock="Left"
                        Text="Hasło:"/>
                 <ucs:PasswordUserControl DockPanel.Dock="Left"
-                    Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                         Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </DockPanel>
             </DockPanel>
     </Grid>
