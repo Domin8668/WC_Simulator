@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WC_Simulator.View.Components"
              mc:Ignorable="d" 
-             d:DesignHeight="160" d:DesignWidth="260">
+             d:DesignHeight="140" d:DesignWidth="260">
     
     <UserControl.Resources>
         <Style TargetType="Image" x:Key="flag_img">
@@ -47,7 +47,7 @@
         <!--Countries flags-->
         <Image x:Name="Team1_fl" Grid.Row="0" Grid.Column="0" 
                Style="{StaticResource flag_img}" 
-               Source="{Binding Path=Team1_Flag_Path}"></Image>
+               Source="../../Resources/Flags/poland.png"></Image>
         <Image x:Name="Team2_fl" Grid.Row="1" Grid.Column="0" 
                Style="{StaticResource flag_img}" 
                Source="{Binding Path=Team2_Flag_Path}"></Image>
