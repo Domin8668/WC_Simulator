@@ -14,6 +14,7 @@ namespace WC_Simulator.ViewModel
         private User _currentUser;
         private MainModel _model;
         private SecureString _password;
+        private string _login;
 
         #endregion
 
@@ -52,8 +53,22 @@ namespace WC_Simulator.ViewModel
         {
             get { return _password; }
             set { _password = value;
+                // test wpisywania hasła:
                 string password = new System.Net.NetworkCredential(string.Empty, Password).Password;
-                Console.WriteLine($"SecurePassword:{password}");
+                Console.WriteLine($"Password: {password}");
+                OnPropertyChanged(nameof(Password));
+            }
+        }
+
+        public string Login
+        {
+            get { return _login; }
+            set
+            {
+                _login = value;
+                // test wpisywania loginu:
+                Console.WriteLine($"Login: {Login}");
+                OnPropertyChanged(nameof(Login));
             }
         }
 
