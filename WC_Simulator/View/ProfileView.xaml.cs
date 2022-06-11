@@ -34,6 +34,13 @@ namespace WC_Simulator.View
             new FrameworkPropertyMetadata(null)
             );
 
+        public static readonly DependencyProperty TourneyCountProperty = DependencyProperty.Register(
+            "TourneyCount",
+            typeof(int),
+            typeof(ProfileView),
+            new FrameworkPropertyMetadata(null)
+            );
+
         public static readonly DependencyProperty FirstDateProperty = DependencyProperty.Register(
             "FirstDate",
             typeof(string),
@@ -48,10 +55,9 @@ namespace WC_Simulator.View
             new FrameworkPropertyMetadata(null)
             );
 
-
         public static readonly DependencyProperty TimeInServiceProperty = DependencyProperty.Register(
             "TimeInService",
-            typeof(TimeSpan),
+            typeof(string),
             typeof(ProfileView),
             new FrameworkPropertyMetadata(null)
             );
@@ -67,21 +73,28 @@ namespace WC_Simulator.View
             set { SetValue(LoginProperty, value); }
         }
 
-        public DateTime FirstDate
+        public int TourneyCount
         {
-            get { return (DateTime)GetValue(FirstDateProperty); }
+            get { return (int)GetValue(TourneyCountProperty); }
+            set { SetValue(TourneyCountProperty, value); }
+        }
+
+
+        public string FirstDate
+        {
+            get { return (string)GetValue(FirstDateProperty); }
             set { SetValue(FirstDateProperty, value); }
         }
 
-        public DateTime LastDate
+        public string LastDate
         {
-            get { return (DateTime)GetValue(LastDateProperty); }
+            get { return (string)GetValue(LastDateProperty); }
             set { SetValue(LastDateProperty, value); }
         }
 
-        public TimeSpan TimeInService
+        public string TimeInService
         {
-            get { return (TimeSpan)GetValue(TimeInServiceProperty); }
+            get { return (string)GetValue(TimeInServiceProperty); }
             set { SetValue(TimeInServiceProperty, value); }
         }
 
