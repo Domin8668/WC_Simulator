@@ -3,6 +3,7 @@ using WC_Simulator.Model;
 using System.Windows;
 using WC_Simulator.DAL.Entities;
 using System;
+using WC_Simulator.Helpers.Stores;
 
 namespace WC_Simulator.ViewModel
 {
@@ -11,11 +12,10 @@ namespace WC_Simulator.ViewModel
         #region Variables
 
         private MainModel _model;
-        private BaseViewModel _currentViewModel;
-        private Visibility _menuVisibility;
+        private NavigationStore _navigationStore;
         private TeamViewModel _teamVM;
         private ProfileViewModel _profileVM;
-        private User _user_current;
+        private User _currentUser;
 
         #endregion
 
@@ -23,16 +23,30 @@ namespace WC_Simulator.ViewModel
 
         public MainViewModel()
         {
-            Model = new MainModel();
-            LoginViewModel login = new LoginViewModel(Model);
-            RegisterViewModel register = new RegisterViewModel(Model);
-            ResetPasswordViewModel resetPassword = new ResetPasswordViewModel(Model);
-            ProfileViewModel profile = new ProfileViewModel(Model);
-            TeamViewModel team = new TeamViewModel(Model);
+            _model = new MainModel();
+            _navigationStore = new NavigationStore();
 
-            CurrentViewModel = profile;
-            MenuVisibility = Visibility.Visible;
-            //MenuVisibility = Visibility.Hidden;
+            LoginViewModel login = new LoginViewModel(_model, _navigationStore);
+            RegisterViewModel register = new RegisterViewModel(_model);
+            ResetPasswordViewModel resetPassword = new ResetPasswordViewModel(_model);
+            ProfileViewModel profile = new ProfileViewModel(_model);
+            TeamViewModel team = new TeamViewModel(_model);
+
+            _navigationStore.CurrentViewModel = login;
+            _navigationStore.MenuVisibility = Visibility.Hidden;
+
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+            _navigationStore.MenuVisibilityChanged += OnMenuVisibilityChanged;
+        }
+
+        private void OnCurrentViewModelChanged()
+        {
+            OnPropertyChanged(nameof(CurrentViewModel));
+        }
+        
+        private void OnMenuVisibilityChanged()
+        {
+            OnPropertyChanged(nameof(MenuVisibility));
         }
 
         #endregion
@@ -46,17 +60,16 @@ namespace WC_Simulator.ViewModel
             set { _model = value; }
         }
 
-
         public BaseViewModel CurrentViewModel
         {
-            get { return _currentViewModel; }
-            set { _currentViewModel = value; }
+            get { return _navigationStore.CurrentViewModel; }
+            set { _navigationStore.CurrentViewModel = value; }
         }
 
         public Visibility MenuVisibility
         {
-            get { return _menuVisibility; }
-            set { _menuVisibility = value; }
+            get { return _navigationStore.MenuVisibility; }
+            set { _navigationStore.MenuVisibility = value; }
         }
 
         public TeamViewModel TeamVM
@@ -70,10 +83,10 @@ namespace WC_Simulator.ViewModel
             set { _profileVM = value; }
         }
 
-        public User User_current
+        public User CurrentUser
         {
-            get { return _user_current; }
-            set { _user_current = value; }
+            get { return _currentUser; }
+            set { _currentUser = value; }
         }
 
         #endregion

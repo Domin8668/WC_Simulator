@@ -105,6 +105,7 @@
     </ApplicationDefinition>
     <Compile Include="Helpers\Hashing\IHashing.cs" />
     <Compile Include="Helpers\Hashing\SHA256Hashing.cs" />
+    <Compile Include="Helpers\Stores\NavigationStore.cs" />
     <Compile Include="Model\MainModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MatchViewModel.cs" />

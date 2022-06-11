@@ -4,6 +4,8 @@ using WC_Simulator.Model;
 using System;
 using WC_Simulator.Helpers.Hashing;
 using System.Windows.Input;
+using WC_Simulator.Helpers.Stores;
+using System.Windows;
 
 namespace WC_Simulator.ViewModel
 {
@@ -13,6 +15,7 @@ namespace WC_Simulator.ViewModel
 
         private User _currentUser;
         private MainModel _model;
+        private NavigationStore _navigationStore;
         private string _password;
         private string _username;
 
@@ -21,26 +24,17 @@ namespace WC_Simulator.ViewModel
 
         #region Constructor
 
-        public LoginViewModel(MainModel model)
+        public LoginViewModel(MainModel model, NavigationStore navigationStore)
         {
             Model = model;
+            _navigationStore = navigationStore;
             _currentUser = new User();
-            _coach = "../../Resources/Flags/poland.png";
         }
 
         #endregion
 
 
         #region Properties
-        private string _coach;
-
-        public string Coach
-        {
-            get { return _coach; }
-            set { _coach = value;
-                OnPropertyChanged(nameof(Coach));
-            }
-        }
 
         public User CurrentUser
         {
@@ -99,8 +93,10 @@ namespace WC_Simulator.ViewModel
                             CurrentUser.Password = SHA256.GetHash(Username, Password);
                             Username = string.Empty;
                             Password = string.Empty;
-                            Model.ValidateUser();
+                            //Model.ValidateUser(CurrentUser);
                             //MessageBox.Show($"Username: {Username}\nPassword: {new NetworkCredential(string.Empty, Password).Password}");
+                            _navigationStore.MenuVisibility = Visibility.Visible;
+                            _navigationStore.CurrentViewModel = new ProfileViewModel(Model);
                         }
                         catch(Exception)
                         { 
