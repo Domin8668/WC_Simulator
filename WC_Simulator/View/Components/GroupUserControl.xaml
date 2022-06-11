@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WC_Simulator.View.Components"
              xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="700" d:DesignWidth="1100">
+             d:DesignHeight="800" d:DesignWidth="1100">
 
     <UserControl.Resources>
         <Style TargetType="Image" x:Key="flag_img">
@@ -42,31 +42,39 @@
     
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.7*"/>
-            <ColumnDefinition Width="0.7*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.7*"/>
         </Grid.RowDefinitions>
 
         <!--6 kontrolek meczów-->
-        <local:MatchUserControl Grid.Row="0" Grid.Column="0" Margin="30"></local:MatchUserControl>
-        <local:MatchUserControl Grid.Row="1" Grid.Column="0" Margin="30"></local:MatchUserControl>
         <local:MatchUserControl Grid.Row="2" Grid.Column="0" Margin="30"></local:MatchUserControl>
-        <local:MatchUserControl Grid.Row="0" Grid.Column="1" Margin="30"></local:MatchUserControl>
-        <local:MatchUserControl Grid.Row="1" Grid.Column="1" Margin="30"></local:MatchUserControl>
+        <local:MatchUserControl Grid.Row="3" Grid.Column="0" Margin="30"></local:MatchUserControl>
         <local:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="30"></local:MatchUserControl>
+        <local:MatchUserControl Grid.Row="3" Grid.Column="1" Margin="30"></local:MatchUserControl>
+        <local:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="30"></local:MatchUserControl>
+        <local:MatchUserControl Grid.Row="3" Grid.Column="2" Margin="30"></local:MatchUserControl>
         
+        <!--Lable kolejek-->
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Kolejka 1" Style="{StaticResource desc}" FontSize="30"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Kolejka 2" Style="{StaticResource desc}" FontSize="30"/>
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="Kolejka 3" Style="{StaticResource desc}" FontSize="30"/>
+
         <!--Tabela grupy-->
         
-        <Grid Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Margin="30" Height="270" VerticalAlignment="Top">
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="30" Width="600" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="0.4*"/>
-                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="0.4*"/>
                 <ColumnDefinition Width="0.4*"/>
                 <ColumnDefinition Width="0.4*"/>
             </Grid.ColumnDefinitions>
@@ -80,13 +88,15 @@
             </Grid.RowDefinitions>
             
             <!--Nazwa tabeli-->
-            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Content="Tabela grupy" Style="{StaticResource table_label}"/>
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" Content="Tabela grupy" Style="{StaticResource table_label}"/>
             
             <!--Opis kolumn-->
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Lp." Style="{StaticResource desc}"/>
             <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Klub" Style="{StaticResource desc}"/>
-            <TextBlock Grid.Row="1" Grid.Column="3" Text="coś" Style="{StaticResource desc}"/>
-            <TextBlock Grid.Row="1" Grid.Column="4" Text="coś" Style="{StaticResource desc}"/>
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="RM" Style="{StaticResource desc}"/>
+            <TextBlock Grid.Row="1" Grid.Column="4" Text="BZ" Style="{StaticResource desc}"/>
+            <TextBlock Grid.Row="1" Grid.Column="5" Text="BS" Style="{StaticResource desc}"/>
+            <TextBlock Grid.Row="1" Grid.Column="6" Text="PKT" Style="{StaticResource desc}"/>
             
             <!--Numerki-->
             <TextBlock Grid.Row="2" Grid.Column="0" Text="1." Style="{StaticResource table_club}"/>
