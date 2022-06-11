@@ -48,25 +48,6 @@
                 Content="Stwórz nowy turniej +"
                 Visibility="{Binding MenuVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         
-        <!--template team
-        <ucs:TeamUserControl DataContext="{Binding TeamVM}"
-            Grid.Column="3" Grid.Row="1" 
-                             Coach="{Binding Coach}"
-                             TeamItems="{Binding TeamItems}"
-                             TeamName="{Binding TeamName}"
-                             Image="{Binding Image}"/>-->
-
-        <!--template profile-->
-        <vs:ProfileView DataContext="{Binding ProfileVM}"
-            Grid.Column="1" Grid.Row="1" 
-                            Login="{Binding User_account.Login}"
-                            FirstDate="{Binding User_account.Creation_date}"
-                            LastDate="{Binding User_account.Last_log_date}"
-                            TimeInService="{Binding User_account.Security_question}"
-                        />
-
-
-
         <ContentControl Grid.Column="2" Grid.Row="1"
                         Grid.ColumnSpan="4" Grid.RowSpan="5"
                         Content="{Binding CurrentViewModel}">
@@ -79,6 +60,12 @@
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type vms:ResetPasswordViewModel}">
                     <vs:ResetPasswordView/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type vms:ProfileViewModel}">
+                    <vs:ProfileView/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type vms:TeamViewModel}">
+                    <vs:RegisterView/>
                 </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>

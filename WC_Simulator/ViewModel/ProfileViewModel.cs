@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WC_Simulator.DAL.Entities;
 using WC_Simulator.Model;
+using WC_Simulator.ViewModel.BaseClasses;
 
 namespace WC_Simulator.ViewModel
 {
-    internal class ProfileViewModel
+    internal class ProfileViewModel : BaseViewModel
     {
         #region Variables
 

@@ -5,12 +5,36 @@ namespace WC_Simulator.View.Components
 {
     public class BindablePasswordBox : Decorator
     {
-        public static readonly DependencyProperty PasswordProperty = DependencyProperty.Register("Password", typeof(string), typeof(BindablePasswordBox), new PropertyMetadata(string.Empty, OnDependencyPropertyChanged));
-        public string Password
+        #region Constructor
+
+        public BindablePasswordBox()
         {
-            get { return (string)GetValue(PasswordProperty); }
-            set { SetValue(PasswordProperty, value); }
+            Child = new PasswordBox();
+            ((PasswordBox)Child).PasswordChanged += BindablePasswordBox_PasswordChanged;
         }
+
+        #endregion
+
+
+        #region Dependecies
+
+        public static readonly DependencyProperty PasswordProperty = DependencyProperty.Register("Password", typeof(string), typeof(BindablePasswordBox), new PropertyMetadata(string.Empty, OnDependencyPropertyChanged));
+
+        #endregion
+
+
+        #region Properties
+
+        public string Password
+                {
+                    get { return (string)GetValue(PasswordProperty); }
+                    set { SetValue(PasswordProperty, value); }
+                }
+
+        #endregion
+
+
+        #region Methods
 
         private static void OnDependencyPropertyChanged(DependencyObject source, DependencyPropertyChangedEventArgs e)
         {
@@ -29,15 +53,12 @@ namespace WC_Simulator.View.Components
             }
         }
 
-        public BindablePasswordBox()
-        {
-            Child = new PasswordBox();
-            ((PasswordBox)Child).PasswordChanged += BindablePasswordBox_PasswordChanged;
-        }
-
         void BindablePasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            Password = ((PasswordBox)Child).Password;
-        }
+                {
+                    Password = ((PasswordBox)Child).Password;
+                }
+
+        #endregion
+
     }
 }
