@@ -104,6 +104,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DAL\Entities\UserShort.cs" />
+    <Compile Include="DAL\Repositories\RepositoryUserShorts.cs" />
     <Compile Include="Helpers\Hashing\IHashing.cs" />
     <Compile Include="Helpers\Hashing\SHA256Hashing.cs" />
     <Compile Include="Helpers\Stores\NavigationStore.cs" />
