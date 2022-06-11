@@ -103,6 +103,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DAL\Entities\UserShort.cs" />
     <Compile Include="Helpers\Hashing\IHashing.cs" />
     <Compile Include="Helpers\Hashing\SHA256Hashing.cs" />
     <Compile Include="Helpers\Stores\NavigationStore.cs" />
