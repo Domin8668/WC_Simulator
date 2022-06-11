@@ -70,11 +70,11 @@ namespace WC_Simulator.DAL.Entities
         {
             var user = obj as User;
             if (user is null) return false;
-            if (Id_user != user.Id_user) return false;
+            //if (Id_user != user.Id_user) return false;
             if (Login.ToLower() != user.Login.ToLower()) return false;
             if (Password != user.Password) return false;
-            if (Creation_date != user.Creation_date) return false;
-            if (Last_log_date != user.Last_log_date) return false;
+            //if (Creation_date != user.Creation_date) return false;
+            //if (Last_log_date != user.Last_log_date) return false;
             if (Security_question.ToLower() != user.Security_question.ToLower()) return false;
             if (Security_answer.ToLower() != user.Security_answer.ToLower()) return false;
             return true;

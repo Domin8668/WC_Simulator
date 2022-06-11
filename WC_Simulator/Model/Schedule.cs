@@ -8,7 +8,7 @@ namespace WC_Simulator.Model
 {
      class Schedule
     {
-        #region Properties
+        #region Variables
         public int[] match_codes = new int[64];
         public int[] match_stages = new int[64];
         public int[] match_locations = new int[64];
@@ -16,6 +16,12 @@ namespace WC_Simulator.Model
         public DateTime[] match_dates = new DateTime[64];
         public ScheduleMatch[] schedule = new ScheduleMatch[64];
         #endregion
+
+
+        #region Properties
+        
+        #endregion
+
 
         #region Constructor
         public Schedule()
@@ -45,6 +51,7 @@ namespace WC_Simulator.Model
             schedule = novqry.Concat(decqry).ToArray();
         }
         #endregion
+
 
         #region Methods
         private void Prepare_matchcodes()
