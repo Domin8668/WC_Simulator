@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WC_Simulator.View.Components"
              xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="140" d:DesignWidth="260">
+             d:DesignHeight="200" d:DesignWidth="260">
 
     <UserControl.Resources>
         <Style TargetType="Image" x:Key="flag_img">
@@ -41,6 +41,7 @@
             <ColumnDefinition Width="0.7*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -84,6 +85,11 @@
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,
                         AncestorType={x:Type UserControl}}}"/>
+
+        <!--Button to MatchView PlaceHolder-->
+        <Button Grid.Column="0" Grid.Row="2" 
+                Grid.ColumnSpan="3" Margin="40, 10, 40, 10"
+                Content="Szczegóły Meczu" FontSize="20"/>
 
     </Grid>
 </UserControl>
