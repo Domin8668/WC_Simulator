@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Input;
 using WC_Simulator.DAL.Entities;
 using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
@@ -111,6 +112,7 @@ namespace WC_Simulator.ViewModel
 
         #endregion
 
+
         #region Methods
 
         private string CalculateTimeInService(DateTime creationDate)
@@ -143,6 +145,30 @@ namespace WC_Simulator.ViewModel
             return $"{timeSpan} {ending}";
 
         }
+        #endregion
+
+
+        #region Commands
+
+        private ICommand _changePassword = null;
+
+
+        public ICommand ChangePassword
+        {
+            get
+            {
+                if (_changePassword == null)
+                {
+                    _changePassword = new RelayCommand(arg =>
+                    {
+                        _navigationStore.CurrentViewModel = new ChangePasswordViewModel(Model, _navigationStore);
+                    },
+                    arg => true);
+                }
+                return _changePassword;
+            }
+        }
+
         #endregion
     }
 }

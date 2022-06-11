@@ -61,8 +61,14 @@
                 <DataTemplate DataType="{x:Type vms:ResetPasswordViewModel}">
                     <vs:ResetPasswordView/>
                 </DataTemplate>
+                <DataTemplate DataType="{x:Type vms:ChangePasswordViewModel}">
+                    <vs:ChangePasswordView/>
+                </DataTemplate>
                 <DataTemplate DataType="{x:Type vms:ProfileViewModel}">
                     <vs:ProfileView/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type vms:MessageViewModel}">
+                    <vs:MessageView/>
                 </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>

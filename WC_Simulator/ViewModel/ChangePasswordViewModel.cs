@@ -13,13 +13,12 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
-        private User _currentUser;
         private MainModel _model;
         private NavigationStore _navigationStore;
         private string _username;
         private string _oldPassword;
         private string _newPassword;
-        private string _repeatPassword;
+        private string _repeatNewPassword;
 
         #endregion
 
@@ -30,19 +29,12 @@ namespace WC_Simulator.ViewModel
         {
             Model = model;
             _navigationStore = navigationStore;
-            _currentUser = new User();
         }
 
         #endregion
 
 
         #region Properties
-
-        public User CurrentUser
-        {
-            get { return _currentUser; }
-            set { _currentUser = value; }
-        }
 
         public MainModel Model
         {
@@ -86,58 +78,57 @@ namespace WC_Simulator.ViewModel
             }
         }
         
-        public string RepeatPassword
+        public string RepeatNewPassword
         {
-            get { return _repeatPassword; }
+            get { return _repeatNewPassword; }
             set
             {
-                _repeatPassword = value;
+                _repeatNewPassword = value;
                 // test wpisywania hasła:
-                Console.WriteLine($"RepeatPassword: {RepeatPassword}");
-                OnPropertyChanged(nameof(RepeatPassword));
+                Console.WriteLine($"RepeatPassword: {RepeatNewPassword}");
+                OnPropertyChanged(nameof(RepeatNewPassword));
             }
         }
-
-        
 
         #endregion
 
 
         #region Commands
 
-        private ICommand _resetPassword = null;
+        private ICommand _changePassword = null;
 
-        public ICommand ResetPassword
+        public ICommand ChangePassword
         {
             get
             {
-                if (_resetPassword == null)
+                if (_changePassword == null)
                 {
-                    _resetPassword = new RelayCommand(arg =>
+                    _changePassword = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new ResetPasswordViewModel(Model, _navigationStore);
+                        ProfileViewModel profile = new ProfileViewModel(Model, _navigationStore);
+                        _navigationStore.CurrentViewModel = new MessageViewModel(Model, _navigationStore, profile);
                     },
                     arg => true);
                 }
-                return _resetPassword;
+                return _changePassword;
             }
         }
 
-        private ICommand _register = null;
+        private ICommand _return = null;
 
-        public ICommand Register
+        public ICommand Return
         {
             get
             {
-                if (_register == null)
+                if (_return == null)
                 {
-                    _register = new RelayCommand(arg =>
+                    _return = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new RegisterViewModel(Model, _navigationStore);
-                    },
+                        _navigationStore.CurrentViewModel = new ProfileViewModel(Model, _navigationStore);
+                    },  
                     arg => true);
                 }
-                return _register;
+                return _return;
             }
         }
 

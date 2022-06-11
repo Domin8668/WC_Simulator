@@ -17,7 +17,6 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
-
     </UserControl.Resources>
     
     
@@ -96,9 +95,10 @@
                     VerticalAlignment="Center" HorizontalAlignment="Left" 
                     Width="Auto" Height="Auto">
             <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource textblock}" 
-                            Text="Reset Hasła: "/>
+                            Text="Zmień hasło: "/>
             <Button x:Name="ResetPlaceHolder" 
                         Grid.Row="2" Content="ResetPlaceholder" FontSize="40"
+                    Command="{Binding ChangePassword}"
                         Width="250" Height="50"/>
         </StackPanel>
     </Grid>
