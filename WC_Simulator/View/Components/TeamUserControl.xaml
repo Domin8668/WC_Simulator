@@ -57,7 +57,7 @@
 
         <!--Drużyna info-->
         <ListView x:Name="team" Grid.Row="2" HorizontalAlignment="Center" Width="400"
-                  ItemsSource="{Binding Path=TeamItems, Mode=TwoWay,
+                  ItemsSource="{Binding Path=Team, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,

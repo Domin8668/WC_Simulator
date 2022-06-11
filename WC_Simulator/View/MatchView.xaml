@@ -42,7 +42,7 @@
                         UpdateSourceTrigger=PropertyChanged}"
                         Coach="{Binding Coach1, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        TeamItems="{Binding TeamItems1, Mode=TwoWay, 
+                        TeamItems="{Binding Team1, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
                         Image="{Binding Image1, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"/>
@@ -101,7 +101,7 @@
                         UpdateSourceTrigger=PropertyChanged}"
                         Coach="{Binding Coach2, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        TeamItems="{Binding TeamItems2, Mode=TwoWay, 
+                        TeamItems="{Binding Team2, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
                         Image="{Binding Image2, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"/>

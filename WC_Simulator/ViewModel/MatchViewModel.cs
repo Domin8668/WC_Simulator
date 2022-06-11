@@ -1,42 +1,72 @@
-﻿using WC_Simulator.Model;
+﻿using System.Collections.ObjectModel;
+using WC_Simulator.Helpers.Stores;
+using WC_Simulator.Model;
+using WC_Simulator.ViewModel.BaseClasses;
 
 namespace WC_Simulator.ViewModel
 {
-    internal class MatchViewModel
+    internal class MatchViewModel : BaseViewModel
     {
         #region Variables
 
         private MainModel _model;
-        private string _t1FlagImg;
-        private string _t1ShortName;
-        private string _t1Result;
 
-        private string _t2FlagImg;
-        private string _t2ShortName;
-        private string _t2Result;
+        private string _coach1;
+        private string _image1;
+        private string _teamName1;
+        private ObservableCollection<string> _team1;
+
+        private string _coach2;
+        private string _image2;
+        private string _teamName2;
+        private ObservableCollection<string> _team2;
+
+        private string _date;
+        private string _hour;
+        private string _location;
+
+        private string _referee;
+        private string _teamGoals1;
+        private string _teamGoals2;
+
+        private NavigationStore _navigationStore;
 
         #endregion
 
 
         #region Constructor
 
-        public MatchViewModel(MainModel model)
+        public MatchViewModel(MainModel model, NavigationStore navigationStore)
         {
             Model = model;
-        }
-        public MatchViewModel()
-        {
-            
+            NavigationStore = navigationStore;
+
+            Location = "Moje serce";
+            Referee = "Kruża";
+            TeamGoals1 = "miliun";
+            TeamGoals2 = "-2";
+            Date = "Wczoraj";
+            Hour = "15:00";
+
+            TeamName1 = "PolskaHusaria";
+            TeamName2 = "Szwaby";
+            Image1 = $"../../Resources/Flags/poland.png";
+            Image2 = $"../../Resources/Flags/germany.png";
+            Coach1 = "Król Czesio";
+            Coach2 = "Jakiś Random";
+            Team1 = new ObservableCollection<string>() { "Lewy", "Cash" };
+            Team2 = new ObservableCollection<string>() { "Gnabry", "Werner" };
+            NavigationStore = navigationStore;
+
         }
 
         public MatchViewModel(string flag1, string team1, string res1, string flag2, string team2, string res2)
         {
-            T1FlagImg = $"../../Resources/Flags/{flag1.ToLower()}";
-            T1ShortName = team1;
-            T1Result = res1;
-            T2FlagImg = $"../../Resources/Flags/{flag2.ToLower()}";
-            T2ShortName = team2;
-            T2Result = res2;
+            //T1ShortName = team1;
+            //T1Result = res1;
+            //T2FlagImg = $"../../Resources/Flags/{flag2.ToLower()}";
+            //T2ShortName = team2;
+            //T2Result = res2;
         }
         #endregion
 
@@ -48,41 +78,97 @@ namespace WC_Simulator.ViewModel
             set { _model = value; }
         }
 
-        public string T1FlagImg
+        public string Coach1
         {
-            get { return _t1FlagImg; }
-            set { _t1FlagImg = value; }
+            get { return _coach1; }
+            set { _coach1 = value; }
         }
 
-        public string T1ShortName
+        public string TeamName1
         {
-            get { return _t1ShortName; }
-            set { _t1ShortName = value; }
+            get { return _teamName1; }
+            set { _teamName1 = value; }
         }
 
-        public string T1Result
+        public string Image1
         {
-            get { return _t1Result; }
-            set { _t1Result = value; }
+            get { return _image1; }
+            set { _image1 = value; }
         }
 
-        public string T2FlagImg
+        public ObservableCollection<string> Team1
         {
-            get { return _t2FlagImg; }
-            set { _t2FlagImg = value; }
+            get { return _team1; }
+            set { _team1 = value; }
         }
 
-        public string T2ShortName
+        public string Coach2
         {
-            get { return _t2ShortName; }
-            set { _t2ShortName = value; }
+            get { return _coach2; }
+            set { _coach2 = value; }
         }
 
-        public string T2Result
+        public string TeamName2
         {
-            get { return _t2Result; }
-            set { _t2Result = value; }
+            get { return _teamName2; }
+            set { _teamName2 = value; }
         }
+
+        public string Image2
+        {
+            get { return _image2; }
+            set { _image2 = value; }
+        }
+
+        public ObservableCollection<string> Team2
+        {
+            get { return _team2; }
+            set { _team2 = value; }
+        }
+
+        public string TeamGoals1
+        {
+            get { return _teamGoals1; }
+            set { _teamGoals1 = value; }
+        }
+
+        public string TeamGoals2
+        {
+            get { return _teamGoals2; }
+            set { _teamGoals2 = value; }
+        }
+
+        public string Referee
+        {
+            get { return _referee; }
+            set { _referee = value; }
+        }
+
+        public string Location
+        {
+            get { return _location; }
+            set { _location = value; }
+        }
+
+        public string Date
+        {
+            get { return _date; }
+            set { _date = value; }
+        }
+
+        public string Hour
+        {
+            get { return _hour; }
+            set { _hour = value; }
+        }
+
+
+        public NavigationStore NavigationStore
+        {
+            get { return _navigationStore; }
+            set { _navigationStore = value; }
+        }
+
 
         #endregion
     }
