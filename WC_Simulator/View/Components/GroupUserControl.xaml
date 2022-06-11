@@ -38,6 +38,15 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
+        
+        <Style TargetType="TextBlock" x:Key="stats">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
     </UserControl.Resources>
     
     <Grid Background="AliceBlue">
@@ -61,13 +70,15 @@
         <local:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="30"></local:MatchUserControl>
         <local:MatchUserControl Grid.Row="3" Grid.Column="2" Margin="30"></local:MatchUserControl>
         
-        <!--Lable kolejek-->
+        <!--Labele kolejek-->
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Kolejka 1" Style="{StaticResource desc}" FontSize="30"/>
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Kolejka 2" Style="{StaticResource desc}" FontSize="30"/>
         <TextBlock Grid.Row="1" Grid.Column="2" Text="Kolejka 3" Style="{StaticResource desc}" FontSize="30"/>
 
-        <!--Tabela grupy-->
         
+        
+        
+        <!--Tabela grupy-->
         <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="30" Width="600" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.2*"/>
@@ -110,47 +121,151 @@
                Source="../../Resources/Flags/poland.png"/>
             <Image x:Name="Team2Img" Grid.Row="2" Grid.Column="1" 
                Style="{StaticResource flag_img}"
-               Source="{Binding Path=Team2Path, Mode=TwoWay,
+               Source="{Binding Path=Team2FlagPath, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,
                         AncestorType={x:Type UserControl}}}"/>
             <Image x:Name="Team3Img" Grid.Row="2" Grid.Column="1" 
                Style="{StaticResource flag_img}"
-               Source="{Binding Path=Team3Path, Mode=TwoWay,
+               Source="{Binding Path=Team3FlagPath, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,
                         AncestorType={x:Type UserControl}}}"/>
             <Image x:Name="Team4Img" Grid.Row="2" Grid.Column="1" 
                Style="{StaticResource flag_img}"
-               Source="{Binding Path=Team4Path, Mode=TwoWay,
+               Source="{Binding Path=Team4FlagPath, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,
                         AncestorType={x:Type UserControl}}}"/>
             
             <!--Pełne nazwy krajów-->
-            <TextBlock x:Name="Team1Name" Grid.Row="2" Grid.Column="2" 
+            <TextBlock x:Name="Team1fn" Grid.Row="2" Grid.Column="2" 
                    Style="{StaticResource table_club}" 
                    Text="Polska"/>
-            <TextBlock x:Name="Team2Name" Grid.Row="3" Grid.Column="2" 
+            <TextBlock x:Name="Team2fn" Grid.Row="3" Grid.Column="2" 
                    Style="{StaticResource table_club}"
                    Text="{Binding Path=Team2Name, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,
                         AncestorType={x:Type UserControl}}}"/>
-            <TextBlock x:Name="Team3Name" Grid.Row="4" Grid.Column="2" 
+            <TextBlock x:Name="Team3fn" Grid.Row="4" Grid.Column="2" 
                    Style="{StaticResource table_club}"
                    Text="{Binding Path=Team3Name, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,
                         AncestorType={x:Type UserControl}}}"/>
-            <TextBlock x:Name="Team4Name" Grid.Row="5" Grid.Column="2" 
+            <TextBlock x:Name="Team4fn" Grid.Row="5" Grid.Column="2" 
                    Style="{StaticResource table_club}"
                    Text="{Binding Path=Team4Name, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            
+            <!--Razem meczów-->
+            <TextBlock x:Name="Team1rm" Grid.Row="2" Grid.Column="3" 
+                   Style="{StaticResource stats}" 
+                   Text="3"/>
+            <TextBlock x:Name="Team2rm" Grid.Row="3" Grid.Column="3" 
+                   Style="{StaticResource stats}"
+                   Text="{Binding Path=Team2RM, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            <TextBlock x:Name="Team3rm" Grid.Row="4" Grid.Column="3" 
+                   Style="{StaticResource stats}"
+                   Text="{Binding Path=Team3RM, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            <TextBlock x:Name="Team4rm" Grid.Row="5" Grid.Column="3" 
+                   Style="{StaticResource stats}"
+                   Text="{Binding Path=Team4RM, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+
+            <!--Bramki zdobyte-->
+            <TextBlock x:Name="Team1bz" Grid.Row="2" Grid.Column="4" 
+                   Style="{StaticResource stats}" 
+                   Text="100"/>
+            <TextBlock x:Name="Team2bz" Grid.Row="3" Grid.Column="4" 
+                   Style="{StaticResource stats}"
+                   Text="{Binding Path=Team2BZ, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            <TextBlock x:Name="Team3bz" Grid.Row="4" Grid.Column="4" 
+                   Style="{StaticResource stats}"
+                   Text="{Binding Path=Team3BZ, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            <TextBlock x:Name="Team4bz" Grid.Row="5" Grid.Column="4" 
+                   Style="{StaticResource stats}"
+                   Text="{Binding Path=Team4BZ, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+
+            <!--Bramki stracone-->
+            <TextBlock x:Name="Team1bs" Grid.Row="2" Grid.Column="5" 
+                   Style="{StaticResource stats}" 
+                   Text="0"/>
+            <TextBlock x:Name="Team2bs" Grid.Row="3" Grid.Column="5" 
+                   Style="{StaticResource stats}"
+                   Text="{Binding Path=Team2BS, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            <TextBlock x:Name="Team3bs" Grid.Row="4" Grid.Column="5" 
+                   Style="{StaticResource stats}"
+                   Text="{Binding Path=Team3BS, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            <TextBlock x:Name="Team4bs" Grid.Row="5" Grid.Column="5" 
+                   Style="{StaticResource stats}"
+                   Text="{Binding Path=Team4BS, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+
+            <!--Punkty-->
+            <TextBlock x:Name="Team1pkt" Grid.Row="2" Grid.Column="6" 
+                   Style="{StaticResource stats}" 
+                   Text="9"/>
+            <TextBlock x:Name="Team2pkt" Grid.Row="3" Grid.Column="6" 
+                   Style="{StaticResource stats}"
+                   Text="{Binding Path=Team2PKT, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            <TextBlock x:Name="Team3pkt" Grid.Row="4" Grid.Column="6" 
+                   Style="{StaticResource stats}"
+                   Text="{Binding Path=Team3PKT, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            <TextBlock x:Name="Team4pkt" Grid.Row="5" Grid.Column="6" 
+                   Style="{StaticResource stats}"
+                   Text="{Binding Path=Team4PKT, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,
