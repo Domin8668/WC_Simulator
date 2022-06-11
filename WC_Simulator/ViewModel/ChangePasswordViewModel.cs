@@ -9,22 +9,24 @@ using WC_Simulator.Helpers.Hashing;
 
 namespace WC_Simulator.ViewModel
 {
-    internal class ResetPasswordViewModel : BaseViewModel
+    internal class ChangePasswordViewModel : BaseViewModel
     {
         #region Variables
 
         private User _currentUser;
         private MainModel _model;
         private NavigationStore _navigationStore;
-        private string _password;
         private string _username;
+        private string _oldPassword;
+        private string _newPassword;
+        private string _repeatPassword;
 
         #endregion
 
 
         #region Constructor
 
-        public ResetPasswordViewModel(MainModel model, NavigationStore navigationStore)
+        public ChangePasswordViewModel(MainModel model, NavigationStore navigationStore)
         {
             Model = model;
             _navigationStore = navigationStore;
@@ -48,18 +50,6 @@ namespace WC_Simulator.ViewModel
             set { _model = value; }
         }
 
-        public string Password
-        {
-            get { return _password; }
-            set
-            {
-                _password = value;
-                // test wpisywania hasła:
-                Console.WriteLine($"Password: {Password}");
-                OnPropertyChanged(nameof(Password));
-            }
-        }
-
         public string Username
         {
             get { return _username; }
@@ -71,6 +61,44 @@ namespace WC_Simulator.ViewModel
                 OnPropertyChanged(nameof(Username));
             }
         }
+
+        public string OldPassword
+        {
+            get { return _oldPassword; }
+            set
+            {
+                _oldPassword = value;
+                // test wpisywania hasła:
+                Console.WriteLine($"OldPassword: {OldPassword}");
+                OnPropertyChanged(nameof(OldPassword));
+            }
+        }
+        
+        public string NewPassword
+        {
+            get { return _newPassword; }
+            set
+            {
+                _newPassword = value;
+                // test wpisywania hasła:
+                Console.WriteLine($"NewPassword: {NewPassword}");
+                OnPropertyChanged(nameof(NewPassword));
+            }
+        }
+        
+        public string RepeatPassword
+        {
+            get { return _repeatPassword; }
+            set
+            {
+                _repeatPassword = value;
+                // test wpisywania hasła:
+                Console.WriteLine($"RepeatPassword: {RepeatPassword}");
+                OnPropertyChanged(nameof(RepeatPassword));
+            }
+        }
+
+        
 
         #endregion
 

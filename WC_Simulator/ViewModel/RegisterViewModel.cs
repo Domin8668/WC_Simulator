@@ -6,6 +6,7 @@ using WC_Simulator.Helpers.Stores;
 using System.Windows.Input;
 using System.Windows;
 using WC_Simulator.Helpers.Hashing;
+using System.Collections.ObjectModel;
 
 namespace WC_Simulator.ViewModel
 {
@@ -16,8 +17,12 @@ namespace WC_Simulator.ViewModel
         private User _currentUser;
         private MainModel _model;
         private NavigationStore _navigationStore;
-        private string _password;
         private string _username;
+        private string _password;
+        private string _repeatPassword;
+        private ObservableCollection<string> _securityQuestions;
+        private string _selectedSecurityQuestion;
+        private string _securityAnswer;
 
         #endregion
 
@@ -48,18 +53,6 @@ namespace WC_Simulator.ViewModel
             set { _model = value; }
         }
 
-        public string Password
-        {
-            get { return _password; }
-            set
-            {
-                _password = value;
-                // test wpisywania hasła:
-                Console.WriteLine($"Password: {Password}");
-                OnPropertyChanged(nameof(Password));
-            }
-        }
-
         public string Username
         {
             get { return _username; }
@@ -72,59 +65,86 @@ namespace WC_Simulator.ViewModel
             }
         }
 
+        public string Password
+        {
+            get { return _password; }
+            set
+            {
+                _password = value;
+                // test wpisywania hasła:
+                Console.WriteLine($"Password: {Password}");
+                OnPropertyChanged(nameof(Password));
+            }
+        }
+
+        public string RepeatPassword
+        {
+            get { return _repeatPassword; }
+            set
+            {
+                _repeatPassword = value;
+                // test wpisywania hasła:
+                Console.WriteLine($"Password: {RepeatPassword}");
+                OnPropertyChanged(nameof(RepeatPassword));
+            }
+        }
+
+        public ObservableCollection<string> SecurityQuestions
+        {
+            get { return _securityQuestions; }
+            set { _securityQuestions = value; }
+        }
+
+        public string SelectedSecurityQuestion
+        {
+            get { return _selectedSecurityQuestion; }
+            set { _selectedSecurityQuestion = value; }
+        }
+
+        public string SecurityAnswer
+        {
+            get { return _securityAnswer; }
+            set { _securityAnswer = value; }
+        }
+
         #endregion
 
 
         #region Commands
 
-        private ICommand _login = null;
+        private ICommand _return = null;
 
-        public ICommand Login
+        public ICommand Return
         {
             get
             {
-                if (_login == null)
+                if (_return == null)
                 {
-                    _login = new RelayCommand(arg => {
-                        try
-                        {
-                            SHA256Hashing SHA256 = new SHA256Hashing();
-                            CurrentUser.Login = Username;
-                            CurrentUser.Password = SHA256.GetHash(Username, Password);
-                            Username = string.Empty;
-                            Password = string.Empty;
-                            //Model.ValidateUser(CurrentUser);
-                            //MessageBox.Show($"Username: {Username}\nPassword: {new NetworkCredential(string.Empty, Password).Password}");
-                            _navigationStore.MenuVisibility = Visibility.Visible;
-                            _navigationStore.CurrentViewModel = new ProfileViewModel(Model, _navigationStore);
-                        }
-                        catch (Exception)
-                        {
-
-                        }
+                    _return = new RelayCommand(arg =>
+                    {
+                        _navigationStore.CurrentViewModel = new LoginViewModel(Model, _navigationStore);
                     },
                     arg => true);
                 }
-                return _login;
+                return _return;
             }
         }
 
+        private ICommand _register = null;
 
-        private ICommand _resetLabelClicked = null;
-
-        public ICommand ResetLabelClicked
+        public ICommand Register
         {
             get
             {
-                if (_resetLabelClicked == null)
+                if (_register == null)
                 {
-                    _resetLabelClicked = new RelayCommand(arg =>
+                    _register = new RelayCommand(arg =>
                     {
                         _navigationStore.CurrentViewModel = new RegisterViewModel(Model, _navigationStore);
                     },
                     arg => true);
                 }
-                return _resetLabelClicked;
+                return _register;
             }
         }
 

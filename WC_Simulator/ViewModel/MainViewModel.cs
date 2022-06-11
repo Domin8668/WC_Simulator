@@ -13,8 +13,6 @@ namespace WC_Simulator.ViewModel
 
         private MainModel _model;
         private NavigationStore _navigationStore;
-        private TeamViewModel _teamVM;
-        private ProfileViewModel _profileVM;
         private User _currentUser;
 
         #endregion
@@ -26,24 +24,29 @@ namespace WC_Simulator.ViewModel
             _model = new MainModel();
             _navigationStore = new NavigationStore();
 
-            LoginViewModel login = new LoginViewModel(_model, _navigationStore);
-            RegisterViewModel register = new RegisterViewModel(_model, _navigationStore);
-            ResetPasswordViewModel resetPassword = new ResetPasswordViewModel(_model);
-            ProfileViewModel profile = new ProfileViewModel(_model, _navigationStore);
-            TeamViewModel team = new TeamViewModel(_model);
+            //LoginViewModel login = new LoginViewModel(_model, _navigationStore);
+            //RegisterViewModel register = new RegisterViewModel(_model, _navigationStore);
+            //ResetPasswordViewModel resetPassword = new ResetPasswordViewModel(_model, _navigationStore);
+            //ProfileViewModel profile = new ProfileViewModel(_model, _navigationStore);
+            //TeamViewModel team = new TeamViewModel(_model);
 
-            _navigationStore.CurrentViewModel = login;
+            _navigationStore.CurrentViewModel = new LoginViewModel(_model, _navigationStore); ;
             _navigationStore.MenuVisibility = Visibility.Hidden;
 
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
             _navigationStore.MenuVisibilityChanged += OnMenuVisibilityChanged;
         }
 
+        #endregion
+
+
+        #region Subscribers
+
         private void OnCurrentViewModelChanged()
         {
             OnPropertyChanged(nameof(CurrentViewModel));
         }
-        
+
         private void OnMenuVisibilityChanged()
         {
             OnPropertyChanged(nameof(MenuVisibility));
@@ -72,27 +75,11 @@ namespace WC_Simulator.ViewModel
             set { _navigationStore.MenuVisibility = value; }
         }
 
-        public TeamViewModel TeamVM
-        {
-            get { return _teamVM; }
-            set { _teamVM = value; }
-        }
-        public ProfileViewModel ProfileVM
-        {
-            get { return _profileVM; }
-            set { _profileVM = value; }
-        }
-
         public User CurrentUser
         {
             get { return _currentUser; }
             set { _currentUser = value; }
         }
-
-        #endregion
-
-
-        #region Commands
 
         #endregion
     }
