@@ -8,37 +8,40 @@ namespace WC_Simulator.Model
 {
     internal class ScheduleMatch
     {
-        #region Properties
-        public int Match_code { get; set; }
-        public string Stage { get; set; }
-        public string Location { get; set; }
-        public string Referee { get; set; }
-        public string Date { get; set; }
-        public string Time { get; set; }
+        #region Variables 
 
-        public string[] StageTypes = new string[6]
-        {
-            "Faza grupowa", 
-            "1/8 finału", 
-            "Ćwierćfinały", 
-            "Półfinały", 
-            "Mecz o 3. miejsce", 
+        private int _matchCode { get; set; }
+        private string _stage { get; set; }
+        private string _location { get; set; }
+        private string _referee { get; set; }
+        private DateTime _dateTimeVariable { get; set; }
+        private string _date { get; set; }
+        private string _time { get; set; }
+
+        //local
+        public string[] _stageTypes = new string[6]
+{
+            "Faza grupowa",
+            "1/8 finału",
+            "Ćwierćfinały",
+            "Półfinały",
+            "Mecz o 3. miejsce",
             "Finał"
-        };
+};
 
-        public string[] LocationTypes = new string[8]
+        public string[] _locationTypes = new string[8]
         {
-            "Al Bayt Stadium, Al-Chaur", 
-            "Lusail Stadium, Lusajl", 
-            "Stadium 974, Doha", 
+            "Al Bayt Stadium, Al-Chaur",
+            "Lusail Stadium, Lusajl",
+            "Stadium 974, Doha",
             "Al Thumama Stadium, Doha",
-            "Education City Stadium, Ar-Rajjan", 
+            "Education City Stadium, Ar-Rajjan",
             "Ahmed bin Ali Stadium, Ar-Rajjan",
-            "Khalifa International Stadium, Ar-Rajjan", 
+            "Khalifa International Stadium, Ar-Rajjan",
             "Al Janoub Stadium, Al-Wakra"
         };
 
-        public string[] Referees = new string[35]
+        public string[] _referees = new string[35]
         {
             "Szymon Marciniak",
             "Michael Oliver",
@@ -80,27 +83,56 @@ namespace WC_Simulator.Model
             "Carlos Orbe",
             "Mario Díaz de Vivar"
         };
+        #endregion
+
+        #region Properties
+        public int MatchCode
+        {
+            get { return _matchCode; }
+            set { _matchCode = value; }
+        }
+        public string Stage
+        {
+            get { return _stage; }
+            set { _stage = value; }
+        }
+        public string Location
+        {
+            get { return _location; }
+            set { _location = value; }
+        }
+        public string Referee
+        {
+            get { return _referee; }
+            set { _referee = value; }
+        }
+        public DateTime DateTimeVariable
+        {
+            get { return _dateTimeVariable; }
+            set { _dateTimeVariable = value; }
+        }
+
+        public string Date
+        {
+            get { return _date; }
+            set { _date = value; }
+        }
+        public string Time
+        {
+            get { return _time; }
+            set { _time = value; }
+        }
 
         #endregion
 
         #region Constructors
-        //useless
-        public ScheduleMatch()
+        public ScheduleMatch(int matchCode, int stage, int location, int referee, DateTime date_and_time)
         {
-            Match_code = 0;
-            Stage = StageTypes[0];
-            Location = LocationTypes[0];
-            Referee = Referees[0];
-            Date = DateTime.Now.ToString("dddd, dd MMMM yyyy");
-            Time = DateTime.Now.ToString("HH: mm");
-        }
-
-        public ScheduleMatch(int match_code, int stage, int location, int referee, DateTime date_and_time)
-        {
-            Match_code = match_code;
-            Stage = StageTypes[stage];
-            Location = LocationTypes[location];
-            Referee = Referees[referee];
+            MatchCode = matchCode;
+            Stage = _stageTypes[stage];
+            Location = _locationTypes[location];
+            Referee = _referees[referee];
+            DateTimeVariable = date_and_time;
             Date = date_and_time.ToString("dddd, dd MMMM yyyy");
             Time = date_and_time.ToString("HH: mm");
         }
@@ -110,7 +142,7 @@ namespace WC_Simulator.Model
         #region Methods
         public override string ToString()
         {
-            return $"Faza: {Stage},\n Lokalizacja: {Location},\n Data: {Date},\n Godzina: {Time}\n, Sędzia: {Referee}";
+            return $"Faza: {Stage},\n Lokalizacja: {Location},\n Data: {Date},\n Godzina: {Time},\n Sędzia: {Referee}";
         }
 
         #endregion
