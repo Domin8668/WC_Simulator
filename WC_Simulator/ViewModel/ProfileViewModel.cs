@@ -1,5 +1,6 @@
 ﻿using System;
 using WC_Simulator.DAL.Entities;
+using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
 using WC_Simulator.ViewModel.BaseClasses;
 
@@ -10,6 +11,7 @@ namespace WC_Simulator.ViewModel
         #region Variables
 
         private MainModel mainModel;
+        private NavigationStore _navigationStore;
         private User _user_account;
         private TimeSpan _timeInService;
 
@@ -18,10 +20,12 @@ namespace WC_Simulator.ViewModel
 
         #region Constructor
 
-        public ProfileViewModel(MainModel model)
+        public ProfileViewModel(MainModel model, NavigationStore navigationStore)
         {
             Model = model;
+            NavigationStore = navigationStore;
             _login = "Test";
+
         }
 
         public ProfileViewModel(User user_account)
@@ -30,6 +34,7 @@ namespace WC_Simulator.ViewModel
             _timeInService = DateTime.Now - user_account.Creation_date;
 
         }
+
         #endregion
 
 
@@ -59,6 +64,12 @@ namespace WC_Simulator.ViewModel
         {
             get { return _timeInService; }
             set { _timeInService = value; }
+        }
+
+        public NavigationStore NavigationStore
+        {
+            get { return _navigationStore; }
+            set { _navigationStore = value; }
         }
 
         #endregion

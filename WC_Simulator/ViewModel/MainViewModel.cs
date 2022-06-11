@@ -27,9 +27,9 @@ namespace WC_Simulator.ViewModel
             _navigationStore = new NavigationStore();
 
             LoginViewModel login = new LoginViewModel(_model, _navigationStore);
-            RegisterViewModel register = new RegisterViewModel(_model);
+            RegisterViewModel register = new RegisterViewModel(_model, _navigationStore);
             ResetPasswordViewModel resetPassword = new ResetPasswordViewModel(_model);
-            ProfileViewModel profile = new ProfileViewModel(_model);
+            ProfileViewModel profile = new ProfileViewModel(_model, _navigationStore);
             TeamViewModel team = new TeamViewModel(_model);
 
             _navigationStore.CurrentViewModel = login;

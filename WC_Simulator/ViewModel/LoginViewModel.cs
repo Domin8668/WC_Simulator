@@ -96,7 +96,7 @@ namespace WC_Simulator.ViewModel
                             //Model.ValidateUser(CurrentUser);
                             //MessageBox.Show($"Username: {Username}\nPassword: {new NetworkCredential(string.Empty, Password).Password}");
                             _navigationStore.MenuVisibility = Visibility.Visible;
-                            _navigationStore.CurrentViewModel = new ProfileViewModel(Model);
+                            _navigationStore.CurrentViewModel = new ProfileViewModel(Model, _navigationStore);
                         }
                         catch(Exception)
                         { 
@@ -106,6 +106,25 @@ namespace WC_Simulator.ViewModel
                     arg => true);
                 }
                 return _login;
+            }
+        }
+
+
+        private ICommand _resetLabelClicked = null;
+
+        public ICommand ResetLabelClicked
+        {
+            get
+            {
+                if (_resetLabelClicked == null)
+                {
+                    _resetLabelClicked = new RelayCommand(arg =>
+                    {
+                        _navigationStore.CurrentViewModel = new RegisterViewModel(Model, _navigationStore);
+                    },
+                    arg => true);
+                }
+                return _resetLabelClicked;
             }
         }
 
