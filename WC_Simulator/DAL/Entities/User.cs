@@ -1,12 +1,13 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Text;
+using WC_Simulator.Helpers.Hashing;
 
 namespace WC_Simulator.DAL.Entities
 {
     class User
     {
-
+        public SHA256Hashing hash = new SHA256Hashing();
         #region Properties
         public uint? Id_user { get; set; }
         public string Login { get; set; }
@@ -72,7 +73,7 @@ namespace WC_Simulator.DAL.Entities
             if (user is null) return false;
             //if (Id_user != user.Id_user) return false;
             if (Login.ToLower() != user.Login.ToLower()) return false;
-            if (Password != user.Password) return false;
+            if (hash.MatchHashes(Password, user.Password)) return false;
             //if (Creation_date != user.Creation_date) return false;
             //if (Last_log_date != user.Last_log_date) return false;
             if (Security_question.ToLower() != user.Security_question.ToLower()) return false;

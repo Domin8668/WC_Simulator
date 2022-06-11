@@ -10,9 +10,13 @@ namespace WC_Simulator.DAL.Entities
 {
     class UserShort
     {
+        public SHA256Hashing hash = new SHA256Hashing();
+
         #region Properties
+
         public string Login { get; set; }
         public byte[] Password { get; set; }
+        
         #endregion
 
 
@@ -40,7 +44,7 @@ namespace WC_Simulator.DAL.Entities
             var user = obj as User;
             if (user is null) return false;
             if (Login.ToLower() != user.Login.ToLower()) return false;
-            if (MatchHashes(Password, user.Password)) return false;
+            if (hash.MatchHashes(Password, user.Password)) return false;
             return true;
         }
 
