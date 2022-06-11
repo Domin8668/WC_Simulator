@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WC_Simulator.Model
 {
-    internal class MainModel
+    public class MainModel
     {
         // tu wrzucamy wszystko z bazy danych chyba
         internal void ValidateUser()
