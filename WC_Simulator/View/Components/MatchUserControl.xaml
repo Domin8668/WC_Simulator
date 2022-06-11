@@ -50,7 +50,7 @@
         <!--Countries flags-->
         <Image x:Name="Team1_fl" Grid.Row="0" Grid.Column="0" 
                Style="{StaticResource flag_img}" 
-               Source="../../Resources/Flags/poland.png"></Image>
+               Source="../../Resources/Flags/poland.png"/>
         <Image x:Name="Team2_fl" Grid.Row="1" Grid.Column="0" 
                Style="{StaticResource flag_img}"
                Source="{Binding Path=Team2FlagPath, Mode=TwoWay,

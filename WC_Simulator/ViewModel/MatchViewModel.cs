@@ -24,6 +24,10 @@ namespace WC_Simulator.ViewModel
         {
             Model = model;
         }
+        public MatchViewModel()
+        {
+            
+        }
 
         public MatchViewModel(string flag1, string team1, string res1, string flag2, string team2, string res2)
         {
