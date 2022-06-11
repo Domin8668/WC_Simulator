@@ -4,9 +4,152 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WC_Simulator.View.Components"
+             xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             d:DesignHeight="700" d:DesignWidth="1100">
+    
+    <UserControl.Resources>
+        <!--<vms:MatchViewModel x:Key="matchViewModel"/>-->
+
+        <Style TargetType="Image" x:Key="flag_img">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="table_label">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="table_club">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="desc">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--6 kontrolek meczów-->
+        <local:MatchUserControl Grid.Row="0" Grid.Column="0" Margin="30"></local:MatchUserControl>
+        <local:MatchUserControl Grid.Row="1" Grid.Column="0" Margin="30"></local:MatchUserControl>
+        <local:MatchUserControl Grid.Row="2" Grid.Column="0" Margin="30"></local:MatchUserControl>
+        <local:MatchUserControl Grid.Row="0" Grid.Column="1" Margin="30"></local:MatchUserControl>
+        <local:MatchUserControl Grid.Row="1" Grid.Column="1" Margin="30"></local:MatchUserControl>
+        <local:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="30"></local:MatchUserControl>
+        
+        <!--Tabela grupy-->
+        
+        <Grid Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Margin="30" Height="270" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="0.4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
             
+            <!--Nazwa tabeli-->
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Content="Tabela grupy" Style="{StaticResource table_label}"/>
+            
+            <!--Opis kolumn-->
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Lp." Style="{StaticResource desc}"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Klub" Style="{StaticResource desc}"/>
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="coś" Style="{StaticResource desc}"/>
+            <TextBlock Grid.Row="1" Grid.Column="4" Text="coś" Style="{StaticResource desc}"/>
+            
+            <!--Numerki-->
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="1." Style="{StaticResource table_club}"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="2." Style="{StaticResource table_club}"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="3." Style="{StaticResource table_club}"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="4." Style="{StaticResource table_club}"/>
+            
+            <!--Flagi-->
+            <Image x:Name="Team1Img" Grid.Row="2" Grid.Column="1" 
+               Style="{StaticResource flag_img}" 
+               Source="../../Resources/Flags/poland.png"/>
+            <Image x:Name="Team2Img" Grid.Row="2" Grid.Column="1" 
+               Style="{StaticResource flag_img}"
+               Source="{Binding Path=Team2Path, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            <Image x:Name="Team3Img" Grid.Row="2" Grid.Column="1" 
+               Style="{StaticResource flag_img}"
+               Source="{Binding Path=Team3Path, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            <Image x:Name="Team4Img" Grid.Row="2" Grid.Column="1" 
+               Style="{StaticResource flag_img}"
+               Source="{Binding Path=Team4Path, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            
+            <!--Pełne nazwy krajów-->
+            <TextBlock x:Name="Team1Name" Grid.Row="2" Grid.Column="2" 
+                   Style="{StaticResource table_club}" 
+                   Text="Polska"/>
+            <TextBlock x:Name="Team2Name" Grid.Row="3" Grid.Column="2" 
+                   Style="{StaticResource table_club}"
+                   Text="{Binding Path=Team2Name, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            <TextBlock x:Name="Team3Name" Grid.Row="4" Grid.Column="2" 
+                   Style="{StaticResource table_club}"
+                   Text="{Binding Path=Team3Name, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+            <TextBlock x:Name="Team4Name" Grid.Row="5" Grid.Column="2" 
+                   Style="{StaticResource table_club}"
+                   Text="{Binding Path=Team4Name, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}"/>
+
+        </Grid>
+
     </Grid>
+    
 </UserControl>
