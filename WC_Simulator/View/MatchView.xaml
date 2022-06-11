@@ -8,8 +8,104 @@
              xmlns:ucs="clr-namespace:WC_Simulator.View.Components"
              xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             d:DesignHeight="1000" d:DesignWidth="1600">
+
+    <UserControl.Resources>
+        <Style TargetType="TextBlock" x:Key="textblock">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+
+
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.5*"/>
+
+        </Grid.RowDefinitions>
+
+        
+        <!--Team1-->
+        <ucs:TeamUserControl x:Name="Team1" Grid.Column="0" Grid.Row="0"
+                        Grid.RowSpan="3"
+                        TeamName="{Binding TeamName1, Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"
+                        Coach="{Binding Coach1, Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"
+                        TeamItems="{Binding TeamItems1, Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"
+                        Image="{Binding Image1, Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!--Info-->
+        <StackPanel x:Name="Info" Grid.Row="1" Grid.Column="1" Orientation="Vertical" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <TextBlock x:Name="HourTB" HorizontalAlignment="Center"
+                       Style="{StaticResource textblock}"
+                       Text="{Binding Path=Hour, Mode=TwoWay, 
+                       UpdateSourceTrigger=PropertyChanged}">
+            </TextBlock>
+
+            <TextBlock x:Name="DateTB" HorizontalAlignment="Center" 
+                        Style="{StaticResource textblock}"
+                        Text="{Binding Path=Date, Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}">
+            </TextBlock>
+
+            <StackPanel x:Name="Score" Orientation="Horizontal" 
+                        HorizontalAlignment="Center">
+                <TextBlock x:Name="TeamGoalsTB" 
+                            Style="{StaticResource textblock}"
+                            Text="{Binding Path=TeamGoals1, Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}">
+                </TextBlock>
+                <TextBlock x:Name="Colon" Style="{StaticResource textblock}" 
+                           Text=" : ">
+                </TextBlock>
+                <TextBlock x:Name="TeamGoals2TB" 
+                            Style="{StaticResource textblock}"
+                            Text="{Binding Path=TeamGoals2, Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}">
+                </TextBlock>
+            </StackPanel>
+
+            <TextBlock x:Name="LocationTB" HorizontalAlignment="Center"
+                       Style="{StaticResource textblock}"
+                       Text="{Binding Path=Location, Mode=TwoWay, 
+                       UpdateSourceTrigger=PropertyChanged}">
+            </TextBlock>
+
+            <TextBlock x:Name="RefereeTB" HorizontalAlignment="Center"
+                       Style="{StaticResource textblock}"
+                       Text="{Binding Path=Referee, Mode=TwoWay, 
+                       UpdateSourceTrigger=PropertyChanged}">
+            </TextBlock>
+        </StackPanel>
+
+
+        <!--Team2-->
+        <ucs:TeamUserControl x:Name="Team2" Grid.Column="2" Grid.Row="0"
+                        Grid.RowSpan="3"
+                        TeamName="{Binding TeamName2, Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"
+                        Coach="{Binding Coach2, Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"
+                        TeamItems="{Binding TeamItems2, Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"
+                        Image="{Binding Image2, Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"/>
+
 
     </Grid>
 </UserControl>

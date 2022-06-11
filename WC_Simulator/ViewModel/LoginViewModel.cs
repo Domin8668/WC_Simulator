@@ -109,22 +109,39 @@ namespace WC_Simulator.ViewModel
             }
         }
 
+        private ICommand _resetPassword = null;
 
-        private ICommand _resetLabelClicked = null;
-
-        public ICommand ResetLabelClicked
+        public ICommand ResetPassword
         {
             get
             {
-                if (_resetLabelClicked == null)
+                if (_resetPassword == null)
                 {
-                    _resetLabelClicked = new RelayCommand(arg =>
+                    _resetPassword = new RelayCommand(arg =>
+                    {
+                        _navigationStore.CurrentViewModel = new ResetPasswordViewModel(Model, _navigationStore);
+                    },
+                    arg => true);
+                }
+                return _resetPassword;
+            }
+        }
+
+        private ICommand _register = null;
+
+        public ICommand Register
+        {
+            get
+            {
+                if (_register == null)
+                {
+                    _register = new RelayCommand(arg =>
                     {
                         _navigationStore.CurrentViewModel = new RegisterViewModel(Model, _navigationStore);
                     },
                     arg => true);
                 }
-                return _resetLabelClicked;
+                return _register;
             }
         }
 
