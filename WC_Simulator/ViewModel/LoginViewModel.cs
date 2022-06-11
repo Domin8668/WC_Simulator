@@ -21,21 +21,26 @@ namespace WC_Simulator.ViewModel
 
         #region Constructor
 
-        public LoginViewModel()
-        {
-            _currentUser = new User();
-        }
-
         public LoginViewModel(MainModel model)
         {
             Model = model;
             _currentUser = new User();
+            _coach = "../../Resources/Flags/poland.png";
         }
 
         #endregion
 
 
         #region Properties
+        private string _coach;
+
+        public string Coach
+        {
+            get { return _coach; }
+            set { _coach = value;
+                OnPropertyChanged(nameof(Coach));
+            }
+        }
 
         public User CurrentUser
         {

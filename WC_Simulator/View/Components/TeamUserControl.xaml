@@ -10,8 +10,7 @@
              d:DesignHeight="800" d:DesignWidth="400">
 
     <UserControl.Resources>
-        <vms:TeamViewModel x:Key="teamViewModel"/>
-
+        
         <Style x:Key="textblock" TargetType="TextBlock">
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="25"/>
@@ -19,7 +18,7 @@
     </UserControl.Resources>
 
 
-    <Grid DataContext="{StaticResource teamViewModel}" Background="AliceBlue">
+    <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>

@@ -7,10 +7,8 @@
              xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="1100">
-    
-    <UserControl.Resources>
-        <!--<vms:MatchViewModel x:Key="matchViewModel"/>-->
 
+    <UserControl.Resources>
         <Style TargetType="Image" x:Key="flag_img">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="VerticalAlignment" Value="Center"/>

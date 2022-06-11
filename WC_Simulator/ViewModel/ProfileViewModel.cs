@@ -14,12 +14,14 @@ namespace WC_Simulator.ViewModel
         private TimeSpan _timeInService;
 
         #endregion
+        
 
         #region Constructor
 
         public ProfileViewModel(MainModel model)
         {
             Model = model;
+            _login = "Test";
         }
 
         public ProfileViewModel(User user_account)
@@ -30,7 +32,17 @@ namespace WC_Simulator.ViewModel
         }
         #endregion
 
+
         #region Properties
+        private string _login;
+
+        public string Login
+        {
+            get { return _login; }
+            set { _login = value;
+                OnPropertyChanged(nameof(Login));
+            }
+        }
 
         public MainModel Model
         {

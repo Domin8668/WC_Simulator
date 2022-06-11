@@ -23,49 +23,40 @@
     
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="760"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
 
-        <TextBlock x:Name="Nickname" Grid.Row="1" Grid.Column="1" Style="{StaticResource textblock}" 
+        <TextBlock x:Name="Nickname" Grid.Row="0" Grid.Column="0" Style="{StaticResource textblock}" 
                    Text="{Binding Path=Login, StringFormat=Nazwa użytkownika: {0}, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
+                        UpdateSourceTrigger=PropertyChanged
+                        }"/>
         
-        <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource textblock}" 
+        <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource textblock}" 
                    Text="{Binding Path=FirstDate, StringFormat=Data założenia: {0}, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,
                         AncestorType={x:Type UserControl}}}"/>
         
-        <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource textblock}" 
+        <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource textblock}" 
                    Text="{Binding Path=LastDate, StringFormat=Ostatnie logowanie: {0}, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,
                         AncestorType={x:Type UserControl}}}"/>
 
-        <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource textblock}" 
+        <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource textblock}" 
                    Text="{Binding Path=TimeInService, StringFormat=Czas w serwisie: {0}, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,
                         AncestorType={x:Type UserControl}}}"/>
-
-
-
     </Grid>
 </UserControl>

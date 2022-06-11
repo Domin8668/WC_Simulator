@@ -64,9 +64,6 @@
                 <DataTemplate DataType="{x:Type vms:ProfileViewModel}">
                     <vs:ProfileView/>
                 </DataTemplate>
-                <DataTemplate DataType="{x:Type vms:TeamViewModel}">
-                    <vs:RegisterView/>
-                </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>
     </Grid>

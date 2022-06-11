@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using WC_Simulator.Model;
+using WC_Simulator.ViewModel.BaseClasses;
 
 namespace WC_Simulator.ViewModel
 {
-    internal class TeamViewModel
+    internal class TeamViewModel : BaseViewModel
     {
+        // niepotrzebne -> 
         #region Variables
 
         private MainModel _model;
@@ -33,6 +30,7 @@ namespace WC_Simulator.ViewModel
             _teamname = teamname;
             _coach = coachname;
             _image = $"../../Resources/Flags/{teamname.ToLower()}.png";
+            
         }
 
         #endregion
@@ -54,7 +52,9 @@ namespace WC_Simulator.ViewModel
         public string Coach
         {
             get { return _coach; }
-            set { _coach = value; }
+            set { _coach = value;
+                OnPropertyChanged(nameof(Coach));
+            }
         }
 
         public string Image

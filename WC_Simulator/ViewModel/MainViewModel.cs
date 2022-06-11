@@ -18,8 +18,6 @@ namespace WC_Simulator.ViewModel
         private User _user_current;
 
         #endregion
-        //public ObservableCollection<string> col = new ObservableCollection<string> { "twoja stara", "twoj stary" };
-        //TeamVM = new TeamViewModel("Poland", "Michniewicz", col);
 
         #region Constructor
 
@@ -29,11 +27,12 @@ namespace WC_Simulator.ViewModel
             LoginViewModel login = new LoginViewModel(Model);
             RegisterViewModel register = new RegisterViewModel(Model);
             ResetPasswordViewModel resetPassword = new ResetPasswordViewModel(Model);
-            //TeamVM = new TeamViewModel("Poland", "Michniewicz", col);
+            ProfileViewModel profile = new ProfileViewModel(Model);
+            TeamViewModel team = new TeamViewModel(Model);
 
-            CurrentViewModel = login;
+            CurrentViewModel = profile;
             MenuVisibility = Visibility.Visible;
-            MenuVisibility = Visibility.Hidden;
+            //MenuVisibility = Visibility.Hidden;
         }
 
         #endregion
