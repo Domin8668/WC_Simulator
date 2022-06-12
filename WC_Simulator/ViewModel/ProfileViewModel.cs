@@ -11,7 +11,7 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
-        private MainModel mainModel;
+        private MainModel _model;
         private NavigationStore _navigationStore;
         private User _user_account;
         private string _login;
@@ -27,16 +27,14 @@ namespace WC_Simulator.ViewModel
 
         public ProfileViewModel(MainModel model, NavigationStore navigationStore)
         {
-            Model = model;
-            NavigationStore = navigationStore;
+            _model = model;
+            _navigationStore = navigationStore;
             Login = "Jason Bourne";
             TourneyCount = 3;
 
             FirstDate = new DateTime(2022, 6, 11, 17, 0, 0).ToString("dd MMMM yyyy HH:mm");
             LastDate = new DateTime(2022, 6, 11, 17, 30, 0).ToString("dd MMMM yyyy HH:mm");
             TimeInService = CalculateTimeInService(new DateTime(2022, 4, 10, 17, 2, 0)); //przekazujemy creation date
-
-            NavigationStore = navigationStore;
         }
 
         public ProfileViewModel(User user_account)
@@ -161,7 +159,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _changePassword = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new ChangePasswordViewModel(Model, _navigationStore);
+                        _navigationStore.CurrentViewModel = new ChangePasswordViewModel(_model, _navigationStore);
                     },
                     arg => true);
                 }

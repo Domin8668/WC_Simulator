@@ -25,7 +25,7 @@ namespace WC_Simulator.ViewModel
 
         public MessageViewModel(MainModel model, NavigationStore navigationStore, BaseViewModel targetViewModel, Visibility targetVisibility)
         {
-            Model = model;
+            _model = model;
             _navigationStore = navigationStore;
             _navigationStore.MenuVisibility = Visibility.Hidden;
             _targetVisibility = targetVisibility;
