@@ -18,6 +18,7 @@ namespace WC_Simulator.ViewModel
 
         #endregion
 
+
         #region Constructor
 
         public MainViewModel()
@@ -153,7 +154,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _groups = new RelayCommand(arg =>
                     {
-                        //_navigationStore.CurrentViewModel = new GroupsViewModel(_model, _navigationStore);
+                        _navigationStore.CurrentViewModel = new GroupsViewModel(_model, _navigationStore);
                     },
                     arg => true);
                 }
