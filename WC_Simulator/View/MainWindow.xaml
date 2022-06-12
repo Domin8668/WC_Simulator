@@ -31,13 +31,20 @@
                    Grid.ColumnSpan="1" Grid.RowSpan="1"
                    Visibility="{Binding MenuVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
             <ItemsControl DockPanel.Dock="Top">
-                <Button Content="Profil"/>
-                <Button Content="Drużyny"/>
-                <Button Content="Terminarz"/>
-                <Button Content="Faza grupowa"/>
-                <Button Content="Faza pucharowa"/>
-                <Button Content="Tabela końcowa"/>
-                <Button Content="Pomoc"/>
+                <Button Content="Profil"
+                        Command="{Binding Profile}"/>
+                <Button Content="Drużyny"
+                        Command="{Binding Teams}"/>
+                <Button Content="Terminarz"
+                        Command="{Binding Schedule}"/>
+                <Button Content="Faza grupowa"
+                        Command="{Binding Groups}"/>
+                <Button Content="Faza pucharowa"
+                        Command="{Binding Knockouts}"/>
+                <Button Content="Tabela końcowa"
+                        Command="{Binding Table}"/>
+                <Button Content="Pomoc"
+                        Command="{Binding Profile}"/>
             </ItemsControl>
             <TextBlock DockPanel.Dock="Top"
                        Text="Turnieje:"/>
@@ -46,6 +53,7 @@
         <Button Grid.Column="1" Grid.Row="2"
                 Grid.ColumnSpan="1" Grid.RowSpan="1"
                 Content="Stwórz nowy turniej +"
+                Command="{Binding NewTournament}"
                 Visibility="{Binding MenuVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         
         <ContentControl Grid.Column="2" Grid.Row="1"

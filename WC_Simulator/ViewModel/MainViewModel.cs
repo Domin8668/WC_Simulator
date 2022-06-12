@@ -4,6 +4,7 @@ using System.Windows;
 using WC_Simulator.DAL.Entities;
 using System;
 using WC_Simulator.Helpers.Stores;
+using System.Windows.Input;
 
 namespace WC_Simulator.ViewModel
 {
@@ -57,11 +58,11 @@ namespace WC_Simulator.ViewModel
 
         #region Properties
 
-        public MainModel Model
-        {
-            get { return _model; }
-            set { _model = value; }
-        }
+        //public MainModel Model
+        //{
+        //    get { return _model; }
+        //    set { _model = value; }
+        //}
 
         public BaseViewModel CurrentViewModel
         {
@@ -79,6 +80,31 @@ namespace WC_Simulator.ViewModel
         {
             get { return _currentUser; }
             set { _currentUser = value; }
+        }
+
+        #endregion
+
+
+        #region Commands
+
+        private ICommand _profile = null;
+
+
+        public ICommand Profile
+        {
+            get
+            {
+                if (_profile == null)
+                {
+                    _profile = new RelayCommand(arg =>
+                    {
+                        _navigationStore.CurrentViewModel = new ProfileViewModel(_model, _navigationStore); ;
+                        _navigationStore.MenuVisibility = Visibility.Hidden;
+                    },
+                    arg => true);
+                }
+                return _profile;
+            }
         }
 
         #endregion

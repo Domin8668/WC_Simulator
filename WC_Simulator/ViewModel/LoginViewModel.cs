@@ -54,11 +54,11 @@ namespace WC_Simulator.ViewModel
             set { _currentUser = value; }
         }
 
-        public MainModel Model
-        {
-            get { return _model; }
-            set { _model = value; }
-        }
+        //public MainModel Model
+        //{
+        //    get { return _model; }
+        //    set { _model = value; }
+        //}
 
         public string Password
         {
