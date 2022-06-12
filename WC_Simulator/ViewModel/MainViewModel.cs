@@ -30,6 +30,8 @@ namespace WC_Simulator.ViewModel
             //ResetPasswordViewModel resetPassword = new ResetPasswordViewModel(_model, _navigationStore);
             //ProfileViewModel profile = new ProfileViewModel(_model, _navigationStore);
             //TeamViewModel team = new TeamViewModel(_model);
+            //GroupsViewModel groups = new GroupsViewModel(_model, _navigationStore);
+            //CurrentViewModel = groups;
 
             _navigationStore.CurrentViewModel = new LoginViewModel(_model, _navigationStore); ;
             _navigationStore.MenuVisibility = Visibility.Hidden;
