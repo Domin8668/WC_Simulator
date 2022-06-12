@@ -111,6 +111,7 @@
     <Compile Include="Model\MainModel.cs" />
     <Compile Include="ViewModel\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\GroupsViewModel.cs" />
+    <Compile Include="ViewModel\KnockoutsViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MatchViewModel.cs" />
     <Compile Include="ViewModel\MessageViewModel.cs" />

@@ -8,6 +8,17 @@
              xmlns:ucs="clr-namespace:WC_Simulator.View.Components"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1100">
+
+    <UserControl.Resources>
+        <Style TargetType="TextBlock" x:Key="labels">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+
     <Grid Background="AliceBlue">
         <TabControl>
             <TabItem x:Name="finals1_8" Header="1/8 Finału">
@@ -20,45 +31,48 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.3*"/>
                         <RowDefinition Height="1.1*"/>
                         <RowDefinition Height="1.1*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <ucs:MatchUserControl Grid.Row="1" Grid.Column="0" Margin="10"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Mecze o wejście do ćwierćfinałów" Style="{StaticResource labels}"/>
                     <ucs:MatchUserControl Grid.Row="2" Grid.Column="0" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="1" Grid.Column="1" Margin="10"/>
+                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="0" Margin="10"/>
                     <ucs:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="1" Grid.Column="2" Margin="10"/>
+                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="1" Margin="10"/>
                     <ucs:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="1" Grid.Column="3" Margin="10"/>
+                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="2" Margin="10"/>
                     <ucs:MatchUserControl Grid.Row="2" Grid.Column="3" Margin="10"/>
+                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="3" Margin="10"/>
 
                 </Grid>
-                
-
             </TabItem>
 
 
             <TabItem x:Name="quarter_finals" Header="Ćwierćfinały">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="249*"/>
+                        <ColumnDefinition Width="274*"/>
+                        <ColumnDefinition Width="273*"/>
+                        <ColumnDefinition Width="273*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.3*"/>
                         <RowDefinition Height="1.1*"/>
                         <RowDefinition Height="1.1*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <ucs:MatchUserControl Grid.Row="1" Grid.Column="1" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="1" Grid.Column="2" Margin="10"/>
+                    <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Text="Mecze o wejście do półfinałów" Style="{StaticResource labels}" Margin="134,12"/>
                     <ucs:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="10"/>
+                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="2" Margin="10"/>
+                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="3" Margin="10"/>
+                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="3" Margin="10"/>
                 </Grid>
 
             </TabItem>
@@ -74,12 +88,14 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.15*"/>
                         <RowDefinition Height="0.7*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <ucs:MatchUserControl Grid.Row="1" Grid.Column="1" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="1" Grid.Column="2" Margin="10"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Mecze o wejście do finału" Style="{StaticResource labels}"/>
+                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="10"/>
+                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="10"/>
                 </Grid>
 
             </TabItem>
@@ -95,12 +111,14 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.15*"/>
                         <RowDefinition Height="0.7*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-
-                    <ucs:MatchUserControl Grid.Row="1" Grid.Column="1" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="1" Grid.Column="2" Margin="10"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="Mecz o 1. miejsce" Style="{StaticResource labels}"/>
+                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="10"/>
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="Mecz o 3. miejsce" Style="{StaticResource labels}"/>
+                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="10"/>
                 </Grid>
 
             </TabItem>
