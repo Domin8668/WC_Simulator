@@ -139,6 +139,9 @@
     <Compile Include="View\GroupsView.xaml.cs">
       <DependentUpon>GroupsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Instructions.xaml.cs">
+      <DependentUpon>Instructions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\KnockoutsView.xaml.cs">
       <DependentUpon>KnockoutsView.xaml</DependentUpon>
     </Compile>
@@ -178,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\GroupsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Instructions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -273,6 +280,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="baza_projekt.sql" />
+    <Resource Include="Resources\user.png" />
     <Resource Include="Resources\Flags\argentina.png" />
     <Resource Include="Resources\Flags\belgium.png" />
     <Resource Include="Resources\Flags\brazil.png" />

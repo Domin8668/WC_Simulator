@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="WC_Simulator.View.Instructions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WC_Simulator.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1100">
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
+
+        <!--Pierwszy opis-->
+        <Grid Background="#cdc9ff" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="../Resources/user.png" Width="60"/>
+            <ListBox Grid.Row="1" Margin="10"/>
+        </Grid>
+
+        <!--Drugi opis-->
+        <Grid Background="#a4ffc7" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="../Resources/user.png" Width="60"/>
+            <ListBox Grid.Row="1" Margin="10"/>
+        </Grid>
+
+        <!--Trzeci opis-->
+        <Grid Background="#caff94" Grid.Row="1" Grid.Column="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="../Resources/user.png" Width="60"/>
+            <ListBox Grid.Row="1" Margin="10"/>
+        </Grid>
+
+        <!--Czwarty opis-->
+        <Grid Background="#fff7b1" Grid.Row="4" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="../Resources/user.png" Width="60"/>
+            <ListBox Grid.Row="1" Margin="10"/>
+        </Grid>
+
+        <!--Piąty opis-->
+        <Grid Background="#ffd0ae" Grid.Row="4" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="../Resources/user.png" Width="60"/>
+            <ListBox Grid.Row="1" Margin="10"/>
+        </Grid>
+
+        <!--Szósty opis-->
+        <Grid Background="#ffc3dc" Grid.Row="4" Grid.Column="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="../Resources/user.png" Width="60"/>
+            <ListBox Grid.Row="1" Margin="10"/>
+        </Grid>
+    </Grid>
+</UserControl>
