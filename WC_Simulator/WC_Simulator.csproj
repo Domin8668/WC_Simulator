@@ -138,6 +138,9 @@
     <Compile Include="View\GroupsView.xaml.cs">
       <DependentUpon>GroupsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\KnockoutsView.xaml.cs">
+      <DependentUpon>KnockoutsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MatchView.xaml.cs">
       <DependentUpon>MatchView.xaml</DependentUpon>
     </Compile>
@@ -174,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\GroupsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\KnockoutsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

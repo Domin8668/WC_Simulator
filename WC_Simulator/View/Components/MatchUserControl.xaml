@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WC_Simulator.View.Components"
              xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="260">
+             d:DesignHeight="180" d:DesignWidth="240">
 
     <UserControl.Resources>
         <Style TargetType="Image" x:Key="flag_img">
