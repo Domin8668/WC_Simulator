@@ -3,10 +3,101 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WC_Simulator.View"
+             xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
+             xmlns:vs="clr-namespace:WC_Simulator.View"
+             xmlns:ucs="clr-namespace:WC_Simulator.View.Components"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="850" d:DesignWidth="1150">
     <Grid>
+        <TabControl>
+            <TabItem x:Name="grupaA" Header="Grupa A">
+                <!--<ucs:GroupUserControl Grid.Column="3" Grid.ColumnSpan="1"
+                                     Grid.Row="7" Grid.RowSpan="1"
+                                     HorizontalAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     Team1FlagPath="{Binding Team1img, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team1Name="{Binding Team1fn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team1RM="{Binding Team1rm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team1BZ="{Binding Team1bz, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team1BS="{Binding Team1bs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team1PKT="{Binding Team1pkt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      
+                                     Team2FlagPath="{Binding Team2img, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team2Name="{Binding Team2fn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team2RM="{Binding Team2rm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team2BZ="{Binding Team2bz, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team2BS="{Binding Team2bs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team2PKT="{Binding Team2pkt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     
+                                     Team3FlagPath="{Binding Team3img, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team3Name="{Binding Team3fn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team3RM="{Binding Team3rm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team3BZ="{Binding Team3bz, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team3BS="{Binding Team3bs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team3PKT="{Binding Team3pkt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      
+                                     Team4FlagPath="{Binding Team4img, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team4Name="{Binding Team4fn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team4RM="{Binding Team4rm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team4BZ="{Binding Team4bz, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team4BS="{Binding Team4bs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team4PKT="{Binding Team4pkt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      />-->
+                <ucs:GroupUserControl Grid.Column="3" Grid.ColumnSpan="1"
+                                     Grid.Row="7" Grid.RowSpan="1"
+                                     HorizontalAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     Team2FlagPath="{Binding Team2img, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team2Name="{Binding Team2fn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team2RM="{Binding Team2rm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team2BZ="{Binding Team2bz, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team2BS="{Binding Team2bs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Team2PKT="{Binding Team2pkt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      />
+                
+            </TabItem>
+
             
+            <TabItem x:Name="grupaB" Header="Grupa B">
+                
+                
+            </TabItem>
+            
+
+            <TabItem x:Name="grupaC" Header="Grupa C">
+                
+                
+            </TabItem>
+            
+
+            <TabItem x:Name="grupaD" Header="Grupa D">
+                
+                
+            </TabItem>
+
+            
+            <TabItem x:Name="grupaE" Header="Grupa E">
+                
+                
+            </TabItem>
+
+            
+            <TabItem x:Name="grupaF" Header="Grupa F">
+                
+                
+            </TabItem>
+            
+
+            <TabItem x:Name="grupaG" Header="Grupa G">
+                
+                
+            </TabItem>
+            
+
+            <TabItem x:Name="grupaH" Header="Grupa H">
+                
+                
+            </TabItem>
+        </TabControl>
     </Grid>
 </UserControl>

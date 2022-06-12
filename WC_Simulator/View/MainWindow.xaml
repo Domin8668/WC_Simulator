@@ -78,6 +78,9 @@
                 <DataTemplate DataType="{x:Type vms:MessageViewModel}">
                     <vs:MessageView/>
                 </DataTemplate>
+                <DataTemplate DataType="{x:Type vms:GroupsViewModel}">
+                    <vs:GroupsView/>
+                </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>
     </Grid>
