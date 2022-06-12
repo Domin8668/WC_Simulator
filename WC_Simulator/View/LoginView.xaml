@@ -110,6 +110,6 @@
             
         </Grid>
         <!--Do testów:-->
-        <ucs:GroupUserControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Team2PKT="{Binding Test}"/>
+        <!--<ucs:GroupUserControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Team2PKT="{Binding Test}"/>-->
     </Grid>
 </UserControl>
