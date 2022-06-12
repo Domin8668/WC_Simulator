@@ -72,11 +72,11 @@ namespace WC_Simulator.ViewModel
 
 
         #region Properties
-        public MainModel Model
-        {
-            get { return _model; }
-            set { _model = value; }
-        }
+        //public MainModel Model
+        //{
+        //    get { return _model; }
+        //    set { _model = value; }
+        //}
 
         public string Coach1
         {
@@ -163,11 +163,11 @@ namespace WC_Simulator.ViewModel
         }
 
 
-        public NavigationStore NavigationStore
-        {
-            get { return _navigationStore; }
-            set { _navigationStore = value; }
-        }
+        //public NavigationStore NavigationStore
+        //{
+        //    get { return _navigationStore; }
+        //    set { _navigationStore = value; }
+        //}
 
 
         #endregion

@@ -36,11 +36,11 @@ namespace WC_Simulator.ViewModel
 
         #region Properties
 
-        public MainModel Model
-        {
-            get { return _model; }
-            set { _model = value; }
-        }
+        //public MainModel Model
+        //{
+        //    get { return _model; }
+        //    set { _model = value; }
+        //}
 
         public string Username
         {
@@ -106,7 +106,7 @@ namespace WC_Simulator.ViewModel
                     _changePassword = new RelayCommand(arg =>
                     {
                         ProfileViewModel profile = new ProfileViewModel(Model, _navigationStore);
-                        _navigationStore.CurrentViewModel = new MessageViewModel(Model, _navigationStore, profile);
+                        _navigationStore.CurrentViewModel = new MessageViewModel(Model, _navigationStore, profile, Visibility.Visible);
                     },
                     arg => true);
                 }

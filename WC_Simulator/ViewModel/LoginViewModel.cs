@@ -26,7 +26,7 @@ namespace WC_Simulator.ViewModel
 
         public LoginViewModel(MainModel model, NavigationStore navigationStore)
         {
-            Model = model;
+            _model = model;
             _navigationStore = navigationStore;
             _currentUser = new User();
             //_test = "5";

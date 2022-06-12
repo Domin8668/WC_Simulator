@@ -92,11 +92,11 @@ namespace WC_Simulator.ViewModel
         }
 
 
-        public MainModel Model
-        {
-            get { return mainModel; }
-            set { mainModel = value; }
-        }
+        //public MainModel Model
+        //{
+        //    get { return mainModel; }
+        //    set { mainModel = value; }
+        //}
 
         public User User_account
         {
@@ -104,11 +104,11 @@ namespace WC_Simulator.ViewModel
             set { _user_account = value; }
         }
 
-        public NavigationStore NavigationStore
-        {
-            get { return _navigationStore; }
-            set { _navigationStore = value; }
-        }
+        //public NavigationStore NavigationStore
+        //{
+        //    get { return _navigationStore; }
+        //    set { _navigationStore = value; }
+        //}
 
         #endregion
 

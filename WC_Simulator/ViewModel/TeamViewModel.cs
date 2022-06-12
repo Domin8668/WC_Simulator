@@ -37,11 +37,11 @@ namespace WC_Simulator.ViewModel
 
         #region Properties
 
-        public MainModel Model
-        {
-            get { return _model; }
-            set { _model = value; }
-        }
+        //public MainModel Model
+        //{
+        //    get { return _model; }
+        //    set { _model = value; }
+        //}
 
         public string TeamName
         {
