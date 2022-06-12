@@ -29,7 +29,7 @@ namespace WC_Simulator.ViewModel
             Model = model;
             _navigationStore = navigationStore;
             _currentUser = new User();
-            _test = "5";
+            //_test = "5";
         }
 
         #endregion
@@ -37,14 +37,14 @@ namespace WC_Simulator.ViewModel
 
         #region Properties
         // do testow GroupUserControlki
-        public string Test
-        {
-            get { return _test; }
-            set { _test = value;
-                OnPropertyChanged(nameof(Test));
-            }
-        }
-        private string _test;
+        //public string Test
+        //{
+        //    get { return _test; }
+        //    set { _test = value;
+        //        OnPropertyChanged(nameof(Test));
+        //    }
+        //}
+        //private string _test;
 
 
 

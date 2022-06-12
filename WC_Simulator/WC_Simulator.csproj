@@ -110,6 +110,7 @@
     <Compile Include="Helpers\Stores\NavigationStore.cs" />
     <Compile Include="Model\MainModel.cs" />
     <Compile Include="ViewModel\ChangePasswordViewModel.cs" />
+    <Compile Include="ViewModel\GroupsViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MatchViewModel.cs" />
     <Compile Include="ViewModel\MessageViewModel.cs" />
@@ -133,6 +134,9 @@
     </Compile>
     <Compile Include="View\Components\UsernameUserControl.xaml.cs">
       <DependentUpon>UsernameUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GroupsView.xaml.cs">
+      <DependentUpon>GroupsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MatchView.xaml.cs">
       <DependentUpon>MatchView.xaml</DependentUpon>
@@ -166,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Components\UsernameUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GroupsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
