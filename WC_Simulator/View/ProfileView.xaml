@@ -109,16 +109,10 @@
                                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
 
-            <StackPanel x:Name="ResetArea" Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Margin="10"
-                    VerticalAlignment="Center" HorizontalAlignment="Left" 
-                    Width="Auto" Height="Auto">
-                <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource textblock}" 
-                            Text="Zmień hasło: "/>
-                <Button x:Name="ResetPlaceHolder" 
-                        Grid.Row="2" Content="ResetPlaceholder" FontSize="25"
+
+            <Button x:Name="ResetPlaceHolder" Grid.Row="5" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3" Content="Zmień hasło" FontSize="25" Background="#7fccff" BorderBrush="#005a95" BorderThickness="2"
                     Command="{Binding ChangePassword}"
                         Width="250" Height="50"/>
-            </StackPanel>
         </Grid>
 
     </Grid>
