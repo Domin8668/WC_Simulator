@@ -91,7 +91,6 @@ namespace WC_Simulator.ViewModel
 
         private ICommand _profile = null;
 
-
         public ICommand Profile
         {
             get
@@ -100,12 +99,137 @@ namespace WC_Simulator.ViewModel
                 {
                     _profile = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new ProfileViewModel(_model, _navigationStore); ;
-                        _navigationStore.MenuVisibility = Visibility.Hidden;
+                        _navigationStore.CurrentViewModel = new ProfileViewModel(_model, _navigationStore);
                     },
                     arg => true);
                 }
                 return _profile;
+            }
+        }
+
+        private ICommand _teams = null;
+
+        public ICommand Teams
+        {
+            get
+            {
+                if (_teams == null)
+                {
+                    _teams = new RelayCommand(arg =>
+                    {
+                        //_navigationStore.CurrentViewModel = new TeamsViewModel(_model, _navigationStore);
+                    },
+                    arg => true);
+                }
+                return _teams;
+            }
+        }
+
+        private ICommand _schedule = null;
+
+        public ICommand Schedule
+        {
+            get
+            {
+                if (_schedule == null)
+                {
+                    _schedule = new RelayCommand(arg =>
+                    {
+                        //_navigationStore.CurrentViewModel = new ScheduleViewModel(_model, _navigationStore);
+                    },
+                    arg => true);
+                }
+                return _schedule;
+            }
+        }
+
+        private ICommand _groups = null;
+
+        public ICommand Groups
+        {
+            get
+            {
+                if (_groups == null)
+                {
+                    _groups = new RelayCommand(arg =>
+                    {
+                        //_navigationStore.CurrentViewModel = new GroupsViewModel(_model, _navigationStore);
+                    },
+                    arg => true);
+                }
+                return _groups;
+            }
+        }
+
+        private ICommand _knockouts = null;
+
+        public ICommand Knockouts
+        {
+            get
+            {
+                if (_knockouts == null)
+                {
+                    _knockouts = new RelayCommand(arg =>
+                    {
+                        //_navigationStore.CurrentViewModel = new KnockoutsViewModel(_model, _navigationStore);
+                    },
+                    arg => true);
+                }
+                return _knockouts;
+            }
+        }
+
+        private ICommand _table = null;
+
+        public ICommand Table
+        {
+            get
+            {
+                if (_table == null)
+                {
+                    _table = new RelayCommand(arg =>
+                    {
+                        //_navigationStore.CurrentViewModel = new TableViewModel(_model, _navigationStore);
+                    },
+                    arg => true);
+                }
+                return _table;
+            }
+        }
+
+        private ICommand _help = null;
+
+        public ICommand Help
+        {
+            get
+            {
+                if (_help == null)
+                {
+                    _help = new RelayCommand(arg =>
+                    {
+                        //_navigationStore.CurrentViewModel = new HelpViewModel(_model, _navigationStore);
+                    },
+                    arg => true);
+                }
+                return _help;
+            }
+        }
+
+        private ICommand _newTournament = null;
+
+        public ICommand NewTournament
+        {
+            get
+            {
+                if (_newTournament == null)
+                {
+                    _newTournament = new RelayCommand(arg =>
+                    {
+                        //_navigationStore.CurrentViewModel = new NewTournamentViewModel(_model, _navigationStore);
+                    },
+                    arg => true);
+                }
+                return _newTournament;
             }
         }
 

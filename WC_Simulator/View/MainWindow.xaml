@@ -44,7 +44,7 @@
                 <Button Content="Tabela końcowa"
                         Command="{Binding Table}"/>
                 <Button Content="Pomoc"
-                        Command="{Binding Profile}"/>
+                        Command="{Binding Help}"/>
             </ItemsControl>
             <TextBlock DockPanel.Dock="Top"
                        Text="Turnieje:"/>
