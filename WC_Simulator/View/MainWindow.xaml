@@ -75,6 +75,9 @@
                 <DataTemplate DataType="{x:Type vms:ProfileViewModel}">
                     <vs:ProfileView/>
                 </DataTemplate>
+                <DataTemplate DataType="{x:Type vms:GroupsViewModel}">
+                    <vs:GroupsView/>
+                </DataTemplate>
                 <DataTemplate DataType="{x:Type vms:MessageViewModel}">
                     <vs:MessageView/>
                 </DataTemplate>
