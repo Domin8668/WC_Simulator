@@ -107,8 +107,9 @@
                     Content="Nie pamiętam hasła"
                     Command="{Binding ResetPassword}"/>
 
-            <!--Do testów:-->
-            <!--<ucs:MatchUserControl Team2FlagPath="{Binding Coach}"/>-->
+            
         </Grid>
+        <!--Do testów:-->
+        <ucs:GroupUserControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Team2PKT="{Binding Test}"/>
     </Grid>
 </UserControl>

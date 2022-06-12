@@ -29,6 +29,12 @@ namespace WC_Simulator.ViewModel
         public TestGroupViewModel(MainModel model)
         {
             Model = model;
+            _team2img = $"../../Resources/Flags/korea.png";
+            _team2fn = "Korea";
+            _team2rm = "7";
+            _team2bz = "6";
+            _team2bs = "5";
+            _team2pkt = "4";
         }
 
         //public TestGroupViewModel(string t2img, string t2fn, string t2rm, string t2bz, string t2bs, string t2pkt)

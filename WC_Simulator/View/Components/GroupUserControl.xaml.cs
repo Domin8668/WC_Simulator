@@ -196,7 +196,7 @@ namespace WC_Simulator.View.Components
         // TEAM 3
         public static readonly DependencyProperty Team3BSProperty =
             DependencyProperty.Register(
-                "Team3BZ",
+                "Team3BS",
                 typeof(string),
                 typeof(GroupUserControl),
                 new FrameworkPropertyMetadata(null)

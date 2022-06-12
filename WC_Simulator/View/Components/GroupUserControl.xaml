@@ -119,21 +119,21 @@
             <Image x:Name="Team1Img" Grid.Row="2" Grid.Column="1" 
                Style="{StaticResource flag_img}" 
                Source="../../Resources/Flags/poland.png"/>
-            <Image x:Name="Team2Img" Grid.Row="2" Grid.Column="1" 
+            <Image x:Name="Team2Img" Grid.Row="3" Grid.Column="1" 
                Style="{StaticResource flag_img}"
                Source="{Binding Path=Team2FlagPath, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,
                         AncestorType={x:Type UserControl}}}"/>
-            <Image x:Name="Team3Img" Grid.Row="2" Grid.Column="1" 
+            <Image x:Name="Team3Img" Grid.Row="4" Grid.Column="1" 
                Style="{StaticResource flag_img}"
                Source="{Binding Path=Team3FlagPath, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,
                         AncestorType={x:Type UserControl}}}"/>
-            <Image x:Name="Team4Img" Grid.Row="2" Grid.Column="1" 
+            <Image x:Name="Team4Img" Grid.Row="5" Grid.Column="1" 
                Style="{StaticResource flag_img}"
                Source="{Binding Path=Team4FlagPath, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
