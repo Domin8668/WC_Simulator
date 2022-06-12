@@ -7,12 +7,12 @@
              xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
              xmlns:ucs="clr-namespace:WC_Simulator.View.Components"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="800" d:DesignWidth="1000">
 
     <UserControl.Resources>
         <Style TargetType="TextBlock" x:Key="textblock">
             <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontSize" Value="45"/>
+            <Setter Property="FontSize" Value="35"/>
             <Setter Property="FontWeight" Value="DemiBold"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -23,34 +23,57 @@
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="../Resources/user.png" Width="150"/>
         <!--Panel użytkownika-->
-        <StackPanel x:Name="ProfilePanel" Orientation="Vertical" Margin="20,10,0,0"
-                        HorizontalAlignment="Left" VerticalAlignment="Stretch"
+        <Grid x:Name="ProfilePanel" Grid.Row="2" Grid.Column="1" Grid.RowSpan="6" Grid.ColumnSpan="4" Margin="20" VerticalAlignment="Stretch"
                         Width="Auto" Height="Auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             <!--Panel z danymi-->
-            <StackPanel x:Name="BioPanel" Orientation="Vertical" 
+            <StackPanel x:Name="BioPanel" Orientation="Vertical" Margin="10"
                         HorizontalAlignment="Left" VerticalAlignment="Stretch"  
-                        Width="Auto" Height="Auto">
+                        Width="Auto" Height="Auto" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3">
 
-                <TextBlock x:Name="BioTB" Margin="0,0,0,0"
+                <TextBlock x:Name="BioTB"
                             Grid.Row="0" Grid.Column="0"
                             HorizontalAlignment="Left"
                             Style="{StaticResource textblock}" 
                             Text="Profil: "/>
 
-                <TextBlock x:Name="Nickname" Grid.Row="0" Grid.Column="0"
+                <TextBlock x:Name="Nickname"
                             HorizontalAlignment="Left"
                             Style="{StaticResource textblock}" 
                             Text="{Binding Path=Login, 
                                 StringFormat=Nazwa użytkownika: {0}, 
                                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBlock x:Name="TourneyNumber" Grid.Row="0" Grid.Column="0"
+                <TextBlock x:Name="TourneyNumber"
                             HorizontalAlignment="Left"
                             Style="{StaticResource textblock}" 
                             Text="{Binding Path=TourneyCount, 
@@ -59,47 +82,44 @@
             </StackPanel>
 
             <!--Panel z Datami-->
-            <StackPanel x:Name="DatePanel" Orientation="Vertical" 
-                        Margin="0,50,0,0"
+            <StackPanel x:Name="DatePanel" Grid.Row="2" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3"
+                        Margin="10"
                         HorizontalAlignment="Left" VerticalAlignment="Stretch"  
                         Width="Auto" Height="Auto">
-                <TextBlock x:Name="DateTB" Grid.Row="0" Grid.Column="0"
+                <TextBlock x:Name="DateTB"
                             HorizontalAlignment="Left"
                             Style="{StaticResource textblock}" 
                             Text="Dodatkowe Informacje: "/>
-                <TextBlock Grid.Row="1" Grid.Column="0" 
-                            HorizontalAlignment="Left" VerticalAlignment="Stretch"
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Stretch"
                             Style="{StaticResource textblock}"
                             Text="{Binding Path=FirstDate, 
                                 StringFormat=Data założenia: {0}, 
                                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" 
-                            HorizontalAlignment="Left" VerticalAlignment="Stretch"
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Stretch"
                             Style="{StaticResource textblock}" 
                             Text="{Binding Path=LastDate, 
                                 StringFormat=Wcześniejsze logowanie: {0}, 
                                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Margin="0,10,0,0"
-                            HorizontalAlignment="Left" VerticalAlignment="Stretch"
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Stretch"
                             Style="{StaticResource textblock}" 
                             Text="{Binding Path=TimeInService, 
                                 StringFormat=Czas w serwisie: {0}, 
                                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
-        </StackPanel>
 
-        <StackPanel x:Name="ResetArea" Orientation="Horizontal" 
-                    Grid.Row="2" Margin="20,10,0,0"
+            <StackPanel x:Name="ResetArea" Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Margin="10"
                     VerticalAlignment="Center" HorizontalAlignment="Left" 
                     Width="Auto" Height="Auto">
-            <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource textblock}" 
+                <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource textblock}" 
                             Text="Zmień hasło: "/>
-            <Button x:Name="ResetPlaceHolder" 
-                        Grid.Row="2" Content="ResetPlaceholder" FontSize="40"
+                <Button x:Name="ResetPlaceHolder" 
+                        Grid.Row="2" Content="ResetPlaceholder" FontSize="25"
                     Command="{Binding ChangePassword}"
                         Width="250" Height="50"/>
-        </StackPanel>
+            </StackPanel>
+        </Grid>
+
     </Grid>
 </UserControl>
