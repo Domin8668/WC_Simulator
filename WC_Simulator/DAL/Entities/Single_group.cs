@@ -28,6 +28,7 @@ namespace WC_Simulator.DAL.Entities
         }
         #endregion
 
+
         #region Constructors
         public Single_group(MySqlDataReader reader)
         {
@@ -58,6 +59,7 @@ namespace WC_Simulator.DAL.Entities
 
         #endregion
 
+
         #region Methods
 
         public override string ToString()
@@ -69,6 +71,7 @@ namespace WC_Simulator.DAL.Entities
         {
             return $"('{Id_group}', '{Id_first_pl_team}', {Id_second_pl_team}, '{Id_tournament}', '{Letter}')";
         }
+
         public override bool Equals(object obj)
         {
             //nie porównujemy ID
@@ -85,6 +88,7 @@ namespace WC_Simulator.DAL.Entities
         {
             return base.GetHashCode();
         }
+
         #endregion
     }
 }

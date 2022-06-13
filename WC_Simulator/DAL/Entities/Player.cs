@@ -24,6 +24,7 @@ namespace WC_Simulator.DAL.Entities
         }
         #endregion
 
+
         #region Constructors
 
         //bardzo przydatny konstruktor tworzy obiekt na podstawie MySQLDataReader
@@ -54,6 +55,7 @@ namespace WC_Simulator.DAL.Entities
 
         #endregion
 
+
         #region Methods
 
         public override string ToString()
@@ -82,6 +84,7 @@ namespace WC_Simulator.DAL.Entities
         {
             return base.GetHashCode();
         }
+
         #endregion
 
     }
