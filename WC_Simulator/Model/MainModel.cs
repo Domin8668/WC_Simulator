@@ -11,12 +11,17 @@ namespace WC_Simulator.Model
 {
     public class MainModel
     {
-        // tu wrzucamy wszystko z bazy danych chyba
+        /// <summary>
+        /// Mechanizm w Modelu zapewnia możliwość wykonywania operacji na obiektach z automatycznym
+        /// aktualizowaniem ich odpowiedników w bazie danych. Edycja np. Playera powoduje aktualizację
+        /// bazy danych oraz aktualizuje obiekt tego Playera w kolekcji obiektów.
+        /// </summary>
         internal void ValidateUser()
         {
             throw new NotImplementedException();
         }
-        // stan bazy
+        // kolekcje obiektów poszczególnych zbiorów encji
+
         //public ObservableCollection<Player> AllPlayers { get; set; } = new ObservableCollection<Player>();
         //public ObservableCollection<Single_group> AllGroups { get; set; } = new ObservableCollection<Single_group>();
         //public ObservableCollection<Single_match> AllMatches { get; set; } = new ObservableCollection<Single_match>();
@@ -25,7 +30,7 @@ namespace WC_Simulator.Model
 
         //public MainModel()
         //{
-        //    //pobranie danych z bazy do kolekcji
+        //    //pobranie danych z bazy do kolekcji za pomocą Repozytoriów
 
         //    //var groups = RepositoryGroups.LoadGroup();
         //    //foreach (var g in groups)
