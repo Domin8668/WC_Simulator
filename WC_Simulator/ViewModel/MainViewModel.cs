@@ -126,24 +126,6 @@ namespace WC_Simulator.ViewModel
             }
         }
 
-        private ICommand _schedule = null;
-
-        public ICommand Schedule
-        {
-            get
-            {
-                if (_schedule == null)
-                {
-                    _schedule = new RelayCommand(arg =>
-                    {
-                        //_navigationStore.CurrentViewModel = new ScheduleViewModel(_model, _navigationStore);
-                    },
-                    arg => true);
-                }
-                return _schedule;
-            }
-        }
-
         private ICommand _groups = null;
 
         public ICommand Groups

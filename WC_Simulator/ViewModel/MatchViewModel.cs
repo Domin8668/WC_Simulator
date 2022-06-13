@@ -38,8 +38,8 @@ namespace WC_Simulator.ViewModel
 
         public MatchViewModel(MainModel model, NavigationStore navigationStore)
         {
-            Model = model;
-            NavigationStore = navigationStore;
+            _model = model;
+            _navigationStore = navigationStore;
 
             Location = "Moje serce";
             Referee = "Kruża";
@@ -56,8 +56,6 @@ namespace WC_Simulator.ViewModel
             Coach2 = "Jakiś Random";
             Team1 = new ObservableCollection<string>() { "Lewy", "Cash" };
             Team2 = new ObservableCollection<string>() { "Gnabry", "Werner" };
-            NavigationStore = navigationStore;
-
         }
 
         public MatchViewModel(string flag1, string team1, string res1, string flag2, string team2, string res2)

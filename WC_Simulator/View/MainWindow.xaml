@@ -35,20 +35,17 @@
                         Command="{Binding Profile}"/>
                 <Button Content="Drużyny"
                         Command="{Binding Teams}"/>
-                <Button Content="Terminarz"
-                        Command="{Binding Schedule}"/>
                 <Button Content="Faza grupowa"
                         Command="{Binding Groups}"/>
                 <Button Content="Faza pucharowa"
                         Command="{Binding Knockouts}"/>
-                <Button Content="Tabela końcowa"
-                        Command="{Binding Table}"/>
                 <Button Content="Pomoc"
                         Command="{Binding Help}"/>
             </ItemsControl>
             <TextBlock DockPanel.Dock="Top"
                        Text="Turnieje:"/>
-            <ListBox DockPanel.Dock="Top"/>
+            <ListBox DockPanel.Dock="Top"
+                     ItemsSource="{Binding Tournaments}"/>
         </DockPanel>
         <Button Grid.Column="1" Grid.Row="2"
                 Grid.ColumnSpan="1" Grid.RowSpan="1"
@@ -75,9 +72,18 @@
                 <DataTemplate DataType="{x:Type vms:ProfileViewModel}">
                     <vs:ProfileView/>
                 </DataTemplate>
+                <!--<DataTemplate DataType="{x:Type vms:TeamsViewModel}">
+                    <vs:TeamsView/>
+                </DataTemplate>-->
                 <DataTemplate DataType="{x:Type vms:GroupsViewModel}">
                     <vs:GroupsView/>
                 </DataTemplate>
+                <DataTemplate DataType="{x:Type vms:KnockoutsViewModel}">
+                    <vs:KnockoutsView/>
+                </DataTemplate>
+                <!--<DataTemplate DataType="{x:Type vms:HelpViewModel}">
+                    <vs:HelpView/>
+                </DataTemplate>-->
                 <DataTemplate DataType="{x:Type vms:MessageViewModel}">
                     <vs:MessageView/>
                 </DataTemplate>

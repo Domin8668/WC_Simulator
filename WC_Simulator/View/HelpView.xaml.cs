@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WC_Simulator.View
 {
     /// <summary>
-    /// Interaction logic for Instructions.xaml
+    /// Interaction logic for HelpView.xaml
     /// </summary>
-    public partial class Instructions : UserControl
+    public partial class HelpView : UserControl
     {
-        public Instructions()
+        public HelpView()
         {
             InitializeComponent();
         }

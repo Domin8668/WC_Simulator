@@ -112,6 +112,7 @@
     <Compile Include="Model\TeamInGroup.cs" />
     <Compile Include="ViewModel\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\GroupsViewModel.cs" />
+    <Compile Include="ViewModel\HelpViewModel.cs" />
     <Compile Include="ViewModel\KnockoutsViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MatchViewModel.cs" />
@@ -140,8 +141,8 @@
     <Compile Include="View\GroupsView.xaml.cs">
       <DependentUpon>GroupsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Instructions.xaml.cs">
-      <DependentUpon>Instructions.xaml</DependentUpon>
+    <Compile Include="View\HelpView.xaml.cs">
+      <DependentUpon>HelpView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\KnockoutsView.xaml.cs">
       <DependentUpon>KnockoutsView.xaml</DependentUpon>
@@ -185,7 +186,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Instructions.xaml">
+    <Page Include="View\HelpView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
