@@ -23,7 +23,7 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" >
             <TextBlock Margin="5"
-                   Text="Wpisz nazę swojego turnieju:"/>
+                   Text="Wpisz nazwę swojego turnieju:"/>
 
             <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200"
                  Margin="5"/>
