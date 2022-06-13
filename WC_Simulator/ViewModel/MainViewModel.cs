@@ -158,7 +158,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _help = new RelayCommand(arg =>
                     {
-                        //_navigationStore.CurrentViewModel = new HelpViewModel(_model, _navigationStore);
+                        _navigationStore.CurrentViewModel = new HelpViewModel(_model, _navigationStore);
                     },
                     arg => true);
                 }
