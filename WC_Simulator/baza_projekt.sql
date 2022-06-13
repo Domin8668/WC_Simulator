@@ -7,7 +7,7 @@ create table user(
 	id_user int unsigned auto_increment primary key,
     login varchar(25) unique not null,
     password binary(32) not null,
-    creation_date date not null,
+    creation_date datetime not null,
     last_log_date datetime not null,
     security_question varchar(25) not null,
     security_answer varchar(25) not null
@@ -30,8 +30,8 @@ desc player;
 
 create table single_group(
 	id_group int unsigned auto_increment primary key,
-    id_first_pl_team int unsigned,
-    id_second_pl_team int unsigned,
+    id_first_pl_team int unsigned default 1,
+    id_second_pl_team int unsigned default 2,
     id_tournament int unsigned not null,
     letter enum("A", "B", "C", "D", "E", "F", "G", "H") not null
 );
@@ -63,16 +63,6 @@ desc single_match;
 -- player fk
 alter table player add
 constraint fk_player_team foreign key(id_team) references team(id_team);
-
--- group fk
-alter table single_group add
-constraint fk_group_fteam foreign key(id_first_pl_team) references team(id_team);
-alter table single_group add
-constraint fk_group_steam foreign key(id_second_pl_team) references team(id_team);
--- group fk dodatkowe id_tournament
-alter table single_group add
-constraint fk_group_tournament foreign key(id_tournament) references tournament(id_tournament);
-
 
 -- team fk
 alter table team add
@@ -108,7 +98,7 @@ insert into tournament values
 
 -- dodawanie rekordow do tabeli 'single_group'
 insert into single_group (id_group, id_tournament, letter) values
-(1, 1,"A"), (2, 1,"B"), (3, 1,"C"), (4, 1,"D"), (5, 1,"E"),
+(1, 1, "A"), (2, 1,"B"), (3, 1,"C"), (4, 1,"D"), (5, 1,"E"),
 (6, 1,"F"), (7, 1,"G"), (8, 1,"H");
 
 -- dodawanie rekordow do tabeli 'team'
@@ -146,7 +136,7 @@ insert into team (id_group, name, short_name, coach, def_factor, att_factor) val
 (7, "Brazylia", "BRA", "Tite", 0.5, 0.5),
 (7, "Serbia", "SRB", "Dragan Stojković", 0.5, 0.5),
 (7, "Szwajcaria", "SUI", "Murat Yakın", 0.5, 0.5),
-(7, "Kamerun", "CMR", "Rigobert Song", 0.5, 0.5),
+(7, "Kamersingle_groupun", "CMR", "Rigobert Song", 0.5, 0.5),
 
 (8, "Portugalia", "POR", "Fernando Santos", 0.5, 0.5),
 (8, "Ghana", "GHA", "Otto Addo", 0.5, 0.5),
@@ -154,3 +144,11 @@ insert into team (id_group, name, short_name, coach, def_factor, att_factor) val
 (8, "Korea Południowa", "KOR", "Paulo Bento", 0.5, 0.5);
 select * from team;
 
+-- group fk
+alter table single_group add
+constraint fk_group_fteam foreign key(id_first_pl_team) references team(id_team);
+alter table single_group add
+constraint fk_group_steam foreign key(id_second_pl_team) references team(id_team);
+-- group fk dodatkowe id_tournament
+alter table single_group add
+constraint fk_group_tournament foreign key(id_tournament) references tournament(id_tournament);
