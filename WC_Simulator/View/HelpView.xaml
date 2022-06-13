@@ -5,105 +5,135 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WC_Simulator.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="800">
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.05*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.05*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.1*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
 
-        <!--Pierwszy opis-->
-        <Grid Background="#cdc9ff" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="20">
+        <!--Pierwszy opis - Drużyny-->
+        <Grid Background="#cdc9ff" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="15,5,15,5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="0.4*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Image Source="../Resources/user.png" Width="60"/>
-            <ListBox Grid.Row="1" Margin="10"/>
+            <StackPanel Grid.Row="0">
+                <TextBlock Margin="0,5,0,0" Text="Drużyny" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"/>
+                <Image Source="../Resources/user.png" Width="30" Margin="5,5,5,0"/>
+            </StackPanel>
+            
+            <TextBox Grid.Row="1" Margin="10,2,10,10" IsReadOnly="True" IsEnabled="False" TextWrapping="Wrap" TextAlignment="Center"
+                     Text="Zakładka dryżyny daje Ci możliwość na bliższe zapoznanie się z konkurującymi dryżynami. Pozwala na podejrzenie szczegółowych informacji o swoich ulubionych drużynach, a te mogą okazać się kluczowe w wyłonieniu najlepszej drużyny Mistrzostw!"/>
         </Grid>
 
-        <!--Drugi opis-->
-        <Grid Background="#a4ffc7" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="20">
+        <!--Drugi opis - Faza grupowa-->
+        <Grid Background="#a4ffc7" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="15,5,15,5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="0.4*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Image Source="../Resources/user.png" Width="60"/>
-            <ListBox Grid.Row="1" Margin="10"/>
+            <StackPanel Grid.Row="0">
+                <TextBlock Margin="0,5,0,0" Text="Faza grupowa" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"/>
+                <Image Source="../Resources/user.png" Width="30" Margin="5,5,5,0"/>
+            </StackPanel>
+
+            <TextBox Grid.Row="1" Margin="10,2,10,10" IsReadOnly="True" IsEnabled="False" TextWrapping="Wrap" TextAlignment="Center"
+                     Text="W fazie grupowej każdego dnia będą rozgrywane cztery mecze, z godzinami rozpoczęcia: 11:00, 14:00, 17:00 i 20:00 w pierwszych dwóch rundach oraz 16:00 i 20:00 w ostatniej rundzie. To właśnie Ty wpisujesz wyniki kolejnych meczów, które rozstrzygną, kto trafi do fazy pucharowej."/>
         </Grid>
 
-        <!--Trzeci opis-->
-        <Grid Background="#caff94" Grid.Row="1" Grid.Column="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="20">
+        <!--Trzeci opis - Faza pucharowa-->
+        <Grid Background="#caff94" Grid.Row="1" Grid.Column="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="15,5,15,5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="0.4*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Image Source="../Resources/user.png" Width="60"/>
-            <ListBox Grid.Row="1" Margin="10"/>
+            <StackPanel Grid.Row="0">
+                <TextBlock Margin="0,5,0,0" Text="Faza pucharowa" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"/>
+                <Image Source="../Resources/user.png" Width="30" Margin="5,5,5,0"/>
+            </StackPanel>
+
+            <TextBox Grid.Row="1" Margin="10,2,10,10" IsReadOnly="True" IsEnabled="False" TextWrapping="Wrap" TextAlignment="Center"
+                     Text="Ta zakładka to kontynuacja rozgrywek z fazy grupowej. Każdy mecz rozstrzyga czy drużyna odpada z rozgrywek czy przechodzi do następnego etapu. Mamy następujące etapy: 1/8 Finału, Ćwierćfinały, Półfinały, Finał. To Ty decydujesz kto odpadnie, a kto będzie walczył o mistrzostwo świata!"/>
         </Grid>
 
-        <!--Czwarty opis-->
-        <Grid Background="#fff7b1" Grid.Row="4" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="20">
+        <!--Czwarty opis - Ustawienia-->
+        <Grid Background="#fff7b1" Grid.Row="4" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="15,5,15,5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="0.4*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Image Source="../Resources/user.png" Width="60"/>
-            <ListBox Grid.Row="1" Margin="10"/>
+            <StackPanel Grid.Row="0">
+                <TextBlock Margin="0,5,0,0" Text="Ustawienia" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"/>
+                <Image Source="../Resources/user.png" Width="30" Margin="5,5,5,0"/>
+            </StackPanel>
+
+            <TextBox Grid.Row="1" Margin="10,2,10,10" IsReadOnly="True" IsEnabled="False" TextWrapping="Wrap" TextAlignment="Center"
+                     Text="W tej zakładce możesz sprawdzić podstawowe informacje o swoim koncie takie jak: nazwa, liczba turniejów czy nawet data założenia konta i ostatnie logowanie. Przycisk 'Zmień hasło' pozwala na zmianę hasła po wcześniejszym podaniu odpowiedzi na twoje pytanie zabezpieczające."/>
         </Grid>
 
-        <!--Piąty opis-->
-        <Grid Background="#ffd0ae" Grid.Row="4" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="20">
+        <!--Piąty opis - Logowanie-->
+        <Grid Background="#ffd0ae" Grid.Row="4" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="15,5,15,5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="0.4*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Image Source="../Resources/user.png" Width="60"/>
-            <ListBox Grid.Row="1" Margin="10"/>
+            <StackPanel Grid.Row="0">
+                <TextBlock Margin="0,5,0,0" Text="O autorach" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"/>
+                <Image Source="../Resources/user.png" Width="30" Margin="5,5,5,0"/>
+            </StackPanel>
+
+            <TextBox Grid.Row="1" Margin="10,2,10,10" IsReadOnly="True" IsEnabled="False" TextWrapping="Wrap" TextAlignment="Center"
+                     Text="Autorami aplikacji są Kamil Giziński, Bartosz Rolnik i Dominik Sigulski - zmotywowani, rozwijający się studenci drugiego roku Informatyki na Politechnice Śląskiej. To jedna z pierwszych tak rozbudowanych aplikacji w ich wykonaniu, ale z pewnością ta trójka nie osiądzie na laurach!                                               Jeśli aplikacja Ci się podoba koniecznie daj nam o tym znać!"/>
         </Grid>
 
-        <!--Szósty opis-->
-        <Grid Background="#ffc3dc" Grid.Row="4" Grid.Column="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="20">
+        <!--Szósty opis - O autorach-->
+        <Grid Background="#ffc3dc" Grid.Row="4" Grid.Column="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="15,5,15,5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="0.4*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Image Source="../Resources/user.png" Width="60"/>
-            <ListBox Grid.Row="1" Margin="10"/>
+            <StackPanel Grid.Row="0">
+                <TextBlock Margin="0,5,0,0" Text="O aplikacji" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"/>
+                <Image Source="../Resources/user.png" Width="30" Margin="5,5,5,0"/>
+            </StackPanel>
+
+            <TextBox Grid.Row="1" Margin="10,2,10,10" IsReadOnly="True" IsEnabled="False" TextWrapping="Wrap" TextAlignment="Center"
+                     Text="Aplikacja to symulator Mistrzostw Świata w Katarze 2022. Możesz tworzyć swoje własne symulacje turnieju, analizować drużyny i tworzyć rozmaite scenariusze. Przebieg rozgrywki i jej zakończenie ogranicza tylko Twoja wyobraźnia!"/>
         </Grid>
     </Grid>
 </UserControl>
