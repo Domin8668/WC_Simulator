@@ -20,10 +20,16 @@ namespace WC_Simulator.View.Components
     /// </summary>
     public partial class MatchUserControl : UserControl
     {
+
+        #region Constructor
+
         public MatchUserControl()
         {
             InitializeComponent();
         }
+
+        #endregion
+
 
         #region Dependencies
 
@@ -73,7 +79,15 @@ namespace WC_Simulator.View.Components
                 new FrameworkPropertyMetadata(null)
             );
 
+        public static readonly DependencyProperty MatchCommandProperty = DependencyProperty.Register(
+                "MatchCommand",
+                typeof(ICommand),
+                typeof(MatchUserControl),
+                new FrameworkPropertyMetadata(null)
+            );
+
         #endregion
+
 
         #region Properties
 
@@ -113,6 +127,12 @@ namespace WC_Simulator.View.Components
         {
             get { return (string)GetValue(Team2ResultProperty); }
             set { SetValue(Team2ResultProperty, value); }
+        }
+
+        public ICommand MatchCommand
+        {
+            get { return (ICommand)GetValue(MatchCommandProperty); }
+            set { SetValue(MatchCommandProperty, value); }
         }
 
         #endregion

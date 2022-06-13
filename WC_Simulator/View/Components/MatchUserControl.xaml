@@ -65,10 +65,10 @@
         <TextBlock x:Name="Team2_sn" Grid.Row="1" Grid.Column="1" 
                    Style="{StaticResource shortname_tb}"
                    Text="{Binding Path=Team2ShortName, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
+                          UpdateSourceTrigger=PropertyChanged,
+                          RelativeSource={
+                          RelativeSource Mode=FindAncestor,
+                          AncestorType={x:Type UserControl}}}"/>
 
         <!--Results-->
         <TextBox x:Name="Team1_res" Grid.Row="0" Grid.Column="2" 
@@ -86,10 +86,20 @@
                         RelativeSource Mode=FindAncestor,
                         AncestorType={x:Type UserControl}}}"/>
 
-        <!--Button to MatchView PlaceHolder-->
+        <!--Button to MatchView-->
         <Button Grid.Column="0" Grid.Row="2" 
                 Grid.ColumnSpan="3" Margin="40, 10, 40, 10"
-                Content="Szczegóły Meczu" FontSize="20"/>
+                Content="Szczegóły Meczu" FontSize="20"
+                Command="{Binding Path=MatchCommand, Mode=TwoWay,
+                          UpdateSourceTrigger=PropertyChanged,
+                          RelativeSource={
+                          RelativeSource Mode=FindAncestor,
+                          AncestorType={x:Type UserControl}}}"
+                CommandParameter="{Binding Path=MatchCommandParameter, Mode=TwoWay,
+                                   UpdateSourceTrigger=PropertyChanged,
+                                   RelativeSource={
+                                   RelativeSource Mode=FindAncestor,
+                                   AncestorType={x:Type UserControl}}}"/>
 
     </Grid>
 </UserControl>

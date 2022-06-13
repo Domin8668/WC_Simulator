@@ -81,9 +81,9 @@
                 <DataTemplate DataType="{x:Type vms:KnockoutsViewModel}">
                     <vs:KnockoutsView/>
                 </DataTemplate>
-                <!--<DataTemplate DataType="{x:Type vms:HelpViewModel}">
+                <DataTemplate DataType="{x:Type vms:HelpViewModel}">
                     <vs:HelpView/>
-                </DataTemplate>-->
+                </DataTemplate>
                 <DataTemplate DataType="{x:Type vms:MessageViewModel}">
                     <vs:MessageView/>
                 </DataTemplate>

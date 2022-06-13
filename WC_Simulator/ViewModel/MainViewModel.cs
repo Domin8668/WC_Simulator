@@ -26,14 +26,6 @@ namespace WC_Simulator.ViewModel
             _model = new MainModel();
             _navigationStore = new NavigationStore();
 
-            //LoginViewModel login = new LoginViewModel(_model, _navigationStore);
-            //RegisterViewModel register = new RegisterViewModel(_model, _navigationStore);
-            //ResetPasswordViewModel resetPassword = new ResetPasswordViewModel(_model, _navigationStore);
-            //ProfileViewModel profile = new ProfileViewModel(_model, _navigationStore);
-            //TeamViewModel team = new TeamViewModel(_model);
-            //GroupsViewModel groups = new GroupsViewModel(_model, _navigationStore);
-            //CurrentViewModel = groups;
-
             _navigationStore.CurrentViewModel = new LoginViewModel(_model, _navigationStore); ;
             _navigationStore.MenuVisibility = Visibility.Hidden;
 
@@ -60,12 +52,6 @@ namespace WC_Simulator.ViewModel
 
 
         #region Properties
-
-        //public MainModel Model
-        //{
-        //    get { return _model; }
-        //    set { _model = value; }
-        //}
 
         public BaseViewModel CurrentViewModel
         {
@@ -154,29 +140,11 @@ namespace WC_Simulator.ViewModel
                 {
                     _knockouts = new RelayCommand(arg =>
                     {
-                        //_navigationStore.CurrentViewModel = new KnockoutsViewModel(_model, _navigationStore);
+                        _navigationStore.CurrentViewModel = new KnockoutsViewModel(_model, _navigationStore);
                     },
                     arg => true);
                 }
                 return _knockouts;
-            }
-        }
-
-        private ICommand _table = null;
-
-        public ICommand Table
-        {
-            get
-            {
-                if (_table == null)
-                {
-                    _table = new RelayCommand(arg =>
-                    {
-                        //_navigationStore.CurrentViewModel = new TableViewModel(_model, _navigationStore);
-                    },
-                    arg => true);
-                }
-                return _table;
             }
         }
 
