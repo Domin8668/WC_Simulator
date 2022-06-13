@@ -273,6 +273,112 @@
 
         </Grid>
 
+        <!--<ListView x:Name="GroupTable" Grid.Column="0" Grid.ColumnSpan="3" Margin="300,40,300,40" 
+                  ItemsSource="{Binding Path=Team, Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged,
+                        RelativeSource={
+                        RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type UserControl}}}">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Width="150" x:Name="player_in_column">
+                            <GridViewColumn.Header>
+                                <TextBlock Text="Kraj" Background="AliceBlue" FontSize="25" >
+                                </TextBlock>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>-->
+        <!--<GridView>
+                    <GridView.Columns>
+                        
+                        <GridViewColumn x:Name="PositionColumn" Width="50">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Position}" FontSize="14"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                            <GridViewColumn.Header>
+                                <TextBlock Text="Lp." Background="AliceBlue" Width="50"/>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+
+                        <GridViewColumn x:Name="ImageColumn" Width="50">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Image}" FontSize="14"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                            <GridViewColumn.Header>
+                                <TextBlock Text=" " Background="AliceBlue" Width="100"/>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+
+
+                        <GridViewColumn x:Name="CountryColumn" Width="300">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Country}" FontSize="14"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                            <GridViewColumn.Header>
+                                <TextBlock Text="Kraj" Background="AliceBlue" Width="50"/>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+
+                        <GridViewColumn x:Name="MatchesColumn" Width="50">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Matches}" FontSize="14"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                            <GridViewColumn.Header>
+                                <TextBlock Text="RM" Background="AliceBlue" Width="50"/>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+
+                        <GridViewColumn x:Name="GoalsForColumn" Width="50">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding GoalsFor}" FontSize="14"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                            <GridViewColumn.Header>
+                                <TextBlock Text="BZ" Background="AliceBlue" Width="50"/>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+
+                        <GridViewColumn x:Name="GoalsAgainstColumn" Width="50">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding GoalsAgainst}" FontSize="14"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                            <GridViewColumn.Header>
+                                <TextBlock Text="BS" Background="AliceBlue" Width="50"/>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+
+                        <GridViewColumn x:Name="PointsColumn" Width="50">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Points}" FontSize="14"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                            <GridViewColumn.Header>
+                                <TextBlock Text="Pkt" Background="AliceBlue" Width="50"/>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+
+                    </GridView.Columns>
+                </GridView>-->
+        <!--</ListView.View>
+        </ListView>-->
+
+
     </Grid>
     
 </UserControl>

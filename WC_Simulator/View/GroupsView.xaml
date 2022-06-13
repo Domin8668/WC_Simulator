@@ -54,7 +54,13 @@
                                      Team2BS="{Binding Team2bs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                      Team2PKT="{Binding Team2pkt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       />
-                
+
+                <!--do lv nie dziala-->
+                <!--<ucs:GroupUserControl x:Name="Team2" Grid.Column="2" Grid.Row="0"
+                        Grid.RowSpan="3"
+                        TeamItems="{Binding Team2, Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"/>-->
+
             </TabItem>
 
             
