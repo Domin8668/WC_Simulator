@@ -19,7 +19,7 @@ namespace WC_Simulator.ViewModel
         private MainModel _model;
         private NavigationStore _navigationStore;
 
-        private ObservableCollection<TeamInGroup> _teamsInGroup;
+        private ObservableCollection<TeamInGroup> _teamsA;
         private string _team2ShortName;
         #endregion
 
@@ -31,13 +31,12 @@ namespace WC_Simulator.ViewModel
             _model = model;
             _navigationStore = navigationStore;
 
-            _teamsInGroup = new ObservableCollection<TeamInGroup>()
+            _teamsA = new ObservableCollection<TeamInGroup>()
             {
                 new TeamInGroup(1, "../../Resources/Flags/poland.png", "Poland", 3, 3, 3, 3),
-                new TeamInGroup(1, "../../Resources/Flags/belgium.png", "Belgia", 3, 3, 3, 3),
-                new TeamInGroup(1, "../../Resources/Flags/netherlands.png", "Holandia", 3, 3, 3, 3),
-                new TeamInGroup(1, "../../Resources/Flags/wales.png", "Walia", 3, 3, 3, 3)
-
+                new TeamInGroup(2, "../../Resources/Flags/belgium.png", "Belgia", 3, 3, 3, 3),
+                new TeamInGroup(3, "../../Resources/Flags/netherlands.png", "Holandia", 3, 3, 3, 3),
+                new TeamInGroup(4, "../../Resources/Flags/wales.png", "Walia", 3, 3, 3, 3)
             };
             Team2ShortName = "ARG";
         }
@@ -49,9 +48,9 @@ namespace WC_Simulator.ViewModel
 
         public ObservableCollection<TeamInGroup> TeamsA
         {
-            get { return _teamsInGroup; }
+            get { return _teamsA; }
             set {
-                _teamsInGroup = value;
+                _teamsA = value;
                 OnPropertyChanged(nameof(TeamsA));
             }
         }

@@ -14,7 +14,6 @@ namespace WC_Simulator.ViewModel
 
         private MainModel _model;
         private NavigationStore _navigationStore;
-        private User _currentUser;
 
         #endregion
 
@@ -63,12 +62,6 @@ namespace WC_Simulator.ViewModel
         {
             get { return _navigationStore.MenuVisibility; }
             set { _navigationStore.MenuVisibility = value; }
-        }
-
-        public User CurrentUser
-        {
-            get { return _currentUser; }
-            set { _currentUser = value; }
         }
 
         #endregion
