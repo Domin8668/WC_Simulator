@@ -30,9 +30,9 @@ namespace WC_Simulator.Model
             //var groups = RepositoryGroups.LoadGroup();
             //foreach (var g in groups)
             //    AllGroups.Add(g);
-            //var matches = RepositoryMatches.LoadMatch();
-            //foreach (var m in matches)
-            //    AllMatches.Add(m);
+            var matches = RepositoryMatches.LoadMatch();
+            foreach (var m in matches)
+                AllMatches.Add(m);
             //var players = RepositoryPlayers.Load();
             //foreach (var p in players)
             //    AllPlayers.Add(p);
