@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
 using WC_Simulator.ViewModel.BaseClasses;
 
@@ -10,6 +11,7 @@ namespace WC_Simulator.ViewModel
         #region Variables
 
         private MainModel _model;
+        private NavigationStore _navigationStore; 
         private string _teamname;
         private string _coach;
         private string _image;
@@ -19,9 +21,10 @@ namespace WC_Simulator.ViewModel
 
         #region Constructor
 
-        public TeamViewModel(MainModel model)
+        public TeamViewModel(MainModel model, NavigationStore navigationStore)
         {
-            Model = model;
+            _model = model;
+            _navigationStore = navigationStore;
         }
 
         public TeamViewModel(string teamname, string coachname, ObservableCollection<string> team)

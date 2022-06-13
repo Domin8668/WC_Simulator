@@ -26,7 +26,7 @@ namespace WC_Simulator.ViewModel
 
         public ResetPasswordViewModel(MainModel model, NavigationStore navigationStore)
         {
-            Model = model;
+            _model = model;
             _navigationStore = navigationStore;
             _currentUser = new User();
         }
@@ -41,12 +41,6 @@ namespace WC_Simulator.ViewModel
             get { return _currentUser; }
             set { _currentUser = value; }
         }
-
-        //public MainModel Model
-        //{
-        //    get { return _model; }
-        //    set { _model = value; }
-        //}
 
         public string Password
         {

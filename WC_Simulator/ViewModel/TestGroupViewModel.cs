@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
 using WC_Simulator.ViewModel.BaseClasses;
 
@@ -11,10 +12,9 @@ namespace WC_Simulator.ViewModel
 {
     class TestGroupViewModel : BaseViewModel
     {
-        // niepotrzebne -> 
         #region Variables
-        // potem mozna te wszystkie rm, bz, bs, pkt wrzucic na jedna liste
         private MainModel _model;
+        private NavigationStore _navigationStore;
         private string _team2img;
         private string _team2fn; //full name
         private string _team2rm;
@@ -26,9 +26,10 @@ namespace WC_Simulator.ViewModel
 
         #region Constructor
 
-        public TestGroupViewModel(MainModel model)
+        public TestGroupViewModel(MainModel model, NavigationStore navigationStore)
         {
-            Model = model;
+            _model = model;
+            _navigationStore = navigationStore;
             _team2img = $"../../Resources/Flags/korea.png";
             _team2fn = "Korea";
             _team2rm = "7";
