@@ -20,6 +20,7 @@ namespace WC_Simulator.ViewModel
         private NavigationStore _navigationStore;
 
         private ObservableCollection<TeamInGroup> _teamsInGroup;
+        private string _team2ShortName;
         #endregion
 
 
@@ -34,6 +35,7 @@ namespace WC_Simulator.ViewModel
             {
                 new TeamInGroup(1, "../../Resources/Flags/poland.png", "Poland", 3, 3, 3, 3)
             };
+            Team2ShortName = "ARG";
         }
 
         #endregion
@@ -47,6 +49,16 @@ namespace WC_Simulator.ViewModel
             set {
                 _teamsInGroup = value;
                 OnPropertyChanged(nameof(TeamsA));
+            }
+        }
+
+
+        public string Team2ShortName
+        {
+            get { return _team2ShortName; }
+            set {
+                _team2ShortName = value;
+                OnPropertyChanged(nameof(Team2ShortName));
             }
         }
 

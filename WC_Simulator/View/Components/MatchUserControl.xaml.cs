@@ -129,11 +129,11 @@ namespace WC_Simulator.View.Components
             set { SetValue(Team2ResultProperty, value); }
         }
 
-        public ICommand MatchCommand
-        {
-            get { return (ICommand)GetValue(MatchCommandProperty); }
-            set { SetValue(MatchCommandProperty, value); }
-        }
+        //public ICommand MatchCommand
+        //{
+        //    get { return (ICommand)GetValue(MatchCommandProperty); }
+        //    set { SetValue(MatchCommandProperty, value); }
+        //}
 
         #endregion
     }

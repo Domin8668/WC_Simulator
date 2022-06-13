@@ -41,6 +41,13 @@ namespace WC_Simulator.View.Components
             new FrameworkPropertyMetadata(null)
         );
 
+        public static readonly DependencyProperty Team2SNProperty = DependencyProperty.Register(
+            "Team2SN",
+            typeof(string),
+            typeof(GroupUserControl),
+            new FrameworkPropertyMetadata(null)
+        );
+
         #endregion
 
 
@@ -51,6 +58,13 @@ namespace WC_Simulator.View.Components
             get { return (ObservableCollection<TeamInGroup>)GetValue(TeamsProperty); }
             set { SetValue(TeamsProperty, value); }
         }
+
+        public string Team2SN
+        {
+            get { return (string)GetValue(Team2SNProperty); }
+            set { SetValue(Team2SNProperty, value); }
+        }
+
 
         #endregion
     }
