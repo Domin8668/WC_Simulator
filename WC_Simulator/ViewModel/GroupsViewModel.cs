@@ -32,7 +32,11 @@ namespace WC_Simulator.ViewModel
 
             _teamsInGroup = new ObservableCollection<TeamInGroup>()
             {
-                new TeamInGroup(1, "../../Resources/Flags/poland.png", "Poland", 3, 3, 3, 3)
+                new TeamInGroup(1, "../../Resources/Flags/poland.png", "Poland", 3, 3, 3, 3),
+                new TeamInGroup(1, "../../Resources/Flags/belgium.png", "Belgia", 3, 3, 3, 3),
+                new TeamInGroup(1, "../../Resources/Flags/netherlands.png", "Holandia", 3, 3, 3, 3),
+                new TeamInGroup(1, "../../Resources/Flags/wales.png", "Walia", 3, 3, 3, 3)
+
             };
         }
 

@@ -76,7 +76,7 @@
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Kolejka 2" Style="{StaticResource desc}" FontSize="30"/>
         <TextBlock Grid.Row="1" Grid.Column="2" Text="Kolejka 3" Style="{StaticResource desc}" FontSize="30"/>
 
-        <ListView x:Name="GroupTable" Grid.Column="0" Grid.ColumnSpan="3" Margin="300,40,300,40" 
+        <ListView x:Name="GroupTable" Grid.Column="0" Grid.ColumnSpan="3" Margin="336,40,336,40" FontSize="16"
                   ItemsSource="{Binding Path=Teams, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
@@ -89,111 +89,59 @@
                             <Setter Property="IsHitTestVisible" Value="False"/>
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
-                    <GridViewColumn Header="Kraj" Width="120">
+                    <GridViewColumn Header="Lp." Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Country}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />
-                                    <Image Source="{Binding Image}"/>
-                                </StackPanel>
+                                <TextBlock Text="{Binding Position}" Margin="45,0,0,0"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Mecze" Width="120">
+                    <GridViewColumn Header="" Width="110" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Matches}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />
+                                <Image Source="{Binding Image}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Kraj" Width="205">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Country}" TextDecorations="Underline" Foreground="Blue" 
+                                           Cursor="Hand" Margin="45,0,0,0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Mecze" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Matches}" Margin="45,0,0,0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="BZ" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding GF}" Margin="45,0,0,0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="BS" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding GA}" Margin="45,0,0,0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Punkty" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Points}" Margin="45,0,0,0" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-        <!--<GridView>
-            <GridView.Columns>
-
-                <GridViewColumn x:Name="PositionColumn" Width="50">
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Position}" FontSize="14"/>
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                    <GridViewColumn.Header>
-                        <TextBlock Text="Lp." Background="AliceBlue" Width="50"/>
-                    </GridViewColumn.Header>
-                </GridViewColumn>
-
-                <GridViewColumn x:Name="ImageColumn" Width="50">
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Image}" FontSize="14"/>
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                    <GridViewColumn.Header>
-                        <TextBlock Text=" " Background="AliceBlue" Width="100"/>
-                    </GridViewColumn.Header>
-                </GridViewColumn>
-
-
-                <GridViewColumn x:Name="CountryColumn" Width="300">
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Country}" FontSize="14"/>
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                    <GridViewColumn.Header>
-                        <TextBlock Text="Kraj" Background="AliceBlue" Width="50"/>
-                    </GridViewColumn.Header>
-                </GridViewColumn>
-
-                <GridViewColumn x:Name="MatchesColumn" Width="50">
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Matches}" FontSize="14"/>
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                    <GridViewColumn.Header>
-                        <TextBlock Text="RM" Background="AliceBlue" Width="50"/>
-                    </GridViewColumn.Header>
-                </GridViewColumn>
-
-                <GridViewColumn x:Name="GoalsForColumn" Width="50">
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding GoalsFor}" FontSize="14"/>
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                    <GridViewColumn.Header>
-                        <TextBlock Text="BZ" Background="AliceBlue" Width="50"/>
-                    </GridViewColumn.Header>
-                </GridViewColumn>
-
-                <GridViewColumn x:Name="GoalsAgainstColumn" Width="50">
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding GoalsAgainst}" FontSize="14"/>
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                    <GridViewColumn.Header>
-                        <TextBlock Text="BS" Background="AliceBlue" Width="50"/>
-                    </GridViewColumn.Header>
-                </GridViewColumn>
-
-                <GridViewColumn x:Name="PointsColumn" Width="50">
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Points}" FontSize="14"/>
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                    <GridViewColumn.Header>
-                        <TextBlock Text="Pkt" Background="AliceBlue" Width="50"/>
-                    </GridViewColumn.Header>
-                </GridViewColumn>
-
-            </GridView.Columns>
-        </GridView>-->
-
-
     </Grid>
     
 </UserControl>
