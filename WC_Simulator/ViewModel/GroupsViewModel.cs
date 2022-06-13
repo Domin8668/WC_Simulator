@@ -7,6 +7,7 @@ using WC_Simulator.DAL.Entities;
 using WC_Simulator.ViewModel.BaseClasses;
 using WC_Simulator.Model;
 using WC_Simulator.Helpers.Stores;
+using System.Collections.ObjectModel;
 
 namespace WC_Simulator.ViewModel
 {
@@ -18,12 +19,7 @@ namespace WC_Simulator.ViewModel
         private MainModel _model;
         private NavigationStore _navigationStore;
 
-        private string _team2img;
-        private string _team2fn; //full name
-        private string _team2rm;
-        private string _team2bz;
-        private string _team2bs;
-        private string _team2pkt;
+        private ObservableCollection<TeamInGroup> _teamsInGroup;
         #endregion
 
 
@@ -33,65 +29,25 @@ namespace WC_Simulator.ViewModel
         {
             _model = model;
             _navigationStore = navigationStore;
-            //_team2img = $"../../Resources/Flags/korea.png";
-            //_team2fn = "Korea";
-            //_team2rm = "7";
-            //_team2bz = "6";
-            //_team2bs = "5";
-            //_team2pkt = "4";
+
+            _teamsInGroup = new ObservableCollection<TeamInGroup>()
+            {
+                new TeamInGroup(1, "../../Resources/Flags/poland.png", "Poland", 3, 3, 3, 3)
+            };
         }
 
-        public GroupsViewModel()
-        {
-            _team2img = $"../../Resources/Flags/korea.png";
-            _team2fn = "Korea";
-            _team2rm = "7";
-            _team2bz = "6";
-            _team2bs = "5";
-            _team2pkt = "4";
-        }
         #endregion
 
 
         #region Properties
 
-        public string Team2img
+        public ObservableCollection<TeamInGroup> TeamsA
         {
-            get { return _team2img; }
-            set { _team2img = value; }
-        }
-
-        public string Team2fn
-        {
-            get { return _team2fn; }
-            set
-            {
-                _team2fn = value;
-                OnPropertyChanged(nameof(Team2fn));
+            get { return _teamsInGroup; }
+            set {
+                _teamsInGroup = value;
+                OnPropertyChanged(nameof(TeamsA));
             }
-        }
-
-        public string Team2rm
-        {
-            get { return _team2rm; }
-            set { _team2rm = value; }
-        }
-
-        public string Team2bz
-        {
-            get { return _team2bz; }
-            set { _team2bz = value; }
-        }
-        public string Team2bs
-        {
-            get { return _team2bs; }
-            set { _team2bs = value; }
-        }
-
-        public string Team2pkt
-        {
-            get { return _team2pkt; }
-            set { _team2pkt = value; }
         }
 
         #endregion

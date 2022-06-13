@@ -63,320 +63,135 @@
         </Grid.RowDefinitions>
 
         <!--6 kontrolek meczów-->
-        <local:MatchUserControl Grid.Row="2" Grid.Column="0" Margin="30"></local:MatchUserControl>
-        <local:MatchUserControl Grid.Row="3" Grid.Column="0" Margin="30"></local:MatchUserControl>
-        <local:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="30"></local:MatchUserControl>
-        <local:MatchUserControl Grid.Row="3" Grid.Column="1" Margin="30"></local:MatchUserControl>
-        <local:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="30"></local:MatchUserControl>
-        <local:MatchUserControl Grid.Row="3" Grid.Column="2" Margin="30"></local:MatchUserControl>
+        <local:MatchUserControl Grid.Row="2" Grid.Column="0" Margin="30"
+                                MatchCommand="{Binding MatchCommand}"/>
+        <local:MatchUserControl Grid.Row="3" Grid.Column="0" Margin="30"/>
+        <local:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="30"/>
+        <local:MatchUserControl Grid.Row="3" Grid.Column="1" Margin="30"/>
+        <local:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="30"/>
+        <local:MatchUserControl Grid.Row="3" Grid.Column="2" Margin="30"/>
         
         <!--Labele kolejek-->
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Kolejka 1" Style="{StaticResource desc}" FontSize="30"/>
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Kolejka 2" Style="{StaticResource desc}" FontSize="30"/>
         <TextBlock Grid.Row="1" Grid.Column="2" Text="Kolejka 3" Style="{StaticResource desc}" FontSize="30"/>
 
-        
-        
-        
-        <!--Tabela grupy-->
-        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="30" Width="600" HorizontalAlignment="Center">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.2*"/>
-                <ColumnDefinition Width="0.3*"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="0.4*"/>
-                <ColumnDefinition Width="0.4*"/>
-                <ColumnDefinition Width="0.4*"/>
-                <ColumnDefinition Width="0.4*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="0.5*"/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            
-            <!--Nazwa tabeli-->
-            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" Content="Tabela grupy" Style="{StaticResource table_label}"/>
-            
-            <!--Opis kolumn-->
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="Lp." Style="{StaticResource desc}"/>
-            <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Klub" Style="{StaticResource desc}"/>
-            <TextBlock Grid.Row="1" Grid.Column="3" Text="RM" Style="{StaticResource desc}"/>
-            <TextBlock Grid.Row="1" Grid.Column="4" Text="BZ" Style="{StaticResource desc}"/>
-            <TextBlock Grid.Row="1" Grid.Column="5" Text="BS" Style="{StaticResource desc}"/>
-            <TextBlock Grid.Row="1" Grid.Column="6" Text="PKT" Style="{StaticResource desc}"/>
-            
-            <!--Numerki-->
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="1." Style="{StaticResource table_club}"/>
-            <TextBlock Grid.Row="3" Grid.Column="0" Text="2." Style="{StaticResource table_club}"/>
-            <TextBlock Grid.Row="4" Grid.Column="0" Text="3." Style="{StaticResource table_club}"/>
-            <TextBlock Grid.Row="5" Grid.Column="0" Text="4." Style="{StaticResource table_club}"/>
-            
-            <!--Flagi-->
-            <Image x:Name="Team1Img" Grid.Row="2" Grid.Column="1" 
-               Style="{StaticResource flag_img}" 
-               Source="../../Resources/Flags/poland.png"/>
-            <Image x:Name="Team2Img" Grid.Row="3" Grid.Column="1" 
-               Style="{StaticResource flag_img}"
-               Source="{Binding Path=Team2FlagPath, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-            <Image x:Name="Team3Img" Grid.Row="4" Grid.Column="1" 
-               Style="{StaticResource flag_img}"
-               Source="{Binding Path=Team3FlagPath, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-            <Image x:Name="Team4Img" Grid.Row="5" Grid.Column="1" 
-               Style="{StaticResource flag_img}"
-               Source="{Binding Path=Team4FlagPath, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-            
-            <!--Pełne nazwy krajów-->
-            <TextBlock x:Name="Team1fn" Grid.Row="2" Grid.Column="2" 
-                   Style="{StaticResource table_club}" 
-                   Text="Polska"/>
-            <TextBlock x:Name="Team2fn" Grid.Row="3" Grid.Column="2" 
-                   Style="{StaticResource table_club}"
-                   Text="{Binding Path=Team2Name, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-            <TextBlock x:Name="Team3fn" Grid.Row="4" Grid.Column="2" 
-                   Style="{StaticResource table_club}"
-                   Text="{Binding Path=Team3Name, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-            <TextBlock x:Name="Team4fn" Grid.Row="5" Grid.Column="2" 
-                   Style="{StaticResource table_club}"
-                   Text="{Binding Path=Team4Name, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-            
-            <!--Razem meczów-->
-            <TextBlock x:Name="Team1rm" Grid.Row="2" Grid.Column="3" 
-                   Style="{StaticResource stats}" 
-                   Text="3"/>
-            <TextBlock x:Name="Team2rm" Grid.Row="3" Grid.Column="3" 
-                   Style="{StaticResource stats}"
-                   Text="{Binding Path=Team2RM, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-            <TextBlock x:Name="Team3rm" Grid.Row="4" Grid.Column="3" 
-                   Style="{StaticResource stats}"
-                   Text="{Binding Path=Team3RM, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-            <TextBlock x:Name="Team4rm" Grid.Row="5" Grid.Column="3" 
-                   Style="{StaticResource stats}"
-                   Text="{Binding Path=Team4RM, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-
-            <!--Bramki zdobyte-->
-            <TextBlock x:Name="Team1bz" Grid.Row="2" Grid.Column="4" 
-                   Style="{StaticResource stats}" 
-                   Text="100"/>
-            <TextBlock x:Name="Team2bz" Grid.Row="3" Grid.Column="4" 
-                   Style="{StaticResource stats}"
-                   Text="{Binding Path=Team2BZ, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-            <TextBlock x:Name="Team3bz" Grid.Row="4" Grid.Column="4" 
-                   Style="{StaticResource stats}"
-                   Text="{Binding Path=Team3BZ, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-            <TextBlock x:Name="Team4bz" Grid.Row="5" Grid.Column="4" 
-                   Style="{StaticResource stats}"
-                   Text="{Binding Path=Team4BZ, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-
-            <!--Bramki stracone-->
-            <TextBlock x:Name="Team1bs" Grid.Row="2" Grid.Column="5" 
-                   Style="{StaticResource stats}" 
-                   Text="0"/>
-            <TextBlock x:Name="Team2bs" Grid.Row="3" Grid.Column="5" 
-                   Style="{StaticResource stats}"
-                   Text="{Binding Path=Team2BS, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-            <TextBlock x:Name="Team3bs" Grid.Row="4" Grid.Column="5" 
-                   Style="{StaticResource stats}"
-                   Text="{Binding Path=Team3BS, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-            <TextBlock x:Name="Team4bs" Grid.Row="5" Grid.Column="5" 
-                   Style="{StaticResource stats}"
-                   Text="{Binding Path=Team4BS, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-
-            <!--Punkty-->
-            <TextBlock x:Name="Team1pkt" Grid.Row="2" Grid.Column="6" 
-                   Style="{StaticResource stats}" 
-                   Text="9"/>
-            <TextBlock x:Name="Team2pkt" Grid.Row="3" Grid.Column="6" 
-                   Style="{StaticResource stats}"
-                   Text="{Binding Path=Team2PKT, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-            <TextBlock x:Name="Team3pkt" Grid.Row="4" Grid.Column="6" 
-                   Style="{StaticResource stats}"
-                   Text="{Binding Path=Team3PKT, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-            <TextBlock x:Name="Team4pkt" Grid.Row="5" Grid.Column="6" 
-                   Style="{StaticResource stats}"
-                   Text="{Binding Path=Team4PKT, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
-
-        </Grid>
-
-        <!--<ListView x:Name="GroupTable" Grid.Column="0" Grid.ColumnSpan="3" Margin="300,40,300,40" 
-                  ItemsSource="{Binding Path=Team, Mode=TwoWay,
+        <ListView x:Name="GroupTable" Grid.Column="0" Grid.ColumnSpan="3" Margin="300,40,300,40" 
+                  ItemsSource="{Binding Path=Teams, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,
                         AncestorType={x:Type UserControl}}}">
             <ListView.View>
                 <GridView>
-                    <GridView.Columns>
-                        <GridViewColumn Width="150" x:Name="player_in_column">
-                            <GridViewColumn.Header>
-                                <TextBlock Text="Kraj" Background="AliceBlue" FontSize="25" >
-                                </TextBlock>
-                            </GridViewColumn.Header>
-                        </GridViewColumn>
-                    </GridView.Columns>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="IsHitTestVisible" Value="False"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Header="Kraj" Width="120">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Country}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />
+                                    <Image Source="{Binding Image}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Mecze" Width="120">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Matches}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
-        </ListView>-->
+        </ListView>
         <!--<GridView>
-                    <GridView.Columns>
-                        
-                        <GridViewColumn x:Name="PositionColumn" Width="50">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Position}" FontSize="14"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                            <GridViewColumn.Header>
-                                <TextBlock Text="Lp." Background="AliceBlue" Width="50"/>
-                            </GridViewColumn.Header>
-                        </GridViewColumn>
+            <GridView.Columns>
 
-                        <GridViewColumn x:Name="ImageColumn" Width="50">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Image}" FontSize="14"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                            <GridViewColumn.Header>
-                                <TextBlock Text=" " Background="AliceBlue" Width="100"/>
-                            </GridViewColumn.Header>
-                        </GridViewColumn>
+                <GridViewColumn x:Name="PositionColumn" Width="50">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Position}" FontSize="14"/>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                    <GridViewColumn.Header>
+                        <TextBlock Text="Lp." Background="AliceBlue" Width="50"/>
+                    </GridViewColumn.Header>
+                </GridViewColumn>
+
+                <GridViewColumn x:Name="ImageColumn" Width="50">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Image}" FontSize="14"/>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                    <GridViewColumn.Header>
+                        <TextBlock Text=" " Background="AliceBlue" Width="100"/>
+                    </GridViewColumn.Header>
+                </GridViewColumn>
 
 
-                        <GridViewColumn x:Name="CountryColumn" Width="300">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Country}" FontSize="14"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                            <GridViewColumn.Header>
-                                <TextBlock Text="Kraj" Background="AliceBlue" Width="50"/>
-                            </GridViewColumn.Header>
-                        </GridViewColumn>
+                <GridViewColumn x:Name="CountryColumn" Width="300">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Country}" FontSize="14"/>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                    <GridViewColumn.Header>
+                        <TextBlock Text="Kraj" Background="AliceBlue" Width="50"/>
+                    </GridViewColumn.Header>
+                </GridViewColumn>
 
-                        <GridViewColumn x:Name="MatchesColumn" Width="50">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Matches}" FontSize="14"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                            <GridViewColumn.Header>
-                                <TextBlock Text="RM" Background="AliceBlue" Width="50"/>
-                            </GridViewColumn.Header>
-                        </GridViewColumn>
+                <GridViewColumn x:Name="MatchesColumn" Width="50">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Matches}" FontSize="14"/>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                    <GridViewColumn.Header>
+                        <TextBlock Text="RM" Background="AliceBlue" Width="50"/>
+                    </GridViewColumn.Header>
+                </GridViewColumn>
 
-                        <GridViewColumn x:Name="GoalsForColumn" Width="50">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding GoalsFor}" FontSize="14"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                            <GridViewColumn.Header>
-                                <TextBlock Text="BZ" Background="AliceBlue" Width="50"/>
-                            </GridViewColumn.Header>
-                        </GridViewColumn>
+                <GridViewColumn x:Name="GoalsForColumn" Width="50">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding GoalsFor}" FontSize="14"/>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                    <GridViewColumn.Header>
+                        <TextBlock Text="BZ" Background="AliceBlue" Width="50"/>
+                    </GridViewColumn.Header>
+                </GridViewColumn>
 
-                        <GridViewColumn x:Name="GoalsAgainstColumn" Width="50">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding GoalsAgainst}" FontSize="14"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                            <GridViewColumn.Header>
-                                <TextBlock Text="BS" Background="AliceBlue" Width="50"/>
-                            </GridViewColumn.Header>
-                        </GridViewColumn>
+                <GridViewColumn x:Name="GoalsAgainstColumn" Width="50">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding GoalsAgainst}" FontSize="14"/>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                    <GridViewColumn.Header>
+                        <TextBlock Text="BS" Background="AliceBlue" Width="50"/>
+                    </GridViewColumn.Header>
+                </GridViewColumn>
 
-                        <GridViewColumn x:Name="PointsColumn" Width="50">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Points}" FontSize="14"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                            <GridViewColumn.Header>
-                                <TextBlock Text="Pkt" Background="AliceBlue" Width="50"/>
-                            </GridViewColumn.Header>
-                        </GridViewColumn>
+                <GridViewColumn x:Name="PointsColumn" Width="50">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Points}" FontSize="14"/>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                    <GridViewColumn.Header>
+                        <TextBlock Text="Pkt" Background="AliceBlue" Width="50"/>
+                    </GridViewColumn.Header>
+                </GridViewColumn>
 
-                    </GridView.Columns>
-                </GridView>-->
-        <!--</ListView.View>
-        </ListView>-->
+            </GridView.Columns>
+        </GridView>-->
 
 
     </Grid>
