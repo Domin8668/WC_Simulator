@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace WC_Simulator.DAL.Repositories
 {
+    using MySql.Data.MySqlClient;
     using WC_Simulator.DAL;
+    using WC_Simulator.DAL.Entities;
     class RepositoryTeams
     {
         #region QUERIES
@@ -18,6 +20,21 @@ namespace WC_Simulator.DAL.Repositories
         #endregion
 
         #region CRUD
+
+        public static List<Team> LoadTeam()
+        {
+            List<Team> team = new List<Team>();
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand(ALL_TEAM, connection);
+                connection.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                    team.Add(new Team(reader));
+                connection.Close();
+            }
+            return team;
+        }
 
         #endregion
     }
