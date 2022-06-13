@@ -86,7 +86,11 @@ namespace WC_Simulator.ViewModel
         public string TimeInService
         {
             get { return _timeInService; }
-            set { _timeInService = value; }
+            set 
+            {
+                _timeInService = value; 
+                OnPropertyChanged(nameof(_timeInService));
+            }
         }
 
 

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WC_Simulator.View
 {
     /// <summary>
-    /// Interaction logic for TeamListView.xaml
+    /// Interaction logic for CreateTourneyView.xaml
     /// </summary>
-    public partial class TeamListView : UserControl
+    public partial class CreateTourneyView : UserControl
     {
-        public TeamListView()
+        public CreateTourneyView()
         {
             InitializeComponent();
         }

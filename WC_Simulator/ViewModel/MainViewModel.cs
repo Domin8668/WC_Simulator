@@ -104,7 +104,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _teams = new RelayCommand(arg =>
                     {
-                        //_navigationStore.CurrentViewModel = new TeamsViewModel(_model, _navigationStore);
+                        _navigationStore.CurrentViewModel = new TeamsViewModel(_model, _navigationStore);
                     },
                     arg => true);
                 }
@@ -176,7 +176,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _newTournament = new RelayCommand(arg =>
                     {
-                        //_navigationStore.CurrentViewModel = new NewTournamentViewModel(_model, _navigationStore);
+                        _navigationStore.CurrentViewModel = new CreateTourneyViewModel(_model, _navigationStore);
                     },
                     arg => true);
                 }
