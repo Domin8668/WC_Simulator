@@ -64,7 +64,8 @@
 
         <!--6 kontrolek meczów-->
         <local:MatchUserControl Grid.Row="2" Grid.Column="0" Margin="30"
-                                MatchCommand="{Binding MatchCommand}"/>
+                                Team2ShortName="{Binding Team2ShortName, Mode=TwoWay,
+                                UpdateSourceTrigger=PropertyChanged}"/>
         <local:MatchUserControl Grid.Row="3" Grid.Column="0" Margin="30"/>
         <local:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="30"/>
         <local:MatchUserControl Grid.Row="3" Grid.Column="1" Margin="30"/>
@@ -78,10 +79,10 @@
 
         <ListView x:Name="GroupTable" Grid.Column="0" Grid.ColumnSpan="3" Margin="336,40,336,40" FontSize="16"
                   ItemsSource="{Binding Path=Teams, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}">
+                  UpdateSourceTrigger=PropertyChanged,
+                  RelativeSource={
+                  RelativeSource Mode=FindAncestor,
+                  AncestorType={x:Type UserControl}}}">
             <ListView.View>
                 <GridView>
                     <GridView.ColumnHeaderContainerStyle>

@@ -94,12 +94,6 @@
                           UpdateSourceTrigger=PropertyChanged,
                           RelativeSource={
                           RelativeSource Mode=FindAncestor,
-                          AncestorType={x:Type UserControl}}}"
-                CommandParameter="{Binding Path=MatchCommandParameter, Mode=TwoWay,
-                                   UpdateSourceTrigger=PropertyChanged,
-                                   RelativeSource={
-                                   RelativeSource Mode=FindAncestor,
-                                   AncestorType={x:Type UserControl}}}"/>
-
+                          AncestorType={x:Type UserControl}}}"/>
     </Grid>
 </UserControl>

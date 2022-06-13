@@ -44,8 +44,8 @@
             </ItemsControl>
             <TextBlock DockPanel.Dock="Top"
                        Text="Turnieje:"/>
-            <ListBox DockPanel.Dock="Top"
-                     ItemsSource="{Binding Tournaments}"/>
+            <!--<ListBox DockPanel.Dock="Top"
+                     ItemsSource="{Binding Tournaments}"/>-->
         </DockPanel>
         <Button Grid.Column="1" Grid.Row="2"
                 Grid.ColumnSpan="1" Grid.RowSpan="1"
