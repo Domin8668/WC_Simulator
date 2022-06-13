@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace WC_Simulator.DAL.Entities
 {
-    class Tournament
+     public class Tournament
     {
 
         #region Properties

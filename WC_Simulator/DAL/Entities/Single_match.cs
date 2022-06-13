@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace WC_Simulator.DAL.Entities
 {
-    class Single_match
+    public class Single_match
     {
 
         #region Properties

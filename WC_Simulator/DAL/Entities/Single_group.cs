@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace WC_Simulator.DAL.Entities
 {
-    class Single_group
+    public class Single_group
     {
         #region Properties
         public uint? Id_group { get; set; }
