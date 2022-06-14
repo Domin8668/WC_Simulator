@@ -18,9 +18,16 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
     </UserControl.Resources>
+    <UserControl.Background>
+        <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0.1" Color="#c9f3c6" />
+                <GradientStop Offset="1" Color="#f5e382" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </UserControl.Background>
     
-    
-    <Grid Background="AliceBlue">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>

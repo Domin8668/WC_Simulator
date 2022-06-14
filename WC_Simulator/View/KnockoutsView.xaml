@@ -8,7 +8,14 @@
              xmlns:ucs="clr-namespace:WC_Simulator.View.Components"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1100">
-
+    <UserControl.Background>
+        <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0.1" Color="#c9f3c6" />
+                <GradientStop Offset="1" Color="#e8bef4" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </UserControl.Background>
     <UserControl.Resources>
         <Style TargetType="TextBlock" x:Key="labels">
             <Setter Property="Margin" Value="5"/>
@@ -17,11 +24,25 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
+
+        <Style TargetType="TabItem" x:Key="tabItemStyle">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Margin" Value="0 0 5 0"/>
+            <Setter Property="Width" Value="180"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Padding" Value="10 5"/>
+            <Setter Property="FontWeight" Value="500"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
     </UserControl.Resources>
 
-    <Grid Background="AliceBlue">
-        <TabControl>
-            <TabItem x:Name="finals1_8" Header="1/8 Finału">
+    <Grid Background="Transparent">
+        <TabControl Background="Transparent">
+            <TabItem x:Name="finals1_8" Header="1/8 Finału" Style="{DynamicResource tabItemStyle}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -38,20 +59,20 @@
                     </Grid.RowDefinitions>
                     
                     <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Mecze o wejście do ćwierćfinałów" Style="{StaticResource labels}"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="0" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="0" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="1" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="2" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="3" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="3" Margin="10"/>
+                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="0" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="0" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="1" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="2" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="3" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="3" Margin="10" FontSize="45"/>
 
                 </Grid>
             </TabItem>
 
 
-            <TabItem x:Name="quarter_finals" Header="Ćwierćfinały">
+            <TabItem x:Name="quarter_finals" Header="Ćwierćfinały" Style="{DynamicResource tabItemStyle}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="25*"/>
@@ -78,7 +99,7 @@
             </TabItem>
 
 
-            <TabItem x:Name="semi_finals" Header="Półfinały">
+            <TabItem x:Name="semi_finals" Header="Półfinały" Style="{DynamicResource tabItemStyle}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -101,7 +122,7 @@
             </TabItem>
 
 
-            <TabItem x:Name="final" Header="Finał">
+            <TabItem x:Name="final" Header="Finał" Style="{DynamicResource tabItemStyle}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>

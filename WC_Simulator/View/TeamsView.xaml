@@ -7,8 +7,15 @@
              xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-
-    <Grid Background="AliceBlue">
+    <UserControl.Background>
+        <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0.1" Color="#c9f3c6" />
+                <GradientStop Offset="1" Color="#a5d0f5" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </UserControl.Background>
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.05*"/>
             <ColumnDefinition Width="*"/>

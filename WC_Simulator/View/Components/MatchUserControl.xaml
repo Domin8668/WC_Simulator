@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WC_Simulator.View.Components"
              xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="180" d:DesignWidth="240">
+             d:DesignHeight="200" d:DesignWidth="240" MaxHeight="200" MaxWidth="240" BorderBrush="Black" BorderThickness="1">
 
     <UserControl.Resources>
         <Style TargetType="Image" x:Key="flag_img">
@@ -14,6 +14,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="MinWidth" Value="60"/>
+            <Setter Property="MaxWidth" Value="100"/>
         </Style>
         
         <Style TargetType="TextBlock" x:Key="shortname_tb">
@@ -26,11 +27,15 @@
         
         <Style TargetType="TextBox" x:Key="result_tb">
             <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontSize" Value="45"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="FontWeight" Value="DemiBold"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="MinWidth" Value="60"/>
+            <Setter Property="MinWidth" Value="55"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Hidden"/>
+            <Setter Property="MaxLength" Value="2"/>
         </Style>
     </UserControl.Resources>
 
@@ -72,12 +77,7 @@
 
         <!--Results-->
         <TextBox x:Name="Team1_res" Grid.Row="0" Grid.Column="2" 
-                 Style="{StaticResource result_tb}" 
-                 Text="{Binding Path=Team1Result, Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged,
-                        RelativeSource={
-                        RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}"/>
+                 Style="{StaticResource result_tb}"/>
         <TextBox x:Name="Team2_res" Grid.Row="1" Grid.Column="2"
                  Style="{StaticResource result_tb}"
                  Text="{Binding Path=Team2Result, Mode=TwoWay,
@@ -88,7 +88,7 @@
 
         <!--Button to MatchView-->
         <Button Grid.Column="0" Grid.Row="2" 
-                Grid.ColumnSpan="3" Margin="40, 10, 40, 10"
+                Grid.ColumnSpan="3" Margin="20, 7, 20, 7" Background="#7a8793" Foreground="White" BorderBrush="Black" 
                 Content="Szczegóły Meczu" FontSize="20"
                 Command="{Binding Path=MatchCommand, Mode=TwoWay,
                           UpdateSourceTrigger=PropertyChanged,

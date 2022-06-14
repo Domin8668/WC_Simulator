@@ -8,7 +8,15 @@
              xmlns:ucs="clr-namespace:WC_Simulator.View.Components"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
+    <UserControl.Background>
+        <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0.1" Color="#c9f3c6" />
+                <GradientStop Offset="1" Color="#fcffb4" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </UserControl.Background>
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -54,7 +62,7 @@
                    VerticalAlignment="Center"
                    Content="Symulator Mistrzostw Świata w Katarze 2022" FontSize="25" FontWeight="DemiBold"/>
             <!--Placeholder na logo:-->
-            <Image Grid.Row="2" Grid.Column="2" Grid.RowSpan="3" Grid.ColumnSpan="2" Source="../Resources/front_icon.png" Width="120"/>
+            <Image Grid.Row="2" Grid.Column="2" Grid.RowSpan="3" Grid.ColumnSpan="2" Source="../Resources/front_icon.png" Width="180"/>
 
             <!--<Label Grid.Column="2" Grid.ColumnSpan="2"
                    Grid.Row="5" Grid.RowSpan="2"

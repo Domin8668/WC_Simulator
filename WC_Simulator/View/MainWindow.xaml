@@ -28,6 +28,16 @@
         </Style>
     </Window.Resources>
 
+
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0.1" Color="#c9f3c6" />
+                <GradientStop Offset="1" Color="#fcffb4" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </Window.Background>
+
     <Grid DataContext="{StaticResource mainVM}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -48,27 +58,51 @@
                    Grid.ColumnSpan="1" Grid.RowSpan="1"
                    Visibility="{Binding MenuVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
             <ItemsControl DockPanel.Dock="Top">
-                <Button Content="Profil" Style="{StaticResource btn}"
+                
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../Resources/profile.png" Width="70"/>
+                    <Button Content="Profil" Style="{StaticResource btn}"
                         Command="{Binding Profile}"/>
-                <Button Content="Drużyny" Style="{StaticResource btn}"
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../Resources/team.png" Width="70"/>
+                    <Button Content="Drużyny" Style="{StaticResource btn}"
                         Command="{Binding Teams}"/>
-                <Button Content="Faza grupowa" Style="{StaticResource btn}"
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../Resources/group_phase.png" Width="70"/>
+                    <Button Content="Faza grupowa" Style="{StaticResource btn}"
                         Command="{Binding Groups}"/>
-                <Button Content="Faza pucharowa" Style="{StaticResource btn}"
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../Resources/world_cup.png" Width="70"/>
+                    <Button Content="Faza pucharowa" Style="{StaticResource btn}"
                         Command="{Binding Knockouts}"/>
-                <Button Content="Pomoc" Style="{StaticResource btn}"
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../Resources/settings.png" Width="70"/>
+                    <Button Content="Pomoc" Style="{StaticResource btn}"
                         Command="{Binding Help}"/>
+                </StackPanel>
+                
             </ItemsControl>
             <TextBlock DockPanel.Dock="Top"
                        Text="Turnieje:"/>
             <!--<ListBox DockPanel.Dock="Top"
                      ItemsSource="{Binding Tournaments}"/>-->
         </DockPanel>
-        <Button Grid.Column="1" Grid.Row="2"
-                Grid.ColumnSpan="1" Grid.RowSpan="1"
-                Content="Stwórz nowy turniej +"
+        <StackPanel Grid.Column="1" Grid.Row="2"
+                Grid.ColumnSpan="1" Grid.RowSpan="1" Orientation="Horizontal">
+            <Image Source="../Resources/create.png" Width="70"/>
+            <Button Content="Stwórz nowy turniej" Style="{StaticResource btn}" Width="390"
                 Command="{Binding NewTournament}"
                 Visibility="{Binding MenuVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        
         
         <ContentControl Grid.Column="2" Grid.Row="1"
                         Grid.ColumnSpan="4" Grid.RowSpan="5"
