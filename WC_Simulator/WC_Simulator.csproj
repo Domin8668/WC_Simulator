@@ -298,6 +298,12 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="baza_projekt.sql" />
+    <Resource Include="Resources\settings.png" />
+    <Resource Include="Resources\world_cup.png" />
+    <Resource Include="Resources\application.png" />
+    <Resource Include="Resources\author.png" />
+    <Resource Include="Resources\group_phase.png" />
+    <Resource Include="Resources\team.png" />
     <Resource Include="Resources\user.png" />
     <Resource Include="Resources\Flags\argentina.png" />
     <Resource Include="Resources\Flags\belgium.png" />

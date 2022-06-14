@@ -5,7 +5,43 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WC_Simulator.View"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="800">
+             d:DesignHeight="1000" d:DesignWidth="1400">
+
+    <UserControl.Resources>
+        <Style TargetType="Grid" x:Key="zakladka">
+            <Setter Property="Width" Value="380"/>
+            <Setter Property="Height" Value="430"/>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="opis">
+            <Setter Property="Margin" Value="10,2,10,10"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="IsEnabled" Value="False"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        
+        <Style TargetType="TextBlock" x:Key="label">
+            <Setter Property="Margin" Value="0,5,0,0"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Image" x:Key="icon">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="70"/>
+        </Style>
+
+        
+
+        
+    </UserControl.Resources>
+
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.05*"/>
@@ -29,7 +65,7 @@
         </Grid.RowDefinitions>
 
         <!--Pierwszy opis - Drużyny-->
-        <Grid Background="#cdc9ff" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="15,5,15,5">
+        <Grid Background="#cdc9ff" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -38,16 +74,16 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0">
-                <TextBlock Margin="0,5,0,0" Text="Drużyny" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"/>
-                <Image Source="../Resources/user.png" Width="30" Margin="5,5,5,0"/>
+                <TextBlock Text="Drużyny" Style="{StaticResource label}"/>
+                <Image Source="../Resources/team.png" Style="{StaticResource icon}"/>
             </StackPanel>
-            
-            <TextBox Grid.Row="1" Margin="10,2,10,10" IsReadOnly="True" IsEnabled="False" TextWrapping="Wrap" TextAlignment="Center"
-                     Text="Zakładka dryżyny daje Ci możliwość na bliższe zapoznanie się z konkurującymi dryżynami. Pozwala na podejrzenie szczegółowych informacji o swoich ulubionych drużynach, a te mogą okazać się kluczowe w wyłonieniu najlepszej drużyny Mistrzostw!"/>
+
+            <TextBox Grid.Row="1" Style="{StaticResource opis}"
+                     Text="Zakładka dryżyny daje Ci możliwość na bliższe zapoznanie się z konkurującymi dryżynami. &#xD;&#xA;&#xD;&#xA;Pozwala na podejrzenie szczegółowych informacji o swoich ulubionych drużynach, a te mogą okazać się kluczowe w wyłonieniu najlepszej drużyny Mistrzostw!"/>
         </Grid>
 
         <!--Drugi opis - Faza grupowa-->
-        <Grid Background="#a4ffc7" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="15,5,15,5">
+        <Grid Background="#a4ffc7" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -56,16 +92,16 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0">
-                <TextBlock Margin="0,5,0,0" Text="Faza grupowa" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"/>
-                <Image Source="../Resources/user.png" Width="30" Margin="5,5,5,0"/>
+                <TextBlock Text="Faza grupowa" Style="{StaticResource label}"/>
+                <Image Source="../Resources/group_phase.png" Style="{StaticResource icon}"/>
             </StackPanel>
 
-            <TextBox Grid.Row="1" Margin="10,2,10,10" IsReadOnly="True" IsEnabled="False" TextWrapping="Wrap" TextAlignment="Center"
-                     Text="W fazie grupowej każdego dnia będą rozgrywane cztery mecze, z godzinami rozpoczęcia: 11:00, 14:00, 17:00 i 20:00 w pierwszych dwóch rundach oraz 16:00 i 20:00 w ostatniej rundzie. To właśnie Ty wpisujesz wyniki kolejnych meczów, które rozstrzygną, kto trafi do fazy pucharowej."/>
+            <TextBox Grid.Row="1" Style="{StaticResource opis}"
+                     Text="W fazie grupowej każdego dnia będą rozgrywane cztery mecze, z godzinami rozpoczęcia: 11:00, 14:00, 17:00 i 20:00 w pierwszych dwóch rundach oraz 16:00 i 20:00 w ostatniej rundzie. &#xD;&#xA;&#xD;&#xA;To właśnie Ty wpisujesz wyniki kolejnych meczów, które rozstrzygną, kto trafi do fazy pucharowej."/>
         </Grid>
 
         <!--Trzeci opis - Faza pucharowa-->
-        <Grid Background="#caff94" Grid.Row="1" Grid.Column="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="15,5,15,5">
+        <Grid Background="#caff94" Grid.Row="1" Grid.Column="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -74,16 +110,16 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0">
-                <TextBlock Margin="0,5,0,0" Text="Faza pucharowa" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"/>
-                <Image Source="../Resources/user.png" Width="30" Margin="5,5,5,0"/>
+                <TextBlock Text="Faza pucharowa" Style="{StaticResource label}"/>
+                <Image Source="../Resources/world_cup.png" Style="{StaticResource icon}"/>
             </StackPanel>
 
-            <TextBox Grid.Row="1" Margin="10,2,10,10" IsReadOnly="True" IsEnabled="False" TextWrapping="Wrap" TextAlignment="Center"
-                     Text="Ta zakładka to kontynuacja rozgrywek z fazy grupowej. Każdy mecz rozstrzyga czy drużyna odpada z rozgrywek czy przechodzi do następnego etapu. Mamy następujące etapy: 1/8 Finału, Ćwierćfinały, Półfinały, Finał. To Ty decydujesz kto odpadnie, a kto będzie walczył o mistrzostwo świata!"/>
+            <TextBox Grid.Row="1" Style="{StaticResource opis}"
+                     Text="Ta zakładka to kontynuacja rozgrywek z fazy grupowej. Każdy mecz rozstrzyga czy drużyna odpada z rozgrywek czy przechodzi do następnego etapu. &#xD;&#xA;&#xD;&#xA;Mamy następujące etapy: 1/8 Finału, Ćwierćfinały, Półfinały, Finał. &#xD;&#xA;&#xD;&#xA;To Ty decydujesz kto odpadnie, a kto będzie walczył o mistrzostwo świata!"/>
         </Grid>
 
         <!--Czwarty opis - Ustawienia-->
-        <Grid Background="#fff7b1" Grid.Row="4" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="15,5,15,5">
+        <Grid Background="#fff7b1" Grid.Row="4" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -92,16 +128,16 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0">
-                <TextBlock Margin="0,5,0,0" Text="Ustawienia" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"/>
-                <Image Source="../Resources/user.png" Width="30" Margin="5,5,5,0"/>
+                <TextBlock Text="Ustawienia" Style="{StaticResource label}"/>
+                <Image Source="../Resources/settings.png" Style="{StaticResource icon}"/>
             </StackPanel>
 
-            <TextBox Grid.Row="1" Margin="10,2,10,10" IsReadOnly="True" IsEnabled="False" TextWrapping="Wrap" TextAlignment="Center"
-                     Text="W tej zakładce możesz sprawdzić podstawowe informacje o swoim koncie takie jak: nazwa, liczba turniejów czy nawet data założenia konta i ostatnie logowanie. Przycisk 'Zmień hasło' pozwala na zmianę hasła po wcześniejszym podaniu odpowiedzi na twoje pytanie zabezpieczające."/>
+            <TextBox Grid.Row="1" Style="{StaticResource opis}"
+                     Text="W tej zakładce możesz sprawdzić podstawowe informacje o swoim koncie takie jak: nazwa, liczba turniejów czy nawet data założenia konta i ostatnie logowanie. &#xD;&#xA;&#xD;&#xA;Przycisk 'Zmień hasło' pozwala na zmianę hasła po wcześniejszym podaniu odpowiedzi na twoje pytanie zabezpieczające."/>
         </Grid>
 
-        <!--Piąty opis - Logowanie-->
-        <Grid Background="#ffd0ae" Grid.Row="4" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="15,5,15,5">
+        <!--Piąty opis - O autorach-->
+        <Grid Background="#ffd0ae" Grid.Row="4" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -110,16 +146,16 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0">
-                <TextBlock Margin="0,5,0,0" Text="O autorach" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"/>
-                <Image Source="../Resources/user.png" Width="30" Margin="5,5,5,0"/>
+                <TextBlock Text="O autorach" Style="{StaticResource label}"/>
+                <Image Source="../Resources/author.png" Style="{StaticResource icon}"/>
             </StackPanel>
 
-            <TextBox Grid.Row="1" Margin="10,2,10,10" IsReadOnly="True" IsEnabled="False" TextWrapping="Wrap" TextAlignment="Center"
-                     Text="Autorami aplikacji są Kamil Giziński, Bartosz Rolnik i Dominik Sigulski - zmotywowani, rozwijający się studenci drugiego roku Informatyki na Politechnice Śląskiej. To jedna z pierwszych tak rozbudowanych aplikacji w ich wykonaniu, ale z pewnością ta trójka nie osiądzie na laurach!                                               Jeśli aplikacja Ci się podoba koniecznie daj nam o tym znać!"/>
+            <TextBox Grid.Row="1" Style="{StaticResource opis}"
+                     Text="Autorami aplikacji są Kamil Giziński, Bartosz Rolnik i Dominik Sigulski - zmotywowani, rozwijający się studenci drugiego roku Informatyki na Politechnice Śląskiej. &#xD;&#xA;To jedna z pierwszych tak rozbudowanych aplikacji w ich wykonaniu, ale z pewnością ta trójka nie osiądzie na laurach!                                               Jeśli aplikacja Ci się podoba koniecznie daj nam o tym znać!"/>
         </Grid>
 
-        <!--Szósty opis - O autorach-->
-        <Grid Background="#ffc3dc" Grid.Row="4" Grid.Column="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="15,5,15,5">
+        <!--Szósty opis - O aplikacji-->
+        <Grid Background="#ffc3dc" Grid.Row="4" Grid.Column="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -128,12 +164,12 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0">
-                <TextBlock Margin="0,5,0,0" Text="O aplikacji" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="DemiBold"/>
-                <Image Source="../Resources/user.png" Width="30" Margin="5,5,5,0"/>
+                <TextBlock Text="O aplikacji" Style="{StaticResource label}"/>
+                <Image Source="../Resources/application.png" Style="{StaticResource icon}"/>
             </StackPanel>
 
-            <TextBox Grid.Row="1" Margin="10,2,10,10" IsReadOnly="True" IsEnabled="False" TextWrapping="Wrap" TextAlignment="Center"
-                     Text="Aplikacja to symulator Mistrzostw Świata w Katarze 2022. Możesz tworzyć swoje własne symulacje turnieju, analizować drużyny i tworzyć rozmaite scenariusze. Przebieg rozgrywki i jej zakończenie ogranicza tylko Twoja wyobraźnia!"/>
+            <TextBox Grid.Row="1" Style="{StaticResource opis}"
+                     Text="Aplikacja to symulator Mistrzostw Świata w Katarze 2022. &#xD;&#xA;&#xD;&#xA;Możesz tworzyć swoje własne symulacje turnieju, analizować drużyny i tworzyć rozmaite scenariusze. &#xD;&#xA;&#xD;&#xA;Przebieg rozgrywki i jej zakończenie ogranicza tylko Twoja wyobraźnia!"/>
         </Grid>
     </Grid>
 </UserControl>
