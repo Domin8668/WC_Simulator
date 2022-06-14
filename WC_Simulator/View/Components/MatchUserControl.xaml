@@ -6,8 +6,15 @@
              xmlns:local="clr-namespace:WC_Simulator.View.Components"
              xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="240" MaxHeight="200" MaxWidth="240" BorderBrush="Black" BorderThickness="1">
-
+             d:DesignHeight="200" d:DesignWidth="240" MaxHeight="200" MaxWidth="240">
+    <!--<UserControl.Background>
+        <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0.1" Color="#ffa8a7" />
+                <GradientStop Offset="1" Color="#ffcbaa" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </UserControl.Background>-->
     <UserControl.Resources>
         <Style TargetType="Image" x:Key="flag_img">
             <Setter Property="Margin" Value="5"/>
@@ -39,7 +46,7 @@
         </Style>
     </UserControl.Resources>
 
-    <Grid Background="White">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.7*"/>
             <ColumnDefinition Width="1*"/>
