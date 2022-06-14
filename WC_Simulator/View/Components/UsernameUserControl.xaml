@@ -12,6 +12,16 @@
                             Mode=TwoWay,
                             UpdateSourceTrigger=PropertyChanged,
                             RelativeSource={RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"  
+                 FontSize="{Binding Path=TBFontSize,
+                            Mode=TwoWay,
+                            UpdateSourceTrigger=PropertyChanged,
+                            RelativeSource={RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                 MaxLength="{Binding Path=TBMaxLength,
+                            Mode=TwoWay,
+                            UpdateSourceTrigger=PropertyChanged,
+                            RelativeSource={RelativeSource Mode=FindAncestor,
                                             AncestorType={x:Type UserControl}}}"/>
     </Grid>
 </UserControl>

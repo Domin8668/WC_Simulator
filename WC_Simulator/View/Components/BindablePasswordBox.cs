@@ -11,6 +11,8 @@ namespace WC_Simulator.View.Components
         {
             Child = new PasswordBox();
             ((PasswordBox)Child).PasswordChanged += BindablePasswordBox_PasswordChanged;
+            ((PasswordBox)Child).FontSize = 16;
+            ((PasswordBox)Child).MaxLength = 16;
         }
 
         #endregion
@@ -26,10 +28,10 @@ namespace WC_Simulator.View.Components
         #region Properties
 
         public string Password
-                {
-                    get { return (string)GetValue(PasswordProperty); }
-                    set { SetValue(PasswordProperty, value); }
-                }
+        {
+            get { return (string)GetValue(PasswordProperty); }
+            set { SetValue(PasswordProperty, value); }
+        }
 
         #endregion
 

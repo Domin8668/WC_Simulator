@@ -39,6 +39,20 @@ namespace WC_Simulator.View.Components
             new FrameworkPropertyMetadata(null)
             );
 
+        public static readonly DependencyProperty TBMaxLengthProperty = DependencyProperty.Register(
+            "TBMaxLength",
+            typeof(int),
+            typeof(UsernameUserControl),
+            new FrameworkPropertyMetadata(null)
+            );
+
+        public static readonly DependencyProperty TBFontSizeProperty = DependencyProperty.Register(
+            "TBFontSize",
+            typeof(double),
+            typeof(UsernameUserControl),
+            new FrameworkPropertyMetadata(null)
+            );
+
         #endregion
 
 
@@ -48,6 +62,18 @@ namespace WC_Simulator.View.Components
         {
             get { return (string)GetValue(TBTextProperty); }
             set { SetValue(TBTextProperty, value); }
+        }
+
+        public int TBMaxLength
+        {
+            get { return (int)GetValue(TBMaxLengthProperty); }
+            set { SetValue(TBMaxLengthProperty, value); }
+        }
+
+        public double TBFontSize
+        {
+            get { return (double)GetValue(TBFontSizeProperty); }
+            set { SetValue(TBFontSizeProperty, value); }
         }
 
         #endregion

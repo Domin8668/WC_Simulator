@@ -19,6 +19,10 @@ namespace WC_Simulator.Model
 
 
         #region Variables
+
+        private UserShort _currentUserShort;
+        private User _currentUser;
+
         #endregion
 
 
@@ -28,18 +32,25 @@ namespace WC_Simulator.Model
         {
             //pobranie danych z bazy do kolekcji za pomocą Repozytoriów
 
-            var groups = RepositoryGroups.LoadGroup();
-            foreach (var g in groups)
-                AllGroups.Add(g);
-            var matches = RepositoryMatches.LoadMatch();
-            foreach (var m in matches)
-                AllMatches.Add(m);
-            var players = RepositoryPlayers.LoadPlayer();
-            foreach (var p in players)
-                AllPlayers.Add(p);
-            var teams = RepositoryTeams.LoadTeam();
-            foreach (var t in teams)
-                AllTeams.Add(t);
+            var usersshort = RepositoryUserShorts.LoadUserShort();
+            foreach (var us in usersshort)
+            {
+                AllUsersShort.Add(us);
+                Console.WriteLine(us);
+            }  
+
+            //var groups = RepositoryGroups.LoadGroup();
+            //foreach (var g in groups)
+            //    AllGroups.Add(g);
+            //var matches = RepositoryMatches.LoadMatch();
+            //foreach (var m in matches)
+            //    AllMatches.Add(m);
+            //var players = RepositoryPlayers.LoadPlayer();
+            //foreach (var p in players)
+            //    AllPlayers.Add(p);
+            //var teams = RepositoryTeams.LoadTeam();
+            //foreach (var t in teams)
+            //    AllTeams.Add(t);
         }
 
         #endregion
@@ -48,6 +59,8 @@ namespace WC_Simulator.Model
         #region Properties
 
         // kolekcje obiektów poszczególnych zbiorów encji
+
+        public ObservableCollection<UserShort> AllUsersShort { get; set; } = new ObservableCollection<UserShort>();
 
         public ObservableCollection<Player> AllPlayers { get; set; } = new ObservableCollection<Player>();
 
@@ -64,9 +77,22 @@ namespace WC_Simulator.Model
 
         #region Methods
 
+        internal bool CheckLogin()
+        {
+
+            return false;
+        }
+        
         internal void ValidateUser()
         {
             throw new NotImplementedException();
+        }
+
+        internal void LoadUserTournaments()
+        {
+            var tournament = RepositoryTournaments.LoadTournament();
+            foreach (var t in tournament)
+                AllTournaments.Add(t);
         }
 
         #endregion
