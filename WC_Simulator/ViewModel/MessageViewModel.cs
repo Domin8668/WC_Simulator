@@ -15,6 +15,7 @@ namespace WC_Simulator.ViewModel
 
         private MainModel _model;
         private NavigationStore _navigationStore;
+        private string _message;
         public BaseViewModel _targetViewModel;
         public Visibility _targetVisibility;
 
@@ -23,13 +24,14 @@ namespace WC_Simulator.ViewModel
 
         #region Constructor
 
-        public MessageViewModel(MainModel model, NavigationStore navigationStore, BaseViewModel targetViewModel, Visibility targetVisibility)
+        public MessageViewModel(MainModel model, NavigationStore navigationStore, BaseViewModel targetViewModel, Visibility targetVisibility, string message)
         {
             _model = model;
             _navigationStore = navigationStore;
             _navigationStore.MenuVisibility = Visibility.Hidden;
             _targetVisibility = targetVisibility;
             _targetViewModel = targetViewModel;
+            _message = message;
         }
 
         #endregion
@@ -37,11 +39,11 @@ namespace WC_Simulator.ViewModel
 
         #region Properties
 
-        //public MainModel Model
-        //{
-        //    get { return _model; }
-        //    set { _model = value; }
-        //}
+        public string Message
+        {
+            get { return _message; }
+            set { _message = value; }
+        }
 
         #endregion
 

@@ -134,7 +134,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _register = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new RegisterViewModel(Model, _navigationStore);
+                        _navigationStore.CurrentViewModel = new LoginViewModel(Model, _navigationStore);
                     },
                     arg => true);
                 }

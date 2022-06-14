@@ -81,7 +81,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _resetPassword = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new ResetPasswordViewModel(Model, _navigationStore);
+                        _navigationStore.CurrentViewModel = new LoginViewModel(Model, _navigationStore);
                     },
                     arg => true);
                 }
@@ -89,21 +89,21 @@ namespace WC_Simulator.ViewModel
             }
         }
 
-        private ICommand _register = null;
+        private ICommand _return = null;
 
-        public ICommand Register
+        public ICommand Return
         {
             get
             {
-                if (_register == null)
+                if (_return == null)
                 {
-                    _register = new RelayCommand(arg =>
+                    _return = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new RegisterViewModel(Model, _navigationStore);
+                        _navigationStore.CurrentViewModel = new LoginViewModel(Model, _navigationStore);
                     },
                     arg => true);
                 }
-                return _register;
+                return _return;
             }
         }
 

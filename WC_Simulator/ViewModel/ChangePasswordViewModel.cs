@@ -100,7 +100,7 @@ namespace WC_Simulator.ViewModel
                     _changePassword = new RelayCommand(arg =>
                     {
                         ProfileViewModel profile = new ProfileViewModel(_model, _navigationStore);
-                        _navigationStore.CurrentViewModel = new MessageViewModel(_model, _navigationStore, profile, Visibility.Visible);
+                        _navigationStore.CurrentViewModel = new MessageViewModel(_model, _navigationStore, profile, Visibility.Visible, "Hasło zostało zmienione.");
                     },
                     arg => true);
                 }
