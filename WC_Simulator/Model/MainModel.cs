@@ -46,7 +46,7 @@ namespace WC_Simulator.Model
             foreach (var g in groups)
             {
                 AllGroups.Add(g);
-                Console.WriteLine(g.Id_group);
+                Console.WriteLine(g.Letter);
             }
             //var matches = RepositoryMatches.LoadMatch();
             //foreach (var m in matches)

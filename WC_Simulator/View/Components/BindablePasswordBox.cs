@@ -56,9 +56,9 @@ namespace WC_Simulator.View.Components
         }
 
         void BindablePasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
-                {
-                    Password = ((PasswordBox)Child).Password;
-                }
+        {
+            Password = ((PasswordBox)Child).Password;
+        }
 
         #endregion
 
