@@ -15,13 +15,13 @@
     <Window.Resources>
         <Style TargetType="Button" x:Key="btn">
             <Setter Property="Margin" Value="10"/>
-            <Setter Property="Width" Value="330"/>
-            <Setter Property="Height" Value="100"/>
-            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="Width" Value="280"/>
+            <Setter Property="Height" Value="70"/>
+            <Setter Property="FontSize" Value="33"/>
             <Setter Property="FontWeight" Value="DemiBold"/>
             <Setter Property="Background" Value="#2bc342"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="BorderBrush" Value="#197226"/>
+            <Setter Property="BorderBrush" Value="#fff5cb"/>
             <Setter Property="BorderThickness" Value="3"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -60,33 +60,78 @@
             <ItemsControl DockPanel.Dock="Top">
                 
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="../Resources/profile.png" Width="70"/>
+                    <Image Source="../Resources/profile.png" Width="50"/>
                     <Button Content="Profil" Style="{StaticResource btn}"
-                        Command="{Binding Profile}"/>
+                        Command="{Binding Profile}">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Offset="0.1" Color="#f9c800" />
+                                    <GradientStop Offset="1" Color="#ff6354" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="../Resources/team.png" Width="70"/>
+                    <Image Source="../Resources/team.png" Width="50"/>
                     <Button Content="Drużyny" Style="{StaticResource btn}"
-                        Command="{Binding Teams}"/>
+                        Command="{Binding Teams}">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Offset="0.1" Color="#f9c800" />
+                                    <GradientStop Offset="1" Color="#ff6354" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="../Resources/group_phase.png" Width="70"/>
+                    <Image Source="../Resources/group_phase.png" Width="50"/>
                     <Button Content="Faza grupowa" Style="{StaticResource btn}"
-                        Command="{Binding Groups}"/>
+                        Command="{Binding Groups}">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Offset="0.1" Color="#f9c800" />
+                                    <GradientStop Offset="1" Color="#ff6354" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="../Resources/world_cup.png" Width="70"/>
+                    <Image Source="../Resources/world_cup.png" Width="50"/>
                     <Button Content="Faza pucharowa" Style="{StaticResource btn}"
-                        Command="{Binding Knockouts}"/>
+                        Command="{Binding Knockouts}">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Offset="0.1" Color="#f9c800" />
+                                    <GradientStop Offset="1" Color="#ff6354" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="../Resources/settings.png" Width="70"/>
+                    <Image Source="../Resources/settings.png" Width="50"/>
                     <Button Content="Pomoc" Style="{StaticResource btn}"
-                        Command="{Binding Help}"/>
+                        Command="{Binding Help}">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Offset="0.1" Color="#f9c800" />
+                                    <GradientStop Offset="1" Color="#ff6354" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
                 </StackPanel>
                 
             </ItemsControl>
@@ -97,10 +142,19 @@
         </DockPanel>
         <StackPanel Grid.Column="1" Grid.Row="2"
                 Grid.ColumnSpan="1" Grid.RowSpan="1" Orientation="Horizontal">
-            <Image Source="../Resources/create.png" Width="70"/>
-            <Button Content="Stwórz nowy turniej" Style="{StaticResource btn}" Width="390"
+            <Image Source="../Resources/create.png" Width="50"/>
+            <Button Content="Stwórz nowy turniej" Style="{StaticResource btn}" FontSize="25" Width="270"
                 Command="{Binding NewTournament}"
-                Visibility="{Binding MenuVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                Visibility="{Binding MenuVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0.1" Color="#f9c800" />
+                            <GradientStop Offset="1" Color="#ff6354" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
         </StackPanel>
         
         
