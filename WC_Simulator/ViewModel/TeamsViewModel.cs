@@ -14,17 +14,14 @@ namespace WC_Simulator.ViewModel
     class TeamsViewModel : BaseViewModel
     {
 
-        private MainModel _model;
-        private NavigationStore _navigationStore;
-
         private ObservableCollection<TeamInTeams> _teams;
         private TeamInTeams _selectedTeam;
 
 
         public TeamsViewModel(MainModel model, NavigationStore navigationStore)
         {
-            _model = model;
-            _navigationStore = navigationStore;
+            Model = model;
+            NavigationStore = navigationStore;
 
             _teams = new ObservableCollection<TeamInTeams>()
             {

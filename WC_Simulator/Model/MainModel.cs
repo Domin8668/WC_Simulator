@@ -30,18 +30,24 @@ namespace WC_Simulator.Model
 
         public MainModel()
         {
+            _currentUserShort = new UserShort();
+            _currentUser = new User();
+
             //pobranie danych z bazy do kolekcji za pomocą Repozytoriów
 
             var usersshort = RepositoryUserShorts.LoadUserShort();
             foreach (var us in usersshort)
             {
                 AllUsersShort.Add(us);
-                Console.WriteLine(us);
-            }  
+                Console.WriteLine(us.Login);
+            }
 
-            //var groups = RepositoryGroups.LoadGroup();
-            //foreach (var g in groups)
-            //    AllGroups.Add(g);
+            var groups = RepositoryGroups.LoadGroup();
+            foreach (var g in groups)
+            {
+                AllGroups.Add(g);
+                Console.WriteLine(g.Id_group);
+            }
             //var matches = RepositoryMatches.LoadMatch();
             //foreach (var m in matches)
             //    AllMatches.Add(m);
@@ -71,6 +77,18 @@ namespace WC_Simulator.Model
         public ObservableCollection<Team> AllTeams { get; set; } = new ObservableCollection<Team>();
 
         public ObservableCollection<Tournament> AllTournaments { get; set; } = new ObservableCollection<Tournament>();
+
+        public User CurrentUser
+        {
+            get { return _currentUser; }
+            set { _currentUser = value; }
+        }
+
+        public UserShort CurrentUserShort
+        {
+            get { return _currentUserShort; }
+            set { _currentUserShort = value; }
+        }
 
         #endregion
 

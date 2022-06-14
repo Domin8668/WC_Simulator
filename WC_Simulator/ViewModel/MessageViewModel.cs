@@ -13,8 +13,6 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
-        private MainModel _model;
-        private NavigationStore _navigationStore;
         private string _message;
         public BaseViewModel _targetViewModel;
         public Visibility _targetVisibility;
@@ -26,9 +24,9 @@ namespace WC_Simulator.ViewModel
 
         public MessageViewModel(MainModel model, NavigationStore navigationStore, BaseViewModel targetViewModel, Visibility targetVisibility, string message)
         {
-            _model = model;
-            _navigationStore = navigationStore;
-            _navigationStore.MenuVisibility = Visibility.Hidden;
+            Model = model;
+            NavigationStore = navigationStore;
+            NavigationStore.MenuVisibility = Visibility.Hidden;
             _targetVisibility = targetVisibility;
             _targetViewModel = targetViewModel;
             _message = message;
@@ -61,9 +59,9 @@ namespace WC_Simulator.ViewModel
                     _changeView = new RelayCommand(arg =>
                     {
                         _targetViewModel.Model = Model;
-                        _targetViewModel.NavigationStore = _navigationStore;
-                        _navigationStore.MenuVisibility = _targetVisibility;
-                        _navigationStore.CurrentViewModel = _targetViewModel;
+                        _targetViewModel.NavigationStore = NavigationStore;
+                        NavigationStore.MenuVisibility = _targetVisibility;
+                        NavigationStore.CurrentViewModel = _targetViewModel;
                     },
                     arg => true);
                 }

@@ -12,12 +12,9 @@ namespace WC_Simulator.ViewModel
     internal class LoginViewModel : BaseViewModel
     {
         #region Variables
-
-        private User _currentUser;
-        private MainModel _model;
-        private NavigationStore _navigationStore;
-        private string _password;
+ 
         private string _username;
+        private string _password;
 
         #endregion
 
@@ -26,51 +23,14 @@ namespace WC_Simulator.ViewModel
 
         public LoginViewModel(MainModel model, NavigationStore navigationStore)
         {
-            _model = model;
-            _navigationStore = navigationStore;
-            _currentUser = new User();
-            //_test = "5";
+            Model = model;
+            NavigationStore = navigationStore;
         }
 
         #endregion
 
 
         #region Properties
-        // do testow GroupUserControlki
-        //public string Test
-        //{
-        //    get { return _test; }
-        //    set { _test = value;
-        //        OnPropertyChanged(nameof(Test));
-        //    }
-        //}
-        //private string _test;
-
-
-
-        public User CurrentUser
-        {
-            get { return _currentUser; }
-            set { _currentUser = value; }
-        }
-
-        //public MainModel Model
-        //{
-        //    get { return _model; }
-        //    set { _model = value; }
-        //}
-
-        public string Password
-        {
-            get { return _password; }
-            set
-            {
-                _password = value;
-                // test wpisywania hasła:
-                Console.WriteLine($"Password: {Password}");
-                OnPropertyChanged(nameof(Password));
-            }
-        }
 
         public string Username
         {
@@ -81,6 +41,18 @@ namespace WC_Simulator.ViewModel
                 // test wpisywania loginu:
                 Console.WriteLine($"Nazwa: {Username}");
                 OnPropertyChanged(nameof(Username));
+            }
+        }
+
+        public string Password
+        {
+            get { return _password; }
+            set
+            {
+                _password = value;
+                // test wpisywania hasła:
+                Console.WriteLine($"Password: {Password}");
+                OnPropertyChanged(nameof(Password));
             }
         }
 
@@ -101,14 +73,14 @@ namespace WC_Simulator.ViewModel
                         try
                         {
                             SHA256Hashing SHA256 = new SHA256Hashing();
-                            CurrentUser.Login = Username;
-                            CurrentUser.Password = SHA256.GetHash(Username, Password);
+                            Model.CurrentUser.Login = Username;
+                            Model.CurrentUser.Password = SHA256.GetHash(Username, Password);
                             Username = string.Empty;
                             Password = string.Empty;
                             //Model.ValidateUser(CurrentUser);
                             //MessageBox.Show($"Username: {Username}\nPassword: {new NetworkCredential(string.Empty, Password).Password}");
-                            _navigationStore.MenuVisibility = Visibility.Visible;
-                            _navigationStore.CurrentViewModel = new ProfileViewModel(Model, _navigationStore);
+                            NavigationStore.MenuVisibility = Visibility.Visible;
+                            NavigationStore.CurrentViewModel = new ProfileViewModel(Model, NavigationStore);
                         }
                         catch(Exception)
                         { 
@@ -131,7 +103,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _resetPassword = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new ResetPasswordViewModel(Model, _navigationStore);
+                        NavigationStore.CurrentViewModel = new ResetPasswordViewModel(Model, NavigationStore);
                     },
                     arg => true);
                 }
@@ -149,7 +121,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _register = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new RegisterViewModel(Model, _navigationStore);
+                        NavigationStore.CurrentViewModel = new RegisterViewModel(Model, NavigationStore);
                     },
                     arg => true);
                 }

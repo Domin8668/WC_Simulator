@@ -13,8 +13,6 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
-        private MainModel _model;
-        private NavigationStore _navigationStore;
         private string _username;
         private string _oldPassword;
         private string _newPassword;
@@ -27,8 +25,8 @@ namespace WC_Simulator.ViewModel
 
         public ChangePasswordViewModel(MainModel model, NavigationStore navigationStore)
         {
-            _model = model;
-            _navigationStore = navigationStore;
+            Model = model;
+            NavigationStore = navigationStore;
         }
 
         #endregion
@@ -99,8 +97,8 @@ namespace WC_Simulator.ViewModel
                 {
                     _changePassword = new RelayCommand(arg =>
                     {
-                        ProfileViewModel profile = new ProfileViewModel(_model, _navigationStore);
-                        _navigationStore.CurrentViewModel = new MessageViewModel(_model, _navigationStore, profile, Visibility.Visible, "Hasło zostało zmienione.");
+                        ProfileViewModel profile = new ProfileViewModel(Model, NavigationStore);
+                        NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, profile, Visibility.Visible, "Hasło zostało zmienione.");
                     },
                     arg => true);
                 }
@@ -118,7 +116,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _return = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new ProfileViewModel(Model, _navigationStore);
+                        NavigationStore.CurrentViewModel = new ProfileViewModel(Model, NavigationStore);
                     },  
                     arg => true);
                 }

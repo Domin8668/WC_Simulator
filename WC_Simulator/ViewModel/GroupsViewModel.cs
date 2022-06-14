@@ -16,9 +16,6 @@ namespace WC_Simulator.ViewModel
 
         #region Variables
 
-        private MainModel _model;
-        private NavigationStore _navigationStore;
-
         private ObservableCollection<TeamInGroup> _teamsA;
         private string _team2ShortName;
         #endregion
@@ -28,8 +25,8 @@ namespace WC_Simulator.ViewModel
 
         public GroupsViewModel(MainModel model, NavigationStore navigationStore)
         {
-            _model = model;
-            _navigationStore = navigationStore;
+            Model = model;
+            NavigationStore = navigationStore;
 
             _teamsA = new ObservableCollection<TeamInGroup>()
             {

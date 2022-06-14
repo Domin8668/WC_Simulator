@@ -12,8 +12,8 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
-        private MainModel _model;
-        private NavigationStore _navigationStore;
+        //private MainModel Model;
+        //private NavigationStore NavigationStore;
 
         #endregion
 
@@ -22,14 +22,14 @@ namespace WC_Simulator.ViewModel
 
         public MainViewModel()
         {
-            _model = new MainModel();
-            _navigationStore = new NavigationStore();
+            Model = new MainModel();
+            NavigationStore = new NavigationStore();
 
-            _navigationStore.CurrentViewModel = new LoginViewModel(_model, _navigationStore); ;
-            _navigationStore.MenuVisibility = Visibility.Hidden;
+            NavigationStore.CurrentViewModel = new LoginViewModel(Model, NavigationStore); ;
+            NavigationStore.MenuVisibility = Visibility.Hidden;
 
-            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
-            _navigationStore.MenuVisibilityChanged += OnMenuVisibilityChanged;
+            NavigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+            NavigationStore.MenuVisibilityChanged += OnMenuVisibilityChanged;
         }
 
         #endregion
@@ -54,14 +54,14 @@ namespace WC_Simulator.ViewModel
 
         public BaseViewModel CurrentViewModel
         {
-            get { return _navigationStore.CurrentViewModel; }
-            set { _navigationStore.CurrentViewModel = value; }
+            get { return NavigationStore.CurrentViewModel; }
+            set { NavigationStore.CurrentViewModel = value; }
         }
 
         public Visibility MenuVisibility
         {
-            get { return _navigationStore.MenuVisibility; }
-            set { _navigationStore.MenuVisibility = value; }
+            get { return NavigationStore.MenuVisibility; }
+            set { NavigationStore.MenuVisibility = value; }
         }
 
         #endregion
@@ -79,7 +79,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _profile = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new ProfileViewModel(_model, _navigationStore);
+                        NavigationStore.CurrentViewModel = new ProfileViewModel(Model, NavigationStore);
                     },
                     arg => true);
                 }
@@ -97,7 +97,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _teams = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new TeamsViewModel(_model, _navigationStore);
+                        NavigationStore.CurrentViewModel = new TeamsViewModel(Model, NavigationStore);
                     },
                     arg => true);
                 }
@@ -115,7 +115,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _groups = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new GroupsViewModel(_model, _navigationStore);
+                        NavigationStore.CurrentViewModel = new GroupsViewModel(Model, NavigationStore);
                     },
                     arg => true);
                 }
@@ -133,7 +133,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _knockouts = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new KnockoutsViewModel(_model, _navigationStore);
+                        NavigationStore.CurrentViewModel = new KnockoutsViewModel(Model, NavigationStore);
                     },
                     arg => true);
                 }
@@ -151,7 +151,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _help = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new HelpViewModel(_model, _navigationStore);
+                        NavigationStore.CurrentViewModel = new HelpViewModel(Model, NavigationStore);
                     },
                     arg => true);
                 }
@@ -169,7 +169,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _newTournament = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new CreateTourneyViewModel(_model, _navigationStore);
+                        NavigationStore.CurrentViewModel = new CreateTourneyViewModel(Model, NavigationStore);
                     },
                     arg => true);
                 }

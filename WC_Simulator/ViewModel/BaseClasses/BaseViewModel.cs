@@ -6,20 +6,16 @@ namespace WC_Simulator.ViewModel.BaseClasses
 {
     class BaseViewModel : INotifyPropertyChanged
     {
+        #region Variables
+
         private MainModel _model;
         private NavigationStore _navigationStore;
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnPropertyChanged(params string[] namesOfProperties)
-        {
-            if (PropertyChanged != null)
-            {
-                foreach (var prop in namesOfProperties)
-                {
-                    PropertyChanged(this, new PropertyChangedEventArgs(prop));
-                }
-            }
-        }
+        #endregion
+
+
+        #region Properties
 
         public MainModel Model
         {
@@ -32,5 +28,23 @@ namespace WC_Simulator.ViewModel.BaseClasses
             get { return _navigationStore; }
             set { _navigationStore = value; }
         }
+
+        #endregion
+
+
+        #region Methods
+
+        protected void OnPropertyChanged(params string[] namesOfProperties)
+        {
+            if (PropertyChanged != null)
+            {
+                foreach (var prop in namesOfProperties)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs(prop));
+                }
+            }
+        }
+
+        #endregion
     }
 }

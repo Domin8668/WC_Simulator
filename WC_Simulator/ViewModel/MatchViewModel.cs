@@ -9,8 +9,6 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
-        private MainModel _model;
-
         private string _coach1;
         private string _image1;
         private string _teamName1;
@@ -29,8 +27,6 @@ namespace WC_Simulator.ViewModel
         private string _teamGoals1;
         private string _teamGoals2;
 
-        private NavigationStore _navigationStore;
-
         #endregion
 
 
@@ -38,8 +34,8 @@ namespace WC_Simulator.ViewModel
 
         public MatchViewModel(MainModel model, NavigationStore navigationStore)
         {
-            _model = model;
-            _navigationStore = navigationStore;
+            Model = model;
+            NavigationStore = navigationStore;
 
             Location = "Moje serce";
             Referee = "Kruża";
@@ -72,8 +68,8 @@ namespace WC_Simulator.ViewModel
         #region Properties
         //public MainModel Model
         //{
-        //    get { return _model; }
-        //    set { _model = value; }
+        //    get { return Model; }
+        //    set { Model = value; }
         //}
 
         public string Coach1
@@ -163,8 +159,8 @@ namespace WC_Simulator.ViewModel
 
         //public NavigationStore NavigationStore
         //{
-        //    get { return _navigationStore; }
-        //    set { _navigationStore = value; }
+        //    get { return NavigationStore; }
+        //    set { NavigationStore = value; }
         //}
 
 

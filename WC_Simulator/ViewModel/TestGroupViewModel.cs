@@ -13,8 +13,7 @@ namespace WC_Simulator.ViewModel
     class TestGroupViewModel : BaseViewModel
     {
         #region Variables
-        private MainModel _model;
-        private NavigationStore _navigationStore;
+
         private string _team2img;
         private string _team2fn; //full name
         private string _team2rm;
@@ -28,8 +27,8 @@ namespace WC_Simulator.ViewModel
 
         public TestGroupViewModel(MainModel model, NavigationStore navigationStore)
         {
-            _model = model;
-            _navigationStore = navigationStore;
+            Model = model;
+            NavigationStore = navigationStore;
             _team2img = $"../../Resources/Flags/korea.png";
             _team2fn = "Korea";
             _team2rm = "7";
@@ -63,8 +62,8 @@ namespace WC_Simulator.ViewModel
 
         //public MainModel Model
         //{
-        //    get { return _model; }
-        //    set { _model = value; }
+        //    get { return Model; }
+        //    set { Model = value; }
         //}
 
         public string Team2img

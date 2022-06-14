@@ -14,8 +14,7 @@ namespace WC_Simulator.ViewModel
         // faza pucharowa mundialu
         #region Variables
 
-        private MainModel _model;
-        private NavigationStore _navigationStore;
+
 
         #endregion
 
@@ -24,8 +23,8 @@ namespace WC_Simulator.ViewModel
 
         public KnockoutsViewModel(MainModel model, NavigationStore navigationStore)
         {
-            _model = model;
-            _navigationStore = navigationStore;
+            Model = model;
+            NavigationStore = navigationStore;
         }
 
         #endregion

@@ -13,8 +13,8 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
-        private MainModel _model;
-        private NavigationStore _navigationStore;
+
+
         #endregion
 
 
@@ -22,8 +22,8 @@ namespace WC_Simulator.ViewModel
 
         public CreateTourneyViewModel(MainModel model, NavigationStore navigationStore)
         {
-            _model = model;
-            _navigationStore = navigationStore;
+            Model = model;
+            NavigationStore = navigationStore;
         }
 
         #endregion

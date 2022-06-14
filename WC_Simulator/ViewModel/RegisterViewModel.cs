@@ -15,8 +15,6 @@ namespace WC_Simulator.ViewModel
         #region Variables
 
         private User _currentUser;
-        private MainModel _model;
-        private NavigationStore _navigationStore;
         private string _username;
         private string _password;
         private string _repeatPassword;
@@ -31,8 +29,8 @@ namespace WC_Simulator.ViewModel
 
         public RegisterViewModel(MainModel model, NavigationStore navigationStore)
         {
-            _model = model;
-            _navigationStore = navigationStore;
+            Model = model;
+            NavigationStore = navigationStore;
             _currentUser = new User();
         }
 
@@ -116,7 +114,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _return = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new LoginViewModel(Model, _navigationStore);
+                        NavigationStore.CurrentViewModel = new LoginViewModel(Model, NavigationStore);
                     },
                     arg => true);
                 }
@@ -134,7 +132,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _register = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new LoginViewModel(Model, _navigationStore);
+                        NavigationStore.CurrentViewModel = new LoginViewModel(Model, NavigationStore);
                     },
                     arg => true);
                 }

@@ -14,8 +14,7 @@ namespace WC_Simulator.ViewModel
 
         #region Variables
 
-        private MainModel _model;
-        private NavigationStore _navigationStore;
+
 
         #endregion
 
@@ -24,8 +23,8 @@ namespace WC_Simulator.ViewModel
 
         public HelpViewModel(MainModel model, NavigationStore navigationStore)
         {
-            _model = model;
-            _navigationStore = navigationStore;
+            Model = model;
+            NavigationStore = navigationStore;
         }
 
         public HelpViewModel()
@@ -39,14 +38,14 @@ namespace WC_Simulator.ViewModel
 
         //public MainModel Model
         //{
-        //    get { return _model; }
-        //    set { _model = value; }
+        //    get { return Model; }
+        //    set { Model = value; }
         //}
 
         //public NavigationStore NavigationStore
         //{
-        //    get { return _navigationStore; }
-        //    set { _navigationStore = value; }
+        //    get { return NavigationStore; }
+        //    set { NavigationStore = value; }
         //}
 
         #endregion

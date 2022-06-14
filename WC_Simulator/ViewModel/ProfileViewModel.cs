@@ -11,8 +11,6 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
-        private MainModel _model;
-        private NavigationStore _navigationStore;
         private User _user_account;
         private string _login;
         private int _tourneyCount;
@@ -27,8 +25,8 @@ namespace WC_Simulator.ViewModel
 
         public ProfileViewModel(MainModel model, NavigationStore navigationStore)
         {
-            _model = model;
-            _navigationStore = navigationStore;
+            Model = model;
+            NavigationStore = navigationStore;
             Login = "Jason Bourne";
             TourneyCount = 3;
 
@@ -108,8 +106,8 @@ namespace WC_Simulator.ViewModel
 
         //public NavigationStore NavigationStore
         //{
-        //    get { return _navigationStore; }
-        //    set { _navigationStore = value; }
+        //    get { return NavigationStore; }
+        //    set { NavigationStore = value; }
         //}
 
         #endregion
@@ -163,7 +161,7 @@ namespace WC_Simulator.ViewModel
                 {
                     _changePassword = new RelayCommand(arg =>
                     {
-                        _navigationStore.CurrentViewModel = new ChangePasswordViewModel(_model, _navigationStore);
+                        NavigationStore.CurrentViewModel = new ChangePasswordViewModel(Model, NavigationStore);
                     },
                     arg => true);
                 }
