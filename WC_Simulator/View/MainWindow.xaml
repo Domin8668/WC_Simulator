@@ -11,6 +11,23 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" Title="Symulator Mistrzostw Świata"
         ResizeMode="NoResize" WindowState="Maximized">
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="btn">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Width" Value="330"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Background" Value="#2bc342"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#197226"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
     <Grid DataContext="{StaticResource mainVM}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -31,15 +48,15 @@
                    Grid.ColumnSpan="1" Grid.RowSpan="1"
                    Visibility="{Binding MenuVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
             <ItemsControl DockPanel.Dock="Top">
-                <Button Content="Profil"
+                <Button Content="Profil" Style="{StaticResource btn}"
                         Command="{Binding Profile}"/>
-                <Button Content="Drużyny"
+                <Button Content="Drużyny" Style="{StaticResource btn}"
                         Command="{Binding Teams}"/>
-                <Button Content="Faza grupowa"
+                <Button Content="Faza grupowa" Style="{StaticResource btn}"
                         Command="{Binding Groups}"/>
-                <Button Content="Faza pucharowa"
+                <Button Content="Faza pucharowa" Style="{StaticResource btn}"
                         Command="{Binding Knockouts}"/>
-                <Button Content="Pomoc"
+                <Button Content="Pomoc" Style="{StaticResource btn}"
                         Command="{Binding Help}"/>
             </ItemsControl>
             <TextBlock DockPanel.Dock="Top"

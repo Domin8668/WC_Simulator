@@ -36,10 +36,6 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Width" Value="70"/>
         </Style>
-
-        
-
-        
     </UserControl.Resources>
 
     <Grid Background="AliceBlue">

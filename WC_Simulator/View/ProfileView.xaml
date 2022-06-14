@@ -40,7 +40,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="../Resources/user.png" Width="150"/>
+        <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="../Resources/profile.png" Width="150"/>
         <!--Panel użytkownika-->
         <Grid x:Name="ProfilePanel" Grid.Row="2" Grid.Column="1" Grid.RowSpan="6" Grid.ColumnSpan="4" Margin="20" VerticalAlignment="Stretch"
                         Width="Auto" Height="Auto">
