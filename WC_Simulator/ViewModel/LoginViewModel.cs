@@ -16,7 +16,10 @@ namespace WC_Simulator.ViewModel
  
         private string _username;
         private string _password;
-        private Brush _passwordBorder;
+        private double _usernameBorder;
+        private double _passwordBorder;
+        private string _usernameWarning;
+        private string _passwordWarning;
 
         #endregion
 
@@ -27,6 +30,8 @@ namespace WC_Simulator.ViewModel
         {
             Model = model;
             NavigationStore = navigationStore;
+            _usernameBorder = 0;
+            _passwordBorder = 0;
         }
 
         #endregion
@@ -40,8 +45,16 @@ namespace WC_Simulator.ViewModel
             set
             {
                 _username = value;
-                // test wpisywania loginu:
-                Console.WriteLine($"Nazwa: {Username}");
+                if (_username == string.Empty)
+                {
+                    UsernameBorder = 0.7;
+                    UsernameWarning = "Login nie może być pusty";
+                }
+                else
+                {
+                    UsernameBorder = 0;
+                    UsernameWarning = string.Empty;
+                }
                 OnPropertyChanged(nameof(Username));
             }
         }
@@ -52,20 +65,57 @@ namespace WC_Simulator.ViewModel
             set
             {
                 _password = value;
-                // test wpisywania hasła:
-                Console.WriteLine($"Password: {Password}");
+                if (_password == string.Empty)
+                {
+                    PasswordBorder = 0.7;
+                    PasswordWarning = "Hasło nie może być puste";
+                } 
+                else
+                {
+                    PasswordBorder = 0;
+                    PasswordWarning = string.Empty;
+                } 
                 OnPropertyChanged(nameof(Password));
             }
         }
 
+        public double UsernameBorder
+        {
+            get { return _usernameBorder; }
+            set
+            {
+                _usernameBorder = value;
+                OnPropertyChanged(nameof(UsernameBorder));
+            }
+        }
 
-        public Brush PasswordBorder
+        public double PasswordBorder
         {
             get { return _passwordBorder; }
             set
             {
                 _passwordBorder = value;
                 OnPropertyChanged(nameof(PasswordBorder));
+            }
+        }
+
+        public string UsernameWarning
+        {
+            get { return _usernameWarning; }
+            set
+            {
+                _usernameWarning = value;
+                OnPropertyChanged(nameof(UsernameWarning));
+            }
+        }
+
+        public string PasswordWarning
+        {
+            get { return _passwordWarning; }
+            set
+            {
+                _passwordWarning = value;
+                OnPropertyChanged(nameof(PasswordWarning));
             }
         }
 
@@ -89,30 +139,14 @@ namespace WC_Simulator.ViewModel
                         Username = string.Empty;
                         Password = string.Empty;
 
-                        if (Model.CurrentUserShort.Login == null)
+                        if (Model.CurrentUserShort.Login == null || Model.CurrentUserShort.Login.Length < 5 || Model.CurrentUserShort.Login.Contains("`"))
                         {
-                            PasswordBorder = Brushes.Red;
+                            UsernameBorder = 0.7;
                             Model.CurrentUserShort.Login = string.Empty;
                             Model.CurrentUserShort.Password = new byte[32];
                             return;
                         }
 
-
-                        if (Model.CurrentUserShort.Login.Length < 5)
-                        {
-                            PasswordBorder = Brushes.Red;
-                            Model.CurrentUserShort.Login = string.Empty;
-                            Model.CurrentUserShort.Password = new byte[32];
-                            return;
-                        }
-                            
-                        // znaki zabronione w bazie:
-                        else if (Model.CurrentUserShort.Login.Contains("`"))
-                        {
-                            Model.CurrentUserShort.Login = string.Empty;
-                            Model.CurrentUserShort.Password = new byte[32];
-                            return;
-                        }
                         //Model.ValidateUser(CurrentUser);
                         NavigationStore.MenuVisibility = Visibility.Visible;
                             NavigationStore.CurrentViewModel = new ProfileViewModel(Model, NavigationStore);
