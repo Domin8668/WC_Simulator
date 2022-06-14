@@ -141,11 +141,11 @@
                      ItemsSource="{Binding Tournaments}"/>-->
         </DockPanel>
         <StackPanel Grid.Column="1" Grid.Row="2"
-                Grid.ColumnSpan="1" Grid.RowSpan="1" Orientation="Horizontal">
+                    Grid.ColumnSpan="1" Grid.RowSpan="1" Orientation="Horizontal"
+                    Visibility="{Binding MenuVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
             <Image Source="../Resources/create.png" Width="50"/>
             <Button Content="Stwórz nowy turniej" Style="{StaticResource btn}" FontSize="25" Width="270"
-                Command="{Binding NewTournament}"
-                Visibility="{Binding MenuVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                Command="{Binding NewTournament}">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
                         <LinearGradientBrush.GradientStops>
