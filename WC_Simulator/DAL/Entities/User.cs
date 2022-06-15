@@ -35,7 +35,7 @@ namespace WC_Simulator.DAL.Entities
             Creation_date = new DateTime();
             Last_log_date = new DateTime();
             Security_question = string.Empty;
-            Security_answer = new byte[0];
+            Security_answer = new byte[32];
         }
 
         public User(MySqlDataReader reader)
@@ -46,7 +46,7 @@ namespace WC_Simulator.DAL.Entities
             Creation_date = DateTime.Parse(reader["creation_date"].ToString());
             Last_log_date = DateTime.Parse(reader["last_log_date"].ToString());
             Security_question = reader["login"].ToString();
-            Security_answer = (byte[])reader["password"];
+            Security_answer = (byte[])reader["security_answer"];
         }
 
         public User(uint id_user, string login, byte[] password, DateTime creation_date, DateTime last_log_date, string security_question, byte[] security_answer)

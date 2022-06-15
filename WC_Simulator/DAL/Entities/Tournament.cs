@@ -45,7 +45,7 @@ namespace WC_Simulator.DAL.Entities
 
         public override string ToString()
         {
-            return $"Turniej nr {Id_tournament}";
+            return T_name;
         }
 
         public string ToInsert()

@@ -24,7 +24,7 @@ namespace WC_Simulator.DAL.Entities
         public UserShort()
         {
             Login = string.Empty;
-            Password = new byte[0];
+            Password = new byte[32];
         }
 
         public UserShort(MySqlDataReader reader)

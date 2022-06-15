@@ -177,15 +177,15 @@ DROP TABLE IF EXISTS `user`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
   `id_user` int unsigned NOT NULL AUTO_INCREMENT,
-  `login` varchar(25) NOT NULL,
+  `login` varchar(16) NOT NULL,
   `password` binary(32) NOT NULL,
   `creation_date` datetime NOT NULL,
   `last_log_date` datetime NOT NULL,
-  `security_question` varchar(25) NOT NULL,
+  `security_question` varchar(64) NOT NULL,
   `security_answer` binary(32) NOT NULL,
   PRIMARY KEY (`id_user`),
   UNIQUE KEY `login` (`login`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -194,7 +194,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin',_binary 'PJš÷U‚H¼‹)¿4â£³4\èG\Æ|w>œö>ÜŽ','2022-06-15 19:27:17','2022-06-15 19:27:17','pyt|odp',_binary 'i–t9\çK\\\ß\Æ\ÞGWºæˆ¸\àt\×0#ff‰¯ƒ4Ùž,');
+INSERT INTO `user` VALUES (1,'admin',_binary 'PJš÷U‚H¼‹)¿4â£³4\èG\Æ|w>œö>ÜŽ','2022-06-15 21:47:06','2022-06-15 21:47:06','Jak ma na nazwisko najlepszy napastnik?',_binary 'Š»¦\ÄZ>iW\nŸ\ê¢½ \Z\0\Ì-V\ÉQ\Ö^\ÄFüçŸ®');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -207,4 +207,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-15 19:33:07
+-- Dump completed on 2022-06-15 21:56:01
