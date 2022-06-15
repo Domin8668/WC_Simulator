@@ -34,7 +34,7 @@ namespace WC_Simulator.Model
             _currentUserShort = new UserShort();
             _currentUser = new User();
 
-            //pobranie danych z bazy do kolekcji za pomocą Repozytoriów
+            // pobranie danych z bazy do kolekcji za pomocą Repozytoriów
 
             var usersshort = RepositoryUserShorts.LoadUserShort();
             foreach (var us in usersshort)
@@ -150,6 +150,7 @@ namespace WC_Simulator.Model
                 if (t.Id_user == CurrentUser.Id_user)
                 {
                     AllTournaments.Add(t);
+                    //Console.WriteLine(t);
                 }
             }    
         }
