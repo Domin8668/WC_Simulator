@@ -5,6 +5,7 @@ using WC_Simulator.DAL.Entities;
 using System;
 using WC_Simulator.Helpers.Stores;
 using System.Windows.Input;
+using System.Collections.ObjectModel;
 
 namespace WC_Simulator.ViewModel
 {
@@ -62,6 +63,14 @@ namespace WC_Simulator.ViewModel
         {
             get { return NavigationStore.MenuVisibility; }
             set { NavigationStore.MenuVisibility = value; }
+        }
+
+        public ObservableCollection<Tournament> Tournaments
+        {
+            get { return Model.AllTournaments; }
+            set { Model.AllTournaments = value;
+                OnPropertyChanged(nameof(Tournaments));
+            }
         }
 
         #endregion
