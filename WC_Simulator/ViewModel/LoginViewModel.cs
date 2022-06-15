@@ -136,14 +136,7 @@ namespace WC_Simulator.ViewModel
                     _login = new RelayCommand(arg => {
                         SHA256Hashing myHash = new SHA256Hashing();
                         Model.CurrentUserShort.Login = Username;
-                        //Console.WriteLine(Username);
                         Model.CurrentUserShort.Password = myHash.GetHash(Username, Password);
-                        foreach (var b in Model.CurrentUserShort.Password)
-                        {
-                            Console.Write(b + ", ");
-                        }
-                        Console.WriteLine();
-                        Console.WriteLine("Działa: " + myHash.MatchHashes(Model.CurrentUserShort.Password, Model.AllUsersShort[1].Password));
                         //User domin = new User(2, "domin", myHash.GetHash("domin", "Domin444"), DateTime.Now, DateTime.Now, "pyt|odp", myHash.GetHash("pyt", "odp"));
                         //bool state = RepositoryUsers.AddUser(domin);
                         //Console.WriteLine(state.ToString());
