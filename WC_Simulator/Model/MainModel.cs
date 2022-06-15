@@ -40,11 +40,12 @@ namespace WC_Simulator.Model
             foreach (var us in usersshort)
             {
                 AllUsersShort.Add(us);
-                Console.WriteLine(us.Login);
-                foreach (var b in us.Password)
-                {
-                    Console.WriteLine(b);
-                }
+            }
+
+            var users = RepositoryUsers.LoadUser();
+            foreach (var u in users)
+            {
+                AllUsers.Add(u);
             }
 
             var groups = RepositoryGroups.LoadGroup();
@@ -135,7 +136,7 @@ namespace WC_Simulator.Model
                     {
                         CurrentUser = u;
                         CurrentUser.Last_log_date = DateTime.Now;
-                        //Console.WriteLine(CurrentUser);
+                        Console.WriteLine(CurrentUser);
                         return;
                     }
                 }

@@ -31,11 +31,6 @@ namespace WC_Simulator.DAL.Entities
         {
             Login = reader["login"].ToString();
             Password = (byte[])reader["password"];
-            //Console.WriteLine(Login);
-            //foreach (var b in Password)
-            //{
-            //    Console.WriteLine(b);
-            //}
         }
 
         #endregion
