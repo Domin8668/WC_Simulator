@@ -7,15 +7,21 @@ namespace WC_Simulator.DAL.Entities
 {
     class User
     {
-        public SHA256Hashing hash = new SHA256Hashing();
         #region Properties
         public uint? Id_user { get; set; }
+
         public string Login { get; set; }
+
         public byte[] Password { get; set; }
+
         public DateTime Creation_date { get; set; }
+
         public DateTime Last_log_date { get; set; }
+
         public string Security_question { get; set; }
+
         public string Security_answer { get; set; }
+
         #endregion
 
 
@@ -73,7 +79,7 @@ namespace WC_Simulator.DAL.Entities
             if (user is null) return false;
             //if (Id_user != user.Id_user) return false;
             if (Login.ToLower() != user.Login.ToLower()) return false;
-            if (hash.MatchHashes(Password, user.Password)) return false;
+            if (!new SHA256Hashing().MatchHashes(Password, user.Password)) return false;
             //if (Creation_date != user.Creation_date) return false;
             //if (Last_log_date != user.Last_log_date) return false;
             if (Security_question.ToLower() != user.Security_question.ToLower()) return false;
