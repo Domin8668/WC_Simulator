@@ -39,15 +39,15 @@ namespace WC_Simulator.Model
             foreach (var us in usersshort)
             {
                 AllUsersShort.Add(us);
-                Console.WriteLine(us.Login);
+                //Console.WriteLine(us.Login);
             }
 
             var groups = RepositoryGroups.LoadGroup();
             foreach (var g in groups)
             {
                 AllGroups.Add(g);
-                Console.WriteLine(g.Letter);
             }
+
             //var matches = RepositoryMatches.LoadMatch();
             //foreach (var m in matches)
             //    AllMatches.Add(m);
@@ -67,6 +67,8 @@ namespace WC_Simulator.Model
         // kolekcje obiektów poszczególnych zbiorów encji
 
         public ObservableCollection<UserShort> AllUsersShort { get; set; } = new ObservableCollection<UserShort>();
+
+        public ObservableCollection<User> AllUsers { get; set; } = new ObservableCollection<User>();
 
         public ObservableCollection<Player> AllPlayers { get; set; } = new ObservableCollection<Player>();
 
@@ -97,20 +99,48 @@ namespace WC_Simulator.Model
 
         internal bool CheckLogin()
         {
-
+            foreach (var us in AllUsersShort)
+            {
+                if (CurrentUserShort.Login == us.Login)
+                    return true;
+            }
             return false;
         }
         
-        internal void ValidateUser()
+        internal bool ValidateUserShort()
         {
-            throw new NotImplementedException();
+            if (AllUsersShort.Contains(CurrentUserShort))
+                return true;
+            return false;
+        }
+
+        internal void UpdateCurrentUser()
+        {
+            if(CurrentUserShort != null)
+            {
+                foreach (var u in AllUsers)
+                {
+                    if (u.Login == CurrentUserShort.Login)
+                    {
+                        CurrentUser = u;
+                        CurrentUser.Last_log_date = DateTime.Now;
+                        //Console.WriteLine(CurrentUser);
+                        return;
+                    }
+                }
+            }
         }
 
         internal void LoadUserTournaments()
         {
             var tournament = RepositoryTournaments.LoadTournament();
             foreach (var t in tournament)
-                AllTournaments.Add(t);
+            {
+                if (t.Id_user == CurrentUser.Id_user)
+                {
+                    AllTournaments.Add(t);
+                }
+            }    
         }
 
         #endregion
