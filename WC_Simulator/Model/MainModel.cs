@@ -114,22 +114,8 @@ namespace WC_Simulator.Model
         
         internal bool ValidateUserShort()
         {
-            Console.WriteLine(CurrentUserShort.Login);
-            foreach (var b in CurrentUserShort.Password)
-            {
-                Console.Write(b + ", ");
-            }
-            Console.WriteLine();
             foreach (var us in AllUsersShort)
             {
-                Console.WriteLine(us.Login);
-                foreach (var b in us.Password)
-                {
-                    Console.Write(b + ", ");
-                }
-                Console.WriteLine();
-                //if (CurrentUserShort.Equals(us))
-                //    return true;
                 if (CurrentUserShort.Login == us.Login &&
                     new SHA256Hashing().MatchHashes(CurrentUserShort.Password, us.Password))
                 {
@@ -137,9 +123,6 @@ namespace WC_Simulator.Model
                 }
             }
             return false;
-            //if (AllUsersShort.Contains(CurrentUserShort))
-            //    return true;
-            //return false;
         }
 
         internal void UpdateCurrentUser()

@@ -40,8 +40,14 @@ namespace WC_Simulator.DAL.Repositories
             bool state = false;
             using (var connection = DBConnection.Instance.Connection)
             {
-                MySqlCommand command = new MySqlCommand($"{ADD_USER} {user.ToInsert()}", connection);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `user`(`login`, `password`, `creation_date`, `last_log_date`, `security_question`, `security_answer`) VALUES (@login, @password, @creation_date, @last_log_date, @security_question, @security_answer)", connection);
                 connection.Open();
+                command.Parameters.Add("@login", MySqlDbType.VarChar).Value = user.Login;
+                command.Parameters.Add("@password", MySqlDbType.Blob).Value = user.Password;
+                command.Parameters.Add("@creation_date", MySqlDbType.DateTime).Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                command.Parameters.Add("@last_log_date", MySqlDbType.DateTime).Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                command.Parameters.Add("@security_question", MySqlDbType.VarChar).Value = user.Security_question;
+                command.Parameters.Add("@security_answer", MySqlDbType.Blob).Value = user.Security_answer;
                 var id = command.ExecuteNonQuery();
                 state = true;
                 user.Id_user = (uint)command.LastInsertedId;
