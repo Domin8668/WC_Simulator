@@ -136,7 +136,6 @@ namespace WC_Simulator.Model
                     {
                         CurrentUser = u;
                         CurrentUser.Last_log_date = DateTime.Now;
-                        Console.WriteLine(CurrentUser);
                         return;
                     }
                 }
