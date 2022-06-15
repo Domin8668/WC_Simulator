@@ -49,8 +49,7 @@
 
         <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="../Resources/profile.png" Width="150"/>
         <!--Panel użytkownika-->
-        <Grid x:Name="ProfilePanel" Grid.Row="2" Grid.Column="1" Grid.RowSpan="6" Grid.ColumnSpan="4" Margin="20" VerticalAlignment="Stretch"
-                        Width="Auto" Height="Auto">
+        <Grid x:Name="ProfilePanel" Grid.Row="2" Grid.Column="1" Grid.RowSpan="6" Grid.ColumnSpan="4" Margin="20" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -69,23 +68,23 @@
                         Width="Auto" Height="Auto" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3">
 
                 <TextBlock x:Name="BioTB"
-                            Grid.Row="0" Grid.Column="0"
-                            HorizontalAlignment="Left"
-                            Style="{StaticResource textblock}" 
-                            Text="Profil: "/>
+                           Grid.Row="0" Grid.Column="0"
+                           HorizontalAlignment="Left"
+                           Style="{StaticResource textblock}" 
+                           Text="Profil: "/>
 
                 <TextBlock x:Name="Nickname"
-                            HorizontalAlignment="Left"
-                            Style="{StaticResource textblock}" 
-                            Text="{Binding Path=Login, 
-                                StringFormat=Nazwa użytkownika: {0}, 
-                                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                           HorizontalAlignment="Left"
+                           Style="{StaticResource textblock}" 
+                           Text="{Binding Path=Username, 
+                           StringFormat=Nazwa użytkownika: {0}, 
+                           Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock x:Name="TourneyNumber"
-                            HorizontalAlignment="Left"
-                            Style="{StaticResource textblock}" 
-                            Text="{Binding Path=TourneyCount, 
-                                StringFormat=Liczba turniejów: {0}, 
-                                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                           HorizontalAlignment="Left"
+                           Style="{StaticResource textblock}" 
+                           Text="{Binding Path=TournamentCount, 
+                           StringFormat=Liczba turniejów: {0}, 
+                           Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
 
             <!--Panel z Datami-->
@@ -94,30 +93,30 @@
                         HorizontalAlignment="Left" VerticalAlignment="Stretch"  
                         Width="Auto" Height="Auto">
                 <TextBlock x:Name="DateTB"
-                            HorizontalAlignment="Left"
-                            Style="{StaticResource textblock}" 
-                            Text="Dodatkowe Informacje: "/>
+                           HorizontalAlignment="Left"
+                           Style="{StaticResource textblock}" 
+                           Text="Dodatkowe informacje: "/>
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Stretch"
-                            Style="{StaticResource textblock}"
-                            Text="{Binding Path=FirstDate, 
-                                StringFormat=Data założenia: {0}, 
-                                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                           Style="{StaticResource textblock}"
+                           Text="{Binding Path=CreationDate, 
+                           StringFormat=Data założenia: {0}, 
+                           Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Stretch"
-                            Style="{StaticResource textblock}" 
-                            Text="{Binding Path=LastDate, 
-                                StringFormat=Wcześniejsze logowanie: {0}, 
-                                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                           Style="{StaticResource textblock}" 
+                           Text="{Binding Path=LastLoginDate, 
+                           StringFormat=Poprzednie logowanie: {0}, 
+                           Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Stretch"
-                            Style="{StaticResource textblock}" 
-                            Text="{Binding Path=TimeInService, 
-                                StringFormat=Czas w serwisie: {0}, 
-                                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                           Style="{StaticResource textblock}" 
+                           Text="{Binding Path=AccountAge, 
+                           StringFormat=Czas w aplikacji: {0}, 
+                           Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
             <Button x:Name="ResetPlaceHolder" Grid.Row="5" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3" Content="Zmień hasło" FontSize="25" Background="#7fccff" BorderBrush="#005a95" BorderThickness="2"
                     Command="{Binding ChangePassword}"
-                        Width="250" Height="50"/>
+                    Width="250" Height="50"/>
         </Grid>
 
     </Grid>

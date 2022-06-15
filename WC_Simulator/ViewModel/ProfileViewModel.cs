@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Input;
-using WC_Simulator.DAL.Entities;
 using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
 using WC_Simulator.ViewModel.BaseClasses;
@@ -11,12 +10,7 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
-        private User _user_account;
-        private string _login;
-        private int _tourneyCount;
-        private string _timeInService;
-        private string _firstDate;
-        private string _lastDate;
+        private string _accountAge;
 
         #endregion
 
@@ -27,88 +21,60 @@ namespace WC_Simulator.ViewModel
         {
             Model = model;
             NavigationStore = navigationStore;
-            Login = "Jason Bourne";
-            TourneyCount = 3;
-
-            FirstDate = new DateTime(2022, 6, 11, 17, 0, 0).ToString("dd MMMM yyyy HH:mm");
-            LastDate = new DateTime(2022, 6, 11, 17, 30, 0).ToString("dd MMMM yyyy HH:mm");
-            TimeInService = CalculateTimeInService(new DateTime(2022, 4, 10, 17, 2, 0)); //przekazujemy creation date
-        }
-
-        public ProfileViewModel(User user_account)
-        {
-            _user_account = user_account;
+            _accountAge = CalculateTimeInService(Model.CurrentUser.Creation_date);
         }
 
         #endregion
 
 
         #region Properties
-        public string Login
+
+        public string Username
         {
-            get { return _login; }
+            get { return Model.CurrentUser.Login; }
             set
             {
-                _login = value;
-                OnPropertyChanged(nameof(Login));
+                Model.CurrentUser.Login = value;
+                OnPropertyChanged(nameof(Username));
             }
         }
 
-        public int TourneyCount
+        public int TournamentCount
         {
-            get { return _tourneyCount; }
+            get { return Model.AllTournaments.Count; }
             set
             {
-                _tourneyCount = value;
-                OnPropertyChanged(nameof(_tourneyCount));
+                OnPropertyChanged(nameof(TournamentCount));
             }
         }
-        public string FirstDate
+
+        public string CreationDate
         {
-            get { return _firstDate; }
+            get { return Model.CurrentUser.Creation_date.ToString(); }
             set
             {
-                _firstDate = value;
-                OnPropertyChanged(nameof(_firstDate));
+                OnPropertyChanged(nameof(CreationDate));
             }
         }
-        public string LastDate
+
+        public string LastLoginDate
         {
-            get { return _lastDate; }
+            get { return Model.CurrentUser.Last_log_date.ToString(); }
             set
             {
-                _lastDate = value;
-                OnPropertyChanged(nameof(_lastDate));
+                OnPropertyChanged(nameof(LastLoginDate));
             }
         }
-        public string TimeInService
+
+        public string AccountAge
         {
-            get { return _timeInService; }
-            set 
+            get { return _accountAge; }
+            set
             {
-                _timeInService = value; 
-                OnPropertyChanged(nameof(_timeInService));
+                _accountAge = value;
+                OnPropertyChanged(nameof(AccountAge));
             }
         }
-
-
-        //public MainModel Model
-        //{
-        //    get { return mainModel; }
-        //    set { mainModel = value; }
-        //}
-
-        public User User_account
-        {
-            get { return _user_account; }
-            set { _user_account = value; }
-        }
-
-        //public NavigationStore NavigationStore
-        //{
-        //    get { return NavigationStore; }
-        //    set { NavigationStore = value; }
-        //}
 
         #endregion
 
@@ -117,15 +83,14 @@ namespace WC_Simulator.ViewModel
 
         private string CalculateTimeInService(DateTime creationDate)
         {
-            string ending = "";
-            string timeSpan = "brak";
-            int timeSpanInt;
+            string ending;
+            string timeSpan = "";
             var v = DateTime.Now - creationDate;
-            timeSpanInt = Convert.ToInt32(v.TotalMinutes);
+            int timeSpanInt = Convert.ToInt32(v.TotalMinutes);
 
             if (timeSpanInt < 1)
             {
-
+                ending = "Przed chwilą";
             }
             else if (timeSpanInt >= 1 && timeSpanInt < 60)
             {
@@ -145,6 +110,7 @@ namespace WC_Simulator.ViewModel
             return $"{timeSpan} {ending}";
 
         }
+
         #endregion
 
 
