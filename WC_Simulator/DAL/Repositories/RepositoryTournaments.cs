@@ -13,7 +13,7 @@ namespace WC_Simulator.DAL.Repositories
     {
         #region QUERIES
         private const string ALL_TOURNAMENT = "SELECT * FROM `tournament`";
-        private const string ADD_TOURNAMENT = "INSERT INTO `tournament`(`id_tournament`, `id_user`) VALUES ";
+        private const string ADD_TOURNAMENT = "INSERT INTO `tournament`(`id_tournament`, `id_user`, `t_name`) VALUES ";
         private const string DELETE_TOURNAMENT = "DELETE FROM `tournament` WHERE id_tournament = ";
         //private const string UPDATE_TOURNAMENT = "UPDATE `tournament` SET xx WHERE id_tournament = ";
         #endregion
@@ -54,8 +54,8 @@ namespace WC_Simulator.DAL.Repositories
             bool state = false;
             using (var connection = DBConnection.Instance.Connection)
             {
-                string UPDATE_TOURNAMENT = $"UPDATE Tournament SET id_tournament='{tournament.Id_tournament}', id_user='{tournament.Id_user}'" +
-                    $"WHERE id_tournament={idTournament}";
+                string UPDATE_TOURNAMENT = $"UPDATE Tournament SET id_tournament='{tournament.Id_tournament}', id_user='{tournament.Id_user}', " +
+                    $"t_name='{tournament.T_name}' WHERE id_tournament={idTournament}";
 
                 MySqlCommand command = new MySqlCommand(UPDATE_TOURNAMENT, connection);
                 connection.Open();
