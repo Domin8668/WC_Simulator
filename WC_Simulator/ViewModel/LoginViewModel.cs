@@ -7,6 +7,7 @@ using System.Windows.Input;
 using WC_Simulator.Helpers.Stores;
 using System.Windows;
 using System.Windows.Media;
+using WC_Simulator.DAL.Repositories;
 
 namespace WC_Simulator.ViewModel
 {
@@ -133,21 +134,94 @@ namespace WC_Simulator.ViewModel
                 if (_login == null)
                 {
                     _login = new RelayCommand(arg => {
-                        SHA256Hashing SHA256 = new SHA256Hashing();
+                        SHA256Hashing myHash = new SHA256Hashing();
                         Model.CurrentUserShort.Login = Username;
-                        Model.CurrentUserShort.Password = SHA256.GetHash(Username, Password);
-                        Username = string.Empty;
-                        Password = string.Empty;
-
-                        if (Model.CurrentUserShort.Login == null || Model.CurrentUserShort.Login.Length < 5 || Model.CurrentUserShort.Login.Contains("`"))
+                        Console.WriteLine(Username);
+                        Model.CurrentUserShort.Password = myHash.GetHash(Username, Password);
+                        foreach (var b in myHash.GetHash(Username, Password))
                         {
+                            Console.Write(b + ", ");
+                        }
+                        Console.WriteLine();
+                        foreach (var b in Model.CurrentUserShort.Password)
+                        {
+                            Console.Write(b + ", ");
+                        }
+                        Console.WriteLine();
+                        //User domin = new User(2, "domin", SHA256.GetHash("domin", "Domin444"), DateTime.Now, DateTime.Now, "hasło:", "Domin444");
+                        //bool state = RepositoryUsers.AddUser(domin);
+                        //Console.WriteLine(state.ToString());
+                        //myHash = null;
+
+                        if (Username == null)
+                        {
+                            Username = string.Empty;
+                            if (Password == null)
+                            {
+                                Password = string.Empty;
+                            }
+                            return;
+                        }
+                        if (Password == null)
+                        {
+                            Password = string.Empty;
+                            if (Login == null)
+                            {
+                                Username = string.Empty;
+                            }
+                            return;
+                        }
+                        if (Model.CurrentUserShort.Login.Length < 5)
+                        {
+                            Username = null;
+                            Password = null;
                             UsernameBorder = 0.7;
+                            UsernameWarning = "Login musi mieć min. 5 znaków";
                             Model.CurrentUserShort.Login = string.Empty;
                             Model.CurrentUserShort.Password = new byte[32];
                             return;
                         }
-
-                        //Model.ValidateUser(CurrentUser);
+                        if (Model.CurrentUserShort.Login.Contains("`"))
+                        {
+                            Username = null;
+                            Password = null;
+                            UsernameBorder = 0.7;
+                            UsernameWarning = "Login nie może zawierać '`'";
+                            Model.CurrentUserShort.Login = string.Empty;
+                            Model.CurrentUserShort.Password = new byte[32];
+                            return;
+                        }
+                        if (Password.Length < 8)
+                        {
+                            Username = null;
+                            Password = null;
+                            PasswordBorder = 0.7;
+                            PasswordWarning = "Hasło musi mieć min. 8 znaków";
+                            Model.CurrentUserShort.Login = string.Empty;
+                            Model.CurrentUserShort.Password = new byte[32];
+                            return;
+                        }
+                        if (!Model.CheckLogin())
+                        {
+                            Username = null;
+                            Password = null;
+                            UsernameBorder = 0.7;
+                            UsernameWarning = "Nieprawidłowy login";
+                            Model.CurrentUserShort.Login = string.Empty;
+                            Model.CurrentUserShort.Password = new byte[32];
+                            return;
+                        }
+                        if (!Model.ValidateUserShort())
+                        {
+                            //Username = null;
+                            Password = null;
+                            PasswordBorder = 0.7;
+                            PasswordWarning = "Nieprawidłowe hasło";
+                            Model.CurrentUserShort.Login = string.Empty;
+                            Model.CurrentUserShort.Password = new byte[32];
+                            return;
+                        }
+                        Model.UpdateCurrentUser();
                         NavigationStore.MenuVisibility = Visibility.Visible;
                             NavigationStore.CurrentViewModel = new ProfileViewModel(Model, NavigationStore);
                     },

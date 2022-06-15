@@ -42,16 +42,17 @@ namespace WC_Simulator.DAL.Entities
 
         #region Methods
 
-        // chyba nieużywane u nas
-        //public override string ToString()
-        //{
-        //    return $"";
-        //}
+
+        public override string ToString()
+        {
+            return $"Turniej nr {Id_tournament}";
+        }
 
         public string ToInsert()
         {
             return $"('{Id_tournament}', '{Id_user}', '{T_name}')";
         }
+
         public override bool Equals(object obj)
         {
             var tournament = obj as Tournament;
