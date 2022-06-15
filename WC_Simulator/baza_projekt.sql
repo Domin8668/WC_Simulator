@@ -10,13 +10,14 @@ create table user(
     creation_date datetime not null,
     last_log_date datetime not null,
     security_question varchar(25) not null,
-    security_answer varchar(25) not null
+    security_answer binary(32) not null
 );
 desc user;
 
 create table tournament(
 	id_tournament int unsigned auto_increment primary key,
-    id_user int unsigned  not null
+    id_user int unsigned  not null,
+    t_name varchar(30) default "tournament_1"
 );
 desc tournament;
 
@@ -93,7 +94,7 @@ insert into user (id_user, login, password, creation_date, last_log_date, securi
 (1, "Qsalvic", 0101, now(), now(), "Co robisz?", "No to ciszej k");
 
 -- dodawanie rekordow do tabeli 'tournament'
-insert into tournament values
+insert into tournament (id_tournament, id_user) values
 (1,1);
 
 -- dodawanie rekordow do tabeli 'single_group'
@@ -119,12 +120,12 @@ insert into team (id_group, name, short_name, coach, def_factor, att_factor) val
 (3, "Polska", "POL", "Czesław Michniewicz", 0.5, 0.5),
 
 (4, "Francja", "FRA", "Didier Deschamps", 0.5, 0.5),
-(4, "X", "xxx", "Félix", 0.5, 0.5),
+(4, "Australia", "AUS", "Graham Arnold", 0.5, 0.5),
 (4, "Dania", "DEN", "Kasper Hjulmand", 0.5, 0.5),
 (4, "Tunezja", "TUN", "Mondher Kebaier", 0.5, 0.5),
 
 (5, "Hiszpania", "ESP", "Luis Enrique", 0.5, 0.5),
-(5, "Y", "yyy", "Félix", 0.5, 0.5),
+(5, "Kostaryka", "CRC", "Luis Fernando Suárez", 0.5, 0.5),
 (5, "Niemcy", "GER", "Hans-Dieter Flick", 0.5, 0.5),
 (5, "Japonia", "JPN", "Hajime Moriyasu", 0.5, 0.5),
 
@@ -136,7 +137,7 @@ insert into team (id_group, name, short_name, coach, def_factor, att_factor) val
 (7, "Brazylia", "BRA", "Tite", 0.5, 0.5),
 (7, "Serbia", "SRB", "Dragan Stojković", 0.5, 0.5),
 (7, "Szwajcaria", "SUI", "Murat Yakın", 0.5, 0.5),
-(7, "Kamersingle_groupun", "CMR", "Rigobert Song", 0.5, 0.5),
+(7, "Kamerun", "CMR", "Rigobert Song", 0.5, 0.5),
 
 (8, "Portugalia", "POR", "Fernando Santos", 0.5, 0.5),
 (8, "Ghana", "GHA", "Otto Addo", 0.5, 0.5),
