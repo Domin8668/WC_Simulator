@@ -137,9 +137,6 @@ namespace WC_Simulator.ViewModel
                         SHA256Hashing myHash = new SHA256Hashing();
                         Model.CurrentUserShort.Login = Username;
                         Model.CurrentUserShort.Password = myHash.GetHash(Username, Password);
-                        //User domin = new User(1, "domin", myHash.GetHash("domin", "Domin444"), DateTime.Now, DateTime.Now, "pyt|odp", myHash.GetHash("pyt", "odp"));
-                        //bool state = RepositoryUsers.AddUser(domin);
-                        //Console.WriteLine(state.ToString());
                         myHash = null;
 
                         if (Username == null)
@@ -211,6 +208,7 @@ namespace WC_Simulator.ViewModel
                         }
 
                         Model.UpdateCurrentUser();
+                        Model.LoadUserTournaments();
                         NavigationStore.MenuVisibility = Visibility.Visible;
                             NavigationStore.CurrentViewModel = new ProfileViewModel(Model, NavigationStore);
                     },
