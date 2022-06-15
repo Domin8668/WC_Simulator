@@ -40,7 +40,7 @@ namespace WC_Simulator.DAL.Entities
         {
             Id_user = uint.Parse(reader["id_user"].ToString());
             Login = reader["login"].ToString();
-            Password = Encoding.ASCII.GetBytes(reader["password"].ToString());
+            Password = (byte[])reader["password"];
             Creation_date = DateTime.Parse(reader["creation_date"].ToString());
             Last_log_date = DateTime.Parse(reader["last_log_date"].ToString());
             Security_question = reader["login"].ToString();

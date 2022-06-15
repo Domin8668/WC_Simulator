@@ -30,7 +30,12 @@ namespace WC_Simulator.DAL.Entities
         public UserShort(MySqlDataReader reader)
         {
             Login = reader["login"].ToString();
-            Password = Encoding.ASCII.GetBytes(reader["password"].ToString());
+            Password = (byte[])reader["password"];
+            //Console.WriteLine(Login);
+            //foreach (var b in Password)
+            //{
+            //    Console.WriteLine(b);
+            //}
         }
 
         #endregion
