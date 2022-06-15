@@ -136,22 +136,18 @@ namespace WC_Simulator.ViewModel
                     _login = new RelayCommand(arg => {
                         SHA256Hashing myHash = new SHA256Hashing();
                         Model.CurrentUserShort.Login = Username;
-                        Console.WriteLine(Username);
+                        //Console.WriteLine(Username);
                         Model.CurrentUserShort.Password = myHash.GetHash(Username, Password);
-                        foreach (var b in myHash.GetHash(Username, Password))
-                        {
-                            Console.Write(b + ", ");
-                        }
-                        Console.WriteLine();
                         foreach (var b in Model.CurrentUserShort.Password)
                         {
                             Console.Write(b + ", ");
                         }
                         Console.WriteLine();
-                        //User domin = new User(2, "domin", SHA256.GetHash("domin", "Domin444"), DateTime.Now, DateTime.Now, "hasło:", "Domin444");
+                        Console.WriteLine("Działa: " + myHash.MatchHashes(Model.CurrentUserShort.Password, Model.AllUsersShort[1].Password));
+                        //User domin = new User(2, "domin", myHash.GetHash("domin", "Domin444"), DateTime.Now, DateTime.Now, "pyt|odp", myHash.GetHash("pyt", "odp"));
                         //bool state = RepositoryUsers.AddUser(domin);
                         //Console.WriteLine(state.ToString());
-                        //myHash = null;
+                        myHash = null;
 
                         if (Username == null)
                         {
@@ -213,7 +209,6 @@ namespace WC_Simulator.ViewModel
                         }
                         if (!Model.ValidateUserShort())
                         {
-                            //Username = null;
                             Password = null;
                             PasswordBorder = 0.7;
                             PasswordWarning = "Nieprawidłowe hasło";
@@ -221,6 +216,7 @@ namespace WC_Simulator.ViewModel
                             Model.CurrentUserShort.Password = new byte[32];
                             return;
                         }
+
                         Model.UpdateCurrentUser();
                         NavigationStore.MenuVisibility = Visibility.Visible;
                             NavigationStore.CurrentViewModel = new ProfileViewModel(Model, NavigationStore);
