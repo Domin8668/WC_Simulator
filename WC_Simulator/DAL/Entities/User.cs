@@ -20,7 +20,7 @@ namespace WC_Simulator.DAL.Entities
 
         public string Security_question { get; set; }
 
-        public string Security_answer { get; set; }
+        public byte[] Security_answer { get; set; }
 
         #endregion
 
@@ -34,6 +34,8 @@ namespace WC_Simulator.DAL.Entities
             Password = new byte[0];
             Creation_date = new DateTime();
             Last_log_date = new DateTime();
+            Security_question = string.Empty;
+            Security_answer = new byte[0];
         }
 
         public User(MySqlDataReader reader)
@@ -44,10 +46,10 @@ namespace WC_Simulator.DAL.Entities
             Creation_date = DateTime.Parse(reader["creation_date"].ToString());
             Last_log_date = DateTime.Parse(reader["last_log_date"].ToString());
             Security_question = reader["login"].ToString();
-            Security_answer = reader["password"].ToString();
+            Security_answer = (byte[])reader["password"];
         }
 
-        public User(uint id_user, string login, byte[] password, DateTime creation_date, DateTime last_log_date, string security_question, string security_answer)
+        public User(uint id_user, string login, byte[] password, DateTime creation_date, DateTime last_log_date, string security_question, byte[] security_answer)
         {
             Id_user = id_user;
             Login = login;
@@ -68,10 +70,10 @@ namespace WC_Simulator.DAL.Entities
             return $"Nazwa użytkownika: {Login}, Data założenia konta: {Creation_date}, Ostatnie logowanie: {Last_log_date}";
         }
 
-        public string ToInsert()
-        {
-            return $"('{Id_user}', '{Login}', '{Password}', '{DateTime.Now.ToString("yyyy-MM-dd")}', '{DateTime.Now.ToString("yyyy-MM-dd")}', '{Security_question}', '{Security_answer}')";
-        }
+        //public string ToInsert()
+        //{
+        //    return $"('{Id_user}', '{Login}', '{Password}', '{DateTime.Now.ToString("yyyy-MM-dd")}', '{DateTime.Now.ToString("yyyy-MM-dd")}', '{Security_question}', '{Security_answer}')";
+        //}
 
         public override bool Equals(object obj)
         {
@@ -83,7 +85,7 @@ namespace WC_Simulator.DAL.Entities
             //if (Creation_date != user.Creation_date) return false;
             //if (Last_log_date != user.Last_log_date) return false;
             if (Security_question.ToLower() != user.Security_question.ToLower()) return false;
-            if (Security_answer.ToLower() != user.Security_answer.ToLower()) return false;
+            if (!new SHA256Hashing().MatchHashes(Security_answer, user.Security_answer)) return false;
             return true;
         }
 

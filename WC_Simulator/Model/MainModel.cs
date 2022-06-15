@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using WC_Simulator.DAL.Entities;
 using WC_Simulator.DAL.Repositories;
+using WC_Simulator.Helpers.Hashing;
 
 namespace WC_Simulator.Model
 {
@@ -39,7 +40,12 @@ namespace WC_Simulator.Model
             foreach (var us in usersshort)
             {
                 AllUsersShort.Add(us);
-                //Console.WriteLine(us.Login);
+            }
+
+            var users = RepositoryUsers.LoadUser();
+            foreach (var u in users)
+            {
+                AllUsers.Add(u);
             }
 
             var groups = RepositoryGroups.LoadGroup();
@@ -109,8 +115,14 @@ namespace WC_Simulator.Model
         
         internal bool ValidateUserShort()
         {
-            if (AllUsersShort.Contains(CurrentUserShort))
-                return true;
+            foreach (var us in AllUsersShort)
+            {
+                if (CurrentUserShort.Login == us.Login &&
+                    new SHA256Hashing().MatchHashes(CurrentUserShort.Password, us.Password))
+                {
+                    return true;
+                }
+            }
             return false;
         }
 
@@ -124,7 +136,6 @@ namespace WC_Simulator.Model
                     {
                         CurrentUser = u;
                         CurrentUser.Last_log_date = DateTime.Now;
-                        //Console.WriteLine(CurrentUser);
                         return;
                     }
                 }
