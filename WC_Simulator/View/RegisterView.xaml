@@ -8,6 +8,32 @@
              xmlns:ucs="clr-namespace:WC_Simulator.View.Components"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    
+    <UserControl.Background>
+        <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0.1" Color="#c9f3c6" />
+                <GradientStop Offset="1" Color="#93ca35" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </UserControl.Background>
+    <UserControl.Resources>
+        <Style TargetType="TextBlock" x:Key="label">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+        </Style>
+        
+        <Style TargetType="TextBox" x:Key="tb">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+    </UserControl.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -49,80 +75,106 @@
             </Grid.RowDefinitions>
             <Label Grid.Column="2" Grid.ColumnSpan="2"
                    Grid.Row="1" Grid.RowSpan="2"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
+                   VerticalAlignment="Center" 
+                   FontSize="25" FontWeight="DemiBold" HorizontalAlignment="Right" Margin="0,0,10,0"
                    Content="Załóż konto"/>
-            <TextBlock Grid.Column="2" Grid.ColumnSpan="1"
-                       Grid.Row="3" Grid.RowSpan="1"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
+            
+            <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Style="{StaticResource label}"
                        Text="Login:"/>
-            <ucs:UsernameUserControl Grid.Column="3" Grid.ColumnSpan="1"
-                                     Grid.Row="3" Grid.RowSpan="1"
-                                     HorizontalAlignment="Center"
-                                     VerticalAlignment="Center"
+                <ucs:UsernameUserControl Margin="5" FontSize="15" VerticalAlignment="Center" Width="150" Height="27"
                                      TBText="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                      MinWidth="100"/>
-            <TextBlock Grid.Column="2" Grid.ColumnSpan="1"
-                       Grid.Row="4" Grid.RowSpan="1"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
+                
+            </StackPanel>
+
+            <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Style="{StaticResource label}"
                        Text="Hasło:"/>
-            <ucs:BindablePasswordBox Grid.Column="3" Grid.ColumnSpan="1"
-                                     Grid.Row="4" Grid.RowSpan="1"
-                                     HorizontalAlignment="Center"
-                                     VerticalAlignment="Center"
+                <ucs:BindablePasswordBox Margin="5" VerticalAlignment="Center" Width="150" Height="27"
                                      Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                      MinWidth="100"/>
-            <TextBlock Grid.Column="2" Grid.ColumnSpan="1"
-                       Grid.Row="5" Grid.RowSpan="1"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Style="{StaticResource label}"
                        Text="Powtórz hasło:"/>
-            <ucs:BindablePasswordBox Grid.Column="3" Grid.ColumnSpan="1"
-                                     Grid.Row="5" Grid.RowSpan="1"
-                                     HorizontalAlignment="Center"
-                                     VerticalAlignment="Center"
+                <ucs:BindablePasswordBox Margin="5" VerticalAlignment="Center" Width="150" Height="27"
                                      Password="{Binding RepeatPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                      MinWidth="100"/>
-            <TextBlock Grid.Column="2" Grid.ColumnSpan="1"
-                       Grid.Row="6" Grid.RowSpan="1"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Style="{StaticResource label}"
                        Text="Pytanie bezpieczeństwa:"/>
-            <ComboBox Grid.Column="3" Grid.ColumnSpan="1"
-                      Grid.Row="6" Grid.RowSpan="1"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Center"
+                <ComboBox Margin="5" FontSize="15" VerticalAlignment="Center" Width="150" Height="27"
                       ItemsSource="{Binding SecurityQuestions, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                       
                       MinWidth="100"/>
-                      <!--SelectionChanged="SecurityQuestionSelectionChanged"
+                    <!--SelectionChanged="SecurityQuestionSelectionChanged"
                       SelectedItem="SecurityQuestionSelectedItem"-->
-            <TextBlock Grid.Column="2" Grid.ColumnSpan="1"
-                       Grid.Row="7" Grid.RowSpan="1"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
+            </StackPanel>
+
+            <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Style="{StaticResource label}"
                        Text="Odpowiedź:"/>
-            <TextBox Grid.Column="3" Grid.ColumnSpan="1"
-                     Grid.Row="7" Grid.RowSpan="1"
-                     HorizontalAlignment="Center"
-                     VerticalAlignment="Center"
+                <TextBox Margin="5" FontSize="15" VerticalAlignment="Center" Width="150" Height="27"
                      Text="{Binding SecurityAnswer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      MinWidth="100"/>
+            </StackPanel>
 
-            <Button Grid.Column="2" Grid.ColumnSpan="1"
+
+
+            <Button Grid.Column="2" Grid.ColumnSpan="2"
                     Grid.Row="8" Grid.RowSpan="1"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
+                    MinWidth="100"
+                    Width="150"
+                    Height="35"
+                    Foreground="White"
+                    BorderBrush="#175a18"
+                    BorderThickness="2"
+                    FontSize="15"
+                    FontWeight="DemiBold"
                     Content="Zarejestruj się"
-                    Command="{Binding Register}"/>
-            <Button Grid.Column="3" Grid.ColumnSpan="1"
+                    Command="{Binding Register}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0.1" Color="#2C5F2D" />
+                            <GradientStop Offset="1" Color="#2bab2f" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <Button Grid.Column="3" Grid.ColumnSpan="2"
                     Grid.Row="8" Grid.RowSpan="1"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
+                    MinWidth="100"
+                    Width="150"
+                    Height="35"
+                    Foreground="White"
+                    BorderBrush="#175a18"
+                    BorderThickness="2"
+                    FontSize="15"
+                    FontWeight="DemiBold"
                     Content="Powrót"
-                    Command="{Binding Return}"/>
+                    Command="{Binding Return}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0.1" Color="#2C5F2D" />
+                            <GradientStop Offset="1" Color="#2bab2f" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            
         </Grid>
     </Grid>
 </UserControl>
