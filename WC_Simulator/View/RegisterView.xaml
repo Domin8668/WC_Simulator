@@ -82,50 +82,75 @@
             <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Style="{StaticResource label}"
                        Text="Login:"/>
-                <ucs:UsernameUserControl Margin="5" FontSize="15" VerticalAlignment="Center" Width="150" Height="27"
+                <Border BorderBrush="Red"
+                        BorderThickness="{Binding }">
+                    <ucs:UsernameUserControl Margin="5" FontSize="15" VerticalAlignment="Center" Width="150" Height="27"
                                      TBText="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                      MinWidth="100"/>
-                
+                </Border>
             </StackPanel>
+            <TextBlock Grid.Row="3" Grid.Column="4"
+                       Text="{Binding }"
+                       Foreground="Red"/>
 
             <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Style="{StaticResource label}"
                        Text="Hasło:"/>
-                <ucs:BindablePasswordBox Margin="5" VerticalAlignment="Center" Width="150" Height="27"
+                <Border BorderBrush="Red"
+                        BorderThickness="{Binding }">
+                    <ucs:BindablePasswordBox Margin="5" VerticalAlignment="Center" Width="150" Height="27"
                                      Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                      MinWidth="100"/>
-
+                </Border>
             </StackPanel>
+            <TextBlock Grid.Row="3" Grid.Column="4"
+                       Text="{Binding }"
+                       Foreground="Red"/>
 
             <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Style="{StaticResource label}"
                        Text="Powtórz hasło:"/>
-                <ucs:BindablePasswordBox Margin="5" VerticalAlignment="Center" Width="150" Height="27"
+                <Border BorderBrush="Red"
+                        BorderThickness="{Binding }">
+                    <ucs:BindablePasswordBox Margin="5" VerticalAlignment="Center" Width="150" Height="27"
                                      Password="{Binding RepeatPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                      MinWidth="100"/>
-
+                </Border>
             </StackPanel>
+            <TextBlock Grid.Row="3" Grid.Column="4"
+                       Text="{Binding }"
+                       Foreground="Red"/>
 
             <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Style="{StaticResource label}"
                        Text="Pytanie bezpieczeństwa:"/>
-                <ComboBox Margin="5" FontSize="15" VerticalAlignment="Center" Width="150" Height="27"
+                <Border BorderBrush="Red"
+                        BorderThickness="{Binding }">
+                    <ComboBox Margin="5" FontSize="15" VerticalAlignment="Center" Width="150" Height="27"
                       ItemsSource="{Binding SecurityQuestions, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                       
                       MinWidth="100"/>
                     <!--SelectionChanged="SecurityQuestionSelectionChanged"
                       SelectedItem="SecurityQuestionSelectedItem"-->
+                </Border>
             </StackPanel>
+            <TextBlock Grid.Row="3" Grid.Column="4"
+                       Text="{Binding }"
+                       Foreground="Red"/>
 
             <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Style="{StaticResource label}"
                        Text="Odpowiedź:"/>
-                <TextBox Margin="5" FontSize="15" VerticalAlignment="Center" Width="150" Height="27"
+                <Border BorderBrush="Red"
+                        BorderThickness="{Binding }">
+                    <TextBox Margin="5" FontSize="15" VerticalAlignment="Center" Width="150" Height="27"
                      Text="{Binding SecurityAnswer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      MinWidth="100"/>
+                </Border>
             </StackPanel>
-
-
+            <TextBlock Grid.Row="3" Grid.Column="4"
+                       Text="{Binding }"
+                       Foreground="Red"/>
 
             <Button Grid.Column="2" Grid.ColumnSpan="2"
                     Grid.Row="8" Grid.RowSpan="1"
