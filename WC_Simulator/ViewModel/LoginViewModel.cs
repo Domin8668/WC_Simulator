@@ -31,8 +31,6 @@ namespace WC_Simulator.ViewModel
         {
             Model = model;
             NavigationStore = navigationStore;
-            _usernameBorder = 0;
-            _passwordBorder = 0;
         }
 
         #endregion
