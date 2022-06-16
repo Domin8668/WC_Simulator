@@ -298,6 +298,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="baza_projekt.sql" />
+    <Resource Include="Resources\front_logo.png" />
     <Resource Include="Resources\create.png" />
     <Resource Include="Resources\front_icon.png" />
     <Resource Include="Resources\login.png" />
