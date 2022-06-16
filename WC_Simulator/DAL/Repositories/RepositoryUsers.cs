@@ -56,19 +56,34 @@ namespace WC_Simulator.DAL.Repositories
             return state;
         }
 
-        public static bool UpdateUser(User user, uint idUser)
+        public static bool UpdateUserPassword(User user)
         {
             bool state = false;
             using (var connection = DBConnection.Instance.Connection)
             {
-                MySqlCommand command = new MySqlCommand("UPDATE User SET password=@password, last_log_date=@last_log_date WHERE id_user=@id_user", connection);
+                MySqlCommand command = new MySqlCommand("UPDATE User SET password=@password, last_log_date=@last_log_date WHERE login=@login", connection);
                 connection.Open();
-                command.Parameters.Add("@id_user", MySqlDbType.UInt64).Value = user.Id_user;
                 command.Parameters.Add("@password", MySqlDbType.Blob).Value = user.Password;
-                command.Parameters.Add("@last_log_date", MySqlDbType.DateTime).Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                command.Parameters.Add("@last_log_date", MySqlDbType.DateTime).Value = user.Last_log_date.ToString("yyyy-MM-dd HH:mm:ss");
+                command.Parameters.Add("@login", MySqlDbType.VarChar).Value = user.Login;
                 var n = command.ExecuteNonQuery();
                 if (n == 1) state = true;
-                user.Id_user = (uint)command.LastInsertedId;
+                connection.Close();
+            }
+            return state;
+        }
+
+        public static bool UpdateUserLastLogin(User user)
+        {
+            bool state = false;
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand("UPDATE User SET last_log_date=@last_log_date WHERE login=@login", connection);
+                connection.Open();
+                command.Parameters.Add("@last_log_date", MySqlDbType.DateTime).Value = user.Last_log_date.ToString("yyyy-MM-dd HH:mm:ss");
+                command.Parameters.Add("@login", MySqlDbType.VarChar).Value = user.Login;
+                var n = command.ExecuteNonQuery();
+                if (n == 1) state = true;
                 connection.Close();
             }
             return state;
