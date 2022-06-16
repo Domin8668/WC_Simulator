@@ -97,7 +97,7 @@
                         UpdateSourceTrigger=PropertyChanged,
                         RelativeSource={
                         RelativeSource Mode=FindAncestor,
-                        AncestorType={x:Type UserControl}}}" TextChanged="Team1_res_TextChanged"/>
+                        AncestorType={x:Type UserControl}}}"/>
         
         <TextBox x:Name="Team2_res" Grid.Row="1" Grid.Column="2"
                  Style="{StaticResource result_tb}"
