@@ -85,6 +85,11 @@ namespace WC_Simulator.Model
         public ObservableCollection<Team> AllTeams { get; set; } = new ObservableCollection<Team>();
 
         public ObservableCollection<Tournament> AllTournaments { get; set; } = new ObservableCollection<Tournament>();
+        public ObservableCollection<string> SecurityQuestions { get; set; } = new ObservableCollection<string>() { "Jak ma na nazwisko najlepszy napastnik?",
+                                                                                                                   "W jakim mieście się urodziłeś/łaś?",
+                                                                                                                   "Jaki był pierwszy koncert, na którym byłeś/łaś?",
+                                                                                                                   "Jaki był pierwszy koncert, na którym byłeś/łaś?",
+                                                                                                                   "Jakie jest nazwisko panieńskie twojej mamy?"};
 
         public User CurrentUser
         {
