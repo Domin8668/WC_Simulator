@@ -1,4 +1,7 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows;
+using System.Windows.Input;
+using WC_Simulator.Helpers.Hashing;
 using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
 using WC_Simulator.ViewModel.BaseClasses;
@@ -36,6 +39,10 @@ namespace WC_Simulator.ViewModel
         {
             Model = model;
             NavigationStore = navigationStore;
+            _usernameWarning = "Login musi mieć min. 5 znaków";
+            _newPasswordWarning = "Hasło musi mieć min. 8 znaków";
+            _repeatNewPasswordWarning = "Hasło musi mieć min. 8 znaków";
+            _securityAnswerWarning = "Odpowiedź musi mieć min. 8 znaków";
         }
 
         #endregion
@@ -52,7 +59,7 @@ namespace WC_Simulator.ViewModel
                 if (_username == string.Empty)
                 {
                     UsernameBorder = 0.7;
-                    UsernameWarning = "Hasło nie może być puste";
+                    UsernameWarning = "Login nie może być pusty";
                 }
                 else
                 {
@@ -109,12 +116,7 @@ namespace WC_Simulator.ViewModel
             set
             {
                 _selectedSecurityQuestion = value;
-                if (_selectedSecurityQuestion == string.Empty)
-                {
-                    SecurityQuestionsBorder = 0.7;
-                    SecurityQuestionsWarning = "Hasło nie może być puste";
-                }
-                else
+                if (_selectedSecurityQuestion != null)
                 {
                     SecurityQuestionsBorder = 0;
                     SecurityQuestionsWarning = string.Empty;
@@ -132,7 +134,7 @@ namespace WC_Simulator.ViewModel
                 if (_securityAnswer == string.Empty)
                 {
                     SecurityAnswerBorder = 0.7;
-                    SecurityAnswerWarning = "Hasło nie może być puste";
+                    SecurityAnswerWarning = "Odpowiedź nie może być pusta";
                 }
                 else
                 {
@@ -258,7 +260,234 @@ namespace WC_Simulator.ViewModel
                 {
                     _resetPassword = new RelayCommand(arg =>
                     {
-                        NavigationStore.CurrentViewModel = new LoginViewModel(Model, NavigationStore);
+                        SHA256Hashing myHash = new SHA256Hashing();
+
+                        if (Username == null)
+                        {
+                            Username = string.Empty;
+                            if (NewPassword == null)
+                            {
+                                NewPassword = string.Empty;
+                            }
+                            else
+                                NewPassword = null;
+                            if (RepeatNewPassword == null)
+                            {
+                                RepeatNewPassword = string.Empty;
+                            }
+                            else
+                                RepeatNewPassword = null;
+                            if (SelectedSecurityQuestion == null)
+                            {
+                                SecurityQuestionsBorder = 0.7;
+                                SecurityQuestionsWarning = "Musisz wybrać pytanie";
+                            }
+                            else
+                                SelectedSecurityQuestion = null;
+                            if (SecurityAnswer == null)
+                            {
+                                SecurityAnswer = string.Empty;
+                            }
+                            else
+                                SecurityAnswer = null;
+                            return;
+                        }
+                        if (NewPassword == null)
+                        {
+                            NewPassword = string.Empty;
+                            if (Username == null)
+                            {
+                                Username = string.Empty;
+                            }
+                            else
+                                Username = null;
+                            if (RepeatNewPassword == null)
+                            {
+                                RepeatNewPassword = string.Empty;
+                            }
+                            else
+                                RepeatNewPassword = null;
+                            if (SelectedSecurityQuestion == null)
+                            {
+                                SecurityQuestionsBorder = 0.7;
+                                SecurityQuestionsWarning = "Musisz wybrać pytanie";
+                            }
+                            else
+                                SelectedSecurityQuestion = null;
+                            if (SecurityAnswer == null)
+                            {
+                                SecurityAnswer = string.Empty;
+                            }
+                            else
+                                SecurityAnswer = null;
+                            return;
+                        }
+                        if (RepeatNewPassword == null)
+                        {
+                            RepeatNewPassword = string.Empty;
+                            if (Username == null)
+                            {
+                                Username = string.Empty;
+                            }
+                            else
+                                Username = null;
+                            if (NewPassword == null)
+                            {
+                                NewPassword = string.Empty;
+                            }
+                            else
+                                NewPassword = null;
+                            if (SelectedSecurityQuestion == null)
+                            {
+                                SecurityQuestionsBorder = 0.7;
+                                SecurityQuestionsWarning = "Musisz wybrać pytanie";
+                            }
+                            else
+                                SelectedSecurityQuestion = null;
+                            if (SecurityAnswer == null)
+                            {
+                                SecurityAnswer = string.Empty;
+                            }
+                            else
+                                SecurityAnswer = null;
+                            return;
+                        }
+                        if (SelectedSecurityQuestion == null)
+                        {
+                            SecurityQuestionsBorder = 0.7;
+                            SecurityQuestionsWarning = "Musisz wybrać pytanie";
+                            if (Username == null)
+                            {
+                                Username = string.Empty;
+                            }
+                            else
+                                Username = null;
+                            if (NewPassword == null)
+                            {
+                                NewPassword = string.Empty;
+                            }
+                            else
+                                NewPassword = null;
+                            if (RepeatNewPassword == null)
+                            {
+                                RepeatNewPassword = string.Empty;
+                            }
+                            else
+                                RepeatNewPassword = null;
+                            if (SecurityAnswer == null)
+                            {
+                                SecurityAnswer = string.Empty;
+                            }
+                            else
+                                SecurityAnswer = null;
+                            return;
+                        }
+                        if (SecurityAnswer == null)
+                        {
+                            SecurityAnswer = string.Empty;
+                            if (Username == null)
+                            {
+                                Username = string.Empty;
+                            }
+                            else
+                                Username = null;
+                            if (NewPassword == null)
+                            {
+                                NewPassword = string.Empty;
+                            }
+                            else
+                                NewPassword = null;
+                            if (RepeatNewPassword == null)
+                            {
+                                RepeatNewPassword = string.Empty;
+                            }
+                            else
+                                RepeatNewPassword = null;
+                            if (SelectedSecurityQuestion == null)
+                            {
+                                SecurityQuestionsBorder = 0.7;
+                                SecurityQuestionsWarning = "Musisz wybrać pytanie";
+                            }
+                            else
+                                SelectedSecurityQuestion = null;
+                        }
+                        if (Username.Length < 5)
+                        {
+                            Username = null;
+                            NewPassword = null;
+                            RepeatNewPassword = null;
+                            SelectedSecurityQuestion = null;
+                            SecurityAnswer = null;
+                            UsernameBorder = 0.7;
+                            UsernameWarning = "Login musi mieć min. 5 znaków";
+                            return;
+                        }
+                        if (NewPassword.Length < 5)
+                        {
+                            Username = null;
+                            NewPassword = null;
+                            RepeatNewPassword = null;
+                            SelectedSecurityQuestion = null;
+                            SecurityAnswer = null;
+                            NewPasswordBorder = 0.7;
+                            NewPasswordWarning = "Hasło musi mieć min. 5 znaków";
+                            return;
+                        }
+                        if (SecurityAnswer.Length < 5)
+                        {
+                            Username = null;
+                            NewPassword = null;
+                            RepeatNewPassword = null;
+                            SelectedSecurityQuestion = null;
+                            SecurityAnswer = null;
+                            SecurityAnswerBorder = 0.7;
+                            SecurityAnswerWarning = "Odpowiedź musi mieć min. 5 znaków";
+                            return;
+                        }
+                        byte[] NewSecurePassword = myHash.GetHash(Username, NewPassword);
+                        byte[] RepeatNewSecurePassword = myHash.GetHash(Username, RepeatNewPassword);
+                        byte[] SecureSecurityAnswer = myHash.GetHash(SelectedSecurityQuestion, SecurityAnswer);
+                        if (!myHash.MatchHashes(NewSecurePassword, RepeatNewSecurePassword))
+                        {
+                            Username = null;
+                            NewPassword = null;
+                            RepeatNewPassword = null;
+                            SelectedSecurityQuestion = null;
+                            SecurityAnswer = null;
+                            NewPasswordBorder = RepeatNewPasswordBorder = 0.7;
+                            NewPasswordWarning = RepeatNewPasswordWarning = "Hasła muszą się zgadzać";
+                            return;
+                        }
+                        Model.CurrentUserShort.Login = Username;
+                        if (!Model.CheckLogin())
+                        {
+                            Username = null;
+                            NewPassword = null;
+                            RepeatNewPassword = null;
+                            SelectedSecurityQuestion = null;
+                            SecurityAnswer = null;
+                            UsernameBorder = 0.7;
+                            UsernameWarning = "Nieprawidłowy login";
+                            Model.CurrentUserShort.Login = null;
+                            return;
+                        }
+                        if (!Model.ValidateAnswer(Username, SecureSecurityAnswer))
+                        {
+                            Username = null;
+                            NewPassword = null;
+                            RepeatNewPassword = null;
+                            SelectedSecurityQuestion = null;
+                            SecurityAnswer = null;
+                            SecurityAnswerBorder = 0.7;
+                            SecurityAnswerWarning = "Nieprawidłowa odpowiedź";
+                            return;
+                        }
+                        Model.CurrentUserShort.Login = Username;
+                        Model.CurrentUserShort.Password = NewSecurePassword;
+                        Model.UpdateCurrentUserShortPassword();
+
+                        LoginViewModel login = new LoginViewModel(Model, NavigationStore);
+                        NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, login, Visibility.Hidden, "Hasło zostało zresetowane.");
                     },
                     arg => true);
                 }

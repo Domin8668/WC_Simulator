@@ -34,6 +34,8 @@ namespace WC_Simulator.ViewModel
         {
             Model = model;
             NavigationStore = navigationStore;
+            _newPasswordWarning = "Hasło musi mieć min. 8 znaków";
+            _repeatNewPasswordWarning = "Hasło musi mieć min. 8 znaków";
         }
 
         #endregion

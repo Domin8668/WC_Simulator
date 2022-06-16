@@ -14,8 +14,8 @@ namespace WC_Simulator.Model
     {
         /// <summary>
         /// Mechanizm w Modelu zapewnia możliwość wykonywania operacji na obiektach z automatycznym
-        /// aktualizowaniem ich odpowiedników w bazie danych. Edycja np. Playera powoduje aktualizację
-        /// bazy danych oraz aktualizuje obiekt tego Playera w kolekcji obiektów.
+        /// aktualizowaniem ich odpowiedników w bazie danych. Edycja np. Usera powoduje aktualizację
+        /// bazy danych oraz aktualizuje obiekt tego Usera w kolekcji obiektów.
         /// </summary>
 
 
@@ -123,8 +123,19 @@ namespace WC_Simulator.Model
         {
             foreach (var us in AllUsersShort)
             {
-                if (CurrentUserShort.Login == us.Login &&
-                    new SHA256Hashing().MatchHashes(CurrentUserShort.Password, us.Password))
+                if (CurrentUserShort.Login == us.Login && new SHA256Hashing().MatchHashes(CurrentUserShort.Password, us.Password))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        internal bool ValidateAnswer(string login, byte[] answer)
+        {
+            foreach (var u in AllUsers)
+            {
+                if (login == u.Login && new SHA256Hashing().MatchHashes(answer, u.Security_answer))
                 {
                     return true;
                 }
@@ -154,9 +165,43 @@ namespace WC_Simulator.Model
         {
             if (CurrentUser != null)
             {
+                foreach (var us in AllUsersShort)
+                {
+                    if (us.Login == CurrentUserShort.Login)
+                    {
+                        us.Password = CurrentUserShort.Password;
+                    }
+                }
                 foreach (var u in AllUsers)
                 {
                     if (u.Login == CurrentUser.Login)
+                    {
+                        CurrentUser = u;
+                        CurrentUser.Password = CurrentUserShort.Password;
+                        u.Password = CurrentUserShort.Password;
+                        CurrentUser.Last_log_date = DateTime.Now;
+                        u.Last_log_date = CurrentUser.Last_log_date;
+                        RepositoryUsers.UpdateUserPassword(CurrentUser);
+                        return;
+                    }
+                }
+            }
+        }
+
+        internal void UpdateCurrentUserShortPassword()
+        {
+            if (CurrentUserShort != null)
+            {
+                foreach (var us in AllUsersShort)
+                {
+                    if (us.Login == CurrentUserShort.Login)
+                    {
+                        us.Password = CurrentUserShort.Password;
+                    }
+                }
+                foreach (var u in AllUsers)
+                {
+                    if (u.Login == CurrentUserShort.Login)
                     {
                         CurrentUser = u;
                         CurrentUser.Password = CurrentUserShort.Password;
