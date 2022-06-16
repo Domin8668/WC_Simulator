@@ -303,6 +303,14 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="baza_projekt.sql" />
+    <Resource Include="Resources\points.png" />
+    <Resource Include="Resources\win.png" />
+    <Resource Include="Resources\draw.png" />
+    <Resource Include="Resources\etap.png" />
+    <Resource Include="Resources\kraj.png" />
+    <Resource Include="Resources\lose.png" />
+    <Resource Include="Resources\match.png" />
+    <Resource Include="Resources\trener.png" />
     <Resource Include="Resources\date.png" />
     <Resource Include="Resources\ile_turniejow.png" />
     <Resource Include="Resources\last_log.png" />
