@@ -16,9 +16,11 @@ namespace WC_Simulator.ViewModel
         private string _oldPassword;
         private string _newPassword;
         private string _repeatNewPassword;
+
         private double _oldPasswordBorder;
         private double _newPasswordBorder;
         private double _repeatNewPasswordBorder;
+
         private string _oldPasswordWarning;
         private string _newPasswordWarning;
         private string _repeatNewPasswordWarning;
