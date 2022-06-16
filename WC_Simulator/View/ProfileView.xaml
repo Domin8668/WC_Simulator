@@ -47,7 +47,11 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Image Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Source="../Resources/profile.png" Width="150"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="4" HorizontalAlignment="Center">
+            <Image Source="../Resources/woman.png" Width="280" HorizontalAlignment="Center" Margin="15"/>
+            <Image Source="../Resources/man.png" Width="280" HorizontalAlignment="Center" Margin="15"/>
+        </StackPanel>
+        
         <!--Panel użytkownika-->
         <Grid x:Name="ProfilePanel" Grid.Row="2" Grid.Column="1" Grid.RowSpan="6" Grid.ColumnSpan="4" Margin="20" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>

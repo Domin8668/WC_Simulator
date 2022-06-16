@@ -149,7 +149,7 @@
                     <TextBlock Text="Turnieje:" Margin="10" FontSize="30" FontWeight="DemiBold"/>
                 </StackPanel>
                 
-                <ListBox Margin="5,5,5,200" FontSize="20" Background="Transparent" BorderBrush="#c4c5c4" BorderThickness="1" ItemsSource="{Binding Tournaments}"/>
+                <ListBox Margin="5,5,5,480" FontSize="27" Background="Transparent" BorderBrush="#c4c5c4" BorderThickness="1" ItemsSource="{Binding Tournaments}"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
