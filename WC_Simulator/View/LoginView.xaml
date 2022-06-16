@@ -111,6 +111,8 @@
                     Height="40"
                     Foreground="White"
                     FontSize="20"
+                    BorderThickness="2"
+                    BorderBrush="#738e12"
                     FontWeight="DemiBold"
                     Command="{Binding Login}">
                 <Button.Background>
@@ -131,6 +133,8 @@
                     Height="35"
                     Foreground="White"
                     FontSize="15"
+                    BorderThickness="2"
+                    BorderBrush="#738e12"
                     FontWeight="DemiBold"
                     Content="Zarejestruj się"
                     Command="{Binding Register}">
@@ -152,6 +156,8 @@
                     Height="35"
                     Foreground="White"
                     FontSize="15"
+                    BorderThickness="2"
+                    BorderBrush="#738e12"
                     FontWeight="DemiBold"
                     Content="Nie pamiętam hasła"
                     Command="{Binding ResetPassword}">
