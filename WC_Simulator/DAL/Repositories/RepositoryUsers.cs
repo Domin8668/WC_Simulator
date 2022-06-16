@@ -48,8 +48,8 @@ namespace WC_Simulator.DAL.Repositories
                 command.Parameters.Add("@last_log_date", MySqlDbType.DateTime).Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 command.Parameters.Add("@security_question", MySqlDbType.VarChar).Value = user.Security_question;
                 command.Parameters.Add("@security_answer", MySqlDbType.Blob).Value = user.Security_answer;
-                var id = command.ExecuteNonQuery();
-                state = true;
+                var n = command.ExecuteNonQuery();
+                if (n == 1) state = true;
                 user.Id_user = (uint)command.LastInsertedId;
                 connection.Close();
             }
@@ -61,15 +61,14 @@ namespace WC_Simulator.DAL.Repositories
             bool state = false;
             using (var connection = DBConnection.Instance.Connection)
             {
-                string UPDATE_USER = $"UPDATE User SET id_user='{user.Id_user}', login='{user.Login}', password='{user.Password}'" +
-                    $"creation_date='{user.Creation_date}', last_log_date='{user.Last_log_date}', security_question='{user.Security_question}'" +
-                    $"WHERE id_user={idUser}";
-
-                MySqlCommand command = new MySqlCommand(UPDATE_USER, connection);
+                MySqlCommand command = new MySqlCommand("UPDATE User SET password=@password, last_log_date=@last_log_date WHERE id_user=@id_user", connection);
                 connection.Open();
+                command.Parameters.Add("@id_user", MySqlDbType.UInt64).Value = user.Id_user;
+                command.Parameters.Add("@password", MySqlDbType.Blob).Value = user.Password;
+                command.Parameters.Add("@last_log_date", MySqlDbType.DateTime).Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 var n = command.ExecuteNonQuery();
                 if (n == 1) state = true;
-
+                user.Id_user = (uint)command.LastInsertedId;
                 connection.Close();
             }
             return state;
