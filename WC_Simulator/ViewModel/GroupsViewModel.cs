@@ -8,6 +8,7 @@ using WC_Simulator.ViewModel.BaseClasses;
 using WC_Simulator.Model;
 using WC_Simulator.Helpers.Stores;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace WC_Simulator.ViewModel
 {
@@ -17,7 +18,9 @@ namespace WC_Simulator.ViewModel
         #region Variables
 
         private ObservableCollection<TeamInGroup> _teamsA;
-        private string _team2ShortName;
+        //private string _team2ShortName;
+        private BindingList<string> _test;
+
         #endregion
 
 
@@ -35,7 +38,12 @@ namespace WC_Simulator.ViewModel
                 new TeamInGroup(3, "../../Resources/Flags/netherlands.png", "Holandia", 3, 3, 3, 3),
                 new TeamInGroup(4, "../../Resources/Flags/wales.png", "Walia", 3, 3, 3, 3)
             };
-            Team2ShortName = "ARG";
+            //Team2ShortName = "ARG";
+            Test = new BindingList<string>()
+            {
+                "1",
+                "2"
+            };
         }
 
         #endregion
@@ -52,13 +60,22 @@ namespace WC_Simulator.ViewModel
             }
         }
 
+        //public string Team2ShortName
+        //{
+        //    get { return _team2ShortName; }
+        //    set {
+        //        _team2ShortName = value;
+        //        OnPropertyChanged(nameof(Team2ShortName));
+        //    }
+        //}
 
-        public string Team2ShortName
+        public BindingList<string> Test
         {
-            get { return _team2ShortName; }
-            set {
-                _team2ShortName = value;
-                OnPropertyChanged(nameof(Team2ShortName));
+            get { return _test; }
+            set
+            {
+                _test = value;
+                OnPropertyChanged(nameof(Test));
             }
         }
 
