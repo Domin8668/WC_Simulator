@@ -59,9 +59,23 @@
                     </Grid.RowDefinitions>
                     
                     <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Mecze o wejście do ćwierćfinałów" Style="{StaticResource labels}"/>
-                    <ucs:MatchUserControl x:Name="match49" Grid.Row="2" Grid.Column="0" Margin="10" FontSize="45"/>
-                    <ucs:MatchUserControl x:Name="match50" Grid.Row="3" Grid.Column="0" Margin="10" FontSize="45"/>
-                    <ucs:MatchUserControl x:Name="match52" Grid.Row="2" Grid.Column="1" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl x:Name="match49" Grid.Row="2" Grid.Column="0" Margin="10" FontSize="45"
+                                          Team1FlagPath="{Binding match49T1Flag}"
+                                          Team2FlagPath="{Binding match49T2Flag}"
+                                          Team1ShortName="{Binding match49T1Short}"
+                                          Team2ShortName="{Binding match49T2Short}"
+                                          Team1Result="{Binding match49T1Result}"
+                                          Team2Result="{Binding match49T2Result}"
+                                          />
+                    <ucs:MatchUserControl x:Name="match50" Grid.Row="3" Grid.Column="0" Margin="10" FontSize="45"
+                                          Team1Result="{Binding Matches[0].Goals_first_team, Mode=TwoWay}"
+                                          Team2Result="{Binding Matches[0].Goals_second_team, Mode=TwoWay}"
+                                          
+                                          
+                                          />
+                    <ucs:MatchUserControl x:Name="match52" Grid.Row="2" Grid.Column="1" Margin="10" FontSize="45" 
+                                          Team1Result="{Binding Matches[1].Goals_first_team, Mode=TwoWay,  UpdateSourceTrigger=LostFocus}"
+                                          Team2Result="{Binding Matches[1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <ucs:MatchUserControl x:Name="match51" Grid.Row="3" Grid.Column="1" Margin="10" FontSize="45"/>
                     <ucs:MatchUserControl x:Name="match53" Grid.Row="2" Grid.Column="2" Margin="10" FontSize="45"/>
                     <ucs:MatchUserControl x:Name="match54" Grid.Row="3" Grid.Column="2" Margin="10" FontSize="45"/>
