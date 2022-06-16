@@ -13,10 +13,15 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
-        private string _username;
         private string _oldPassword;
         private string _newPassword;
         private string _repeatNewPassword;
+        private double _oldPasswordBorder;
+        private double _newPasswordBorder;
+        private double _repeatNewPasswordBorder;
+        private string _oldPasswordWarning;
+        private string _newPasswordWarning;
+        private string _repeatNewPasswordWarning;
 
         #endregion
 
@@ -34,27 +39,23 @@ namespace WC_Simulator.ViewModel
 
         #region Properties
 
-        public string Username
-        {
-            get { return _username; }
-            set
-            {
-                _username = value;
-                // test wpisywania loginu:
-                Console.WriteLine($"Nazwa: {Username}");
-                OnPropertyChanged(nameof(Username));
-            }
-        }
-
         public string OldPassword
         {
             get { return _oldPassword; }
             set
             {
                 _oldPassword = value;
-                // test wpisywania hasła:
-                Console.WriteLine($"OldPassword: {OldPassword}");
-                OnPropertyChanged(nameof(OldPassword));
+                if (_oldPassword == string.Empty)
+                {
+                    OldPasswordBorder = 0.7;
+                    OldPasswordWarning = "Hasło nie może być puste";
+                }
+                else
+                {
+                    OldPasswordBorder = 0;
+                    OldPasswordWarning = string.Empty;
+                }
+                OnPropertyChanged(OldPassword);
             }
         }
         
@@ -64,8 +65,16 @@ namespace WC_Simulator.ViewModel
             set
             {
                 _newPassword = value;
-                // test wpisywania hasła:
-                Console.WriteLine($"NewPassword: {NewPassword}");
+                if (_newPassword == string.Empty)
+                {
+                    NewPasswordBorder = 0.7;
+                    NewPasswordWarning = "Hasło nie może być puste";
+                }
+                else
+                {
+                    NewPasswordBorder = 0;
+                    NewPasswordWarning = string.Empty;
+                }
                 OnPropertyChanged(nameof(NewPassword));
             }
         }
@@ -76,9 +85,77 @@ namespace WC_Simulator.ViewModel
             set
             {
                 _repeatNewPassword = value;
-                // test wpisywania hasła:
-                Console.WriteLine($"RepeatPassword: {RepeatNewPassword}");
+                if (_repeatNewPassword == string.Empty)
+                {
+                    RepeatNewPasswordBorder = 0.7;
+                    RepeatNewPasswordWarning = "Hasło nie może być puste";
+                }
+                else
+                {
+                    RepeatNewPasswordBorder = 0;
+                    RepeatNewPasswordWarning = string.Empty;
+                }
                 OnPropertyChanged(nameof(RepeatNewPassword));
+            }
+        }
+
+        public double OldPasswordBorder
+        {
+            get { return _oldPasswordBorder; }
+            set
+            {
+                _oldPasswordBorder = value;
+                OnPropertyChanged(nameof(OldPasswordBorder));
+            }
+        }
+
+        public double NewPasswordBorder
+        {
+            get { return _newPasswordBorder; }
+            set
+            {
+                _newPasswordBorder = value;
+                OnPropertyChanged(nameof(NewPasswordBorder));
+            }
+        }
+        
+        public double RepeatNewPasswordBorder
+        {
+            get { return _repeatNewPasswordBorder; }
+            set
+            {
+                _repeatNewPasswordBorder = value;
+                OnPropertyChanged(nameof(RepeatNewPasswordBorder));
+            }
+        }
+
+        public string OldPasswordWarning
+        {
+            get { return _oldPasswordWarning; }
+            set
+            {
+                _oldPasswordWarning = value;
+                OnPropertyChanged(nameof(OldPasswordWarning));
+            }
+        }
+
+        public string NewPasswordWarning
+        {
+            get { return _newPasswordWarning; }
+            set
+            {
+                _newPasswordWarning = value;
+                OnPropertyChanged(nameof(NewPasswordWarning));
+            }
+        }
+
+        public string RepeatNewPasswordWarning
+        {
+            get { return _repeatNewPasswordWarning; }
+            set
+            {
+                _repeatNewPasswordWarning = value;
+                OnPropertyChanged(nameof(RepeatNewPasswordWarning));
             }
         }
 
@@ -97,6 +174,104 @@ namespace WC_Simulator.ViewModel
                 {
                     _changePassword = new RelayCommand(arg =>
                     {
+                        SHA256Hashing myHash = new SHA256Hashing();
+
+                        if (OldPassword == null)
+                        {
+                            OldPassword = string.Empty;
+                            if (NewPassword == null)
+                            {
+                                NewPassword = string.Empty;
+                            }
+                            else
+                                NewPassword = null;
+                            if (RepeatNewPassword == null)
+                            {
+                                RepeatNewPassword = string.Empty;
+                            }
+                            else
+                                RepeatNewPassword = null;
+                            return;
+                        }
+                        if (NewPassword == null)
+                        {
+                            NewPassword = string.Empty;
+                            if (OldPassword == null)
+                            {
+                                OldPassword = string.Empty;
+                            }
+                            else
+                                OldPassword = null;
+                            if (RepeatNewPassword == null)
+                            {
+                                RepeatNewPassword = string.Empty;
+                            }
+                            else
+                                RepeatNewPassword = null;
+                            return;
+                        }
+                        if (RepeatNewPassword == null)
+                        {
+                            RepeatNewPassword = string.Empty;
+                            if (OldPassword == null)
+                            {
+                                OldPassword = string.Empty;
+                            }
+                            else
+                                OldPassword = null;
+                            if (NewPassword == null)
+                            {
+                                NewPassword = string.Empty;
+                            }
+                            else
+                                NewPassword = null;
+                            return;
+                        }
+                        if (OldPassword.Length < 8)
+                        {
+                            OldPassword = null;
+                            NewPassword = null;
+                            RepeatNewPassword = null;
+                            OldPasswordBorder = 0.7;
+                            OldPasswordWarning = "Hasło musi mieć min. 8 znaków";
+                            return;
+                        }
+                        if (NewPassword.Length < 8)
+                        {
+                            OldPassword = null;
+                            NewPassword = null;
+                            RepeatNewPassword = null;
+                            NewPasswordBorder = 0.7;
+                            NewPasswordWarning = "Hasło musi mieć min. 8 znaków";
+                            return;
+                        }
+                        byte[] OldSecurePassword = myHash.GetHash(Model.CurrentUserShort.Login, OldPassword);
+                        byte[] NewSecurePassword = myHash.GetHash(Model.CurrentUserShort.Login, NewPassword);
+                        byte[] RepeatNewSecurePassword = myHash.GetHash(Model.CurrentUserShort.Login, RepeatNewPassword);
+                        if (!myHash.MatchHashes(NewSecurePassword, RepeatNewSecurePassword))
+                        {
+                            OldPassword = null;
+                            NewPassword = null;
+                            RepeatNewPassword = null;
+                            NewPasswordBorder = RepeatNewPasswordBorder = 0.7;
+                            NewPasswordWarning = RepeatNewPasswordWarning = "Hasła muszą się zgadzać";
+                            return;
+                        }
+
+                        (OldSecurePassword, Model.CurrentUserShort.Password) = (Model.CurrentUserShort.Password, OldSecurePassword);
+                        if (!Model.ValidateUserShort())
+                        {
+                            (OldSecurePassword, Model.CurrentUserShort.Password) = (Model.CurrentUserShort.Password, OldSecurePassword);
+                            OldPassword = null;
+                            NewPassword = null;
+                            RepeatNewPassword = null;
+                            OldPasswordBorder = 0.7;
+                            OldPasswordWarning = "Nieprawidłowe hasło";
+                            return;
+                        }
+                        (NewSecurePassword, Model.CurrentUserShort.Password) = (Model.CurrentUserShort.Password, NewSecurePassword);
+                        Model.UpdateCurrentUserPassword();
+
                         ProfileViewModel profile = new ProfileViewModel(Model, NavigationStore);
                         NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, profile, Visibility.Visible, "Hasło zostało zmienione.");
                     },

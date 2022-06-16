@@ -75,7 +75,7 @@ namespace WC_Simulator.ViewModel
                 {
                     PasswordBorder = 0;
                     PasswordWarning = string.Empty;
-                } 
+                }
                 OnPropertyChanged(nameof(Password));
             }
         }
@@ -137,8 +137,6 @@ namespace WC_Simulator.ViewModel
                         SHA256Hashing myHash = new SHA256Hashing();
                         Model.CurrentUserShort.Login = Username;
                         Model.CurrentUserShort.Password = myHash.GetHash(Username, Password);
-                        //User admin = new User(1, "admin", myHash.GetHash("admin", "Zaq12wsx"), DateTime.UtcNow, DateTime.Now, "Jak ma na nazwisko najlepszy napastnik?", myHash.GetHash("Jak ma na nazwisko najlepszy napastnik?", "Lewandowski"));
-                        //RepositoryUsers.AddUser(admin);
                         myHash = null;
 
                         if (Username == null)

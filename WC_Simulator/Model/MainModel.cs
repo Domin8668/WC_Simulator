@@ -128,7 +128,7 @@ namespace WC_Simulator.Model
 
         internal void UpdateCurrentUser()
         {
-            if(CurrentUserShort != null)
+            if (CurrentUserShort != null)
             {
                 foreach (var u in AllUsers)
                 {
@@ -136,6 +136,28 @@ namespace WC_Simulator.Model
                     {
                         CurrentUser = u;
                         CurrentUser.Last_log_date = DateTime.Now;
+                        u.Last_log_date = CurrentUser.Last_log_date;
+                        RepositoryUsers.UpdateUserLastLogin(CurrentUser);
+                        return;
+                    }
+                }
+            }
+        }
+
+        internal void UpdateCurrentUserPassword()
+        {
+            if (CurrentUser != null)
+            {
+                foreach (var u in AllUsers)
+                {
+                    if (u.Login == CurrentUser.Login)
+                    {
+                        CurrentUser = u;
+                        CurrentUser.Password = CurrentUserShort.Password;
+                        u.Password = CurrentUserShort.Password;
+                        CurrentUser.Last_log_date = DateTime.Now;
+                        u.Last_log_date = CurrentUser.Last_log_date;
+                        RepositoryUsers.UpdateUserPassword(CurrentUser);
                         return;
                     }
                 }

@@ -26,7 +26,7 @@ namespace WC_Simulator.ViewModel
             Model = new MainModel();
             NavigationStore = new NavigationStore();
 
-            NavigationStore.CurrentViewModel = new LoginViewModel(Model, NavigationStore); ;
+            NavigationStore.CurrentViewModel = new LoginViewModel(Model, NavigationStore);
             NavigationStore.MenuVisibility = Visibility.Hidden;
 
             NavigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
