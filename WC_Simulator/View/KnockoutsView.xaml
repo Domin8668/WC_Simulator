@@ -34,7 +34,7 @@
             <Setter Property="Height" Value="60"/>
             <Setter Property="FontSize" Value="25"/>
             <Setter Property="Padding" Value="10 5"/>
-            <Setter Property="FontWeight" Value="500"/>
+            <Setter Property="FontWeight" Value="Medium"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
@@ -59,14 +59,14 @@
                     </Grid.RowDefinitions>
                     
                     <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Mecze o wejście do ćwierćfinałów" Style="{StaticResource labels}"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="0" Margin="10" FontSize="45"/>
-                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="0" Margin="10" FontSize="45"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="10" FontSize="45"/>
-                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="1" Margin="10" FontSize="45"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="10" FontSize="45"/>
-                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="2" Margin="10" FontSize="45"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="3" Margin="10" FontSize="45"/>
-                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="3" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl x:Name="match49" Grid.Row="2" Grid.Column="0" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl x:Name="match50" Grid.Row="3" Grid.Column="0" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl x:Name="match52" Grid.Row="2" Grid.Column="1" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl x:Name="match51" Grid.Row="3" Grid.Column="1" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl x:Name="match53" Grid.Row="2" Grid.Column="2" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl x:Name="match54" Grid.Row="3" Grid.Column="2" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl x:Name="match55" Grid.Row="2" Grid.Column="3" Margin="10" FontSize="45"/>
+                    <ucs:MatchUserControl x:Name="match56" Grid.Row="3" Grid.Column="3" Margin="10" FontSize="45"/>
 
                 </Grid>
             </TabItem>
@@ -90,10 +90,10 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Text="Mecze o wejście do półfinałów" Style="{StaticResource labels}" Margin="134,12"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="2" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="3" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="3" Grid.Column="3" Margin="10"/>
+                    <ucs:MatchUserControl x:Name="match58" Grid.Row="2" Grid.Column="2" Margin="10"/>
+                    <ucs:MatchUserControl x:Name="match57" Grid.Row="3" Grid.Column="2" Margin="10"/>
+                    <ucs:MatchUserControl x:Name="match60" Grid.Row="2" Grid.Column="3" Margin="10"/>
+                    <ucs:MatchUserControl x:Name="match59" Grid.Row="3" Grid.Column="3" Margin="10"/>
                 </Grid>
 
             </TabItem>
@@ -115,8 +115,8 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Mecze o wejście do finału" Style="{StaticResource labels}"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="10"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="10"/>
+                    <ucs:MatchUserControl x:Name="match61" Grid.Row="2" Grid.Column="1" Margin="10"/>
+                    <ucs:MatchUserControl x:Name="match62" Grid.Row="2" Grid.Column="2" Margin="10"/>
                 </Grid>
 
             </TabItem>
@@ -137,9 +137,9 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="1" Grid.Column="1" Text="Mecz o 1. miejsce" Style="{StaticResource labels}"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="10"/>
+                    <ucs:MatchUserControl x:Name="match64" Grid.Row="2" Grid.Column="1" Margin="10"/>
                     <TextBlock Grid.Row="1" Grid.Column="2" Text="Mecz o 3. miejsce" Style="{StaticResource labels}"/>
-                    <ucs:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="10"/>
+                    <ucs:MatchUserControl x:Name="match63" Grid.Row="2" Grid.Column="2" Margin="10"/>
                 </Grid>
 
             </TabItem>
