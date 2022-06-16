@@ -6,7 +6,17 @@
              xmlns:local="clr-namespace:WC_Simulator.View"
              xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="900" d:DesignWidth="1000">
+
+    <UserControl.Resources>
+        <Style TargetType="TextBlock" x:Key="textblock">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+    </UserControl.Resources>
+
     <UserControl.Background>
         <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
             <LinearGradientBrush.GradientStops>
@@ -15,79 +25,191 @@
             </LinearGradientBrush.GradientStops>
         </LinearGradientBrush>
     </UserControl.Background>
+    
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.05*"/>
+            <ColumnDefinition Width="0.75*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="0.05*"/>
-
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="0.05*"/>
-
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.1*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="1.5*"/>
-            <RowDefinition Height="0.1*"/>
-
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.1*"/>
         </Grid.RowDefinitions>
 
         <!--ListView Krajów-->
-        <ListView x:Name="CountryTable" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" FontSize="16"
+        <ListView x:Name="CountryTable" 
+                  Grid.Column="0" 
+                  Grid.Row="0" 
+                  Grid.RowSpan="3" 
+                  FontSize="20" 
+                  Margin="10,20,20,20" 
+                  Width="400" 
+                  HorizontalAlignment="Left" 
+                  Background="Transparent" 
+                  BorderThickness="0"
                   SelectedItem="{Binding SelectedTeam, Mode=TwoWay}"
                   ItemsSource="{Binding Teams, Mode=TwoWay}">
 
             <ListView.View>
                 <GridView>
+                    
                     <GridView.ColumnHeaderContainerStyle>
                         <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
                             <Setter Property="IsHitTestVisible" Value="False"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="FontSize" Value="23"/>
+                            <Setter Property="FontWeight" Value="DemiBold"/>
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
-                    <GridViewColumn Header="" Width="110" >
+                    
+                    <GridViewColumn Header="Flaga" Width="110">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding Image}" />
+                                <Image Source="{Binding Image}" Margin="5"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Kraj" Width="200">
+                    
+                    <GridViewColumn Header="Kraj" Width="260">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Country}" Margin="45,0,0,0"/>
+                                <TextBlock Text="{Binding Country}" Margin="5" FontSize="20"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
+                    
                 </GridView>
             </ListView.View>
         </ListView>
 
-        <!--StackPanel Info-->
+        <Image Grid.Row="0" Grid.Column="1" x:Name="TeamImage" Source="{Binding SelectedTeam.Image}" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="5" HorizontalAlignment="Center">
+            <!--Kraj-->
+            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
 
+                <TextBlock Text="Kraj" Foreground="#535352" Margin="1" FontSize="17"/>
+                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Image Source="../Resources/kraj.png" Width="18" Margin="5"/>
+                        <TextBlock x:Name="TeamName" Style="{StaticResource textblock}" 
+                           Text="{Binding SelectedTeam.Country, StringFormat={}{0}, Mode=TwoWay,
+                                             UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </Border>
 
-        <StackPanel Grid.Row="1" Grid.Column="3" Orientation="Vertical" Margin="30" >
-            <Image x:Name="TeamImage" Grid.Row="1" Grid.Column="3"
-               Source="{Binding SelectedTeam.Image}" Width="150"/>
-            <TextBlock x:Name="TeamName" FontSize="20" Text="{Binding SelectedTeam.Country, StringFormat=Kraj: {0}, Mode=TwoWay,
-                                             UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-            <TextBlock x:Name="TeamCoach" FontSize="20" Text="{Binding SelectedTeam.Coach, StringFormat=Trener: {0}, Mode=TwoWay,
-                                             UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-            <TextBlock x:Name="LastPhase" FontSize="20" Text="{Binding SelectedTeam.Phase, StringFormat=Ostatni Etap: {0}, Mode=TwoWay,
-                                             UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+            </StackPanel>
 
-            
+            <!--Trener-->
+            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+
+                <TextBlock Text="Trener" Foreground="#535352" Margin="1" FontSize="17"/>
+                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Image Source="../Resources/trener.png" Width="18" Margin="5"/>
+                        <TextBlock x:Name="TeamCoach" Style="{StaticResource textblock}" 
+                           Text="{Binding SelectedTeam.Coach, StringFormat={}{0}, Mode=TwoWay,
+                                             UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+
+            <!--Ostatni Etap-->
+            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+
+                <TextBlock Text="Ostatni Etap" Foreground="#535352" Margin="1" FontSize="17"/>
+                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Image Source="../Resources/etap.png" Width="18" Margin="5"/>
+                        <TextBlock x:Name="LastPhase" Style="{StaticResource textblock}" 
+                           Text="{Binding SelectedTeam.Phase, StringFormat={}{0}, Mode=TwoWay,
+                                             UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+
+            <!--Mecze-->
+            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+
+                <TextBlock Text="Mecze" Foreground="#535352" Margin="1" FontSize="17"/>
+                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Image Source="../Resources/match.png" Width="18" Margin="5"/>
+                        <TextBlock x:Name="Matches" Style="{StaticResource textblock}" 
+                           Text="{Binding SelectedTeam.Matches, StringFormat={}{0}, Mode=TwoWay,
+                                             UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+
+            <!--Wygrane-->
+            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+
+                <TextBlock Text="Wygrane" Foreground="#535352" Margin="1" FontSize="17"/>
+                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Image Source="../Resources/win.png" Width="18" Margin="5"/>
+                        <TextBlock x:Name="WinsNB" Style="{StaticResource textblock}" 
+                           Text="{Binding SelectedTeam.Wins, StringFormat={}{0}, 
+                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+
+            <!--Remisy-->
+            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+
+                <TextBlock Text="Remisy" Foreground="#535352" Margin="1" FontSize="17"/>
+                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Image Source="../Resources/draw.png" Width="18" Margin="5"/>
+                        <TextBlock x:Name="DrawsNB" Style="{StaticResource textblock}" 
+                           Text="{Binding SelectedTeam.Draws, StringFormat={}{0}, 
+                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+
+            <!--Przegrane-->
+            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+
+                <TextBlock Text="Przegrane" Foreground="#535352" Margin="1" FontSize="17"/>
+                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Image Source="../Resources/lose.png" Width="18" Margin="5"/>
+                        <TextBlock x:Name="LossesNB" Style="{StaticResource textblock}" 
+                           Text="{Binding SelectedTeam.Losses, StringFormat={}{0}, 
+                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+
+            <!--Punkty-->
+            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+
+                <TextBlock Text="Punkty" Foreground="#535352" Margin="1" FontSize="17"/>
+                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Image Source="../Resources/points.png" Width="18" Margin="5"/>
+                        <TextBlock x:Name="PointsNB" Style="{StaticResource textblock}" 
+                           Text="{Binding SelectedTeam.Points, StringFormat={}{0}, 
+                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+
             <!--Staty-->
-            <TextBlock x:Name="Matches" FontSize="20" Text="{Binding SelectedTeam.Matches, StringFormat=Mecze: {0}, Mode=TwoWay,
-                                             UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-            <TextBlock x:Name="WinsNB" FontSize="20" Text="{Binding SelectedTeam.Wins, StringFormat=Wygrane: {0}, 
-                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBlock x:Name="LossesNB" FontSize="20" Text="{Binding SelectedTeam.Wins, StringFormat=Przegrane: {0}, 
-                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBlock x:Name="DrawsNB" FontSize="20" Text="{Binding SelectedTeam.Draws, StringFormat=Remisy: {0}, 
-                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBlock x:Name="PointsNB" FontSize="20" Text="{Binding SelectedTeam.Points, StringFormat=Punkty: {0}, 
-                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            
 
             <!--<TextBlock x:Name="GoalsForNB" Text="{Binding SelectedTeam.GF, StringFormat=Gole zdobyte: {0}, 
                                             Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -98,7 +220,12 @@
         
         
         <!--Listview Piłkarze-->
-        <ListView x:Name="PlayersTable" Grid.Column="3" Grid.Row="2" FontSize="20" Width="600"
+        <ListView x:Name="PlayersTable" Grid.Column="1" Grid.Row="2" FontSize="18" 
+                  Margin="10,20,20,20"
+                  Width="400"
+                  HorizontalAlignment="Center" 
+                  Background="Transparent" 
+                  BorderThickness="0"
                   ItemsSource="{Binding SelectedTeam.Players, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged}">
             <ListView.View>
@@ -106,9 +233,15 @@
                     <GridView.ColumnHeaderContainerStyle>
                         <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
                             <Setter Property="IsHitTestVisible" Value="False"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="FontSize" Value="18"/>
+                            <Setter Property="FontWeight" Value="DemiBold"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
-                    <GridViewColumn Header="Piłkarz" Width="590" >
+                    <GridViewColumn Header="Piłkarz" Width="400">
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
