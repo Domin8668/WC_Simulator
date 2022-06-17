@@ -15,55 +15,390 @@
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsA, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M1Flag_first="{Binding Matches[0].Flag_first}"
-                        M1Flag_second="{Binding Matches[0].Flag_second}"
-                        M1Goals_first_team="{Binding Matches[0].Goals_first_team}"
-                        M1Goals_second_team="{Binding Matches[0].Goals_second_team}"
-                        M1Short_first="{Binding Matches[0].Short_first}"
-                        M1Short_second="{Binding Matches[0].Short_second}"
+                                      
+                        M1Flag_first="{Binding MatchesA[0].Flag_first}"
+                        M1Flag_second="{Binding MatchesA[0].Flag_second}"
+                        M1Goals_first_team="{Binding MatchesA[0].Goals_first_team}"
+                        M1Goals_second_team="{Binding MatchesA[0].Goals_second_team}"
+                        M1Short_first="{Binding MatchesA[0].Short_first}"
+                        M1Short_second="{Binding MatchesA[0].Short_second}"
+                                      
+                        M2Flag_first="{Binding MatchesA[1].Flag_first}"
+                        M2Flag_second="{Binding MatchesA[1].Flag_second}"
+                        M2Goals_first_team="{Binding MatchesA[1].Goals_first_team}"
+                        M2Goals_second_team="{Binding MatchesA[1].Goals_second_team}"
+                        M2Short_first="{Binding MatchesA[1].Short_first}"
+                        M2Short_second="{Binding MatchesA[1].Short_second}"
+                                      
+                        M3Flag_first="{Binding MatchesA[2].Flag_first}"
+                        M3Flag_second="{Binding MatchesA[2].Flag_second}"
+                        M3Goals_first_team="{Binding MatchesA[2].Goals_first_team}"
+                        M3Goals_second_team="{Binding MatchesA[2].Goals_second_team}"
+                        M3Short_first="{Binding MatchesA[2].Short_first}"
+                        M3Short_second="{Binding MatchesA[2].Short_second}"
+                                      
+                        M4Flag_first="{Binding MatchesA[3].Flag_first}"
+                        M4Flag_second="{Binding MatchesA[3].Flag_second}"
+                        M4Goals_first_team="{Binding MatchesA[3].Goals_first_team}"
+                        M4Goals_second_team="{Binding MatchesA[3].Goals_second_team}"
+                        M4Short_first="{Binding MatchesA[3].Short_first}"
+                        M4Short_second="{Binding MatchesA[3].Short_second}"                                          
+                                      
+                        M5Flag_first="{Binding MatchesA[4].Flag_first}"
+                        M5Flag_second="{Binding MatchesA[4].Flag_second}"
+                        M5Goals_first_team="{Binding MatchesA[4].Goals_first_team}"
+                        M5Goals_second_team="{Binding MatchesA[4].Goals_second_team}"
+                        M5Short_first="{Binding MatchesA[4].Short_first}"
+                        M5Short_second="{Binding MatchesA[4].Short_second}"   
+                                      
+                        M6Flag_first="{Binding MatchesA[5].Flag_first}"
+                        M6Flag_second="{Binding MatchesA[5].Flag_second}"
+                        M6Goals_first_team="{Binding MatchesA[5].Goals_first_team}"
+                        M6Goals_second_team="{Binding MatchesA[5].Goals_second_team}"
+                        M6Short_first="{Binding MatchesA[5].Short_first}"
+                        M6Short_second="{Binding MatchesA[5].Short_second}"                                         
                                       />
             </TabItem>
             <TabItem x:Name="GroupB" Header="Grupa B">
                 <ucs:GroupUserControl x:Name="GroupBUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsB, Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"/>
+                        UpdateSourceTrigger=PropertyChanged}"
+                                      
+                        M1Flag_first="{Binding MatchesB[0].Flag_first}"
+                        M1Flag_second="{Binding MatchesB[0].Flag_second}"
+                        M1Goals_first_team="{Binding MatchesB[0].Goals_first_team}"
+                        M1Goals_second_team="{Binding MatchesB[0].Goals_second_team}"
+                        M1Short_first="{Binding MatchesB[0].Short_first}"
+                        M1Short_second="{Binding MatchesB[0].Short_second}"
+                                      
+                        M2Flag_first="{Binding MatchesB[1].Flag_first}"
+                        M2Flag_second="{Binding MatchesB[1].Flag_second}"
+                        M2Goals_first_team="{Binding MatchesB[1].Goals_first_team}"
+                        M2Goals_second_team="{Binding MatchesB[1].Goals_second_team}"
+                        M2Short_first="{Binding MatchesB[1].Short_first}"
+                        M2Short_second="{Binding MatchesB[1].Short_second}"
+                                      
+                        M3Flag_first="{Binding MatchesB[2].Flag_first}"
+                        M3Flag_second="{Binding MatchesB[2].Flag_second}"
+                        M3Goals_first_team="{Binding MatchesB[2].Goals_first_team}"
+                        M3Goals_second_team="{Binding MatchesB[2].Goals_second_team}"
+                        M3Short_first="{Binding MatchesB[2].Short_first}"
+                        M3Short_second="{Binding MatchesB[2].Short_second}"
+                                      
+                        M4Flag_first="{Binding MatchesB[3].Flag_first}"
+                        M4Flag_second="{Binding MatchesB[3].Flag_second}"
+                        M4Goals_first_team="{Binding MatchesB[3].Goals_first_team}"
+                        M4Goals_second_team="{Binding MatchesB[3].Goals_second_team}"
+                        M4Short_first="{Binding MatchesB[3].Short_first}"
+                        M4Short_second="{Binding MatchesB[3].Short_second}"                                          
+                                      
+                        M5Flag_first="{Binding MatchesB[4].Flag_first}"
+                        M5Flag_second="{Binding MatchesB[4].Flag_second}"
+                        M5Goals_first_team="{Binding MatchesB[4].Goals_first_team}"
+                        M5Goals_second_team="{Binding MatchesB[4].Goals_second_team}"
+                        M5Short_first="{Binding MatchesB[4].Short_first}"
+                        M5Short_second="{Binding MatchesB[4].Short_second}"   
+                                      
+                        M6Flag_first="{Binding MatchesB[5].Flag_first}"
+                        M6Flag_second="{Binding MatchesB[5].Flag_second}"
+                        M6Goals_first_team="{Binding MatchesB[5].Goals_first_team}"
+                        M6Goals_second_team="{Binding MatchesB[5].Goals_second_team}"
+                        M6Short_first="{Binding MatchesB[5].Short_first}"
+                        M6Short_second="{Binding MatchesB[5].Short_second}"                                      
+                                      />
             </TabItem>
             <TabItem x:Name="GroupC" Header="Grupa C">
                 <ucs:GroupUserControl x:Name="GroupCUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsC, Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"/>
+                        UpdateSourceTrigger=PropertyChanged}"
+                                      
+                        M1Flag_first="{Binding MatchesC[0].Flag_first}"
+                        M1Flag_second="{Binding MatchesC[0].Flag_second}"
+                        M1Goals_first_team="{Binding MatchesC[0].Goals_first_team}"
+                        M1Goals_second_team="{Binding MatchesC[0].Goals_second_team}"
+                        M1Short_first="{Binding MatchesC[0].Short_first}"
+                        M1Short_second="{Binding MatchesC[0].Short_second}"
+                                      
+                        M2Flag_first="{Binding MatchesC[1].Flag_first}"
+                        M2Flag_second="{Binding MatchesC[1].Flag_second}"
+                        M2Goals_first_team="{Binding MatchesC[1].Goals_first_team}"
+                        M2Goals_second_team="{Binding MatchesC[1].Goals_second_team}"
+                        M2Short_first="{Binding MatchesC[1].Short_first}"
+                        M2Short_second="{Binding MatchesC[1].Short_second}"
+                                      
+                        M3Flag_first="{Binding MatchesC[2].Flag_first}"
+                        M3Flag_second="{Binding MatchesC[2].Flag_second}"
+                        M3Goals_first_team="{Binding MatchesC[2].Goals_first_team}"
+                        M3Goals_second_team="{Binding MatchesC[2].Goals_second_team}"
+                        M3Short_first="{Binding MatchesC[2].Short_first}"
+                        M3Short_second="{Binding MatchesC[2].Short_second}"
+                                      
+                        M4Flag_first="{Binding MatchesC[3].Flag_first}"
+                        M4Flag_second="{Binding MatchesC[3].Flag_second}"
+                        M4Goals_first_team="{Binding MatchesC[3].Goals_first_team}"
+                        M4Goals_second_team="{Binding MatchesC[3].Goals_second_team}"
+                        M4Short_first="{Binding MatchesC[3].Short_first}"
+                        M4Short_second="{Binding MatchesC[3].Short_second}"                                          
+                                      
+                        M5Flag_first="{Binding MatchesC[4].Flag_first}"
+                        M5Flag_second="{Binding MatchesC[4].Flag_second}"
+                        M5Goals_first_team="{Binding MatchesC[4].Goals_first_team}"
+                        M5Goals_second_team="{Binding MatchesC[4].Goals_second_team}"
+                        M5Short_first="{Binding MatchesC[4].Short_first}"
+                        M5Short_second="{Binding MatchesC[4].Short_second}"   
+                                      
+                        M6Flag_first="{Binding MatchesC[5].Flag_first}"
+                        M6Flag_second="{Binding MatchesC[5].Flag_second}"
+                        M6Goals_first_team="{Binding MatchesC[5].Goals_first_team}"
+                        M6Goals_second_team="{Binding MatchesC[5].Goals_second_team}"
+                        M6Short_first="{Binding MatchesC[5].Short_first}"
+                        M6Short_second="{Binding MatchesC[5].Short_second}" />
             </TabItem>
             <TabItem x:Name="GroupD" Header="Grupa D">
                 <ucs:GroupUserControl x:Name="GroupDUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsD, Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"/>
+                        UpdateSourceTrigger=PropertyChanged}"
+                                      
+                        M1Flag_first="{Binding MatchesD[0].Flag_first}"
+                        M1Flag_second="{Binding MatchesD[0].Flag_second}"
+                        M1Goals_first_team="{Binding MatchesD[0].Goals_first_team}"
+                        M1Goals_second_team="{Binding MatchesD[0].Goals_second_team}"
+                        M1Short_first="{Binding MatchesD[0].Short_first}"
+                        M1Short_second="{Binding MatchesD[0].Short_second}"
+                                      
+                        M2Flag_first="{Binding MatchesD[1].Flag_first}"
+                        M2Flag_second="{Binding MatchesD[1].Flag_second}"
+                        M2Goals_first_team="{Binding MatchesD[1].Goals_first_team}"
+                        M2Goals_second_team="{Binding MatchesD[1].Goals_second_team}"
+                        M2Short_first="{Binding MatchesD[1].Short_first}"
+                        M2Short_second="{Binding MatchesD[1].Short_second}"
+                                      
+                        M3Flag_first="{Binding MatchesD[2].Flag_first}"
+                        M3Flag_second="{Binding MatchesD[2].Flag_second}"
+                        M3Goals_first_team="{Binding MatchesD[2].Goals_first_team}"
+                        M3Goals_second_team="{Binding MatchesD[2].Goals_second_team}"
+                        M3Short_first="{Binding MatchesD[2].Short_first}"
+                        M3Short_second="{Binding MatchesD[2].Short_second}"
+                                      
+                        M4Flag_first="{Binding MatchesD[3].Flag_first}"
+                        M4Flag_second="{Binding MatchesD[3].Flag_second}"
+                        M4Goals_first_team="{Binding MatchesD[3].Goals_first_team}"
+                        M4Goals_second_team="{Binding MatchesD[3].Goals_second_team}"
+                        M4Short_first="{Binding MatchesD[3].Short_first}"
+                        M4Short_second="{Binding MatchesD[3].Short_second}"                                          
+                                      
+                        M5Flag_first="{Binding MatchesD[4].Flag_first}"
+                        M5Flag_second="{Binding MatchesD[4].Flag_second}"
+                        M5Goals_first_team="{Binding MatchesD[4].Goals_first_team}"
+                        M5Goals_second_team="{Binding MatchesD[4].Goals_second_team}"
+                        M5Short_first="{Binding MatchesD[4].Short_first}"
+                        M5Short_second="{Binding MatchesD[4].Short_second}"   
+                                      
+                        M6Flag_first="{Binding MatchesD[5].Flag_first}"
+                        M6Flag_second="{Binding MatchesD[5].Flag_second}"
+                        M6Goals_first_team="{Binding MatchesD[5].Goals_first_team}"
+                        M6Goals_second_team="{Binding MatchesD[5].Goals_second_team}"
+                        M6Short_first="{Binding MatchesD[5].Short_first}"
+                        M6Short_second="{Binding MatchesD[5].Short_second}"/>
             </TabItem>
             <TabItem x:Name="GroupE" Header="Grupa E">
                 <ucs:GroupUserControl x:Name="GroupEUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsE, Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"/>
+                        UpdateSourceTrigger=PropertyChanged}"
+                                      
+                        M1Flag_first="{Binding MatchesE[0].Flag_first}"
+                        M1Flag_second="{Binding MatchesE[0].Flag_second}"
+                        M1Goals_first_team="{Binding MatchesE[0].Goals_first_team}"
+                        M1Goals_second_team="{Binding MatchesE[0].Goals_second_team}"
+                        M1Short_first="{Binding MatchesE[0].Short_first}"
+                        M1Short_second="{Binding MatchesE[0].Short_second}"
+                                      
+                        M2Flag_first="{Binding MatchesE[1].Flag_first}"
+                        M2Flag_second="{Binding MatchesE[1].Flag_second}"
+                        M2Goals_first_team="{Binding MatchesE[1].Goals_first_team}"
+                        M2Goals_second_team="{Binding MatchesE[1].Goals_second_team}"
+                        M2Short_first="{Binding MatchesE[1].Short_first}"
+                        M2Short_second="{Binding MatchesE[1].Short_second}"
+                                      
+                        M3Flag_first="{Binding MatchesE[2].Flag_first}"
+                        M3Flag_second="{Binding MatchesE[2].Flag_second}"
+                        M3Goals_first_team="{Binding MatchesE[2].Goals_first_team}"
+                        M3Goals_second_team="{Binding MatchesE[2].Goals_second_team}"
+                        M3Short_first="{Binding MatchesE[2].Short_first}"
+                        M3Short_second="{Binding MatchesE[2].Short_second}"
+                                      
+                        M4Flag_first="{Binding MatchesE[3].Flag_first}"
+                        M4Flag_second="{Binding MatchesE[3].Flag_second}"
+                        M4Goals_first_team="{Binding MatchesE[3].Goals_first_team}"
+                        M4Goals_second_team="{Binding MatchesE[3].Goals_second_team}"
+                        M4Short_first="{Binding MatchesE[3].Short_first}"
+                        M4Short_second="{Binding MatchesE[3].Short_second}"                                          
+                                      
+                        M5Flag_first="{Binding MatchesE[4].Flag_first}"
+                        M5Flag_second="{Binding MatchesE[4].Flag_second}"
+                        M5Goals_first_team="{Binding MatchesE[4].Goals_first_team}"
+                        M5Goals_second_team="{Binding MatchesE[4].Goals_second_team}"
+                        M5Short_first="{Binding MatchesE[4].Short_first}"
+                        M5Short_second="{Binding MatchesE[4].Short_second}"   
+                                      
+                        M6Flag_first="{Binding MatchesE[5].Flag_first}"
+                        M6Flag_second="{Binding MatchesE[5].Flag_second}"
+                        M6Goals_first_team="{Binding MatchesE[5].Goals_first_team}"
+                        M6Goals_second_team="{Binding MatchesE[5].Goals_second_team}"
+                        M6Short_first="{Binding MatchesE[5].Short_first}"
+                        M6Short_second="{Binding MatchesE[5].Short_second}"                                      
+                                      />
             </TabItem>
             <TabItem x:Name="GroupF" Header="Grupa F">
                 <ucs:GroupUserControl x:Name="GroupFUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsF, Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"/>
+                        UpdateSourceTrigger=PropertyChanged}"
+                                      
+                        M1Flag_first="{Binding MatchesF[0].Flag_first}"
+                        M1Flag_second="{Binding MatchesF[0].Flag_second}"
+                        M1Goals_first_team="{Binding MatchesF[0].Goals_first_team}"
+                        M1Goals_second_team="{Binding MatchesF[0].Goals_second_team}"
+                        M1Short_first="{Binding MatchesF[0].Short_first}"
+                        M1Short_second="{Binding MatchesF[0].Short_second}"
+                                      
+                        M2Flag_first="{Binding MatchesF[1].Flag_first}"
+                        M2Flag_second="{Binding MatchesF[1].Flag_second}"
+                        M2Goals_first_team="{Binding MatchesF[1].Goals_first_team}"
+                        M2Goals_second_team="{Binding MatchesF[1].Goals_second_team}"
+                        M2Short_first="{Binding MatchesF[1].Short_first}"
+                        M2Short_second="{Binding MatchesF[1].Short_second}"
+                                      
+                        M3Flag_first="{Binding MatchesF[2].Flag_first}"
+                        M3Flag_second="{Binding MatchesF[2].Flag_second}"
+                        M3Goals_first_team="{Binding MatchesF[2].Goals_first_team}"
+                        M3Goals_second_team="{Binding MatchesF[2].Goals_second_team}"
+                        M3Short_first="{Binding MatchesF[2].Short_first}"
+                        M3Short_second="{Binding MatchesF[2].Short_second}"
+                                      
+                        M4Flag_first="{Binding MatchesF[3].Flag_first}"
+                        M4Flag_second="{Binding MatchesF[3].Flag_second}"
+                        M4Goals_first_team="{Binding MatchesF[3].Goals_first_team}"
+                        M4Goals_second_team="{Binding MatchesF[3].Goals_second_team}"
+                        M4Short_first="{Binding MatchesF[3].Short_first}"
+                        M4Short_second="{Binding MatchesF[3].Short_second}"                                          
+                                      
+                        M5Flag_first="{Binding MatchesF[4].Flag_first}"
+                        M5Flag_second="{Binding MatchesF[4].Flag_second}"
+                        M5Goals_first_team="{Binding MatchesF[4].Goals_first_team}"
+                        M5Goals_second_team="{Binding MatchesF[4].Goals_second_team}"
+                        M5Short_first="{Binding MatchesF[4].Short_first}"
+                        M5Short_second="{Binding MatchesF[4].Short_second}"   
+                                      
+                        M6Flag_first="{Binding MatchesF[5].Flag_first}"
+                        M6Flag_second="{Binding MatchesF[5].Flag_second}"
+                        M6Goals_first_team="{Binding MatchesF[5].Goals_first_team}"
+                        M6Goals_second_team="{Binding MatchesF[5].Goals_second_team}"
+                        M6Short_first="{Binding MatchesF[5].Short_first}"
+                        M6Short_second="{Binding MatchesF[5].Short_second}"        
+                                      />
             </TabItem>
             <TabItem x:Name="GroupG" Header="Grupa G">
                 <ucs:GroupUserControl x:Name="GroupGUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsG, Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"/>
+                        UpdateSourceTrigger=PropertyChanged}"
+                                      
+                        M1Flag_first="{Binding MatchesG[0].Flag_first}"
+                        M1Flag_second="{Binding MatchesG[0].Flag_second}"
+                        M1Goals_first_team="{Binding MatchesG[0].Goals_first_team}"
+                        M1Goals_second_team="{Binding MatchesG[0].Goals_second_team}"
+                        M1Short_first="{Binding MatchesG[0].Short_first}"
+                        M1Short_second="{Binding MatchesG[0].Short_second}"
+                                      
+                        M2Flag_first="{Binding MatchesG[1].Flag_first}"
+                        M2Flag_second="{Binding MatchesG[1].Flag_second}"
+                        M2Goals_first_team="{Binding MatchesG[1].Goals_first_team}"
+                        M2Goals_second_team="{Binding MatchesG[1].Goals_second_team}"
+                        M2Short_first="{Binding MatchesG[1].Short_first}"
+                        M2Short_second="{Binding MatchesG[1].Short_second}"
+                                      
+                        M3Flag_first="{Binding MatchesG[2].Flag_first}"
+                        M3Flag_second="{Binding MatchesG[2].Flag_second}"
+                        M3Goals_first_team="{Binding MatchesG[2].Goals_first_team}"
+                        M3Goals_second_team="{Binding MatchesG[2].Goals_second_team}"
+                        M3Short_first="{Binding MatchesG[2].Short_first}"
+                        M3Short_second="{Binding MatchesG[2].Short_second}"
+                                      
+                        M4Flag_first="{Binding MatchesG[3].Flag_first}"
+                        M4Flag_second="{Binding MatchesG[3].Flag_second}"
+                        M4Goals_first_team="{Binding MatchesG[3].Goals_first_team}"
+                        M4Goals_second_team="{Binding MatchesG[3].Goals_second_team}"
+                        M4Short_first="{Binding MatchesG[3].Short_first}"
+                        M4Short_second="{Binding MatchesG[3].Short_second}"                                          
+                                      
+                        M5Flag_first="{Binding MatchesG[4].Flag_first}"
+                        M5Flag_second="{Binding MatchesG[4].Flag_second}"
+                        M5Goals_first_team="{Binding MatchesG[4].Goals_first_team}"
+                        M5Goals_second_team="{Binding MatchesG[4].Goals_second_team}"
+                        M5Short_first="{Binding MatchesG[4].Short_first}"
+                        M5Short_second="{Binding MatchesG[4].Short_second}"   
+                                      
+                        M6Flag_first="{Binding MatchesG[5].Flag_first}"
+                        M6Flag_second="{Binding MatchesG[5].Flag_second}"
+                        M6Goals_first_team="{Binding MatchesG[5].Goals_first_team}"
+                        M6Goals_second_team="{Binding MatchesG[5].Goals_second_team}"
+                        M6Short_first="{Binding MatchesG[5].Short_first}"
+                        M6Short_second="{Binding MatchesG[5].Short_second}" 
+                                      />
             </TabItem>
             <TabItem x:Name="GroupH" Header="Grupa H">
                 <ucs:GroupUserControl x:Name="GroupHUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsH, Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"/>
+                        UpdateSourceTrigger=PropertyChanged}"
+                                      
+                        M1Flag_first="{Binding MatchesH[0].Flag_first}"
+                        M1Flag_second="{Binding MatchesH[0].Flag_second}"
+                        M1Goals_first_team="{Binding MatchesH[0].Goals_first_team}"
+                        M1Goals_second_team="{Binding MatchesH[0].Goals_second_team}"
+                        M1Short_first="{Binding MatchesH[0].Short_first}"
+                        M1Short_second="{Binding MatchesH[0].Short_second}"
+                                      
+                        M2Flag_first="{Binding MatchesH[1].Flag_first}"
+                        M2Flag_second="{Binding MatchesH[1].Flag_second}"
+                        M2Goals_first_team="{Binding MatchesH[1].Goals_first_team}"
+                        M2Goals_second_team="{Binding MatchesH[1].Goals_second_team}"
+                        M2Short_first="{Binding MatchesH[1].Short_first}"
+                        M2Short_second="{Binding MatchesH[1].Short_second}"
+                                      
+                        M3Flag_first="{Binding MatchesH[2].Flag_first}"
+                        M3Flag_second="{Binding MatchesH[2].Flag_second}"
+                        M3Goals_first_team="{Binding MatchesH[2].Goals_first_team}"
+                        M3Goals_second_team="{Binding MatchesH[2].Goals_second_team}"
+                        M3Short_first="{Binding MatchesH[2].Short_first}"
+                        M3Short_second="{Binding MatchesH[2].Short_second}"
+                                      
+                        M4Flag_first="{Binding MatchesH[3].Flag_first}"
+                        M4Flag_second="{Binding MatchesH[3].Flag_second}"
+                        M4Goals_first_team="{Binding MatchesH[3].Goals_first_team}"
+                        M4Goals_second_team="{Binding MatchesH[3].Goals_second_team}"
+                        M4Short_first="{Binding MatchesH[3].Short_first}"
+                        M4Short_second="{Binding MatchesH[3].Short_second}"                                          
+                                      
+                        M5Flag_first="{Binding MatchesH[4].Flag_first}"
+                        M5Flag_second="{Binding MatchesH[4].Flag_second}"
+                        M5Goals_first_team="{Binding MatchesH[4].Goals_first_team}"
+                        M5Goals_second_team="{Binding MatchesH[4].Goals_second_team}"
+                        M5Short_first="{Binding MatchesH[4].Short_first}"
+                        M5Short_second="{Binding MatchesH[4].Short_second}"   
+                                      
+                        M6Flag_first="{Binding MatchesH[5].Flag_first}"
+                        M6Flag_second="{Binding MatchesH[5].Flag_second}"
+                        M6Goals_first_team="{Binding MatchesH[5].Goals_first_team}"
+                        M6Goals_second_team="{Binding MatchesH[5].Goals_second_team}"
+                        M6Short_first="{Binding MatchesH[5].Short_first}"
+                        M6Short_second="{Binding MatchesH[5].Short_second}"
+                                      />
             </TabItem>
         </TabControl>
     </Grid>

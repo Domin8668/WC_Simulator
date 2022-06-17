@@ -37,8 +37,8 @@ namespace WC_Simulator.DAL.Entities
             Short_second = reader["abbr_second"].ToString();
             Name_first = reader["name_first"].ToString();
             Name_second = reader["name_second"].ToString();
-            Flag_first = $"../../Resources/Flags/{ Name_first.ToLower()}.png";
-            Flag_second = $"../../Resources/Flags/{ Name_second.ToLower()}.png";
+            Flag_first = $"../../Resources/Flags/{ Name_first.Replace(" ", "").ToLower()}.png";
+            Flag_second = $"../../Resources/Flags/{ Name_second.Replace(" ", "").ToLower()}.png";
             Match_code = uint.Parse(reader["match_code"].ToString());
             Goals_first_team = uint.Parse(reader["goals_first_team"].ToString());
             Goals_second_team = uint.Parse(reader["goals_second_team"].ToString());
@@ -54,25 +54,23 @@ namespace WC_Simulator.DAL.Entities
             Short_second = short_second.Trim();
             Name_first = name_first.Trim();
             Name_second = name_second.Trim();
-            Flag_first = $"../../Resources/Flags/{ Name_first.ToLower()}.png";
-            Flag_second = $"../../Resources/Flags/{ Name_second.ToLower()}.png";
+            Flag_first = $"../../Resources/Flags/{ Name_first.Replace(" ", "").ToLower()}.png";
+            Flag_second = $"../../Resources/Flags/{ Name_second.Replace(" ", "").ToLower()}.png";
             Match_code = match_code;
             Goals_first_team = goals_first_team;
             Goals_second_team = goals_second_team;
         }
 
-        public Single_match(Team team1, Team team2, uint id_tournament, uint match_code, uint goals_first_team, uint goals_second_team)
+        public Single_match(uint id_tournament, Team team1, Team team2 , uint match_code, uint goals_first_team, uint goals_second_team)
         {
             Id_match = null;
-            Id_first_team = (uint)team1.Id_team;
-            Id_second_team = (uint)team2.Id_team;
             Id_tournament = id_tournament;
             Short_first = team1.Short_name.Trim();
             Short_second = team2.Short_name.Trim();
             Name_first = team1.Name.Trim();
             Name_second = team2.Name.Trim();
-            Flag_first = $"../../Resources/Flags/{ Name_first.ToLower()}.png";
-            Flag_second = $"../../Resources/Flags/{ Name_second.ToLower()}.png";
+            Flag_first = $"../../Resources/Flags/{Name_first.Replace(" ", "").ToLower()}.png";
+            Flag_second = $"../../Resources/Flags/{Name_second.Replace(" ", "").ToLower()}.png";
             Match_code = match_code;
             Goals_first_team = goals_first_team;
             Goals_second_team = goals_second_team;

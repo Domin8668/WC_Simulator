@@ -304,7 +304,7 @@
   <ItemGroup>
     <Content Include="baza_projekt.sql" />
     <Resource Include="Resources\Flags\anglia.png" />
-    <Resource Include="Resources\Flags\arabia.png" />
+    <Resource Include="Resources\Flags\arabiasaudyjska.png" />
     <Resource Include="Resources\Flags\argentyna.png" />
     <Resource Include="Resources\Flags\australia.png" />
     <Resource Include="Resources\Flags\belgia.png" />
@@ -321,7 +321,7 @@
     <Resource Include="Resources\Flags\kamerun.png" />
     <Resource Include="Resources\Flags\kanada.png" />
     <Resource Include="Resources\Flags\katar.png" />
-    <Resource Include="Resources\Flags\korea.png" />
+    <Resource Include="Resources\Flags\koreapołudniowa.png" />
     <Resource Include="Resources\Flags\kostaryka.png" />
     <Resource Include="Resources\Flags\maroko.png" />
     <Resource Include="Resources\Flags\meksyk.png" />
@@ -330,7 +330,7 @@
     <Resource Include="Resources\Flags\portugalia.png" />
     <Resource Include="Resources\Flags\senegal.png" />
     <Resource Include="Resources\Flags\serbia.png" />
-    <Resource Include="Resources\Flags\stany.png" />
+    <Resource Include="Resources\Flags\stanyzjednoczone.png" />
     <Resource Include="Resources\Flags\szwajcaria.png" />
     <Resource Include="Resources\Flags\tunezja.png" />
     <Resource Include="Resources\Flags\urugwaj.png" />

@@ -73,9 +73,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arabia {
+        internal static System.Drawing.Bitmap arabiasaudyjska {
             get {
-                object obj = ResourceManager.GetObject("arabia", resourceCulture);
+                object obj = ResourceManager.GetObject("arabiasaudyjska", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +243,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap korea {
+        internal static System.Drawing.Bitmap koreapołudniowa {
             get {
-                object obj = ResourceManager.GetObject("korea", resourceCulture);
+                object obj = ResourceManager.GetObject("koreapołudniowa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,9 +333,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap stany {
+        internal static System.Drawing.Bitmap stanyzjednoczone {
             get {
-                object obj = ResourceManager.GetObject("stany", resourceCulture);
+                object obj = ResourceManager.GetObject("stanyzjednoczone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
