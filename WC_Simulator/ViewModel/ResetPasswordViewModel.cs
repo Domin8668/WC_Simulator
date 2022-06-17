@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
+using WC_Simulator.DAL.Entities;
 using WC_Simulator.Helpers.Hashing;
 using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
@@ -482,9 +483,10 @@ namespace WC_Simulator.ViewModel
                             SecurityAnswerWarning = "Nieprawidłowa odpowiedź";
                             return;
                         }
-                        Model.CurrentUserShort.Login = Username;
                         Model.CurrentUserShort.Password = NewSecurePassword;
                         Model.UpdateCurrentUserShortPassword();
+                        Model.CurrentUserShort = new UserShort();
+                        Model.CurrentUser = new User();
 
                         LoginViewModel login = new LoginViewModel(Model, NavigationStore);
                         NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, login, Visibility.Hidden, "Hasło zostało zresetowane.");
