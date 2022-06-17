@@ -20,7 +20,6 @@ namespace WC_Simulator.View.Components
     /// </summary>
     public partial class MatchUserControl : UserControl
     {
-
         #region Constructor
 
         public MatchUserControl()
@@ -129,11 +128,16 @@ namespace WC_Simulator.View.Components
             set { SetValue(Team2ResultProperty, value); }
         }
 
-        //public ICommand MatchCommand
-        //{
-        //    get { return (ICommand)GetValue(MatchCommandProperty); }
-        //    set { SetValue(MatchCommandProperty, value); }
-        //}
+        public ICommand MatchCommand
+        {
+            get { return (ICommand)GetValue(MatchCommandProperty); }
+            set { SetValue(MatchCommandProperty, value); }
+        }
+
+        #endregion
+
+
+        #region Events
 
         #endregion
     }

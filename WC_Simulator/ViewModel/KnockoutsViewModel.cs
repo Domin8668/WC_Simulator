@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using WC_Simulator.DAL.Entities;
 using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
@@ -14,10 +15,9 @@ namespace WC_Simulator.ViewModel
 {
     class KnockoutsViewModel : BaseViewModel
     {
-        // faza pucharowa mundialu
         #region Variables
 
-        private BindingList<Single_match> _matches = new BindingList<Single_match>();
+        private ObservableCollection<Single_match> _matches = new ObservableCollection<Single_match>();
 
         #endregion
 
@@ -28,22 +28,35 @@ namespace WC_Simulator.ViewModel
         {
             Model = model;
             NavigationStore = navigationStore;
-            //Matches = new BindingList<Single_match>() { new Single_match(1,2,1,1,1,2), new Single_match(3, 4, 1, 3, 3, 4) };
+            Matches = new ObservableCollection<Single_match>() {
+                new Single_match(1, 2, 1, "POL", "ARG", "Polska", "Argentyna", 1, 1, 2),
+            };
         }
 
         #endregion
 
 
         #region Properties
-        public BindingList<Single_match> Matches
+
+        public ObservableCollection<Single_match> Matches
         {
             get { return _matches; }
             set { _matches = value; }
         }
 
+        public string MatchName
+        {
+            get { return _matchName; }
+            set { _matchName = value;
+                OnPropertyChanged(nameof(MatchName));
+            }
+        }
+
         #endregion
 
+
         #region Methods
+
         public void PrepareMatches()
         {
 
@@ -54,6 +67,24 @@ namespace WC_Simulator.ViewModel
 
         #region Commands
 
+        private ICommand _matchCommand = null;
+
+        public ICommand MatchCommand
+        {
+            get
+            {
+                if (_matchCommand == null)
+                {
+                    _matchCommand = new RelayCommand(arg =>
+                    {
+                        NavigationStore.CurrentViewModel = new MatchViewModel(Model, NavigationStore);
+                        Console.WriteLine("Działa");
+                    },
+                    arg => true);
+                }
+                return _matchCommand;
+            }
+        }
 
         #endregion
     }

@@ -197,6 +197,9 @@
                 <DataTemplate DataType="{x:Type vms:KnockoutsViewModel}">
                     <vs:KnockoutsView/>
                 </DataTemplate>
+                <DataTemplate DataType="{x:Type vms:MatchViewModel}">
+                    <vs:MatchView/>
+                </DataTemplate>
                 <DataTemplate DataType="{x:Type vms:HelpViewModel}">
                     <vs:HelpView/>
                 </DataTemplate>
