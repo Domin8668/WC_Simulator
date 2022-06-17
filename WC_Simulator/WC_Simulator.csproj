@@ -116,6 +116,11 @@
     <Compile Include="Model\MainModel.cs" />
     <Compile Include="Model\TeamInGroup.cs" />
     <Compile Include="Model\TeamInTeams.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\CreateTourneyViewModel.cs" />
     <Compile Include="ViewModel\GroupsViewModel.cs" />
@@ -277,11 +282,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -303,6 +303,38 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="baza_projekt.sql" />
+    <Resource Include="Resources\Flags\anglia.png" />
+    <Resource Include="Resources\Flags\arabia.png" />
+    <Resource Include="Resources\Flags\argentyna.png" />
+    <Resource Include="Resources\Flags\australia.png" />
+    <Resource Include="Resources\Flags\belgia.png" />
+    <Resource Include="Resources\Flags\brazylia.png" />
+    <Resource Include="Resources\Flags\chorwacja.png" />
+    <Resource Include="Resources\Flags\dania.png" />
+    <Resource Include="Resources\Flags\ekwador.png" />
+    <Resource Include="Resources\Flags\francja.png" />
+    <Resource Include="Resources\Flags\ghana.png" />
+    <Resource Include="Resources\Flags\hiszpania.png" />
+    <Resource Include="Resources\Flags\holandia.png" />
+    <Resource Include="Resources\Flags\iran.png" />
+    <Resource Include="Resources\Flags\japonia.png" />
+    <Resource Include="Resources\Flags\kamerun.png" />
+    <Resource Include="Resources\Flags\kanada.png" />
+    <Resource Include="Resources\Flags\katar.png" />
+    <Resource Include="Resources\Flags\korea.png" />
+    <Resource Include="Resources\Flags\kostaryka.png" />
+    <Resource Include="Resources\Flags\maroko.png" />
+    <Resource Include="Resources\Flags\meksyk.png" />
+    <Resource Include="Resources\Flags\niemcy.png" />
+    <Resource Include="Resources\Flags\polska.png" />
+    <Resource Include="Resources\Flags\portugalia.png" />
+    <Resource Include="Resources\Flags\senegal.png" />
+    <Resource Include="Resources\Flags\serbia.png" />
+    <Resource Include="Resources\Flags\stany.png" />
+    <Resource Include="Resources\Flags\szwajcaria.png" />
+    <Resource Include="Resources\Flags\tunezja.png" />
+    <Resource Include="Resources\Flags\urugwaj.png" />
+    <Resource Include="Resources\Flags\walia.png" />
     <Resource Include="Resources\stracone.png" />
     <Resource Include="Resources\zdobyte.png" />
     <Resource Include="Resources\points.png" />
@@ -335,36 +367,6 @@
     <Resource Include="Resources\group_phase.png" />
     <Resource Include="Resources\team.png" />
     <Resource Include="Resources\user.png" />
-    <Resource Include="Resources\Flags\argentina.png" />
-    <Resource Include="Resources\Flags\belgium.png" />
-    <Resource Include="Resources\Flags\brazil.png" />
-    <Resource Include="Resources\Flags\cameroon.png" />
-    <Resource Include="Resources\Flags\canada.png" />
-    <Resource Include="Resources\Flags\croatia.png" />
-    <Resource Include="Resources\Flags\denmark.png" />
-    <Resource Include="Resources\Flags\ecuador.png" />
-    <Resource Include="Resources\Flags\england.png" />
-    <Resource Include="Resources\Flags\france.png" />
-    <Resource Include="Resources\Flags\germany.png" />
-    <Resource Include="Resources\Flags\ghana.png" />
-    <Resource Include="Resources\Flags\iran.png" />
-    <Resource Include="Resources\Flags\japan.png" />
-    <Resource Include="Resources\Flags\korea.png" />
-    <Resource Include="Resources\Flags\mexico.png" />
-    <Resource Include="Resources\Flags\morocco.png" />
-    <Resource Include="Resources\Flags\netherlands.png" />
-    <Resource Include="Resources\Flags\portugal.png" />
-    <Resource Include="Resources\Flags\qatar.png" />
-    <Resource Include="Resources\Flags\saudiarabia.png" />
-    <Resource Include="Resources\Flags\senegal.png" />
-    <Resource Include="Resources\Flags\serbia.png" />
-    <Resource Include="Resources\Flags\spain.png" />
-    <Resource Include="Resources\Flags\switzerland.png" />
-    <Resource Include="Resources\Flags\tunisia.png" />
-    <Resource Include="Resources\Flags\uruguay.png" />
-    <Resource Include="Resources\Flags\usa.png" />
-    <Resource Include="Resources\Flags\wales.png" />
-    <Resource Include="Resources\Flags\poland.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

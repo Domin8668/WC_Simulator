@@ -63,9 +63,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap argentina {
+        internal static System.Drawing.Bitmap anglia {
             get {
-                object obj = ResourceManager.GetObject("argentina", resourceCulture);
+                object obj = ResourceManager.GetObject("anglia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap belgium {
+        internal static System.Drawing.Bitmap arabia {
             get {
-                object obj = ResourceManager.GetObject("belgium", resourceCulture);
+                object obj = ResourceManager.GetObject("arabia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap brazil {
+        internal static System.Drawing.Bitmap argentyna {
             get {
-                object obj = ResourceManager.GetObject("brazil", resourceCulture);
+                object obj = ResourceManager.GetObject("argentyna", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cameroon {
+        internal static System.Drawing.Bitmap australia {
             get {
-                object obj = ResourceManager.GetObject("cameroon", resourceCulture);
+                object obj = ResourceManager.GetObject("australia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap canada {
+        internal static System.Drawing.Bitmap belgia {
             get {
-                object obj = ResourceManager.GetObject("canada", resourceCulture);
+                object obj = ResourceManager.GetObject("belgia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap croatia {
+        internal static System.Drawing.Bitmap brazylia {
             get {
-                object obj = ResourceManager.GetObject("croatia", resourceCulture);
+                object obj = ResourceManager.GetObject("brazylia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap denmark {
+        internal static System.Drawing.Bitmap chorwacja {
             get {
-                object obj = ResourceManager.GetObject("denmark", resourceCulture);
+                object obj = ResourceManager.GetObject("chorwacja", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ecuador {
+        internal static System.Drawing.Bitmap dania {
             get {
-                object obj = ResourceManager.GetObject("ecuador", resourceCulture);
+                object obj = ResourceManager.GetObject("dania", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap england {
+        internal static System.Drawing.Bitmap ekwador {
             get {
-                object obj = ResourceManager.GetObject("england", resourceCulture);
+                object obj = ResourceManager.GetObject("ekwador", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,19 +153,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap france {
+        internal static System.Drawing.Bitmap francja {
             get {
-                object obj = ResourceManager.GetObject("france", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap germany {
-            get {
-                object obj = ResourceManager.GetObject("germany", resourceCulture);
+                object obj = ResourceManager.GetObject("francja", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,6 +173,26 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hiszpania {
+            get {
+                object obj = ResourceManager.GetObject("hiszpania", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap holandia {
+            get {
+                object obj = ResourceManager.GetObject("holandia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iran {
             get {
                 object obj = ResourceManager.GetObject("iran", resourceCulture);
@@ -193,9 +203,39 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap japan {
+        internal static System.Drawing.Bitmap japonia {
             get {
-                object obj = ResourceManager.GetObject("japan", resourceCulture);
+                object obj = ResourceManager.GetObject("japonia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kamerun {
+            get {
+                object obj = ResourceManager.GetObject("kamerun", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kanada {
+            get {
+                object obj = ResourceManager.GetObject("kanada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap katar {
+            get {
+                object obj = ResourceManager.GetObject("katar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +253,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mexico {
+        internal static System.Drawing.Bitmap kostaryka {
             get {
-                object obj = ResourceManager.GetObject("mexico", resourceCulture);
+                object obj = ResourceManager.GetObject("kostaryka", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +263,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap morocco {
+        internal static System.Drawing.Bitmap maroko {
             get {
-                object obj = ResourceManager.GetObject("morocco", resourceCulture);
+                object obj = ResourceManager.GetObject("maroko", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +273,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap netherlands {
+        internal static System.Drawing.Bitmap meksyk {
             get {
-                object obj = ResourceManager.GetObject("netherlands", resourceCulture);
+                object obj = ResourceManager.GetObject("meksyk", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +283,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap poland {
+        internal static System.Drawing.Bitmap niemcy {
             get {
-                object obj = ResourceManager.GetObject("poland", resourceCulture);
+                object obj = ResourceManager.GetObject("niemcy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +293,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap poland1 {
+        internal static System.Drawing.Bitmap polska {
             get {
-                object obj = ResourceManager.GetObject("poland1", resourceCulture);
+                object obj = ResourceManager.GetObject("polska", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,29 +303,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap portugal {
+        internal static System.Drawing.Bitmap portugalia {
             get {
-                object obj = ResourceManager.GetObject("portugal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap qatar {
-            get {
-                object obj = ResourceManager.GetObject("qatar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap saudiarabia {
-            get {
-                object obj = ResourceManager.GetObject("saudiarabia", resourceCulture);
+                object obj = ResourceManager.GetObject("portugalia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,9 +333,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap spain {
+        internal static System.Drawing.Bitmap stany {
             get {
-                object obj = ResourceManager.GetObject("spain", resourceCulture);
+                object obj = ResourceManager.GetObject("stany", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,9 +343,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap switzerland {
+        internal static System.Drawing.Bitmap szwajcaria {
             get {
-                object obj = ResourceManager.GetObject("switzerland", resourceCulture);
+                object obj = ResourceManager.GetObject("szwajcaria", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,9 +353,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tunisia {
+        internal static System.Drawing.Bitmap tunezja {
             get {
-                object obj = ResourceManager.GetObject("tunisia", resourceCulture);
+                object obj = ResourceManager.GetObject("tunezja", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +363,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap uruguay {
+        internal static System.Drawing.Bitmap urugwaj {
             get {
-                object obj = ResourceManager.GetObject("uruguay", resourceCulture);
+                object obj = ResourceManager.GetObject("urugwaj", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,19 +373,9 @@ namespace WC_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap usa {
+        internal static System.Drawing.Bitmap walia {
             get {
-                object obj = ResourceManager.GetObject("usa", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap wales {
-            get {
-                object obj = ResourceManager.GetObject("wales", resourceCulture);
+                object obj = ResourceManager.GetObject("walia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
