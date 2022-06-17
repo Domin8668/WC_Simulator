@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
 using WC_Simulator.ViewModel.BaseClasses;
@@ -70,6 +71,28 @@ namespace WC_Simulator.ViewModel
             {
                 _newTourneyWarning = value;
                 OnPropertyChanged(nameof(NewTourneyWarning));
+            }
+        }
+
+        #endregion
+
+        #region Commands
+
+        private ICommand _addTourney = null;
+
+        public ICommand AddTourney
+        {
+            get
+            {
+                if (_addTourney == null)
+                {
+                    _addTourney = new RelayCommand(arg =>
+                    {
+                        NavigationStore.CurrentViewModel = new RegisterViewModel(Model, NavigationStore);
+                    },
+                    arg => true);
+                }
+                return _addTourney;
             }
         }
 

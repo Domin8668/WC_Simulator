@@ -29,7 +29,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="Wpisz nazwę swojego turnieju:" Foreground="#8a8a89" Margin="2" FontSize="26"/>
+            <TextBlock Text="Wpisz nazwę nowego turnieju:" Foreground="#8a8a89" Margin="2" FontSize="26"/>
             <Border BorderBrush="Red" BorderThickness="{Binding NewTourneyBorder}" Width="400" Height="39">
                 <TextBox VerticalAlignment="Center" FontSize="24" Background="#b1b1b0" Foreground="White"
                          HorizontalAlignment="Center" Width="400" 
@@ -39,6 +39,29 @@
             <TextBlock Margin="5" VerticalAlignment="Center" FontSize="20" FontWeight="DemiBold"
                        Text="{Binding NewTourneyWarning}"
                        Foreground="Red"/>
+            
+            <Button HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="White"
+                        BorderBrush="#6c1b77"
+                        BorderThickness="2"
+                        Width="150"
+                        Height="40"
+                        Margin="10"
+                        FontSize="18"
+                        FontWeight="DemiBold"
+                        Content="Utwórz turniej"
+                        Command="{Binding AddTourney}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0.1" Color="#9c80e9" />
+                            <GradientStop Offset="1" Color="#bc2fd0" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            
         </StackPanel>
     </Grid>
 </UserControl>
