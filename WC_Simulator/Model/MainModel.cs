@@ -110,6 +110,11 @@ namespace WC_Simulator.Model
             set { _currentUserShort = value; }
         }
 
+        public uint[] Numbers { get; set; } = new uint[10]
+        {
+            0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+        };
+
         #endregion
 
 
