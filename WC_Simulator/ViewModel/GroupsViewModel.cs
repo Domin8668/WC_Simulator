@@ -26,9 +26,12 @@ namespace WC_Simulator.ViewModel
         private ObservableCollection<TeamInGroup> _teamsG;
         private ObservableCollection<TeamInGroup> _teamsH;
 
+        private ObservableCollection<Team> _allTeams;
+
+
         private Schedule _scheduleInfo;
 
-        private BindingList<Single_match> _matches;
+        private ObservableCollection<Single_match> _matches;
 
 
         #endregion
@@ -58,7 +61,10 @@ namespace WC_Simulator.ViewModel
             _teamsH = new ObservableCollection<TeamInGroup>();
 
 
-
+            AllTeams = new ObservableCollection<Team> { new Team(1, 1, "Senegal", "SEN", "Aliou Cissé", (float)0.5, (float)0.5), new Team(2, 1, "Holandia", "NED", "Louis van Gaal", (float)0.5, (float)0.5) };
+            //AllTeams.Add(new Team(1, "Senegal", "SEN", "Aliou Cissé", (float)0.5, (float)0.5));
+            //AllTeams.Add(new Team(1, "Holandia", "NED", "Louis van Gaal", (float)0.5, (float)0.5));
+            Matches = new ObservableCollection<Single_match> { new Single_match(AllTeams[0], AllTeams[1], 1, 1, 0, 0) };
         }
 
         #endregion
@@ -66,10 +72,22 @@ namespace WC_Simulator.ViewModel
 
         #region Properties
 
+        public ObservableCollection<Team> AllTeams
+        {
+            get { return _allTeams; }
+            set
+            {
+                _allTeams = value;
+                OnPropertyChanged(nameof(AllTeams));
+            }
+        }
+
+
         public ObservableCollection<TeamInGroup> TeamsA
         {
             get { return _teamsA; }
-            set {
+            set
+            {
                 _teamsA = value;
                 OnPropertyChanged(nameof(TeamsA));
             }
@@ -155,7 +173,7 @@ namespace WC_Simulator.ViewModel
             }
         }
 
-        public BindingList<Single_match> Matches
+        public ObservableCollection<Single_match> Matches
         {
             get { return _matches; }
             set
@@ -171,11 +189,7 @@ namespace WC_Simulator.ViewModel
 
         #region Methods
 
-        public void Prepare_Matches()
-        {
-            Matches.Clear();
-            Matches[0] = new Single_match(3, 4, 1, "NED", "SEN", "Holandia", "Senegal", (uint)ScheduleInfo.FinalSchedule[0].MatchCode, 1, 2);
-        }
+
 
         #endregion
 

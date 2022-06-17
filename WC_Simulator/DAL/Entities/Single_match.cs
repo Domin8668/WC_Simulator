@@ -21,12 +21,9 @@ namespace WC_Simulator.DAL.Entities
         public string Name_second { get; set; }
         public string Flag_first { get; set; }
         public string Flag_second { get; set; }
-
-
-
         public uint Match_code { get; set; }
         public uint Goals_first_team { get; set; }
-        public uint Goals_second_team { get; set; }
+        public uint Goals_second_team { get; set; } // zmienic na string if goals == empty.String do bazy zapis ma byc -1, if goals w bazie rowna sie -1 zmien na empty.string
         #endregion
 
         #region Constructors
@@ -57,12 +54,31 @@ namespace WC_Simulator.DAL.Entities
             Short_second = short_second.Trim();
             Name_first = name_first.Trim();
             Name_second = name_second.Trim();
-            Flag_first = Name_first.ToLower()+".png";
+            Flag_first = Name_first.ToLower() + ".png";
             Flag_second = Name_second.ToLower() + ".png";
             Match_code = match_code;
             Goals_first_team = goals_first_team;
             Goals_second_team = goals_second_team;
         }
+
+        public Single_match(Team team1, Team team2, uint id_tournament, uint match_code, uint goals_first_team, uint goals_second_team)
+        {
+            Id_match = null;
+            Id_first_team = (uint)team1.Id_team;
+            Id_second_team = (uint)team2.Id_team;
+            Id_tournament = id_tournament;
+            Short_first = team1.Short_name.Trim();
+            Short_second = team2.Short_name.Trim();
+            Name_first = team1.Name.Trim();
+            Name_second = team2.Name.Trim();
+            Flag_first = Name_first.ToLower() + ".png";
+            Flag_second = Name_second.ToLower() + ".png";
+            Match_code = match_code;
+            Goals_first_team = goals_first_team;
+            Goals_second_team = goals_second_team;
+        }
+
+
 
         public Single_match(Single_match match)
         {

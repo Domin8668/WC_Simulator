@@ -15,7 +15,7 @@
             </LinearGradientBrush.GradientStops>
         </LinearGradientBrush>
     </UserControl.Background>
-    
+
     <UserControl.Resources>
         <Style TargetType="Image" x:Key="flag_img">
             <Setter Property="Margin" Value="5"/>
@@ -46,7 +46,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
-        
+
         <Style TargetType="TextBlock" x:Key="stats">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="FontSize" Value="25"/>
@@ -56,7 +56,7 @@
         </Style>
 
     </UserControl.Resources>
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -71,20 +71,193 @@
         </Grid.RowDefinitions>
 
         <!--6 kontrolek meczów-->
-        <local:MatchUserControl Grid.Row="2" Grid.Column="0" Margin="30"
-                                Team2Result="{Binding Path=Team2Result, Mode=TwoWay,
-                                UpdateSourceTrigger=PropertyChanged,
-                                RelativeSource={
-                                RelativeSource Mode=FindAncestor,
-                                AncestorType={x:Type UserControl}}}"/>
-        <!--Team2Result="{Binding Test[0], Mode=TwoWay,
-                                UpdateSourceTrigger=PropertyChanged}"/>-->
-        <local:MatchUserControl Grid.Row="3" Grid.Column="0" Margin="30"/>
-        <local:MatchUserControl Grid.Row="2" Grid.Column="1" Margin="30"/>
-        <local:MatchUserControl Grid.Row="3" Grid.Column="1" Margin="30"/>
-        <local:MatchUserControl Grid.Row="2" Grid.Column="2" Margin="30"/>
-        <local:MatchUserControl Grid.Row="3" Grid.Column="2" Margin="30"/>
-        
+        <local:MatchUserControl x:Name="match1" Grid.Row="2" Grid.Column="0" Margin="30"
+                                Team1FlagPath="{Binding Path=M1Flag_first, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2FlagPath="{Binding Path=M1Flag_second, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team1ShortName="{Binding Path=M1Short_first, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2ShortName="{Binding Path=M1Short_second, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team1Result="{Binding Path=M1Goals_first_team, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2Result="{Binding Path=M1Goals_second_team, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"/>
+        <local:MatchUserControl x:Name="match2" Grid.Row="3" Grid.Column="0" Margin="30"
+                                Team1FlagPath="{Binding Path=M2Flag_first, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2FlagPath="{Binding Path=M2Flag_second, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team1ShortName="{Binding Path=M2Short_first, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2ShortName="{Binding Path=M2Short_second, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team1Result="{Binding Path=M2Goals_first_team, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2Result="{Binding Path=M2Goals_second_team, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"/>
+        <local:MatchUserControl x:Name="match3" Grid.Row="2" Grid.Column="1" Margin="30"
+                                Team1FlagPath="{Binding Path=M3Flag_first, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2FlagPath="{Binding Path=M3Flag_second, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team1ShortName="{Binding Path=M3Short_first, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2ShortName="{Binding Path=M3Short_second, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team1Result="{Binding Path=M3Goals_first_team, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2Result="{Binding Path=M3Goals_second_team, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"/>
+        <local:MatchUserControl x:Name="match4" Grid.Row="3" Grid.Column="1" Margin="30"
+                                Team1FlagPath="{Binding Path=M4Flag_first, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2FlagPath="{Binding Path=M4Flag_second, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team1ShortName="{Binding Path=M4Short_first, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2ShortName="{Binding Path=M4Short_second, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team1Result="{Binding Path=M4Goals_first_team, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2Result="{Binding Path=M4Goals_second_team, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"/>
+        <local:MatchUserControl x:Name="match5" Grid.Row="2" Grid.Column="2" Margin="30"
+                                Team1FlagPath="{Binding Path=M5Flag_first, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2FlagPath="{Binding Path=M5Flag_second, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team1ShortName="{Binding Path=M5Short_first, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2ShortName="{Binding Path=M5Short_second, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team1Result="{Binding Path=M5Goals_first_team, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2Result="{Binding Path=M5Goals_second_team, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"/>
+        <local:MatchUserControl x:Name="match6" Grid.Row="3" Grid.Column="2" Margin="30"
+                                Team1FlagPath="{Binding Path=M6Flag_first, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2FlagPath="{Binding Path=M6Flag_second, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team1ShortName="{Binding Path=M6Short_first, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2ShortName="{Binding Path=M6Short_second, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team1Result="{Binding Path=M6Goals_first_team, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"
+                                Team2Result="{Binding Path=M6Goals_second_team, Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged,
+                                            RelativeSource={
+                                            RelativeSource Mode=FindAncestor,
+                                            AncestorType={x:Type UserControl}}}"/>
+
         <!--Labele kolejek-->
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Kolejka 1" Style="{StaticResource desc}" FontSize="30"/>
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Kolejka 2" Style="{StaticResource desc}" FontSize="30"/>
@@ -157,5 +330,5 @@
             </ListView.View>
         </ListView>
     </Grid>
-    
+
 </UserControl>

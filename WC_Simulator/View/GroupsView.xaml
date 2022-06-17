@@ -14,7 +14,14 @@
                 <ucs:GroupUserControl x:Name="GroupAUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsA, Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"/>
+                        UpdateSourceTrigger=PropertyChanged}"
+                        M1Flag_first="{Binding Matches[0].Flag_first}"
+                        M1Flag_second="{Binding Matches[0].Flag_second}"
+                        M1Goals_first_team="{Binding Matches[0].Goals_first_team}"
+                        M1Goals_second_team="{Binding Matches[0].Goals_second_team}"
+                        M1Short_first="{Binding Matches[0].Short_first}"
+                        M1Short_second="{Binding Matches[0].Short_second}"
+                                      />
             </TabItem>
             <TabItem x:Name="GroupB" Header="Grupa B">
                 <ucs:GroupUserControl x:Name="GroupBUC" Grid.Column="2" Grid.Row="0"
