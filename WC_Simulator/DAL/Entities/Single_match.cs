@@ -23,7 +23,7 @@ namespace WC_Simulator.DAL.Entities
         public string Flag_second { get; set; }
         public uint Match_code { get; set; }
         public uint Goals_first_team { get; set; }
-        public uint Goals_second_team { get; set; } // zmienic na string if goals == empty.String do bazy zapis ma byc -1, if goals w bazie rowna sie -1 zmien na empty.string
+        public uint Goals_second_team { get; set; } // zmienic na string if goals == empty.String do bazy zapis ma byc jakas najmniejsza liczba z zakresu na ktory nie pozwalamy w kodzie, np 10, if goals w bazie rowna sie 10 zmien na empty.string
         #endregion
 
         #region Constructors

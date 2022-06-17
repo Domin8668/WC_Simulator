@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WC_Simulator.DAL.Entities;
 
 namespace WC_Simulator.Model
 {
@@ -23,11 +24,10 @@ namespace WC_Simulator.Model
 
         #region Constructor
 
-        public TeamInGroup(int lp, string image, string country, int matches, int gf, int ga, int points)
+        public TeamInGroup(Team team, int matches, int gf, int ga, int points)
         {
-            _position = lp;
-            _image = image;
-            _country = country;
+            _image = $"../../Resources/Flags/{ team.Name.Replace(" ", "").ToLower()}.png";
+            _country = team.Name;
             _matches = matches;
             _gf = gf;
             _ga = ga;

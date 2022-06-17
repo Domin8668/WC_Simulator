@@ -99,45 +99,45 @@ insert into single_group (id_group, id_tournament, letter) values
 
 -- dodawanie rekordow do tabeli 'team'
 insert into team (id_group, name, short_name, coach, def_factor, att_factor) values
-new Team(1, "Katar", "QAT", "Félix Sánchez Bas", (float)0.5, (float)0.5),
-new Team(1, "Ekwador", "ECU", "Gustavo Alfaro", (float)0.5, (float)0.5),
-new Team(1, "Senegal", "SEN", "Aliou Cissé", (float)0.5, (float)0.5),
-new Team(1, "Holandia", "NED", "Louis van Gaal", (float)0.5, (float)0.5),
+(1, "Katar", "QAT", "Félix Sánchez Bas", 0.5, 0.5),
+(1, "Ekwador", "ECU", "Gustavo Alfaro", 0.5, 0.5),
+(1, "Senegal", "SEN", "Aliou Cissé", 0.5, 0.5),
+(1, "Holandia", "NED", "Louis van Gaal", 0.5, 0.5),
 
-new Team(2, "Anglia", "ENG", "Gareth Southgate", (float)0.5, (float)0.5),
-new Team(2, "Iran", "IRN", "Dragan Skočić", (float)0.5, (float)0.5),
-new Team(2, "Stany Zjednoczone", "USA", "Gregg Berhalter", (float)0.5, (float)0.5),
-new Team(2, "Walia", "WAL", "Robert Page", (float)0.5, (float)0.5),
+(2, "Anglia", "ENG", "Gareth Southgate", 0.5, 0.5),
+(2, "Iran", "IRN", "Dragan Skočić", 0.5, 0.5),
+(2, "Stany Zjednoczone", "USA", "Gregg Berhalter", 0.5, 0.5),
+(2, "Walia", "WAL", "Robert Page", 0.5, 0.5),
 
-new Team(3, "Argentyna", "ARG", "Lionel Scaloni", (float)0.5, (float)0.5),
-new Team(3, "Arabia Saudyjska", "KSA", "Hervé Renard", (float)0.5, (float)0.5),
-new Team(3, "Meksyk", "MEX", "Gerardo Martino", (float)0.5, (float)0.5),
-new Team(3, "Polska", "POL", "Czesław Michniewicz", (float)0.5, (float)0.5),
+(3, "Argentyna", "ARG", "Lionel Scaloni", 0.5, 0.5),
+(3, "Arabia Saudyjska", "KSA", "Hervé Renard", 0.5, 0.5),
+(3, "Meksyk", "MEX", "Gerardo Martino", 0.5, 0.5),
+(3, "Polska", "POL", "Czesław Michniewicz", 0.5, 0.5),
 
-new Team(4, "Francja", "FRA", "Didier Deschamps", (float)0.5, (float)0.5),
-new Team(4, "Australia", "AUS", "Graham Arnold", (float)0.5, (float)0.5),
-new Team(4, "Dania", "DEN", "Kasper Hjulmand", (float)0.5, (float)0.5),
-new Team(4, "Tunezja", "TUN", "Mondher Kebaier", (float)0.5, (float)0.5),
+(4, "Francja", "FRA", "Didier Deschamps", 0.5, 0.5),
+(4, "Australia", "AUS", "Graham Arnold", 0.5, 0.5),
+(4, "Dania", "DEN", "Kasper Hjulmand", 0.5, 0.5),
+(4, "Tunezja", "TUN", "Mondher Kebaier", 0.5, 0.5),
 
-new Team(5, "Hiszpania", "ESP", "Luis Enrique", (float)0.5, (float)0.5),
-new Team(5, "Kostaryka", "CRC", "Luis Fernando Suárez", (float)0.5, (float)0.5),
-new Team(5, "Niemcy", "GER", "Hans-Dieter Flick", (float)0.5, (float)0.5),
-new Team(5, "Japonia", "JPN", "Hajime Moriyasu", (float)0.5, (float)0.5),
+(5, "Hiszpania", "ESP", "Luis Enrique", 0.5, 0.5),
+(5, "Kostaryka", "CRC", "Luis Fernando Suárez", 0.5, 0.5),
+(5, "Niemcy", "GER", "Hans-Dieter Flick", 0.5, 0.5),
+(5, "Japonia", "JPN", "Hajime Moriyasu", 0.5, 0.5),
 
-new Team(6, "Belgia", "BEL", "Roberto Martínez", (float)0.5, (float)0.5),
-new Team(6, "Kanada", "CAN", "John Herdman", (float)0.5, (float)0.5),
-new Team(6, "Maroko", "MAR", "Vahid Halilhodžić", (float)0.5, (float)0.5),
-new Team(6, "Chorwacja", "CRO", "Zlatko Dalić", (float)0.5, (float)0.5),
+(6, "Belgia", "BEL", "Roberto Martínez", 0.5, 0.5),
+(6, "Kanada", "CAN", "John Herdman", 0.5, 0.5),
+(6, "Maroko", "MAR", "Vahid Halilhodžić", 0.5, 0.5),
+(6, "Chorwacja", "CRO", "Zlatko Dalić", 0.5, 0.5),
 
-new Team(7, "Brazylia", "BRA", "Tite", (float)0.5, (float)0.5),
-new Team(7, "Serbia", "SRB", "Dragan Stojković", (float)0.5, (float)0.5),
-new Team(7, "Szwajcaria", "SUI", "Murat Yakın", (float)0.5, (float)0.5),
-new Team(7, "Kamerun", "CMR", "Rigobert Song", (float)0.5, (float)0.5),
+(7, "Brazylia", "BRA", "Tite", 0.5, 0.5),
+(7, "Serbia", "SRB", "Dragan Stojković", 0.5, 0.5),
+(7, "Szwajcaria", "SUI", "Murat Yakın", 0.5, 0.5),
+(7, "Kamerun", "CMR", "Rigobert Song", 0.5, 0.5),
 
-new Team(8, "Portugalia", "POR", "Fernando Santos", (float)0.5, (float)0.5),
-new Team(8, "Ghana", "GHA", "Otto Addo", (float)0.5, (float)0.5),
-new Team(8, "Urugwaj", "URU", "Diego Alonso", (float)0.5, (float)0.5),
-new Team(8, "Korea Południowa", "KOR", "Paulo Bento", (float)0.5, (float)0.5),
+(8, "Portugalia", "POR", "Fernando Santos", 0.5, 0.5),
+(8, "Ghana", "GHA", "Otto Addo", 0.5, 0.5),
+(8, "Urugwaj", "URU", "Diego Alonso", 0.5, 0.5),
+(8, "Korea Południowa", "KOR", "Paulo Bento", 0.5, 0.5);
 select * from team;
 
 -- group fk
