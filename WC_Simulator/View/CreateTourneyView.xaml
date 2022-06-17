@@ -29,14 +29,16 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="Wpisz nazwę swojego turnieju:" Foreground="#8a8a89" Margin="2" FontSize="23"/>
-            <Border BorderBrush="#8a8a89" BorderThickness="2" Width="400" Height="26">
-                <TextBox Grid.Row="1" Grid.Column="1" 
-                         VerticalAlignment="Center" FontSize="21" 
+            <TextBlock Text="Wpisz nazwę swojego turnieju:" Foreground="#8a8a89" Margin="2" FontSize="26"/>
+            <Border BorderBrush="Red" BorderThickness="{Binding NewTourneyBorder}" Width="400" Height="39">
+                <TextBox VerticalAlignment="Center" FontSize="24" Background="#b1b1b0" Foreground="White"
                          HorizontalAlignment="Center" Width="400" 
-                         Height="26" VerticalContentAlignment="Center"/>
+                         Height="39" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                         Text="{Binding NewTourney, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </Border>
-            
+            <TextBlock Margin="5" VerticalAlignment="Center" FontSize="20" FontWeight="DemiBold"
+                       Text="{Binding NewTourneyWarning}"
+                       Foreground="Red"/>
         </StackPanel>
     </Grid>
 </UserControl>
