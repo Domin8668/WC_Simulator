@@ -174,10 +174,7 @@ namespace WC_Simulator.ViewModel
         public void Prepare_Matches()
         {
             Matches.Clear();
-            Matches[0] = new Single_match(3, 4, 1, (uint)ScheduleInfo.FinalSchedule[0].MatchCode, 1, 2);
-            Matches[1] = new Single_match(1, 2, 1, (uint)ScheduleInfo.FinalSchedule[1].MatchCode, 2, 1);
-
-            Matches[2] = new Single_match(1, 2, 1, (uint)ScheduleInfo.FinalSchedule[1].MatchCode, 2, 1);
+            Matches[0] = new Single_match(3, 4, 1, "NED", "SEN", "Holandia", "Senegal", (uint)ScheduleInfo.FinalSchedule[0].MatchCode, 1, 2);
         }
 
         #endregion

@@ -56,8 +56,8 @@ namespace WC_Simulator.DAL.Repositories
             using (var connection = DBConnection.Instance.Connection)
             {
                 string UPDATE_MATCH = $"UPDATE Single_match SET id_match='{match.Id_match}', id_first_team='{match.Id_first_team}', " +
-                    $"id_second_team={match.Id_second_team}, id_tournament='{match.Id_tournament}', abbr_first='{match.Abbr_first}', " +
-                    $"abbr_second='{match.Abbr_second}', name_first='{match.Name_first}', name_second='{match.Name_second}', " +
+                    $"id_second_team={match.Id_second_team}, id_tournament='{match.Id_tournament}', abbr_first='{match.Short_first}', " +
+                    $"abbr_second='{match.Short_second}', name_first='{match.Name_first}', name_second='{match.Name_second}', " +
                     $"match_code='{match.Match_code}', goals_first_team='{match.Goals_first_team}', goals_second_team='{match.Goals_second_team}' WHERE id_match={idMatch}";
 
                 MySqlCommand command = new MySqlCommand(UPDATE_MATCH, connection);
