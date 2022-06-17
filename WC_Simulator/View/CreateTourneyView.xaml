@@ -6,7 +6,17 @@
              xmlns:local="clr-namespace:WC_Simulator.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="AliceBlue">
+    
+    <UserControl.Background>
+        <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0.1" Color="#c9f3c6" />
+                <GradientStop Offset="1" Color="#fdaad5" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </UserControl.Background>
+    
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.05*"/>
             <ColumnDefinition Width="*"/>
@@ -18,11 +28,15 @@
             <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" >
-            <TextBlock Margin="5"
-                   Text="Wpisz nazwę swojego turnieju:"/>
-            <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200"
-                 Margin="5"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Wpisz nazwę swojego turnieju:" Foreground="#8a8a89" Margin="2" FontSize="23"/>
+            <Border BorderBrush="#8a8a89" BorderThickness="2" Width="400" Height="26">
+                <TextBox Grid.Row="1" Grid.Column="1" 
+                         VerticalAlignment="Center" FontSize="21" 
+                         HorizontalAlignment="Center" Width="400" 
+                         Height="26" VerticalContentAlignment="Center"/>
+            </Border>
+            
         </StackPanel>
     </Grid>
 </UserControl>
