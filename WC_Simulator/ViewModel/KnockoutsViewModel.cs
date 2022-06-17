@@ -28,7 +28,7 @@ namespace WC_Simulator.ViewModel
         {
             Model = model;
             NavigationStore = navigationStore;
-            Matches = new BindingList<Single_match>() { new Single_match(1,2,1,1,1,2), new Single_match(3, 4, 1, 3, 3, 4) };
+            //Matches = new BindingList<Single_match>() { new Single_match(1,2,1,1,1,2), new Single_match(3, 4, 1, 3, 3, 4) };
         }
 
         #endregion
