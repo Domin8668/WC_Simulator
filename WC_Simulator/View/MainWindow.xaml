@@ -155,7 +155,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <Image Source="../Resources/create.png" Width="40"/>
-                <Button Content="Stwórz nowy turniej" Style="{StaticResource btn}" FontSize="20" Width="230" BorderBrush="#fff5cb" BorderThickness="2"
+                <Button Content="Stwórz nowy turniej" Style="{StaticResource btn}" FontSize="20" Width="230" BorderBrush="#ffc6c0" BorderThickness="2"
                 Command="{Binding NewTournament}">
                     <Button.Background>
                         <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
