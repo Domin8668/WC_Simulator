@@ -69,13 +69,12 @@
                                           MatchCommand="{Binding MatchCommand}"
                                           Numbers="{Binding Model.Numbers, Mode=OneWay}"/>
                     <ucs:MatchUserControl x:Name="match50" Grid.Row="3" Grid.Column="0" Margin="10" FontSize="45"
-                                          Team1Result="{Binding Matches[0].Goals_first_team, Mode=TwoWay}"
-                                          Team2Result="{Binding Matches[0].Goals_second_team, Mode=TwoWay}"
-                                          
-                                          
-                                          />
+                                          Team1Result="{Binding Matches[0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2Result="{Binding Matches[0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          MatchCommand="{Binding MatchCommand}"
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"/>
                     <ucs:MatchUserControl x:Name="match52" Grid.Row="2" Grid.Column="1" Margin="10" FontSize="45" 
-                                          Team1Result="{Binding Matches[1].Goals_first_team, Mode=TwoWay,  UpdateSourceTrigger=LostFocus}"
+                                          Team1Result="{Binding Matches[1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
                                           Team2Result="{Binding Matches[1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <ucs:MatchUserControl x:Name="match51" Grid.Row="3" Grid.Column="1" Margin="10" FontSize="45"/>
                     <ucs:MatchUserControl x:Name="match53" Grid.Row="2" Grid.Column="2" Margin="10" FontSize="45"/>

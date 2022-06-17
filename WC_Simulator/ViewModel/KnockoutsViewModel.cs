@@ -41,7 +41,9 @@ namespace WC_Simulator.ViewModel
         public ObservableCollection<Single_match> Matches
         {
             get { return _matches; }
-            set { _matches = value; }
+            set { _matches = value;
+                OnPropertyChanged(nameof(Matches));
+            }
         }
 
         #endregion
@@ -70,7 +72,8 @@ namespace WC_Simulator.ViewModel
                     _matchCommand = new RelayCommand(arg =>
                     {
                         NavigationStore.CurrentViewModel = new MatchViewModel(Model, NavigationStore);
-                        Console.WriteLine("Działa");
+                        //Console.WriteLine(Matches[0].Goals_first_team);
+                        //Console.WriteLine(Matches[0].Goals_second_team);
                     },
                     arg => true);
                 }
