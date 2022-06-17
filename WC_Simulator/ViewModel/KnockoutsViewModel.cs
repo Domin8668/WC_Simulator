@@ -44,14 +44,6 @@ namespace WC_Simulator.ViewModel
             set { _matches = value; }
         }
 
-        public string MatchName
-        {
-            get { return _matchName; }
-            set { _matchName = value;
-                OnPropertyChanged(nameof(MatchName));
-            }
-        }
-
         #endregion
 
 
