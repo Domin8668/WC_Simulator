@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: wc_simulator
+-- Host: localhost    Database: wc_simulator
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -88,6 +88,10 @@ CREATE TABLE `single_match` (
   `id_first_team` int unsigned DEFAULT NULL,
   `id_second_team` int unsigned DEFAULT NULL,
   `id_tournament` int unsigned NOT NULL,
+  `abbr_first` varchar(3) DEFAULT NULL,
+  `abbr_second` varchar(3) DEFAULT NULL,
+  `name_first` varchar(35) DEFAULT NULL,
+  `name_second` varchar(35) DEFAULT NULL,
   `match_code` int unsigned NOT NULL,
   `goals_first_team` int DEFAULT NULL,
   `goals_second_team` int DEFAULT NULL,
@@ -194,7 +198,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin',_binary 'PJš÷U‚H¼‹)¿4â£³4\èG\Æ|w>œö>ÜŽ','2022-06-15 21:47:06','2022-06-15 21:47:06','Jak ma na nazwisko najlepszy napastnik?',_binary 'Š»¦\ÄZ>iW\nŸ\ê¢½ \Z\0\Ì-V\ÉQ\Ö^\ÄFüçŸ®');
+INSERT INTO `user` VALUES (1,'admin',_binary 'PJš÷U‚H¼‹)¿4â£³4\èG\Æ|w>œö>ÜŽ','2022-06-15 21:47:06','2022-06-17 10:48:45','Jak ma na nazwisko najlepszy napastnik?',_binary 'Š»¦\ÄZ>iW\nŸ\ê¢½ \Z\0\Ì-V\ÉQ\Ö^\ÄFüçŸ®');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -207,4 +211,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-15 21:56:01
+-- Dump completed on 2022-06-17 11:22:40
