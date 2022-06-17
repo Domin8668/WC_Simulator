@@ -18,8 +18,18 @@ namespace WC_Simulator.ViewModel
         #region Variables
 
         private ObservableCollection<TeamInGroup> _teamsA;
-        //private string _team2ShortName;
-        private BindingList<string> _test;
+        private ObservableCollection<TeamInGroup> _teamsB;
+        private ObservableCollection<TeamInGroup> _teamsC;
+        private ObservableCollection<TeamInGroup> _teamsD;
+        private ObservableCollection<TeamInGroup> _teamsE;
+        private ObservableCollection<TeamInGroup> _teamsF;
+        private ObservableCollection<TeamInGroup> _teamsG;
+        private ObservableCollection<TeamInGroup> _teamsH;
+
+        private Schedule _scheduleInfo;
+
+        private BindingList<Single_match> _matches;
+
 
         #endregion
 
@@ -38,12 +48,17 @@ namespace WC_Simulator.ViewModel
                 new TeamInGroup(3, "../../Resources/Flags/netherlands.png", "Holandia", 3, 3, 3, 3),
                 new TeamInGroup(4, "../../Resources/Flags/wales.png", "Walia", 3, 3, 3, 3)
             };
-            //Team2ShortName = "ARG";
-            Test = new BindingList<string>()
-            {
-                "1",
-                "2"
-            };
+            _teamsB = new ObservableCollection<TeamInGroup>();
+            _teamsC = new ObservableCollection<TeamInGroup>();
+            _teamsD = new ObservableCollection<TeamInGroup>();
+            _teamsE = new ObservableCollection<TeamInGroup>();
+            _teamsF = new ObservableCollection<TeamInGroup>();
+            _teamsF = new ObservableCollection<TeamInGroup>();
+            _teamsG = new ObservableCollection<TeamInGroup>();
+            _teamsH = new ObservableCollection<TeamInGroup>();
+
+
+
         }
 
         #endregion
@@ -60,23 +75,109 @@ namespace WC_Simulator.ViewModel
             }
         }
 
-        //public string Team2ShortName
-        //{
-        //    get { return _team2ShortName; }
-        //    set {
-        //        _team2ShortName = value;
-        //        OnPropertyChanged(nameof(Team2ShortName));
-        //    }
-        //}
-
-        public BindingList<string> Test
+        public ObservableCollection<TeamInGroup> TeamsB
         {
-            get { return _test; }
+            get { return _teamsB; }
             set
             {
-                _test = value;
-                OnPropertyChanged(nameof(Test));
+                _teamsB = value;
+                OnPropertyChanged(nameof(TeamsB));
             }
+        }
+
+        public ObservableCollection<TeamInGroup> TeamsC
+        {
+            get { return _teamsC; }
+            set
+            {
+                _teamsC = value;
+                OnPropertyChanged(nameof(TeamsC));
+            }
+        }
+
+        public ObservableCollection<TeamInGroup> TeamsD
+        {
+            get { return _teamsD; }
+            set
+            {
+                _teamsD = value;
+                OnPropertyChanged(nameof(TeamsD));
+            }
+        }
+
+        public ObservableCollection<TeamInGroup> TeamsE
+        {
+            get { return _teamsE; }
+            set
+            {
+                _teamsE = value;
+                OnPropertyChanged(nameof(TeamsE));
+            }
+        }
+
+        public ObservableCollection<TeamInGroup> TeamsF
+        {
+            get { return _teamsF; }
+            set
+            {
+                _teamsF = value;
+                OnPropertyChanged(nameof(TeamsF));
+            }
+        }
+
+        public ObservableCollection<TeamInGroup> TeamsG
+        {
+            get { return _teamsG; }
+            set
+            {
+                _teamsG = value;
+                OnPropertyChanged(nameof(TeamsG));
+            }
+        }
+
+        public ObservableCollection<TeamInGroup> TeamsH
+        {
+            get { return _teamsH; }
+            set
+            {
+                _teamsH = value;
+                OnPropertyChanged(nameof(TeamsH));
+            }
+        }
+
+        public Schedule ScheduleInfo
+        {
+            get { return _scheduleInfo; }
+            set
+            {
+                _scheduleInfo = value;
+                OnPropertyChanged(nameof(Schedule));
+            }
+        }
+
+        public BindingList<Single_match> Matches
+        {
+            get { return _matches; }
+            set
+            {
+                _matches = value;
+                OnPropertyChanged(nameof(Matches));
+            }
+        }
+
+
+
+        #endregion
+
+        #region Methods
+
+        public void Prepare_Matches()
+        {
+            Matches.Clear();
+            Matches[0] = new Single_match(3, 4, 1, (uint)ScheduleInfo.FinalSchedule[0].MatchCode, 1, 2);
+            Matches[1] = new Single_match(1, 2, 1, (uint)ScheduleInfo.FinalSchedule[1].MatchCode, 2, 1);
+
+            Matches[2] = new Single_match(1, 2, 1, (uint)ScheduleInfo.FinalSchedule[1].MatchCode, 2, 1);
         }
 
         #endregion

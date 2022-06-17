@@ -14,8 +14,7 @@
                 <ucs:GroupUserControl x:Name="GroupAUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsA, Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"
-                                        Team2Result="{Binding Test[0], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        UpdateSourceTrigger=PropertyChanged}"/>
             </TabItem>
             <TabItem x:Name="GroupB" Header="Grupa B">
                 <ucs:GroupUserControl x:Name="GroupBUC" Grid.Column="2" Grid.Row="0"
