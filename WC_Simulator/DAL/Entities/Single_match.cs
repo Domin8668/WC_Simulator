@@ -46,10 +46,10 @@ namespace WC_Simulator.DAL.Entities
             Id_first_team = id_first_team;
             Id_second_team = id_second_team;
             Id_tournament = id_tournament;
-            Abbr_first = ab_f.Trim(); ;
-            Abbr_second = ab_s.Trim(); ;
-            Name_first = n_f.Trim(); ;
-            Name_second = n_s.Trim(); ;
+            Abbr_first = ab_f.Trim();
+            Abbr_second = ab_s.Trim();
+            Name_first = n_f.Trim();
+            Name_second = n_s.Trim();
             Match_code = match_code;
             Goals_first_team = goals_first_team;
             Goals_second_team = goals_second_team;
