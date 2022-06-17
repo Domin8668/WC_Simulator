@@ -21,20 +21,20 @@
         <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
             <LinearGradientBrush.GradientStops>
                 <GradientStop Offset="0.1" Color="#c9f3c6" />
-                <GradientStop Offset="1" Color="#a5d0f5" />
+                <GradientStop Offset="1" Color="#cae3f9" />
             </LinearGradientBrush.GradientStops>
         </LinearGradientBrush>
     </UserControl.Background>
     
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.75*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.25*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1.1*"/>
         </Grid.RowDefinitions>
 
         <!--ListView Krajów-->
@@ -43,8 +43,8 @@
                   Grid.Row="0" 
                   Grid.RowSpan="3" 
                   FontSize="20" 
-                  Margin="10,20,20,20" 
-                  Width="400" 
+                  Margin="10" 
+                  Width="300" 
                   HorizontalAlignment="Left" 
                   Background="Transparent" 
                   BorderThickness="0"
@@ -65,7 +65,7 @@
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
                     
-                    <GridViewColumn Header="Flaga" Width="110">
+                    <GridViewColumn Header="Flaga" Width="90">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Image Source="{Binding Image}" Margin="5"/>
@@ -73,7 +73,7 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     
-                    <GridViewColumn Header="Kraj" Width="260">
+                    <GridViewColumn Header="Kraj" Width="210">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Country}" Margin="5" FontSize="20"/>
@@ -85,14 +85,14 @@
             </ListView.View>
         </ListView>
 
-        <Image Grid.Row="0" Grid.Column="1" x:Name="TeamImage" Source="{Binding SelectedTeam.Image}" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image Grid.Row="0" Grid.Column="1" x:Name="TeamImage" Source="{Binding SelectedTeam.Image}" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"/>
         
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="5" HorizontalAlignment="Center">
             <!--Kraj-->
-            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+            <StackPanel Orientation="Vertical" Margin="5" HorizontalAlignment="Left">
 
                 <TextBlock Text="Kraj" Foreground="#535352" Margin="1" FontSize="17"/>
-                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/kraj.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="TeamName" Style="{StaticResource textblock}" 
@@ -104,10 +104,10 @@
             </StackPanel>
 
             <!--Trener-->
-            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+            <StackPanel Orientation="Vertical" Margin="5" HorizontalAlignment="Left">
 
                 <TextBlock Text="Trener" Foreground="#535352" Margin="1" FontSize="17"/>
-                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/trener.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="TeamCoach" Style="{StaticResource textblock}" 
@@ -119,10 +119,10 @@
             </StackPanel>
 
             <!--Ostatni Etap-->
-            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+            <StackPanel Orientation="Vertical" Margin="5" HorizontalAlignment="Left">
 
                 <TextBlock Text="Ostatni Etap" Foreground="#535352" Margin="1" FontSize="17"/>
-                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/etap.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="LastPhase" Style="{StaticResource textblock}" 
@@ -134,10 +134,10 @@
             </StackPanel>
 
             <!--Mecze-->
-            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+            <StackPanel Orientation="Vertical" Margin="5" HorizontalAlignment="Left">
 
                 <TextBlock Text="Mecze" Foreground="#535352" Margin="1" FontSize="17"/>
-                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/match.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="Matches" Style="{StaticResource textblock}" 
@@ -149,10 +149,10 @@
             </StackPanel>
 
             <!--Wygrane-->
-            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+            <StackPanel Orientation="Vertical" Margin="5" HorizontalAlignment="Left">
 
                 <TextBlock Text="Wygrane" Foreground="#535352" Margin="1" FontSize="17"/>
-                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/win.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="WinsNB" Style="{StaticResource textblock}" 
@@ -164,10 +164,10 @@
             </StackPanel>
 
             <!--Remisy-->
-            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+            <StackPanel Orientation="Vertical" Margin="5" HorizontalAlignment="Left">
 
                 <TextBlock Text="Remisy" Foreground="#535352" Margin="1" FontSize="17"/>
-                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/draw.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="DrawsNB" Style="{StaticResource textblock}" 
@@ -179,10 +179,10 @@
             </StackPanel>
 
             <!--Przegrane-->
-            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+            <StackPanel Orientation="Vertical" Margin="5" HorizontalAlignment="Left">
 
                 <TextBlock Text="Przegrane" Foreground="#535352" Margin="1" FontSize="17"/>
-                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/lose.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="LossesNB" Style="{StaticResource textblock}" 
@@ -194,10 +194,10 @@
             </StackPanel>
 
             <!--Punkty-->
-            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
+            <StackPanel Orientation="Vertical" Margin="5" HorizontalAlignment="Left">
 
                 <TextBlock Text="Punkty" Foreground="#535352" Margin="1" FontSize="17"/>
-                <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="350">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/points.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="PointsNB" Style="{StaticResource textblock}" 
@@ -208,21 +208,43 @@
 
             </StackPanel>
 
-            <!--Staty-->
-            
+            <!--Gole zdobyte-->
+            <StackPanel Orientation="Vertical" Margin="5" HorizontalAlignment="Left">
 
-            <!--<TextBlock x:Name="GoalsForNB" Text="{Binding SelectedTeam.GF, StringFormat=Gole zdobyte: {0}, 
+                <TextBlock Text="Gole zdobyte" Foreground="#535352" Margin="1" FontSize="17"/>
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Image Source="../Resources/zdobyte.png" Width="18" Margin="5"/>
+                        <TextBlock x:Name="GoalsForNB" Style="{StaticResource textblock}" 
+                           Text="{Binding SelectedTeam.GF, StringFormat={}{0}, 
                                             Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBlock x:Name="GoalsAgainstNB" Text="{Binding SelectedTeam.GA, StringFormat=Gole stracone: {0}, 
-                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+
+            <!--Gole stracone-->
+            <StackPanel Orientation="Vertical" Margin="5" HorizontalAlignment="Left">
+
+                <TextBlock Text="Gole stracone" Foreground="#535352" Margin="1" FontSize="17"/>
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Image Source="../Resources/stracone.png" Width="18" Margin="5"/>
+                        <TextBlock x:Name="GoalsAgainstNB" Style="{StaticResource textblock}" 
+                           Text="{Binding SelectedTeam.GA, StringFormat={}{0}, 
+                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
 
         </StackPanel>
         
         
         <!--Listview Piłkarze-->
-        <ListView x:Name="PlayersTable" Grid.Column="1" Grid.Row="2" FontSize="18" 
-                  Margin="10,20,20,20"
-                  Width="400"
+        <ListView x:Name="PlayersTable" Grid.Column="2" Grid.Row="1" FontSize="18" 
+                  Margin="10"
+                  Width="300"
                   HorizontalAlignment="Center" 
                   Background="Transparent" 
                   BorderThickness="0"
@@ -241,7 +263,7 @@
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
-                    <GridViewColumn Header="Piłkarz" Width="400">
+                    <GridViewColumn Header="Piłkarz" Width="300">
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
