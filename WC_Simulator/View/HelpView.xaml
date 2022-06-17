@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WC_Simulator.View"
              mc:Ignorable="d" 
-             d:DesignHeight="1000" d:DesignWidth="1400">
+             d:DesignHeight="600" d:DesignWidth="800">
     <UserControl.Background>
         <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
             <LinearGradientBrush.GradientStops>
@@ -16,13 +16,14 @@
     </UserControl.Background>
     <UserControl.Resources>
         <Style TargetType="Grid" x:Key="zakladka">
-            <Setter Property="Width" Value="380"/>
-            <Setter Property="Height" Value="430"/>
+            <Setter Property="Width" Value="auto"/>
+            <Setter Property="Height" Value="auto"/>
+            <Setter Property="Margin" Value="40 15 40 15"/>
         </Style>
 
         <Style TargetType="TextBox" x:Key="opis">
             <Setter Property="Margin" Value="10,2,10,10"/>
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontSize" Value="15"/>
             <Setter Property="IsReadOnly" Value="True"/>
             <Setter Property="IsEnabled" Value="False"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
@@ -31,7 +32,7 @@
         
         <Style TargetType="TextBlock" x:Key="label">
             <Setter Property="Margin" Value="0,5,0,0"/>
-            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontSize" Value="25"/>
             <Setter Property="FontWeight" Value="DemiBold"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -41,7 +42,7 @@
             <Setter Property="Margin" Value="5"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Width" Value="70"/>
+            <Setter Property="Width" Value="30"/>
         </Style>
     </UserControl.Resources>
 
