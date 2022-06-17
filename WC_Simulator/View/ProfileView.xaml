@@ -12,7 +12,7 @@
     <UserControl.Resources>
         <Style TargetType="TextBlock" x:Key="textblock">
             <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="FontSize" Value="17"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
@@ -67,23 +67,23 @@
             </Grid.RowDefinitions>
             <!--Panel z danymi-->
             <StackPanel x:Name="BioPanel" Orientation="Vertical" Margin="10"
-                        HorizontalAlignment="Left"  
+                        HorizontalAlignment="Center"  
                         Width="Auto" Height="Auto" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="3">
 
                 <TextBlock x:Name="BioTB"
                            Grid.Row="0" Grid.Column="0"
                            HorizontalAlignment="Left"
-                           Margin="5,5,5,20" FontSize="40" FontWeight="DemiBold" VerticalAlignment="Center"
+                           Margin="5" FontSize="25" FontWeight="DemiBold" VerticalAlignment="Center"
                            Text="Profil użytkownika"/>
 
                 <!--Nazwa użytkownika-->
-                <StackPanel Orientation="Vertical" Margin="10">
+                <StackPanel Orientation="Vertical" Margin="5">
 
-                    <TextBlock Text="Nazwa użytkownika" Foreground="#8a8a89" Margin="5" FontSize="20"/>
+                    <TextBlock Text="Nazwa użytkownika" Foreground="#8a8a89" Margin="2" FontSize="20"/>
                     <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="500">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="../Resources/nazwa_uzytkownika.png" Width="35" Margin="5"/>
-                            <TextBlock x:Name="Nickname" Margin="5"
+                            <Image Source="../Resources/nazwa_uzytkownika.png" Width="25" Margin="5"/>
+                            <TextBlock x:Name="Nickname" Margin="2"
                            HorizontalAlignment="Left"
                            Style="{StaticResource textblock}" 
                            Text="{Binding Path=Username, 
@@ -95,13 +95,13 @@
                 </StackPanel>
 
                 <!--Liczba turniejów-->
-                <StackPanel Orientation="Vertical" Margin="10">
+                <StackPanel Orientation="Vertical" Margin="5">
 
-                    <TextBlock Text="Liczba turniejów" Foreground="#8a8a89" Margin="5" FontSize="20"/>
+                    <TextBlock Text="Liczba turniejów" Foreground="#8a8a89" Margin="2" FontSize="20"/>
                     <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="500">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="../Resources/ile_turniejow.png" Width="35" Margin="5"/>
-                            <TextBlock x:Name="TourneyNumber" Margin="5"
+                            <Image Source="../Resources/ile_turniejow.png" Width="25" Margin="5"/>
+                            <TextBlock x:Name="TourneyNumber" Margin="2"
                            HorizontalAlignment="Left"
                            Style="{StaticResource textblock}" 
                            Text="{Binding Path=TournamentCount, 
@@ -113,14 +113,14 @@
                 </StackPanel>
 
                 <!--Data założenia konta-->
-                <StackPanel Orientation="Vertical" Margin="10">
+                <StackPanel Orientation="Vertical" Margin="5">
 
-                    <TextBlock Text="Data założenia konta" Foreground="#8a8a89" Margin="5" FontSize="20"/>
+                    <TextBlock Text="Data założenia konta" Foreground="#8a8a89" Margin="2" FontSize="20"/>
                     <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="500">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="../Resources/date.png" Width="35" Margin="5"/>
+                            <Image Source="../Resources/date.png" Width="25" Margin="5"/>
                             <TextBlock HorizontalAlignment="Left"
-                           Style="{StaticResource textblock}" Margin="5"
+                           Style="{StaticResource textblock}" Margin="2"
                            Text="{Binding Path=CreationDate, 
                            StringFormat={}{0}, 
                            Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -130,13 +130,13 @@
                 </StackPanel>
 
                 <!--Poprzednie logowanie-->
-                <StackPanel Orientation="Vertical" Margin="10">
+                <StackPanel Orientation="Vertical" Margin="5">
 
-                    <TextBlock Text="Poprzednie logowanie" Foreground="#8a8a89" Margin="5" FontSize="20"/>
+                    <TextBlock Text="Poprzednie logowanie" Foreground="#8a8a89" Margin="2" FontSize="20"/>
                     <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="500">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="../Resources/last_log.png" Width="35" Margin="5"/>
-                            <TextBlock HorizontalAlignment="Left" Margin="5"
+                            <Image Source="../Resources/last_log.png" Width="25" Margin="5"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="2"
                            Style="{StaticResource textblock}" 
                            Text="{Binding Path=LastLoginDate, 
                            StringFormat={}{0}, 
@@ -147,13 +147,13 @@
                 </StackPanel>
 
                 <!--Czas w aplikacji-->
-                <StackPanel Orientation="Vertical" Margin="10">
+                <StackPanel Orientation="Vertical" Margin="5">
 
-                    <TextBlock Text="Czas w aplikacji" Foreground="#8a8a89" Margin="5" FontSize="20"/>
+                    <TextBlock Text="Czas w aplikacji" Foreground="#8a8a89" Margin="2" FontSize="20"/>
                     <Border BorderBrush="#d0d0d0" BorderThickness="2" Width="500">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="../Resources/time_in.png" Width="35" Margin="5"/>
-                            <TextBlock HorizontalAlignment="Left" Margin="5"
+                            <Image Source="../Resources/time_in.png" Width="25" Margin="5"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="2"
                            Style="{StaticResource textblock}" 
                            Text="{Binding Path=AccountAge, 
                            StringFormat={}{0}, 
@@ -194,9 +194,9 @@
                            StringFormat=Czas w aplikacji: {0}, 
                            Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>-->
-            <Button x:Name="ResetPlaceHolder" Grid.Row="5" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3" Content="Zmień hasło" FontSize="25" Background="#7fccff" BorderBrush="#005a95" BorderThickness="2"
+            <Button x:Name="ResetPlaceHolder" Grid.Row="5" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3" Content="Zmień hasło" FontSize="20" Background="#7fccff" BorderBrush="#005a95" BorderThickness="2"
                     Command="{Binding ChangePassword}"
-                    Width="250" Height="50"/>
+                    Width="230" Height="40"/>
         </Grid>
 
     </Grid>
