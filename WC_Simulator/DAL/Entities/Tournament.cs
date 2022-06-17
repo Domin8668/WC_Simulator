@@ -50,7 +50,7 @@ namespace WC_Simulator.DAL.Entities
 
         public string ToInsert()
         {
-            return $"('{Id_tournament}', '{Id_user}', '{T_name}')";
+            return $"('{Id_user}', '{T_name}')";
         }
 
         public override bool Equals(object obj)

@@ -54,6 +54,12 @@ namespace WC_Simulator.Model
                 AllGroups.Add(g);
             }
 
+            //var tourneys = RepositoryTournaments.LoadTournament();
+            //foreach (var t in tourneys)
+            //{
+            //    AllTournaments.Add(t);
+            //}
+
             //var matches = RepositoryMatches.LoadMatch();
             //foreach (var m in matches)
             //    AllMatches.Add(m);
@@ -228,6 +234,16 @@ namespace WC_Simulator.Model
             }    
         }
 
+        public bool AddUserTournament(Tournament tournament)
+        {
+            
+            if (RepositoryTournaments.AddTournament(tournament))
+            {
+                AllTournaments.Add(tournament);
+                return true;
+            }
+            return false;
+        }
         #endregion
     }
 }

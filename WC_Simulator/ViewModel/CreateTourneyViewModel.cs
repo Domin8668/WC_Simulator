@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WC_Simulator.DAL.Entities;
+using WC_Simulator.DAL.Repositories;
 using System.Windows.Input;
 using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
 using WC_Simulator.ViewModel.BaseClasses;
+using System.Collections.ObjectModel;
 
 namespace WC_Simulator.ViewModel
 {
@@ -17,7 +20,6 @@ namespace WC_Simulator.ViewModel
         private string _newTourney;
         private double _newTourneyBorder;
         private string _newTourneyWarning;
-
         #endregion
 
 
@@ -88,7 +90,15 @@ namespace WC_Simulator.ViewModel
                 {
                     _addTourney = new RelayCommand(arg =>
                     {
-                        NavigationStore.CurrentViewModel = new RegisterViewModel(Model, NavigationStore);
+                        var tourney = new Tournament(uint.Parse(Model.CurrentUser.Id_user.ToString()), NewTourney.ToString());
+
+                        if(Model.AddUserTournament(tourney))
+                        {
+                            NewTourney = string.Empty;
+                            NewTourneyBorder = 0;
+                            NewTourneyWarning = string.Empty;
+                            System.Windows.MessageBox.Show("Turniej został utworzony!");
+                        }
                     },
                     arg => true);
                 }

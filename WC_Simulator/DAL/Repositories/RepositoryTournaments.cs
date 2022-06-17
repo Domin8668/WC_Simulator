@@ -13,7 +13,7 @@ namespace WC_Simulator.DAL.Repositories
     {
         #region QUERIES
         private const string ALL_TOURNAMENT = "SELECT * FROM `tournament`";
-        private const string ADD_TOURNAMENT = "INSERT INTO `tournament`(`id_tournament`, `id_user`, `t_name`) VALUES ";
+        private const string ADD_TOURNAMENT = "INSERT INTO `tournament`(`id_user`, `t_name`) VALUES ";
         private const string DELETE_TOURNAMENT = "DELETE FROM `tournament` WHERE id_tournament = ";
         //private const string UPDATE_TOURNAMENT = "UPDATE `tournament` SET xx WHERE id_tournament = ";
         #endregion
