@@ -78,6 +78,13 @@ namespace WC_Simulator.View.Components
                 new FrameworkPropertyMetadata(null)
             );
 
+        public static readonly DependencyProperty NumbersProperty = DependencyProperty.Register(
+                "Numbers",
+                typeof(uint[]),
+                typeof(MatchUserControl),
+                new FrameworkPropertyMetadata(null)
+            );
+
         public static readonly DependencyProperty MatchCommandProperty = DependencyProperty.Register(
                 "MatchCommand",
                 typeof(ICommand),
@@ -126,6 +133,12 @@ namespace WC_Simulator.View.Components
         {
             get { return (string)GetValue(Team2ResultProperty); }
             set { SetValue(Team2ResultProperty, value); }
+        }
+
+        public uint[] Numbers
+        {
+            get { return (uint[])GetValue(NumbersProperty); }
+            set { SetValue(NumbersProperty, value); }
         }
 
         public ICommand MatchCommand
