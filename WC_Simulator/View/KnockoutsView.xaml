@@ -66,6 +66,7 @@
                                           Team2ShortName="{Binding match49T2Short}"
                                           Team1Result="{Binding match49T1Result}"
                                           Team2Result="{Binding match49T2Result}"
+                                          MatchCommand="{Binding MatchCommand}"
                                           />
                     <ucs:MatchUserControl x:Name="match50" Grid.Row="3" Grid.Column="0" Margin="10" FontSize="45"
                                           Team1Result="{Binding Matches[0].Goals_first_team, Mode=TwoWay}"
