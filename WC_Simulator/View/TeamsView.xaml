@@ -43,7 +43,7 @@
                   Grid.Row="0"
                   Grid.RowSpan="3"
                   FontSize="20"
-                  Margin="10"
+                  Margin="10 10 10 40"
                   Width="300"
                   HorizontalAlignment="Left"
                   Background="Transparent"
@@ -244,8 +244,8 @@
         
         <!--Listview Piłkarze-->
         <ListView x:Name="PlayersTable" Grid.Column="2"
-                  Grid.ColumnSpan="1" Grid.Row="1" FontSize="18" 
-                  Margin="10"
+                  Grid.ColumnSpan="1" Grid.Row="0" Grid.RowSpan="2" FontSize="18" 
+                  Margin="10 10 10 40"
                   Width="300"
                   HorizontalAlignment="Center" 
                   Background="Transparent" 

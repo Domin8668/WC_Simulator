@@ -18,7 +18,7 @@
         <Style TargetType="Grid" x:Key="zakladka">
             <Setter Property="Width" Value="auto"/>
             <Setter Property="Height" Value="auto"/>
-            <Setter Property="Margin" Value="40 15 40 15"/>
+            <Setter Property="Margin" Value="60 20 60 20"/>
         </Style>
 
         <Style TargetType="TextBox" x:Key="opis">
@@ -69,7 +69,7 @@
         </Grid.RowDefinitions>
 
         <!--Pierwszy opis - Drużyny-->
-        <Grid Background="#e4ffc3" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
+        <Grid Background="#fbcff4" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -87,7 +87,7 @@
         </Grid>
 
         <!--Drugi opis - Faza grupowa-->
-        <Grid Background="#faffc3" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
+        <Grid Background="#f8c1c8" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -105,7 +105,7 @@
         </Grid>
 
         <!--Trzeci opis - Faza pucharowa-->
-        <Grid Background="#ffe5b9" Grid.Row="1" Grid.Column="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
+        <Grid Background="#f7e1c5" Grid.Row="1" Grid.Column="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -123,7 +123,7 @@
         </Grid>
 
         <!--Czwarty opis - Ustawienia-->
-        <Grid Background="#ffc2bc" Grid.Row="4" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
+        <Grid Background="#ecf5c8" Grid.Row="4" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -141,7 +141,7 @@
         </Grid>
 
         <!--Piąty opis - O autorach-->
-        <Grid Background="#ffc0e2" Grid.Row="4" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
+        <Grid Background="#cff6c9" Grid.Row="4" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -159,7 +159,7 @@
         </Grid>
 
         <!--Szósty opis - O aplikacji-->
-        <Grid Background="#f4c4ff" Grid.Row="4" Grid.Column="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
+        <Grid Background="#cbf3ef" Grid.Row="4" Grid.Column="5" Grid.RowSpan="3" Grid.ColumnSpan="2" Style="{StaticResource zakladka}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
