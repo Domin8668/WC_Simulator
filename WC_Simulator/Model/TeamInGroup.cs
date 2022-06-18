@@ -28,7 +28,6 @@ namespace WC_Simulator.Model
         {
             _points = 0;
             _image = $"../../Resources/Flags/{team.Name.Split(' ')[0]}.png";
-            Console.WriteLine(_image);
             _country = team.Name;
             _matches = matches;
             _gf = gf;
