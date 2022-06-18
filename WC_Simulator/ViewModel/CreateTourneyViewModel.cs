@@ -101,6 +101,13 @@ namespace WC_Simulator.ViewModel
                             NewTourneyBorder = 0;
                             NewTourneyWarning = string.Empty;
                             Model.CurrentTournament = tourney;
+                            Model.CurrentTournamentGroups = new ObservableCollection<Single_group>();
+                            foreach (var letter in Enum.GetValues(typeof(Single_group.Alphabet)))
+                            {
+                                var group = new Single_group(null, null, (uint)Model.CurrentTournament.Id_tournament, (Enum)letter);
+                                Model.CurrentTournamentGroups.Add(group);
+                                RepositoryGroups.AddTournamentGroups(group, (uint)Model.CurrentTournament.Id_tournament);
+                            }
                             NavigationStore.CurrentViewModel = new GroupsViewModel(Model, NavigationStore);
                         }
                     },

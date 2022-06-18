@@ -54,20 +54,26 @@ namespace WC_Simulator.DAL.Repositories
             return state;
         }
 
-        public static bool UpdateGroup(Single_group group, uint idGroup)
+        public static bool UpdateGroup(Single_group group)
         {
             bool state = false;
             using (var connection = DBConnection.Instance.Connection)
             {
-                string UPDATE_GROUP = $"UPDATE Single_group SET id_group='{group.Id_group}', id_first_pl_team='{group.Id_first_pl_team}', " +
-                    $"id_second_pl_team={group.Id_second_pl_team}, id_tournament='{group.Id_tournament}', letter='{group.Letter}' WHERE id_group={idGroup}";
-
-                MySqlCommand command = new MySqlCommand(UPDATE_GROUP, connection);
+                MySqlCommand command = new MySqlCommand("UPDATE Single_group SET id_first_pl_team=@Id_first_pl_team, id_second_pl_team=@Id_second_pl_team, WHERE id_group=@idGroup", connection);
                 connection.Open();
+                if (group.Id_first_pl_team == null)
+                    command.Parameters.AddWithValue("@Id_first_pl_team", DBNull.Value);
+                else
+                    command.Parameters.Add("@Id_first_pl_team", MySqlDbType.UInt64).Value = group.Id_first_pl_team;
+
+                if (group.Id_first_pl_team == null)
+                    command.Parameters.AddWithValue("@Id_second_pl_team", DBNull.Value);
+                else
+                    command.Parameters.Add("@Id_second_pl_team", MySqlDbType.UInt64).Value = group.Id_second_pl_team;
+
+                command.Parameters.Add("@idGroup", MySqlDbType.UInt64).Value = group.Id_first_pl_team;
                 var n = command.ExecuteNonQuery();
                 if (n == 1) state = true;
-
-                connection.Close();
             }
             return state;
         }
@@ -81,6 +87,34 @@ namespace WC_Simulator.DAL.Repositories
                 connection.Open();
                 var id = command.ExecuteNonQuery();
                 state = true;
+                connection.Close();
+            }
+            return state;
+        }
+
+        public static bool AddTournamentGroups(Single_group group, uint tournament_id)
+        {
+            bool state = false;
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand("INSERT INTO `single_group`(`id_tournament`, `id_first_pl_team`, `id_second_pl_team`, `letter`) VALUES (@Id_tournament, @Id_first_pl_team, Id_second_pl_team, @Letter)", connection);
+                connection.Open();
+                command.Parameters.Add("@Id_tournament", MySqlDbType.UInt64).Value = tournament_id;
+
+                if (group.Id_first_pl_team == null)
+                    command.Parameters.AddWithValue("@Id_first_pl_team", DBNull.Value);
+                else
+                    command.Parameters.Add("@Id_first_pl_team", MySqlDbType.UInt64).Value = group.Id_first_pl_team;
+
+                if (group.Id_first_pl_team == null)
+                    command.Parameters.AddWithValue("@Id_second_pl_team", DBNull.Value);
+                else
+                    command.Parameters.Add("@Id_second_pl_team", MySqlDbType.UInt64).Value = group.Id_second_pl_team;
+
+                command.Parameters.Add("@Letter", MySqlDbType.VarChar).Value = group.Letter;
+                var n = command.ExecuteNonQuery();
+                if (n == 1) state = true;
+                group.Id_group = (uint)command.LastInsertedId;
                 connection.Close();
             }
             return state;

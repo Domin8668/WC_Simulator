@@ -24,6 +24,7 @@ namespace WC_Simulator.Model
         private UserShort _currentUserShort;
         private User _currentUser;
         private Tournament _currentTournament;
+        private ObservableCollection<Single_group> _currentTournamentGroups;
 
         #endregion
 
@@ -49,11 +50,11 @@ namespace WC_Simulator.Model
                 AllUsers.Add(u);
             }
 
-            var groups = RepositoryGroups.LoadGroup();
-            foreach (var g in groups)
-            {
-                AllGroups.Add(g);
-            }
+            //var groups = RepositoryGroups.LoadGroup();
+            //foreach (var g in groups)
+            //{
+            //    AllGroups.Add(g);
+            //}
 
             var teams = RepositoryTeams.LoadTeam();
             foreach (var t in teams)
@@ -123,6 +124,12 @@ namespace WC_Simulator.Model
         {
             get { return _currentTournament; }
             set { _currentTournament = value; }
+        }
+
+        public ObservableCollection<Single_group> CurrentTournamentGroups
+        {
+            get { return _currentTournamentGroups; }
+            set { _currentTournamentGroups = value; }
         }
 
         #endregion
