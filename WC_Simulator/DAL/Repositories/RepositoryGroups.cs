@@ -12,7 +12,7 @@ namespace WC_Simulator.DAL.Repositories
     class RepositoryGroups
     {
         #region QUERIES
-        private const string ALL_GROUP = "SELECT * FROM `single_group`";
+        private const string ALL_GROUP = "SELECT * FROM `single_group` WHERE id_tournament = ";
         private const string ADD_GROUP = "INSERT INTO `single_group`(`id_group`, `id_first_pl_team`, `id_second_pl_team`, `id_tournament`, `letter`) VALUES ";
         private const string DELETE_GROUP = "DELETE FROM `single_group` WHERE id_group = ";
         //private const string UPDATE_GROUP = "UPDATE `single_group` SET xx WHERE id_group = ";
@@ -24,12 +24,12 @@ namespace WC_Simulator.DAL.Repositories
         /// </summary>
         /// <returns></returns>
 
-        public static List<Single_group> LoadGroup()
+        public static List<Single_group> LoadTournamentGroup(uint? tournament_id)
         {
             List<Single_group> group = new List<Single_group>();
             using (var connection = DBConnection.Instance.Connection)
             {
-                MySqlCommand command = new MySqlCommand(ALL_GROUP, connection);
+                MySqlCommand command = new MySqlCommand(ALL_GROUP + $"{tournament_id}", connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
@@ -119,6 +119,7 @@ namespace WC_Simulator.DAL.Repositories
             }
             return state;
         }
+
         #endregion
     }
 }

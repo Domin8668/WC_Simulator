@@ -149,10 +149,16 @@
                     <Image Source="../Resources/turnieje.png" Width="40"/>
                     <TextBlock Text="Turnieje:" Margin="10" FontSize="20" FontWeight="DemiBold"/>
                 </StackPanel>
-                
+
                 <ListBox Margin="5,5,5,230" FontSize="17" Background="Transparent" BorderBrush="#c4c5c4" BorderThickness="1"
                          ItemsSource="{Binding Tournaments}"
-                         SelectedItem="{Binding Model.CurrentTournament, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                         SelectedItem="{Binding Model.CurrentTournament, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding TournamentSelectionChanged}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ListBox>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">

@@ -6,6 +6,7 @@ using System;
 using WC_Simulator.Helpers.Stores;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
+using WC_Simulator.DAL.Repositories;
 
 namespace WC_Simulator.ViewModel
 {
@@ -195,6 +196,26 @@ namespace WC_Simulator.ViewModel
                     arg => true);
                 }
                 return _newTournament;
+            }
+        }
+
+        private ICommand _tournamentSelectionChanged = null;
+
+        public ICommand TournamentSelectionChanged
+        {
+            get
+            {
+                if (_tournamentSelectionChanged == null)
+                {
+                    _tournamentSelectionChanged = new RelayCommand(arg => {
+                        if (Model.CurrentTournament != null)
+                        {
+                            Model.CurrentTournamentGroups = new ObservableCollection<Single_group>(RepositoryGroups.LoadTournamentGroup(Model.CurrentTournament.Id_tournament));
+                        }
+                    },
+                    arg => true);
+                }
+                return _tournamentSelectionChanged;
             }
         }
 
