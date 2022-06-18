@@ -269,7 +269,13 @@
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Kolejka 2" Style="{StaticResource desc}" FontSize="30"/>
         <TextBlock Grid.Row="1" Grid.Column="2" Text="Kolejka 3" Style="{StaticResource desc}" FontSize="30"/>
 
-        <ListView x:Name="GroupTable" Grid.Column="0" Grid.ColumnSpan="3" Margin="336,40,336,40" FontSize="16"
+        <ListView x:Name="GroupTable" Grid.Column="0" Grid.ColumnSpan="3" FontSize="18"
+                  Margin="10"
+                  Width="722"
+                  HorizontalAlignment="Center"
+                  Background="Transparent"
+                  BorderThickness="0"
+                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                   ItemsSource="{Binding Path=Teams, Mode=TwoWay,
                   UpdateSourceTrigger=PropertyChanged,
                   RelativeSource={
@@ -282,24 +288,24 @@
                             <Setter Property="IsHitTestVisible" Value="False"/>
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
-                    <GridViewColumn Header="Lp." Width="100">
+                    <GridViewColumn Header="Lp." Width="30">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Position}" Margin="45,0,0,0"/>
+                                <TextBlock Text="{Binding Position}" Margin="0,0,0,0"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="" Width="110" >
+                    <GridViewColumn Header="Flaga" Width="85" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding Image}" />
+                                <Image Source="{Binding Image}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Kraj" Width="205">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Country}" TextDecorations="Underline" Foreground="Blue" 
+                                <TextBlock Text="{Binding Country}" TextDecorations="Underline" Foreground="#815eff" 
                                            Cursor="Hand" Margin="45,0,0,0"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
