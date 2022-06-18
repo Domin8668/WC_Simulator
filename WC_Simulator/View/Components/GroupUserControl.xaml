@@ -101,7 +101,8 @@
                                             UpdateSourceTrigger=PropertyChanged,
                                             RelativeSource={
                                             RelativeSource Mode=FindAncestor,
-                                            AncestorType={x:Type UserControl}}}"/>
+                                            AncestorType={x:Type UserControl}}}"
+                                Numbers="{Binding Model.Numbers, Mode=OneWay}"/>
         <local:MatchUserControl x:Name="match2" Grid.Row="3" Grid.Column="0" Margin="30"
                                 Team1FlagPath="{Binding Path=M2Flag_first, Mode=TwoWay,
                                             UpdateSourceTrigger=PropertyChanged,
@@ -132,7 +133,8 @@
                                             UpdateSourceTrigger=PropertyChanged,
                                             RelativeSource={
                                             RelativeSource Mode=FindAncestor,
-                                            AncestorType={x:Type UserControl}}}"/>
+                                            AncestorType={x:Type UserControl}}}"
+                                Numbers="{Binding Model.Numbers, Mode=OneWay}"/>
         <local:MatchUserControl x:Name="match3" Grid.Row="2" Grid.Column="1" Margin="30"
                                 Team1FlagPath="{Binding Path=M3Flag_first, Mode=TwoWay,
                                             UpdateSourceTrigger=PropertyChanged,
@@ -163,7 +165,8 @@
                                             UpdateSourceTrigger=PropertyChanged,
                                             RelativeSource={
                                             RelativeSource Mode=FindAncestor,
-                                            AncestorType={x:Type UserControl}}}"/>
+                                            AncestorType={x:Type UserControl}}}"
+                                Numbers="{Binding Model.Numbers, Mode=OneWay}"/>
         <local:MatchUserControl x:Name="match4" Grid.Row="3" Grid.Column="1" Margin="30"
                                 Team1FlagPath="{Binding Path=M4Flag_first, Mode=TwoWay,
                                             UpdateSourceTrigger=PropertyChanged,
@@ -194,7 +197,8 @@
                                             UpdateSourceTrigger=PropertyChanged,
                                             RelativeSource={
                                             RelativeSource Mode=FindAncestor,
-                                            AncestorType={x:Type UserControl}}}"/>
+                                            AncestorType={x:Type UserControl}}}"
+                                Numbers="{Binding Model.Numbers, Mode=OneWay}"/>
         <local:MatchUserControl x:Name="match5" Grid.Row="2" Grid.Column="2" Margin="30"
                                 Team1FlagPath="{Binding Path=M5Flag_first, Mode=TwoWay,
                                             UpdateSourceTrigger=PropertyChanged,
@@ -225,7 +229,8 @@
                                             UpdateSourceTrigger=PropertyChanged,
                                             RelativeSource={
                                             RelativeSource Mode=FindAncestor,
-                                            AncestorType={x:Type UserControl}}}"/>
+                                            AncestorType={x:Type UserControl}}}"
+                                Numbers="{Binding Model.Numbers, Mode=OneWay}"/>
         <local:MatchUserControl x:Name="match6" Grid.Row="3" Grid.Column="2" Margin="30"
                                 Team1FlagPath="{Binding Path=M6Flag_first, Mode=TwoWay,
                                             UpdateSourceTrigger=PropertyChanged,
@@ -256,7 +261,8 @@
                                             UpdateSourceTrigger=PropertyChanged,
                                             RelativeSource={
                                             RelativeSource Mode=FindAncestor,
-                                            AncestorType={x:Type UserControl}}}"/>
+                                            AncestorType={x:Type UserControl}}}"
+                                Numbers="{Binding Model.Numbers, Mode=OneWay}"/>
 
         <!--Labele kolejek-->
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Kolejka 1" Style="{StaticResource desc}" FontSize="30"/>
