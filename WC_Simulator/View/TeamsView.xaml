@@ -39,14 +39,14 @@
 
         <!--ListView Krajów-->
         <ListView x:Name="CountryTable" 
-                  Grid.Column="0" 
-                  Grid.Row="0" 
-                  Grid.RowSpan="3" 
-                  FontSize="20" 
-                  Margin="10" 
-                  Width="300" 
-                  HorizontalAlignment="Left" 
-                  Background="Transparent" 
+                  Grid.Column="0"
+                  Grid.Row="0"
+                  Grid.RowSpan="3"
+                  FontSize="20"
+                  Margin="10"
+                  Width="300"
+                  HorizontalAlignment="Left"
+                  Background="Transparent"
                   BorderThickness="0"
                   ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                   SelectedItem="{Binding SelectedTeam, Mode=TwoWay}"
@@ -142,8 +142,8 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/match.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="Matches" Style="{StaticResource textblock}" 
-                           Text="{Binding SelectedTeam.Matches, StringFormat={}{0}, Mode=TwoWay,
-                                             UpdateSourceTrigger=PropertyChanged}"/>
+                                   Text="{Binding SelectedTeam.Matches, StringFormat={}{0},
+                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                 </Border>
 
@@ -156,9 +156,9 @@
                 <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/win.png" Width="18" Margin="5"/>
-                        <TextBlock x:Name="WinsNB" Style="{StaticResource textblock}" 
-                           Text="{Binding SelectedTeam.Wins, StringFormat={}{0}, 
-                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock x:Name="WinsNB" Style="{StaticResource textblock}"
+                                   Text="{Binding SelectedTeam.Wins, StringFormat={}{0},
+                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                 </Border>
 
@@ -172,8 +172,8 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/draw.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="DrawsNB" Style="{StaticResource textblock}" 
-                           Text="{Binding SelectedTeam.Draws, StringFormat={}{0}, 
-                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                   Text="{Binding SelectedTeam.Draws, StringFormat={}{0},
+                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                 </Border>
 
@@ -187,8 +187,8 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/lose.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="LossesNB" Style="{StaticResource textblock}" 
-                           Text="{Binding SelectedTeam.Losses, StringFormat={}{0}, 
-                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                   Text="{Binding SelectedTeam.Losses, StringFormat={}{0}, 
+                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                 </Border>
 
@@ -202,8 +202,8 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/points.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="PointsNB" Style="{StaticResource textblock}" 
-                           Text="{Binding SelectedTeam.Points, StringFormat={}{0}, 
-                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                   Text="{Binding SelectedTeam.Points, StringFormat={}{0}, 
+                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                 </Border>
 
@@ -232,8 +232,8 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/stracone.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="GoalsAgainstNB" Style="{StaticResource textblock}" 
-                           Text="{Binding SelectedTeam.GA, StringFormat={}{0}, 
-                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                   Text="{Binding SelectedTeam.GA, StringFormat={}{0}, 
+                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                 </Border>
 
@@ -243,17 +243,19 @@
         
         
         <!--Listview Piłkarze-->
-        <ListView x:Name="PlayersTable" Grid.Column="2" Grid.Row="1" FontSize="18" 
+        <ListView x:Name="PlayersTable" Grid.Column="2"
+                  Grid.ColumnSpan="1" Grid.Row="1" FontSize="18" 
                   Margin="10"
                   Width="300"
                   HorizontalAlignment="Center" 
                   Background="Transparent" 
                   BorderThickness="0"
+                  BorderBrush="Transparent"
                   ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                   ItemsSource="{Binding SelectedTeam.Players, Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged}">
             <ListView.View>
-                <GridView>
+                <GridView AllowsColumnReorder="False">
                     <GridView.ColumnHeaderContainerStyle>
                         <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
                             <Setter Property="IsHitTestVisible" Value="False"/>
@@ -265,12 +267,15 @@
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
-                    <GridViewColumn Header="Piłkarz" Width="300">
+                    <GridViewColumn Header="Piłkarze" Width="500">
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Height" Value="50"/>
+                </Style>
+            </ListView.ItemContainerStyle>
         </ListView>
-
-
     </Grid>
 </UserControl>

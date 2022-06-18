@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WC_Simulator.DAL.Entities;
 using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
 using WC_Simulator.ViewModel.BaseClasses;
@@ -13,30 +14,30 @@ namespace WC_Simulator.ViewModel
 {
     class TeamsViewModel : BaseViewModel
     {
+        #region Variables
 
         private ObservableCollection<TeamInTeams> _teams;
         private TeamInTeams _selectedTeam;
 
+        #endregion
+
+
+        #region Constructors
 
         public TeamsViewModel(MainModel model, NavigationStore navigationStore)
         {
             Model = model;
             NavigationStore = navigationStore;
 
-            _teams = new ObservableCollection<TeamInTeams>()
-            {
-                new TeamInTeams(1,2,3, "../../Resources/Flags/wales.png", "Walia", "ktoś", 6, 4, new ObservableCollection<string> { "Bale", "Ramsey"}, "1/8 finału"),
-                new TeamInTeams(1,2,3, "../../Resources/Flags/poland.png", "Polska", "Czesio", 6, 4, new ObservableCollection<string> { "Zieliński", "Krychowiak"}, "ćwierćfinał"),
-                new TeamInTeams(1,2,3, "../../Resources/Flags/belgium.png", "Belgia", "Czesio", 6, 4, new ObservableCollection<string> { "De Bruyne", "Hazard"}, "Finał"),
-                new TeamInTeams(1,2,3, "../../Resources/Flags/germany.png", "Niemcy", "Czesio", 6, 4, new ObservableCollection<string> { "Lewandowski", "Muller"}, "Mecz o 3 msc"),
-                new TeamInTeams(1,2,3, "../../Resources/Flags/spain.png", "Hiszpania", "Czesio", 6, 4, new ObservableCollection<string> { "Torres", "Villa"}, "faza grupowa")
-            };
-            SelectedTeam = _teams.FirstOrDefault();
+            _teams = new ObservableCollection<TeamInTeams>();
+            LoadTeamsInTeams();
+            _selectedTeam = Teams[0];
         }
 
+        #endregion
 
 
-
+        #region Properties
 
         public ObservableCollection<TeamInTeams> Teams
         {
@@ -47,6 +48,7 @@ namespace WC_Simulator.ViewModel
                 OnPropertyChanged(nameof(_teams));
             }
         }
+
         public TeamInTeams SelectedTeam
         {
             get { return _selectedTeam; }
@@ -57,5 +59,27 @@ namespace WC_Simulator.ViewModel
             }
         }
 
+        #endregion
+
+
+        #region Methods
+
+        private void LoadTeamsInTeams()
+        {
+            foreach (var team in Model.AllTeams)
+            {
+                ObservableCollection<string> players = new ObservableCollection<string>();
+                foreach (var player in Model.AllPlayers)
+                {   
+                    if (player.Id_team == team.Id_team)
+                    {
+                        players.Add(player.ToString());
+                    }
+                }
+                Teams.Add(new TeamInTeams(team, players));
+            }
+        }
+
+        #endregion
     }
 }
