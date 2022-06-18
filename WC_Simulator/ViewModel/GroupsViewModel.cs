@@ -373,7 +373,7 @@ namespace WC_Simulator.ViewModel
         }
         public void PrepareMatchesF()
         {
-            int i = 2 * 4;
+            int i = 5 * 4;
             MatchesF = new ObservableCollection<Single_match>();
 
             MatchesF.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1], 8, 1, 3));
