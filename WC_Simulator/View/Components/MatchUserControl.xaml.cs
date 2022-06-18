@@ -85,6 +85,13 @@ namespace WC_Simulator.View.Components
                 new FrameworkPropertyMetadata(null)
             );
 
+        public static readonly DependencyProperty ResultsEnabledProperty = DependencyProperty.Register(
+                "ResultsEnabled",
+                typeof(bool),
+                typeof(MatchUserControl),
+                new FrameworkPropertyMetadata(null)
+            );
+
         public static readonly DependencyProperty MatchCommandProperty = DependencyProperty.Register(
                 "MatchCommand",
                 typeof(ICommand),
@@ -141,6 +148,12 @@ namespace WC_Simulator.View.Components
             set { SetValue(NumbersProperty, value); }
         }
 
+        public bool ResultsEnabled
+        {
+            get { return (bool)GetValue(ResultsEnabledProperty); }
+            set { SetValue(ResultsEnabledProperty, value); }
+        }
+
         public ICommand MatchCommand
         {
             get { return (ICommand)GetValue(MatchCommandProperty); }
@@ -151,6 +164,44 @@ namespace WC_Simulator.View.Components
 
 
         #region Events
+
+        public static readonly RoutedEvent Team1ResultChangedEvent = EventManager.RegisterRoutedEvent(
+            "Team1ResultChanged",
+            RoutingStrategy.Bubble,
+            typeof(RoutedEventHandler),
+            typeof(MatchUserControl)
+            );
+
+        public event RoutedEventHandler Team1ResultChanged
+        {
+            add { AddHandler(Team1ResultChangedEvent, value); }
+            remove { RemoveHandler(Team1ResultChangedEvent, value); }
+        }
+
+        void RaiseTeam1ResultChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RoutedEventArgs newEventArgs = new RoutedEventArgs(Team1ResultChangedEvent);
+            RaiseEvent(newEventArgs);
+        }
+
+        public static readonly RoutedEvent Team2ResultChangedEvent = EventManager.RegisterRoutedEvent(
+            "Team2ResultChanged",
+            RoutingStrategy.Bubble,
+            typeof(RoutedEventHandler),
+            typeof(MatchUserControl)
+            );
+
+        public event RoutedEventHandler Team2ResultChanged
+        {
+            add { AddHandler(Team2ResultChangedEvent, value); }
+            remove { RemoveHandler(Team2ResultChangedEvent, value); }
+        }
+
+        void RaiseTeam2ResultChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RoutedEventArgs newEventArgs = new RoutedEventArgs(Team2ResultChangedEvent);
+            RaiseEvent(newEventArgs);
+        }
 
         #endregion
     }

@@ -102,6 +102,12 @@
                                  RelativeSource={
                                  RelativeSource Mode=FindAncestor,
                                  AncestorType={x:Type UserControl}}}"
+                  SelectionChanged="RaiseTeam1ResultChanged"
+                  IsEnabled="{Binding Path=ResultsEnabled, Mode=TwoWay,
+                             UpdateSourceTrigger=PropertyChanged,
+                             RelativeSource={
+                             RelativeSource Mode=FindAncestor,
+                             AncestorType={x:Type UserControl}}}"
                   FontSize="20"
                   FontWeight="DemiBold"
                   HorizontalContentAlignment="Center"
@@ -119,6 +125,12 @@
                                  RelativeSource={
                                  RelativeSource Mode=FindAncestor,
                                  AncestorType={x:Type UserControl}}}"
+                  SelectionChanged="RaiseTeam2ResultChanged"
+                  IsEnabled="{Binding Path=ResultsEnabled, Mode=TwoWay,
+                             UpdateSourceTrigger=PropertyChanged,
+                             RelativeSource={
+                             RelativeSource Mode=FindAncestor,
+                             AncestorType={x:Type UserControl}}}"
                   FontSize="20"
                   FontWeight="DemiBold"
                   HorizontalContentAlignment="Center"
