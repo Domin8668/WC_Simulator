@@ -93,6 +93,8 @@ namespace WC_Simulator.Model
 
         public ObservableCollection<Tournament> AllTournaments { get; set; } = new ObservableCollection<Tournament>();
 
+        #endregion
+
         public ObservableCollection<string> SecurityQuestions { get; private set; } = new ObservableCollection<string>() {
             "Jak ma na nazwisko najlepszy napastnik?",
             "W jakim mieście się urodziłeś/łaś?",
@@ -104,8 +106,6 @@ namespace WC_Simulator.Model
         {
             0, 1, 2, 3, 4, 5, 6, 7, 8, 9
         };
-
-        #endregion
 
         public User CurrentUser
         {
@@ -258,6 +258,7 @@ namespace WC_Simulator.Model
             }
             return false;
         }
+
         #endregion
     }
 }

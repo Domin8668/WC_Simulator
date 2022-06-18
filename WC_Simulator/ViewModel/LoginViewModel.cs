@@ -207,6 +207,10 @@ namespace WC_Simulator.ViewModel
 
                         Model.UpdateCurrentUser();
                         Model.LoadUserTournaments();
+                        if (Model.AllTournaments.Count > 0)
+                        {
+                            Model.CurrentTournament = Model.AllTournaments[0];
+                        }
                         NavigationStore.MenuVisibility = Visibility.Visible;
                             NavigationStore.CurrentViewModel = new ProfileViewModel(Model, NavigationStore);
                     },
