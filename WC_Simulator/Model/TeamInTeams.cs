@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using WC_Simulator.DAL.Entities;
 
 namespace WC_Simulator.Model
 {
@@ -6,6 +7,7 @@ namespace WC_Simulator.Model
     {
         #region Variables
 
+        private uint? _teamId;
         private string _image;
         private string _country;
 
@@ -40,6 +42,16 @@ namespace WC_Simulator.Model
             _players = players;
         }
 
+        public TeamInTeams(Team team, ObservableCollection<string> players)
+        {
+            _teamId = team.Id_team;
+            _image = $"../../Resources/Flags/{team.Name.Split(' ')[0]}.png";
+            _country = team.Name;
+
+            _coach = team.Coach;
+            _players = players;
+        }
+
         #endregion
 
 
@@ -56,6 +68,7 @@ namespace WC_Simulator.Model
             get { return _wins; }
             set { _wins = value; }
         }
+
         public int Losses
         {
             get { return _losses; }
@@ -104,11 +117,22 @@ namespace WC_Simulator.Model
             set { _points = value; }
         }
 
+        public uint? TeamId
+        {
+            get { return _teamId; }
+            set { _teamId = value; }
+        }
+
         #endregion
+
+
+        #region Methods
 
         public override string ToString()
         {
-            return "test";
+            return Country;
         }
+
+        #endregion
     }
 }

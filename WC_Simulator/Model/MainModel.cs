@@ -23,6 +23,7 @@ namespace WC_Simulator.Model
 
         private UserShort _currentUserShort;
         private User _currentUser;
+        private Tournament _currentTournament;
 
         #endregion
 
@@ -54,21 +55,21 @@ namespace WC_Simulator.Model
                 AllGroups.Add(g);
             }
 
-            //var tourneys = RepositoryTournaments.LoadTournament();
-            //foreach (var t in tourneys)
-            //{
-            //    AllTournaments.Add(t);
-            //}
+            var teams = RepositoryTeams.LoadTeam();
+            foreach (var t in teams)
+            {
+                AllTeams.Add(t);
+            }
 
+            var players = RepositoryPlayers.LoadPlayer();
+            foreach (var p in players)
+            {
+                AllPlayers.Add(p);
+            }
+                
             //var matches = RepositoryMatches.LoadMatch();
             //foreach (var m in matches)
             //    AllMatches.Add(m);
-            //var players = RepositoryPlayers.LoadPlayer();
-            //foreach (var p in players)
-            //    AllPlayers.Add(p);
-            //var teams = RepositoryTeams.LoadTeam();
-            //foreach (var t in teams)
-            //    AllTeams.Add(t);
         }
 
         #endregion
@@ -76,7 +77,7 @@ namespace WC_Simulator.Model
 
         #region Properties
 
-        // kolekcje obiektów poszczególnych zbiorów encji
+        #region Entities collections
 
         public ObservableCollection<UserShort> AllUsersShort { get; set; } = new ObservableCollection<UserShort>();
 
@@ -91,12 +92,20 @@ namespace WC_Simulator.Model
         public ObservableCollection<Team> AllTeams { get; set; } = new ObservableCollection<Team>();
 
         public ObservableCollection<Tournament> AllTournaments { get; set; } = new ObservableCollection<Tournament>();
+
         public ObservableCollection<string> SecurityQuestions { get; private set; } = new ObservableCollection<string>() {
             "Jak ma na nazwisko najlepszy napastnik?",
             "W jakim mieście się urodziłeś/łaś?",
             "Jaki był pierwszy koncert, na którym byłeś/łaś?",
             "Jakie było imię Twojego pierwszego zwierzątka?",
             "Jakie jest nazwisko panieńskie Twojej mamy?"};
+
+        public uint[] Numbers { get; set; } = new uint[10]
+        {
+            0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+        };
+
+        #endregion
 
         public User CurrentUser
         {
@@ -110,10 +119,11 @@ namespace WC_Simulator.Model
             set { _currentUserShort = value; }
         }
 
-        public uint[] Numbers { get; set; } = new uint[10]
+        public Tournament CurrentTournament
         {
-            0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-        };
+            get { return _currentTournament; }
+            set { _currentTournament = value; }
+        }
 
         #endregion
 
@@ -234,7 +244,6 @@ namespace WC_Simulator.Model
                 if (t.Id_user == CurrentUser.Id_user)
                 {
                     AllTournaments.Add(t);
-                    //Console.WriteLine(t);
                 }
             }    
         }
