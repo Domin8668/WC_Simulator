@@ -8,9 +8,23 @@
              xmlns:ucs="clr-namespace:WC_Simulator.View.Components"
              mc:Ignorable="d" 
              d:DesignHeight="850" d:DesignWidth="1150">
+    <UserControl.Resources>
+        <Style TargetType="TabItem" x:Key="tabItemStyle">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Margin" Value="0 0 5 0"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <TabControl>
-            <TabItem x:Name="GroupA" Header="Grupa A">
+            <TabItem x:Name="GroupA" Header="Grupa A" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupAUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsA, Mode=TwoWay, 
@@ -60,7 +74,7 @@
                         M5Short_second="{Binding MatchesA[5].Short_second}"                                         
                                       />
             </TabItem>
-            <TabItem x:Name="GroupB" Header="Grupa B">
+            <TabItem x:Name="GroupB" Header="Grupa B" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupBUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsB, Mode=TwoWay, 
@@ -109,7 +123,7 @@
                         M6Short_second="{Binding MatchesB[5].Short_second}"                                      
                                       />
             </TabItem>
-            <TabItem x:Name="GroupC" Header="Grupa C">
+            <TabItem x:Name="GroupC" Header="Grupa C" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupCUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsC, Mode=TwoWay, 
@@ -157,7 +171,7 @@
                         M6Short_first="{Binding MatchesC[5].Short_first}"
                         M6Short_second="{Binding MatchesC[5].Short_second}" />
             </TabItem>
-            <TabItem x:Name="GroupD" Header="Grupa D">
+            <TabItem x:Name="GroupD" Header="Grupa D" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupDUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsD, Mode=TwoWay, 
@@ -205,7 +219,7 @@
                         M5Short_first="{Binding MatchesD[5].Short_first}"
                         M5Short_second="{Binding MatchesD[5].Short_second}"/>
             </TabItem>
-            <TabItem x:Name="GroupE" Header="Grupa E">
+            <TabItem x:Name="GroupE" Header="Grupa E" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupEUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsE, Mode=TwoWay, 
@@ -254,7 +268,7 @@
                         M6Short_second="{Binding MatchesE[5].Short_second}"                                      
                                       />
             </TabItem>
-            <TabItem x:Name="GroupF" Header="Grupa F">
+            <TabItem x:Name="GroupF" Header="Grupa F" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupFUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsF, Mode=TwoWay, 
@@ -303,7 +317,7 @@
                         M5Short_second="{Binding MatchesF[5].Short_second}"        
                                       />
             </TabItem>
-            <TabItem x:Name="GroupG" Header="Grupa G">
+            <TabItem x:Name="GroupG" Header="Grupa G" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupGUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsG, Mode=TwoWay, 
@@ -352,7 +366,7 @@
                         M5Short_second="{Binding MatchesG[5].Short_second}" 
                                      />
             </TabItem>
-            <TabItem x:Name="GroupH" Header="Grupa H">
+            <TabItem x:Name="GroupH" Header="Grupa H" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupHUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
                         Teams="{Binding TeamsH, Mode=TwoWay, 
