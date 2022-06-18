@@ -60,7 +60,7 @@ namespace WC_Simulator.DAL.Entities
 
         public override string ToString()
         {
-            return $"Imię i nazwisko: {Name}, pozycja: {Position}";
+            return Name;
         }
 
         //metoda generuje string dla INSERT TO (nazwisko, imie, wiek, miasto)

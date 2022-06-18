@@ -108,8 +108,6 @@ namespace WC_Simulator.ViewModel
                     _matchCommand = new RelayCommand(arg =>
                     {
                         NavigationStore.CurrentViewModel = new MatchViewModel(Model, NavigationStore);
-                        //Console.WriteLine(Matches[0].Goals_first_team);
-                        //Console.WriteLine(Matches[0].Goals_second_team);
                     },
                     arg => true);
                 }
