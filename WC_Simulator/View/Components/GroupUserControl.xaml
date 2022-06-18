@@ -298,7 +298,7 @@
                     <GridViewColumn Header="Flaga" Width="85" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding Image}"/>
+                                <Image Source="{Binding Image}" Height="50"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
