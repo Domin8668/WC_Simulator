@@ -124,7 +124,13 @@ namespace WC_Simulator.ViewModel
                 {
                     _groups = new RelayCommand(arg =>
                     {
-                        NavigationStore.CurrentViewModel = new GroupsViewModel(Model, NavigationStore);
+                        if (Model.AllTournaments.Count == 0)
+                        {
+                            CreateTourneyViewModel create = new CreateTourneyViewModel(Model, NavigationStore);
+                            NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, create, Visibility.Hidden, "Musisz stworzyć przynajmniej jeden turniej.");
+                        }
+                        else
+                            NavigationStore.CurrentViewModel = new GroupsViewModel(Model, NavigationStore);
                     },
                     arg => true);
                 }
@@ -142,7 +148,13 @@ namespace WC_Simulator.ViewModel
                 {
                     _knockouts = new RelayCommand(arg =>
                     {
-                        NavigationStore.CurrentViewModel = new KnockoutsViewModel(Model, NavigationStore);
+                        if (Model.AllTournaments.Count == 0)
+                        {
+                            CreateTourneyViewModel create = new CreateTourneyViewModel(Model, NavigationStore);
+                            NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, create, Visibility.Hidden, "Musisz stworzyć przynajmniej jeden turniej.");
+                        }
+                        else
+                            NavigationStore.CurrentViewModel = new KnockoutsViewModel(Model, NavigationStore);
                     },
                     arg => true);
                 }

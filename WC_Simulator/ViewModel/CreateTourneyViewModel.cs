@@ -20,6 +20,7 @@ namespace WC_Simulator.ViewModel
         private string _newTourney;
         private double _newTourneyBorder;
         private string _newTourneyWarning;
+
         #endregion
 
 
@@ -33,6 +34,7 @@ namespace WC_Simulator.ViewModel
         }
 
         #endregion
+
 
         #region Properties
 
@@ -78,6 +80,7 @@ namespace WC_Simulator.ViewModel
 
         #endregion
 
+
         #region Commands
 
         private ICommand _addTourney = null;
@@ -97,7 +100,7 @@ namespace WC_Simulator.ViewModel
                             NewTourney = string.Empty;
                             NewTourneyBorder = 0;
                             NewTourneyWarning = string.Empty;
-                            System.Windows.MessageBox.Show("Turniej został utworzony!");
+                            NavigationStore.CurrentViewModel = new GroupsViewModel(Model, NavigationStore);
                         }
                     },
                     arg => true);
