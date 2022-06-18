@@ -273,7 +273,7 @@
             </ListView.View>
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
-                    <Setter Property="Height" Value="50"/>
+                    <Setter Property="Height" Value="28"/>
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
