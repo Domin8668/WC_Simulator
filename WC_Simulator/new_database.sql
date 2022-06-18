@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
--- Host: localhost    Database: wc_simulator
+-- Host: 127.0.0.1    Database: wc_simulator
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -52,8 +52,8 @@ DROP TABLE IF EXISTS `single_group`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `single_group` (
   `id_group` int unsigned NOT NULL AUTO_INCREMENT,
-  `id_first_pl_team` int unsigned DEFAULT '1',
-  `id_second_pl_team` int unsigned DEFAULT '2',
+  `id_first_pl_team` int unsigned,
+  `id_second_pl_team` int unsigned,
   `id_tournament` int unsigned NOT NULL,
   `letter` enum('A','B','C','D','E','F','G','H') NOT NULL,
   PRIMARY KEY (`id_group`),
@@ -72,7 +72,7 @@ CREATE TABLE `single_group` (
 
 LOCK TABLES `single_group` WRITE;
 /*!40000 ALTER TABLE `single_group` DISABLE KEYS */;
-INSERT INTO `single_group` VALUES (1,1,2,1,'A'),(2,1,2,1,'B'),(3,1,2,1,'C'),(4,1,2,1,'D'),(5,1,2,1,'E'),(6,1,2,1,'F'),(7,1,2,1,'G'),(8,1,2,1,'H');
+INSERT INTO `single_group` VALUES (1,NULL,NULL,1,'A'),(2,NULL,NULL,1,'B'),(3,NULL,NULL,1,'C'),(4,NULL,NULL,1,'D'),(5,NULL,NULL,1,'E'),(6,NULL,NULL,1,'F'),(7,NULL,NULL,1,'G'),(8,NULL,NULL,1,'H');
 /*!40000 ALTER TABLE `single_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +159,7 @@ CREATE TABLE `tournament` (
   PRIMARY KEY (`id_tournament`),
   KEY `fk_tournament_user` (`id_user`),
   CONSTRAINT `fk_tournament_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -198,7 +198,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin',_binary 'PJš÷U‚H¼‹)¿4â£³4\èG\Æ|w>œö>ÜŽ','2022-06-15 21:47:06','2022-06-17 10:48:45','Jak ma na nazwisko najlepszy napastnik?',_binary 'Š»¦\ÄZ>iW\nŸ\ê¢½ \Z\0\Ì-V\ÉQ\Ö^\ÄFüçŸ®');
+INSERT INTO `user` VALUES (1,'admin',_binary 'PJš÷U‚H¼‹)¿4â£³4\èG\Æ|w>œö>ÜŽ','2022-06-15 21:47:06','2022-06-18 20:33:15','Jak ma na nazwisko najlepszy napastnik?',_binary 'Š»¦\ÄZ>iW\nŸ\ê¢½ \Z\0\Ì-V\ÉQ\Ö^\ÄFüçŸ®');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -211,4 +211,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-17 11:22:40
+-- Dump completed on 2022-06-18 20:34:02
