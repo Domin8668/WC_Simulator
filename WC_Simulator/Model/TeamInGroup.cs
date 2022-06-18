@@ -27,7 +27,8 @@ namespace WC_Simulator.Model
         public TeamInGroup(Team team, int matches, int gf, int ga, int points)
         {
             _points = 0;
-            _image = $"../../Resources/Flags/{ team.Name.Replace(" ", "").ToLower()}.png";
+            _image = $"../../Resources/Flags/{team.Name.Split(' ')[0]}.png";
+            Console.WriteLine(_image);
             _country = team.Name;
             _matches = matches;
             _gf = gf;

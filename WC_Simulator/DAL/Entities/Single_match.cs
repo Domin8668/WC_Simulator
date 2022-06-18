@@ -37,8 +37,8 @@ namespace WC_Simulator.DAL.Entities
             Short_second = reader["abbr_second"].ToString();
             Name_first = reader["name_first"].ToString();
             Name_second = reader["name_second"].ToString();
-            Flag_first = $"../../Resources/Flags/{ Name_first.Replace(" ", "").ToLower()}.png";
-            Flag_second = $"../../Resources/Flags/{ Name_second.Replace(" ", "").ToLower()}.png";
+            Flag_first = $"../../Resources/Flags/{Name_first.Split(' ')[0]}.png";
+            Flag_second = $"../../Resources/Flags/{Name_second.Split(' ')[0]}.png";
             Match_code = uint.Parse(reader["match_code"].ToString());
             Goals_first_team = uint.Parse(reader["goals_first_team"].ToString());
             Goals_second_team = uint.Parse(reader["goals_second_team"].ToString());
@@ -54,8 +54,8 @@ namespace WC_Simulator.DAL.Entities
             Short_second = short_second.Trim();
             Name_first = name_first.Trim();
             Name_second = name_second.Trim();
-            Flag_first = $"../../Resources/Flags/{ Name_first.Replace(" ", "").ToLower()}.png";
-            Flag_second = $"../../Resources/Flags/{ Name_second.Replace(" ", "").ToLower()}.png";
+            Flag_first = $"../../Resources/Flags/{Name_first.Split(' ')[0]}.png";
+            Flag_second = $"../../Resources/Flags/{Name_second.Split(' ')[0]}.png";
             if (name_first[0] == '1' || name_first[0] == '2')
                 Flag_first = "../../Resources/Flags/placeholder.png";
             if (name_second[0] == '1' || name_second[0] == '2')
@@ -73,8 +73,8 @@ namespace WC_Simulator.DAL.Entities
             Short_second = team2.Short_name.Trim();
             Name_first = team1.Name.Trim();
             Name_second = team2.Name.Trim();
-            Flag_first = $"../../Resources/Flags/{Name_first.Replace(" ", "").ToLower()}.png";
-            Flag_second = $"../../Resources/Flags/{Name_second.Replace(" ", "").ToLower()}.png";
+            Flag_first = $"../../Resources/Flags/{Name_first.Split(' ')[0]}.png";
+            Flag_second = $"../../Resources/Flags/{Name_second.Split(' ')[0]}.png";
             if(team1.Name[0]== '1' || team1.Name[0]== '2')
                 Flag_first = "../../Resources/Flags/placeholder.png";
             if (team2.Name[0] == '1' || team2.Name[0] == '2')

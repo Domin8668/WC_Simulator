@@ -255,6 +255,7 @@ namespace WC_Simulator.ViewModel
 
         #endregion
 
+
         #region Methods
 
         public void Prepare_Teams()
