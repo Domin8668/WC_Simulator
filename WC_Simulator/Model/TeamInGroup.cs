@@ -11,7 +11,7 @@ namespace WC_Simulator.Model
     {
         #region Variables
 
-        private int _position;
+        private string _position;
         private string _image;
         private string _country;
         private int _matches;
@@ -26,6 +26,7 @@ namespace WC_Simulator.Model
 
         public TeamInGroup(Team team, int matches, int gf, int ga, int points)
         {
+            _points = 0;
             _image = $"../../Resources/Flags/{ team.Name.Replace(" ", "").ToLower()}.png";
             _country = team.Name;
             _matches = matches;
@@ -39,7 +40,7 @@ namespace WC_Simulator.Model
 
         #region Properties
 
-        public int Position
+        public string Position
         {
             get { return _position; }
             set { _position = value; }

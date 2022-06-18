@@ -125,6 +125,7 @@
                   VerticalContentAlignment="Center"
                   HorizontalAlignment="Stretch"
                   VerticalAlignment="Stretch"/>
+        
         <!--<TextBox x:Name="Team1_res" Grid.Row="0" Grid.Column="2" 
                  Style="{StaticResource result_tb}"
                  Text="{Binding Path=Team1Result, Mode=TwoWay,

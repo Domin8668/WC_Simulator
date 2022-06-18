@@ -28,7 +28,7 @@ namespace WC_Simulator.ViewModel
 
         private ObservableCollection<Team> _allTeams;
 
-        private ObservableCollection<int> _points;
+        private ObservableCollection<int> _lp;
 
         //private Schedule _scheduleInfo;
 
@@ -62,8 +62,8 @@ namespace WC_Simulator.ViewModel
             PrepareMatchesF();
             PrepareMatchesG();
             PrepareMatchesH();
-            TeamsA = PrepareStandingA(MatchesA, 0);
-            TeamsB = PrepareStandingB(MatchesB, 1);
+            TeamsA = PrepareStanding(MatchesA, 0);
+            TeamsB = PrepareStanding(MatchesB, 1);
             TeamsC = PrepareStanding(MatchesC, 2);
             TeamsD = PrepareStanding(MatchesD, 3);
             TeamsE = PrepareStanding(MatchesE, 4);
@@ -243,13 +243,13 @@ namespace WC_Simulator.ViewModel
             }
         }
 
-        public ObservableCollection<int> Points
+        public ObservableCollection<int> Lp
         {
-            get { return _points; }
+            get { return _lp; }
             set
             {
-                _points = value;
-                OnPropertyChanged(nameof(Points));
+                _lp = value;
+                OnPropertyChanged(nameof(Lp));
             }
         }
 
@@ -312,8 +312,8 @@ namespace WC_Simulator.ViewModel
             MatchesA.Add(new Single_match(1, AllTeams[i], AllTeams[i+2],  17, 0, 0));
             MatchesA.Add(new Single_match(1, AllTeams[i+3], AllTeams[i+1],  18, 1, 1));
 
+            MatchesA.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 35, 4, 0));
             MatchesA.Add(new Single_match(1, AllTeams[i+1], AllTeams[i+2],  34, 3, 5));
-            MatchesA.Add(new Single_match(1, AllTeams[i+3], AllTeams[i],  35, 4, 0));
         }
         public void PrepareMatchesB()
         {
@@ -323,8 +323,8 @@ namespace WC_Simulator.ViewModel
             MatchesB.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1], 2, 10, 1));
             MatchesB.Add(new Single_match(1, AllTeams[i + 2], AllTeams[i + 3], 3, 4, 0));
 
-            MatchesB.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i + 1], 16, 2, 2));
             MatchesB.Add(new Single_match(1, AllTeams[i], AllTeams[i + 2], 19, 1, 4));
+            MatchesB.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i + 1], 16, 2, 2));
 
             MatchesB.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 32, 3, 3));
             MatchesB.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 33, 2, 1));
@@ -332,13 +332,13 @@ namespace WC_Simulator.ViewModel
         public void PrepareMatchesC()
         {
             int i = 2 * 4;
-            MatchesC = new ObservableCollection<Single_match>();
+        MatchesC = new ObservableCollection<Single_match>();
 
-            MatchesC.Add(new Single_match(1, AllTeams[i + 2], AllTeams[i + 3], 6, 0, 0));
             MatchesC.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1], 7, 0, 0));
+            MatchesC.Add(new Single_match(1, AllTeams[i + 2], AllTeams[i + 3], 6, 0, 0));
 
-            MatchesC.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i + 1], 21, 0, 0));
             MatchesC.Add(new Single_match(1, AllTeams[i], AllTeams[i + 2], 23, 0, 0));
+            MatchesC.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i + 1], 21, 0, 0));
 
             MatchesC.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 38, 0, 0));
             MatchesC.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 39, 0, 0));
@@ -348,58 +348,56 @@ namespace WC_Simulator.ViewModel
             int i = 3 * 4;
             MatchesD = new ObservableCollection<Single_match>();
 
-            MatchesD.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1], 4, 0, 0));
-            MatchesD.Add(new Single_match(1, AllTeams[i + 2], AllTeams[i + 3], 5, 0, 0));
+            MatchesD.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1], 4, 1, 3));
+            MatchesD.Add(new Single_match(1, AllTeams[i + 2], AllTeams[i + 3], 5, 2, 4));
 
-            MatchesD.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i + 1], 20, 0, 0));
-            MatchesD.Add(new Single_match(1, AllTeams[i], AllTeams[i + 2], 22, 0, 0));
+            MatchesD.Add(new Single_match(1, AllTeams[i], AllTeams[i + 2], 22, 1, 2));
+            MatchesD.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i + 1], 20, 2, 0));
 
-            MatchesD.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 36, 0, 0));
-            MatchesD.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 37, 0, 0));
-
+            MatchesD.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 36, 0, 0));
+            MatchesD.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 37, 2, 1));
         }
         public void PrepareMatchesE()
         {
             int i = 4 * 4;
             MatchesE = new ObservableCollection<Single_match>();
 
-            MatchesE.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1], 9, 0, 0));
-            MatchesE.Add(new Single_match(1, AllTeams[i + 2], AllTeams[i + 3], 10, 0, 0));
+            MatchesE.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1], 9, 1, 3));
+            MatchesE.Add(new Single_match(1, AllTeams[i + 2], AllTeams[i + 3], 10, 2, 4));
 
-            MatchesE.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i + 1], 24, 0, 0));
-            MatchesE.Add(new Single_match(1, AllTeams[i], AllTeams[i + 2], 27, 0, 0));
+            MatchesE.Add(new Single_match(1, AllTeams[i], AllTeams[i + 2], 27, 1, 2));
+            MatchesE.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i + 1], 24, 2, 0));
 
             MatchesE.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 42, 0, 0));
-            MatchesE.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 43, 0, 0));
+            MatchesE.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 43, 2, 1));
         }
         public void PrepareMatchesF()
         {
-            int i = 5 * 4;
+            int i = 2 * 4;
             MatchesF = new ObservableCollection<Single_match>();
 
-            MatchesF.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1], 8, 0, 0));
-            MatchesF.Add(new Single_match(1, AllTeams[i + 2], AllTeams[i + 3], 11, 0, 0));
+            MatchesF.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1], 8, 1, 3));
+            MatchesF.Add(new Single_match(1, AllTeams[i + 2], AllTeams[i + 3], 11, 2, 4));
 
-            MatchesF.Add(new Single_match(1, AllTeams[i], AllTeams[i + 2], 25, 0, 0));
-            MatchesF.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i + 1], 26, 0, 0));
+            MatchesF.Add(new Single_match(1, AllTeams[i], AllTeams[i + 2], 25, 1, 2));
+            MatchesF.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i + 1], 26, 2, 0));
 
-
-            MatchesF.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i],  40, 0, 0));
-            MatchesF.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 41, 0, 0));
+            MatchesF.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 40, 0, 0));
+            MatchesF.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 41, 2, 1));
         }
         public void PrepareMatchesG()
         {
             int i = 6 * 4;
             MatchesG = new ObservableCollection<Single_match>();
 
+            MatchesG.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1], 15, 2, 3));
             MatchesG.Add(new Single_match(1, AllTeams[i + 2], AllTeams[i + 3], 12, 1, 2));
-            MatchesG.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1],  15, 2, 3));
 
-            MatchesG.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i + 1], 28, 0, 0));
             MatchesG.Add(new Single_match(1, AllTeams[i], AllTeams[i + 2], 30, 2, 1));
+            MatchesG.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i + 1], 28, 0, 0));
 
-            MatchesG.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 46, 3, 3));
             MatchesG.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 47, 2, 5));
+            MatchesG.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 46, 3, 3));
 
         }
         public void PrepareMatchesH()
@@ -407,40 +405,37 @@ namespace WC_Simulator.ViewModel
             int i = 7 * 4;
             MatchesH = new ObservableCollection<Single_match>();
 
-            MatchesH.Add(new Single_match(1, AllTeams[i + 2], AllTeams[i + 3], 13, 0, 0));
-            MatchesH.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1], 14, 0, 0));
+            MatchesH.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1], 14, 1, 3));
+            MatchesH.Add(new Single_match(1, AllTeams[i + 2], AllTeams[i + 3], 13, 2, 4));
 
-            MatchesH.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i + 1], 29, 0, 0));
-            MatchesH.Add(new Single_match(1, AllTeams[i], AllTeams[i + 2], 31, 0, 0));
+            MatchesH.Add(new Single_match(1, AllTeams[i], AllTeams[i + 2], 31, 1, 2));
+            MatchesH.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i + 1], 29, 2, 0));
 
-            MatchesH.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 44, 0, 0));
             MatchesH.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 45, 0, 0));
+            MatchesH.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 44, 2, 1));
         }
-
-
-        //group G Style // koszyk 1 gra drugi mecz
         public ObservableCollection<TeamInGroup> PrepareStanding(ObservableCollection<Single_match> groupMatches, int group)
         {
             // matches gf ga points
             var goalsfor = new int[4] { 0, 0, 0, 0};
             var goalsagainst = new int[4] { 0, 0, 0, 0};
             var points = new int[4] { 0, 0, 0, 0};
-            //brazil
-            goalsfor[0] = (int)groupMatches[1].Goals_first_team + (int)groupMatches[3].Goals_first_team + (int)groupMatches[5].Goals_second_team;
-            goalsagainst[0] = (int)groupMatches[1].Goals_second_team + (int)groupMatches[3].Goals_second_team + (int)groupMatches[5].Goals_first_team;
-            points[0] = Points_for_match(groupMatches[1], 0) + Points_for_match(groupMatches[3], 0) + Points_for_match(groupMatches[5], 1);
-            //serbia
-            goalsfor[1] = (int)groupMatches[1].Goals_second_team + (int)groupMatches[2].Goals_second_team + (int)groupMatches[4].Goals_first_team;
-            goalsagainst[1] = (int)groupMatches[1].Goals_first_team + (int)groupMatches[2].Goals_first_team + (int)groupMatches[4].Goals_second_team;
-            points[1] = Points_for_match(groupMatches[1], 1) + Points_for_match(groupMatches[2], 1) + Points_for_match(groupMatches[4], 0);
-            //Switzerland
-            goalsfor[2] = (int)groupMatches[0].Goals_first_team + (int)groupMatches[3].Goals_second_team + (int)groupMatches[4].Goals_second_team;
-            goalsagainst[2] = (int)groupMatches[0].Goals_second_team + (int)groupMatches[3].Goals_first_team + (int)groupMatches[4].Goals_first_team;
-            points[2] = Points_for_match(groupMatches[0], 0) + Points_for_match(groupMatches[3], 1) + Points_for_match(groupMatches[4], 1);
-            //Kamerun
-            goalsfor[3] = (int)groupMatches[0].Goals_second_team + (int)groupMatches[2].Goals_first_team + (int)groupMatches[4].Goals_first_team;
-            goalsagainst[3] = (int)groupMatches[0].Goals_first_team + (int)groupMatches[2].Goals_second_team + (int)groupMatches[4].Goals_second_team;
-            points[3] = Points_for_match(groupMatches[0], 0) + Points_for_match(groupMatches[2], 1) + Points_for_match(groupMatches[5], 0);
+            //1
+            goalsfor[0] = (int)groupMatches[0].Goals_first_team + (int)groupMatches[2].Goals_first_team + (int)groupMatches[4].Goals_second_team;
+            goalsagainst[0] = (int)groupMatches[0].Goals_second_team + (int)groupMatches[2].Goals_second_team + (int)groupMatches[4].Goals_first_team;
+            points[0] = Points_for_match(groupMatches[0], 0) + Points_for_match(groupMatches[2], 0) + Points_for_match(groupMatches[4], 1);
+            //2
+            goalsfor[1] = (int)groupMatches[0].Goals_second_team + (int)groupMatches[3].Goals_second_team + (int)groupMatches[5].Goals_first_team;
+            goalsagainst[1] = (int)groupMatches[0].Goals_first_team + (int)groupMatches[3].Goals_first_team + (int)groupMatches[5].Goals_second_team;
+            points[1] = Points_for_match(groupMatches[0], 1) + Points_for_match(groupMatches[3], 1) + Points_for_match(groupMatches[5], 0);
+            //3
+            goalsfor[2] = (int)groupMatches[1].Goals_first_team + (int)groupMatches[3].Goals_second_team + (int)groupMatches[5].Goals_second_team;
+            goalsagainst[2] = (int)groupMatches[1].Goals_second_team + (int)groupMatches[3].Goals_first_team + (int)groupMatches[5].Goals_first_team;
+            points[2] = Points_for_match(groupMatches[1], 0) + Points_for_match(groupMatches[3], 1) + Points_for_match(groupMatches[5], 1);
+            //4
+            goalsfor[3] = (int)groupMatches[1].Goals_second_team + (int)groupMatches[2].Goals_first_team + (int)groupMatches[4].Goals_first_team;
+            goalsagainst[3] = (int)groupMatches[1].Goals_first_team + (int)groupMatches[2].Goals_second_team + (int)groupMatches[4].Goals_second_team;
+            points[3] = Points_for_match(groupMatches[1], 1) + Points_for_match(groupMatches[2], 0) + Points_for_match(groupMatches[4], 0);
 
             var teams_list = new List<TeamInGroup>();
             teams_list.Add(new TeamInGroup(AllTeams[group * 4], 3, goalsfor[0], goalsagainst[0], points[0]));
@@ -449,77 +444,16 @@ namespace WC_Simulator.ViewModel
             teams_list.Add(new TeamInGroup(AllTeams[group * 4+3], 3, goalsfor[3], goalsagainst[3], points[3]));
 
             teams_list = teams_list.Select(p => p).OrderByDescending(p => p.Points).ThenBy(p => Math.Abs(p.GF-p.GA)).ThenBy(p => p.GF).ToList();
+
+            for(int i = 0; i < teams_list.Count; i++)
+            {
+                teams_list[i].Position = (i+1).ToString()+".";
+            }
+
+
             ObservableCollection<TeamInGroup> teams_to_return = new ObservableCollection<TeamInGroup>(teams_list);
-            return teams_to_return;
 
-        }
-        //group A Style //zmiana w kolejkach 1, 2
-        public ObservableCollection<TeamInGroup> PrepareStandingA(ObservableCollection<Single_match> groupMatches, int group)
-        {
-            // matches gf ga points
-            var goalsfor = new int[4] { 0, 0, 0, 0 };
-            var goalsagainst = new int[4] { 0, 0, 0, 0 };
-            var points = new int[4] { 0, 0, 0, 0 };
-            //
-            goalsfor[0] = (int)groupMatches[0].Goals_first_team + (int)groupMatches[2].Goals_first_team + (int)groupMatches[5].Goals_second_team;
-            goalsagainst[0] = (int)groupMatches[0].Goals_second_team + (int)groupMatches[2].Goals_second_team + (int)groupMatches[5].Goals_first_team;
-            points[0] = Points_for_match(groupMatches[0], 0) + Points_for_match(groupMatches[2], 0) + Points_for_match(groupMatches[5], 1);
-            //
-            goalsfor[1] = (int)groupMatches[0].Goals_second_team + (int)groupMatches[3].Goals_second_team + (int)groupMatches[4].Goals_first_team;
-            goalsagainst[1] = (int)groupMatches[0].Goals_first_team + (int)groupMatches[3].Goals_first_team + (int)groupMatches[4].Goals_second_team;
-            points[1] = Points_for_match(groupMatches[0], 1) + Points_for_match(groupMatches[3], 1) + Points_for_match(groupMatches[4], 0);
-            //
-            goalsfor[2] = (int)groupMatches[1].Goals_first_team + (int)groupMatches[2].Goals_second_team + (int)groupMatches[4].Goals_second_team;
-            goalsagainst[2] = (int)groupMatches[1].Goals_second_team + (int)groupMatches[2].Goals_first_team + (int)groupMatches[4].Goals_first_team;
-            points[2] = Points_for_match(groupMatches[0], 0) + Points_for_match(groupMatches[2], 1) + Points_for_match(groupMatches[4], 1);
-            //
-            goalsfor[3] = (int)groupMatches[1].Goals_second_team + (int)groupMatches[3].Goals_first_team + (int)groupMatches[4].Goals_first_team;
-            goalsagainst[3] = (int)groupMatches[1].Goals_first_team + (int)groupMatches[3].Goals_second_team + (int)groupMatches[4].Goals_second_team;
-            points[3] = Points_for_match(groupMatches[1], 0) + Points_for_match(groupMatches[3], 1) + Points_for_match(groupMatches[5], 0);
 
-            var teams_list = new List<TeamInGroup>();
-            teams_list.Add(new TeamInGroup(AllTeams[group * 4], 3, goalsfor[0], goalsagainst[0], points[0]));
-            teams_list.Add(new TeamInGroup(AllTeams[group * 4 + 1], 3, goalsfor[1], goalsagainst[1], points[1]));
-            teams_list.Add(new TeamInGroup(AllTeams[group * 4 + 2], 3, goalsfor[2], goalsagainst[2], points[2]));
-            teams_list.Add(new TeamInGroup(AllTeams[group * 4 + 3], 3, goalsfor[3], goalsagainst[3], points[3]));
-
-            teams_list = teams_list.Select(p => p).OrderByDescending(p => p.Points).ThenBy(p => Math.Abs(p.GF - p.GA)).ThenBy(p => p.GF).ToList();
-            ObservableCollection<TeamInGroup> teams_to_return = new ObservableCollection<TeamInGroup>(teams_list);
-            return teams_to_return;
-
-        }
-        //groub B style // po kolei
-        public ObservableCollection<TeamInGroup> PrepareStandingB(ObservableCollection<Single_match> groupMatches, int group)
-        {
-            // matches gf ga points
-            var goalsfor = new int[4] { 0, 0, 0, 0 };
-            var goalsagainst = new int[4] { 0, 0, 0, 0 };
-            var points = new int[4] { 0, 0, 0, 0 };
-
-            goalsfor[0] = (int)groupMatches[0].Goals_first_team + (int)groupMatches[3].Goals_first_team + (int)groupMatches[4].Goals_second_team;
-            goalsagainst[0] = (int)groupMatches[0].Goals_second_team + (int)groupMatches[3].Goals_second_team + (int)groupMatches[4].Goals_first_team;
-            points[0] = Points_for_match(groupMatches[0], 0) + Points_for_match(groupMatches[3], 0) + Points_for_match(groupMatches[4], 1);
-            
-            goalsfor[1] = (int)groupMatches[0].Goals_second_team + (int)groupMatches[2].Goals_second_team + (int)groupMatches[5].Goals_first_team;
-            goalsagainst[1] = (int)groupMatches[0].Goals_first_team + (int)groupMatches[2].Goals_first_team + (int)groupMatches[5].Goals_second_team;
-            points[1] = Points_for_match(groupMatches[0], 1) + Points_for_match(groupMatches[2], 1) + Points_for_match(groupMatches[5], 0);
-            
-            goalsfor[2] = (int)groupMatches[1].Goals_first_team + (int)groupMatches[3].Goals_second_team + (int)groupMatches[5].Goals_second_team;
-            goalsagainst[2] = (int)groupMatches[1].Goals_second_team + (int)groupMatches[3].Goals_first_team + (int)groupMatches[5].Goals_first_team;
-            points[2] = Points_for_match(groupMatches[1], 1) + Points_for_match(groupMatches[3], 0) + Points_for_match(groupMatches[5], 1);
-            
-            goalsfor[3] = (int)groupMatches[1].Goals_second_team + (int)groupMatches[2].Goals_first_team + (int)groupMatches[4].Goals_first_team;
-            goalsagainst[3] = (int)groupMatches[1].Goals_first_team + (int)groupMatches[2].Goals_second_team + (int)groupMatches[4].Goals_second_team;
-            points[3] = Points_for_match(groupMatches[1], 1) + Points_for_match(groupMatches[2], 1) + Points_for_match(groupMatches[4], 0);
-
-            var teams_list = new List<TeamInGroup>();
-            teams_list.Add(new TeamInGroup(AllTeams[group * 4], 3, goalsfor[0], goalsagainst[0], points[0]));
-            teams_list.Add(new TeamInGroup(AllTeams[group * 4 + 1], 3, goalsfor[1], goalsagainst[1], points[1]));
-            teams_list.Add(new TeamInGroup(AllTeams[group * 4 + 2], 3, goalsfor[2], goalsagainst[2], points[2]));
-            teams_list.Add(new TeamInGroup(AllTeams[group * 4 + 3], 3, goalsfor[3], goalsagainst[3], points[3]));
-
-            teams_list = teams_list.Select(p => p).OrderByDescending(p => p.Points).ThenBy(p => Math.Abs(p.GF - p.GA)).ThenBy(p => p.GF).ToList();
-            ObservableCollection<TeamInGroup> teams_to_return = new ObservableCollection<TeamInGroup>(teams_list);
             return teams_to_return;
 
         }
