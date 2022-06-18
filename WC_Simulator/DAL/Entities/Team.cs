@@ -60,7 +60,7 @@ namespace WC_Simulator.DAL.Entities
 
         public override string ToString()
         {
-            return $"Drużyna: {Name}, Trener: {Coach}, Wsp. obrony: {Def_factor}, Wsp. ataku: {Att_factor}";
+            return Name;
         }
 
         public string ToInsert()
