@@ -7,7 +7,7 @@ namespace WC_Simulator.Model
     {
         #region Variables
 
-        private uint? _teamId;
+        private int _teamId;
         private string _image;
         private string _country;
 
@@ -16,6 +16,8 @@ namespace WC_Simulator.Model
         private int _losses;
         private int _draws;
         private int _points;
+        private int _gf;
+        private int _ga;
 
         private string _coach;
         private string _phase;
@@ -44,7 +46,7 @@ namespace WC_Simulator.Model
 
         public TeamInTeams(Team team, ObservableCollection<string> players)
         {
-            _teamId = team.Id_team;
+            _teamId = (int)team.Id_team;
             _image = $"../../Resources/Flags/{team.Name.Split(' ')[0]}.png";
             _country = team.Name;
 
@@ -117,10 +119,22 @@ namespace WC_Simulator.Model
             set { _points = value; }
         }
 
-        public uint? TeamId
+        public int TeamId
         {
             get { return _teamId; }
             set { _teamId = value; }
+        }
+
+        public int GF
+        {
+            get { return _gf; }
+            set { _gf = value; }
+        }
+
+        public int GA
+        {
+            get { return _ga; }
+            set { _ga = value; }
         }
 
         #endregion

@@ -11,7 +11,7 @@ namespace WC_Simulator.DAL.Entities
     {
 
         #region Properties
-        public uint? Id_team { get; set; }
+        public int Id_team { get; set; }
         public uint Id_group { get; set; }
         public string Name { get; set; }
         public string Short_name { get; set; }
@@ -23,7 +23,7 @@ namespace WC_Simulator.DAL.Entities
         #region Constructors
         public Team(MySqlDataReader reader)
         {
-            Id_team = uint.Parse(reader["id_team"].ToString());
+            Id_team = int.Parse(reader["id_team"].ToString());
             Id_group = uint.Parse(reader["id_group"].ToString());
             Name = reader["name"].ToString();
             Short_name = reader["short_name"].ToString();
@@ -34,7 +34,6 @@ namespace WC_Simulator.DAL.Entities
 
         public Team(uint id_group, string name, string short_name, string coach, float def_factor, float att_factor)
         {
-            Id_team = null;
             Id_group = id_group;
             Name = name;
             Short_name = short_name;
@@ -67,6 +66,7 @@ namespace WC_Simulator.DAL.Entities
         {
             return $"('{Id_team}', '{Id_group}', '{Name}', '{Short_name}', '{Coach}', '{Def_factor}', '{Att_factor}')";
         }
+
         public override bool Equals(object obj)
         {
             var team = obj as Team;
