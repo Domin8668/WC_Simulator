@@ -52,8 +52,8 @@ DROP TABLE IF EXISTS `single_group`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `single_group` (
   `id_group` int unsigned NOT NULL AUTO_INCREMENT,
-  `id_first_pl_team` int unsigned,
-  `id_second_pl_team` int unsigned,
+  `id_first_pl_team` int unsigned DEFAULT NULL,
+  `id_second_pl_team` int unsigned DEFAULT NULL,
   `id_tournament` int unsigned NOT NULL,
   `letter` enum('A','B','C','D','E','F','G','H') NOT NULL,
   PRIMARY KEY (`id_group`),
@@ -159,7 +159,7 @@ CREATE TABLE `tournament` (
   PRIMARY KEY (`id_tournament`),
   KEY `fk_tournament_user` (`id_user`),
   CONSTRAINT `fk_tournament_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -211,4 +211,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-18 20:34:02
+-- Dump completed on 2022-06-18 21:10:29
