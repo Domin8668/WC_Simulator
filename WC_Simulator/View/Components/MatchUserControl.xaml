@@ -6,12 +6,12 @@
              xmlns:local="clr-namespace:WC_Simulator.View.Components"
              xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="240" MaxHeight="200" MaxWidth="240">
+             d:DesignHeight="200" d:DesignWidth="240" MaxHeight="200" MaxWidth="270">
     <UserControl.Background>
         <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
             <LinearGradientBrush.GradientStops>
-                <GradientStop Offset="0.1" Color="#ffa8a7" />
-                <GradientStop Offset="1" Color="#ffcbaa" />
+                <GradientStop Offset="0.1" Color="#fff9bf" />
+                <GradientStop Offset="1" Color="#d0c1f5" />
             </LinearGradientBrush.GradientStops>
         </LinearGradientBrush>
     </UserControl.Background>
@@ -91,7 +91,7 @@
                           AncestorType={x:Type UserControl}}}"/>
 
         <!--Results-->
-        <ComboBox x:Name="Team1_res" Grid.Row="0" Grid.Column="2"
+        <ComboBox x:Name="Team1_res" Grid.Row="0" Grid.Column="2" Margin="5"
                   ItemsSource="{Binding Path=Numbers, Mode=TwoWay,
                                 UpdateSourceTrigger=PropertyChanged,
                                 RelativeSource={
@@ -108,7 +108,7 @@
                   VerticalContentAlignment="Center"
                   HorizontalAlignment="Stretch"
                   VerticalAlignment="Stretch"/>
-        <ComboBox x:Name="Team2_res" Grid.Row="1" Grid.Column="2"
+        <ComboBox x:Name="Team2_res" Grid.Row="1" Grid.Column="2" Margin="5"
                   ItemsSource="{Binding Path=Numbers, Mode=TwoWay,
                                 UpdateSourceTrigger=PropertyChanged,
                                 RelativeSource={
@@ -143,8 +143,8 @@
                         AncestorType={x:Type UserControl}}}"/>-->
         <!--Button to MatchView-->
         <Button Grid.Column="0" Grid.Row="2" 
-                Grid.ColumnSpan="3" Margin="20, 7, 20, 7" Background="#7a8793" Foreground="White" BorderBrush="Black" 
-                Content="Szczegóły meczu" FontSize="20"
+                Grid.ColumnSpan="3" Margin="5" Background="#7a8793" Foreground="White" BorderBrush="Black" 
+                Content="Szczegóły meczu" FontSize="20" Height="40" Width="200"
                 Command="{Binding Path=MatchCommand, Mode=TwoWay,
                           UpdateSourceTrigger=PropertyChanged,
                           RelativeSource={
