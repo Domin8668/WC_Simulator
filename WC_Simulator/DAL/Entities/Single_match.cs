@@ -56,6 +56,10 @@ namespace WC_Simulator.DAL.Entities
             Name_second = name_second.Trim();
             Flag_first = $"../../Resources/Flags/{ Name_first.Replace(" ", "").ToLower()}.png";
             Flag_second = $"../../Resources/Flags/{ Name_second.Replace(" ", "").ToLower()}.png";
+            if (name_first[0] == '1' || name_first[0] == '2')
+                Flag_first = "../../Resources/Flags/placeholder.png";
+            if (name_second[0] == '1' || name_second[0] == '2')
+                Flag_second = "../../Resources/Flags/placeholder.png";
             Match_code = match_code;
             Goals_first_team = goals_first_team;
             Goals_second_team = goals_second_team;
@@ -71,6 +75,10 @@ namespace WC_Simulator.DAL.Entities
             Name_second = team2.Name.Trim();
             Flag_first = $"../../Resources/Flags/{Name_first.Replace(" ", "").ToLower()}.png";
             Flag_second = $"../../Resources/Flags/{Name_second.Replace(" ", "").ToLower()}.png";
+            if(team1.Name[0]== '1' || team1.Name[0]== '2')
+                Flag_first = "../../Resources/Flags/placeholder.png";
+            if (team2.Name[0] == '1' || team2.Name[0] == '2')
+                Flag_second = "../../Resources/Flags/placeholder.png";
             Match_code = match_code;
             Goals_first_team = goals_first_team;
             Goals_second_team = goals_second_team;

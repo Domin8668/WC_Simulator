@@ -17,7 +17,11 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
-        private ObservableCollection<Single_match> _matches = new ObservableCollection<Single_match>();
+        private ObservableCollection<Single_match> _matches16;
+        private ObservableCollection<Single_match> _matchesQ;
+        private ObservableCollection<Single_match> _matchesS;
+        private ObservableCollection<Single_match> _matchesF;
+
 
         #endregion
 
@@ -28,8 +32,11 @@ namespace WC_Simulator.ViewModel
         {
             Model = model;
             NavigationStore = navigationStore;
-            Matches = new ObservableCollection<Single_match>() {
-                new Single_match(1, 2, 1, "POL", "ARG", "Polska", "Argentyna", 1, 1, 2),
+            Team Ph1 = new Team(0, "1A", "1A", "1A", 1, 1);
+            Team Ph2 = new Team(0, "2B", "2B", "2B", 1, 1);
+
+            Matches16 = new ObservableCollection<Single_match>() {
+                new Single_match(1, Ph1, Ph2, 100, 1, 1),
             };
         }
 
@@ -38,14 +45,43 @@ namespace WC_Simulator.ViewModel
 
         #region Properties
 
-        public ObservableCollection<Single_match> Matches
+        public ObservableCollection<Single_match> Matches16
         {
-            get { return _matches; }
-            set { _matches = value;
-                OnPropertyChanged(nameof(Matches));
+            get { return _matches16; }
+            set { _matches16 = value;
+                OnPropertyChanged(nameof(Matches16));
             }
         }
 
+        public ObservableCollection<Single_match> MatchesQ
+        {
+            get { return _matchesQ; }
+            set
+            {
+                _matchesQ = value;
+                OnPropertyChanged(nameof(MatchesQ));
+            }
+        }
+
+        public ObservableCollection<Single_match> MatchesS
+        {
+            get { return _matchesS; }
+            set
+            {
+                _matchesS = value;
+                OnPropertyChanged(nameof(MatchesS));
+            }
+        }
+
+        public ObservableCollection<Single_match> MatchesF
+        {
+            get { return _matchesF; }
+            set
+            {
+                _matchesF = value;
+                OnPropertyChanged(nameof(MatchesF));
+            }
+        }
         #endregion
 
 

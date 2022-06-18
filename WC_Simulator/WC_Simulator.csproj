@@ -302,6 +302,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="baza_projekt.sql" />
+    <Resource Include="Resources\Flags\placeholder.png" />
     <Resource Include="Resources\Flags\anglia.png" />
     <Resource Include="Resources\Flags\arabiasaudyjska.png" />
     <Resource Include="Resources\Flags\argentyna.png" />

@@ -60,13 +60,14 @@
                     
                     <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Mecze o wejście do ćwierćfinałów" Style="{StaticResource labels}"/>
                     <ucs:MatchUserControl x:Name="match49" Grid.Row="2" Grid.Column="0" Margin="10" FontSize="45"
-                                          Team1FlagPath="{Binding match49T1Flag}"
-                                          Team2FlagPath="{Binding match49T2Flag}"
-                                          Team1ShortName="{Binding match49T1Short}"
-                                          Team2ShortName="{Binding match49T2Short}"
-                                          Team1Result="{Binding match49T1Result}"
-                                          Team2Result="{Binding match49T2Result}"
+                                          Team1FlagPath="{Binding Matches16[0].Flag_first}"
+                                          Team2FlagPath="{Binding Matches16[0].Flag_second}"
+                                          Team1ShortName="{Binding Matches16[0].Short_first}"
+                                          Team2ShortName="{Binding Matches16[0].Short_second}"
+                                          Team1Result="{Binding Matches16[0].Goals_first_team}"
+                                          Team2Result="{Binding Matches16[0].Goals_second_team}"
                                           MatchCommand="{Binding MatchCommand}"
+                                          
                                           Numbers="{Binding Model.Numbers, Mode=OneWay}"/>
                     <ucs:MatchUserControl x:Name="match50" Grid.Row="3" Grid.Column="0" Margin="10" FontSize="45"
                                           Team1Result="{Binding Matches[0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
