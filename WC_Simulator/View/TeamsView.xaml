@@ -29,7 +29,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.7*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -93,7 +93,7 @@
             <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
 
                 <TextBlock Text="Kraj" Foreground="#535352" Margin="1" FontSize="15"/>
-                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="295">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/kraj.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="TeamName" Style="{StaticResource textblock}" 
@@ -108,7 +108,7 @@
             <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
 
                 <TextBlock Text="Trener" Foreground="#535352" Margin="1" FontSize="15"/>
-                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="295">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/trener.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="TeamCoach" Style="{StaticResource textblock}" 
@@ -123,7 +123,7 @@
             <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
 
                 <TextBlock Text="Ostatni Etap" Foreground="#535352" Margin="1" FontSize="15"/>
-                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="295">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/etap.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="LastPhase" Style="{StaticResource textblock}" 
@@ -138,7 +138,7 @@
             <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
 
                 <TextBlock Text="Mecze" Foreground="#535352" Margin="1" FontSize="15"/>
-                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="295">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/match.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="Matches" Style="{StaticResource textblock}" 
@@ -153,7 +153,7 @@
             <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
 
                 <TextBlock Text="Wygrane" Foreground="#535352" Margin="1" FontSize="15"/>
-                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="295">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/win.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="WinsNB" Style="{StaticResource textblock}"
@@ -168,7 +168,7 @@
             <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
 
                 <TextBlock Text="Remisy" Foreground="#535352" Margin="1" FontSize="15"/>
-                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="295">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/draw.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="DrawsNB" Style="{StaticResource textblock}" 
@@ -183,7 +183,7 @@
             <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
 
                 <TextBlock Text="Przegrane" Foreground="#535352" Margin="1" FontSize="15"/>
-                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="295">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/lose.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="LossesNB" Style="{StaticResource textblock}" 
@@ -198,7 +198,7 @@
             <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
 
                 <TextBlock Text="Punkty" Foreground="#535352" Margin="1" FontSize="15"/>
-                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="295">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/points.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="PointsNB" Style="{StaticResource textblock}" 
@@ -213,7 +213,7 @@
             <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
 
                 <TextBlock Text="Gole zdobyte" Foreground="#535352" Margin="1" FontSize="15"/>
-                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="295">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/zdobyte.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="GoalsForNB" Style="{StaticResource textblock}" 
@@ -228,7 +228,7 @@
             <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Left">
 
                 <TextBlock Text="Gole stracone" Foreground="#535352" Margin="1" FontSize="15"/>
-                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="300">
+                <Border BorderBrush="#b4b4b4" BorderThickness="2" Width="295">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="../Resources/stracone.png" Width="18" Margin="5"/>
                         <TextBlock x:Name="GoalsAgainstNB" Style="{StaticResource textblock}" 
@@ -244,9 +244,9 @@
         
         <!--Listview Piłkarze-->
         <ListView x:Name="PlayersTable" Grid.Column="2"
-                  Grid.ColumnSpan="1" Grid.Row="0" Grid.RowSpan="2" FontSize="18" 
+                  Grid.ColumnSpan="1" Grid.Row="0" Grid.RowSpan="2" FontSize="14" 
                   Margin="10 10 10 40"
-                  Width="300"
+                  Width="330"
                   HorizontalAlignment="Center" 
                   Background="Transparent" 
                   BorderThickness="0"
@@ -264,10 +264,10 @@
                             <Setter Property="BorderBrush" Value="Transparent"/>
                             <Setter Property="FontSize" Value="18"/>
                             <Setter Property="FontWeight" Value="DemiBold"/>
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="left"/>
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
-                    <GridViewColumn Header="Piłkarze" Width="300">
+                    <GridViewColumn Header="Pozycja                     Piłkarz" Width="300">
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
