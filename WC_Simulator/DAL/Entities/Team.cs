@@ -8,7 +8,7 @@ namespace WC_Simulator.DAL.Entities
 
         public int Id_team { get; set; }
 
-        public uint Id_group { get; set; }
+        public int Group_letter { get; set; }
 
         public string Name { get; set; }
 
@@ -28,7 +28,38 @@ namespace WC_Simulator.DAL.Entities
         public Team(MySqlDataReader reader)
         {
             Id_team = int.Parse(reader["id_team"].ToString());
-            Id_group = uint.Parse(reader["id_group"].ToString());
+            var letter = reader["group_letter"].ToString();
+            switch (letter)
+            {
+                case "A":
+                    Group_letter = 1;
+                    break;
+                case "B":
+                    Group_letter = 2;
+                    break;
+                case "C":
+                    Group_letter = 3;
+                    break;
+                case "D":
+                    Group_letter = 4;
+                    break;
+                case "E":
+                    Group_letter = 5;
+                    break;
+                case "F":
+                    Group_letter = 6;
+                    break;
+                case "G":
+                    Group_letter = 7;
+                    break;
+                case "H":
+                    Group_letter = 8;
+                    break;
+                default:
+                    Group_letter = 1;
+                    break;
+            }
+
             Name = reader["name"].ToString();
             Short_name = reader["short_name"].ToString();
             Coach = reader["coach"].ToString();
@@ -36,9 +67,9 @@ namespace WC_Simulator.DAL.Entities
             Att_factor = float.Parse(reader["att_factor"].ToString());
         }
 
-        public Team(uint id_group, string name, string short_name, string coach, float def_factor, float att_factor)
+        public Team(int group_letter, string name, string short_name, string coach, float def_factor, float att_factor)
         {
-            Id_group = id_group;
+            Group_letter = group_letter;
             Name = name;
             Short_name = short_name;
             Coach = coach;
@@ -49,7 +80,7 @@ namespace WC_Simulator.DAL.Entities
         public Team(Team team)
         {
             Id_team =  team.Id_team;
-            Id_group = team.Id_group;
+            Group_letter = team.Group_letter;
             Name = team.Name;
             Short_name = team.Short_name;
             Coach = team.Coach;
@@ -69,7 +100,7 @@ namespace WC_Simulator.DAL.Entities
 
         public string ToInsert()
         {
-            return $"('{Id_team}', '{Id_group}', '{Name}', '{Short_name}', '{Coach}', '{Def_factor}', '{Att_factor}')";
+            return $"('{Id_team}', '{Group_letter}', '{Name}', '{Short_name}', '{Coach}', '{Def_factor}', '{Att_factor}')";
         }
 
         public override bool Equals(object obj)
@@ -77,7 +108,7 @@ namespace WC_Simulator.DAL.Entities
             var team = obj as Team;
             if (team is null) return false;
             if (Id_team != team.Id_team) return false;
-            if (Id_group != team.Id_group) return false;
+            if (Group_letter != team.Group_letter) return false;
             if (Name.ToLower() != team.Name.ToLower()) return false;
             if (Short_name.ToLower() != team.Short_name.ToLower()) return false;
             if (Coach.ToLower() != team.Coach.ToLower()) return false;
