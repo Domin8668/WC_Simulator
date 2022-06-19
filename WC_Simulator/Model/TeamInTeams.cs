@@ -44,14 +44,20 @@ namespace WC_Simulator.Model
             _players = players;
         }
 
-        public TeamInTeams(Team team, ObservableCollection<string> players)
+        public TeamInTeams(Team team, TeamInGroup teamInGroup, ObservableCollection<string> players, string phase)
         {
-            _teamId = (int)team.Id_team;
+            _teamId = team.Id_team;
             _image = $"../../Resources/Flags/{team.Name.Split(' ')[0]}.png";
             _country = team.Name;
 
             _coach = team.Coach;
             _players = players;
+
+            _matches = teamInGroup.Matches;
+            _points = teamInGroup.Points;
+            _gf = teamInGroup.GF;
+            _ga = teamInGroup.GA;
+            _phase = phase;
         }
 
         #endregion

@@ -76,7 +76,17 @@ namespace WC_Simulator.ViewModel
                         players.Add(player.ToString());
                     }
                 }
-                Teams.Add(new TeamInTeams(team, players));
+
+                TeamInGroup tig = null;
+                foreach (var group in Model.GroupsTeams)
+                {
+                    foreach (var teamInGroup in group)
+                    {
+                        if (teamInGroup.Country == team.Name)
+                            tig = teamInGroup;
+                    }
+                }
+                Teams.Add(new TeamInTeams(team, tig, players, "Faza grupowa"));
             }
         }
 
