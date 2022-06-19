@@ -31,6 +31,5 @@ namespace WC_Simulator.DAL.Repositories
         }
 
         #endregion
-
     }
 }
