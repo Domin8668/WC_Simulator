@@ -56,7 +56,7 @@ namespace WC_Simulator.DAL.Entities
 
         public override string ToString()
         {
-            return Name;
+            return $"{Name}, {Position}";
         }
 
         //metoda generuje string dla INSERT TO (nazwisko, imie, wiek, miasto)
@@ -64,6 +64,7 @@ namespace WC_Simulator.DAL.Entities
         {
             return $"('{Id_player}', '{Id_team}', {Name}, '{Position}')";
         }
+
         //dzięki przeciążeniu tej metody Contains w liście sprawdzi czy dany obiekt do niej należy
         public override bool Equals(object obj)
         {
