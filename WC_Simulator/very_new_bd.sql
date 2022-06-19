@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
--- Host: localhost    Database: wc_simulator
+-- Host: 127.0.0.1    Database: wc_simulator
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -102,7 +102,7 @@ CREATE TABLE `single_match` (
   CONSTRAINT `fk_match_fteam` FOREIGN KEY (`id_first_team`) REFERENCES `team` (`id_team`),
   CONSTRAINT `fk_match_steam` FOREIGN KEY (`id_second_team`) REFERENCES `team` (`id_team`),
   CONSTRAINT `fk_match_tournament` FOREIGN KEY (`id_tournament`) REFERENCES `tournament` (`id_tournament`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,6 +111,7 @@ CREATE TABLE `single_match` (
 
 LOCK TABLES `single_match` WRITE;
 /*!40000 ALTER TABLE `single_match` DISABLE KEYS */;
+INSERT INTO `single_match` VALUES (1,NULL,NULL,1,'QAT','ECU','Katar','Ekwador',0,NULL,NULL),(2,NULL,NULL,1,'SEN','NED','Senegal','Holandia',1,NULL,NULL),(3,NULL,NULL,1,'QAT','SEN','Katar','Senegal',17,NULL,NULL),(4,NULL,NULL,1,'NED','ECU','Holandia','Ekwador',18,NULL,NULL),(5,NULL,NULL,1,'NED','QAT','Holandia','Katar',35,NULL,NULL),(6,NULL,NULL,1,'ECU','SEN','Ekwador','Senegal',34,NULL,NULL),(7,NULL,NULL,1,'ENG','IRN','Anglia','Iran',2,NULL,NULL),(8,NULL,NULL,1,'USA','WAL','Stany Zjednoczone','Walia',3,NULL,NULL),(9,NULL,NULL,1,'ENG','USA','Anglia','Stany Zjednoczone',19,NULL,NULL),(10,NULL,NULL,1,'WAL','IRN','Walia','Iran',16,NULL,NULL),(11,NULL,NULL,1,'WAL','ENG','Walia','Anglia',32,NULL,NULL),(12,NULL,NULL,1,'IRN','USA','Iran','Stany Zjednoczone',33,NULL,NULL),(13,NULL,NULL,1,'ARG','KSA','Argentyna','Arabia Saudyjska',7,NULL,NULL),(14,NULL,NULL,1,'MEX','POL','Meksyk','Polska',6,NULL,NULL),(15,NULL,NULL,1,'ARG','MEX','Argentyna','Meksyk',23,NULL,NULL),(16,NULL,NULL,1,'POL','KSA','Polska','Arabia Saudyjska',21,NULL,NULL),(17,NULL,NULL,1,'POL','ARG','Polska','Argentyna',38,NULL,NULL),(18,NULL,NULL,1,'KSA','MEX','Arabia Saudyjska','Meksyk',39,NULL,NULL),(19,NULL,NULL,1,'FRA','AUS','Francja','Australia',4,NULL,NULL),(20,NULL,NULL,1,'DEN','TUN','Dania','Tunezja',5,NULL,NULL),(21,NULL,NULL,1,'FRA','DEN','Francja','Dania',22,NULL,NULL),(22,NULL,NULL,1,'TUN','AUS','Tunezja','Australia',20,NULL,NULL),(23,NULL,NULL,1,'TUN','FRA','Tunezja','Francja',36,NULL,NULL),(24,NULL,NULL,1,'AUS','DEN','Australia','Dania',37,NULL,NULL),(25,NULL,NULL,1,'ESP','CRC','Hiszpania','Kostaryka',9,NULL,NULL),(26,NULL,NULL,1,'GER','JPN','Niemcy','Japonia',10,NULL,NULL),(27,NULL,NULL,1,'ESP','GER','Hiszpania','Niemcy',27,NULL,NULL),(28,NULL,NULL,1,'JPN','CRC','Japonia','Kostaryka',24,NULL,NULL),(29,NULL,NULL,1,'JPN','ESP','Japonia','Hiszpania',42,NULL,NULL),(30,NULL,NULL,1,'CRC','GER','Kostaryka','Niemcy',43,NULL,NULL),(31,NULL,NULL,1,'BEL','CAN','Belgia','Kanada',8,NULL,NULL),(32,NULL,NULL,1,'MAR','CRO','Maroko','Chorwacja',11,NULL,NULL),(33,NULL,NULL,1,'BEL','MAR','Belgia','Maroko',25,NULL,NULL),(34,NULL,NULL,1,'CRO','CAN','Chorwacja','Kanada',26,NULL,NULL),(35,NULL,NULL,1,'CRO','BEL','Chorwacja','Belgia',40,NULL,NULL),(36,NULL,NULL,1,'CAN','MAR','Kanada','Maroko',41,NULL,NULL),(37,NULL,NULL,1,'BRA','SRB','Brazylia','Serbia',15,NULL,NULL),(38,NULL,NULL,1,'SUI','CMR','Szwajcaria','Kamerun',12,NULL,NULL),(39,NULL,NULL,1,'BRA','SUI','Brazylia','Szwajcaria',30,NULL,NULL),(40,NULL,NULL,1,'CMR','SRB','Kamerun','Serbia',28,NULL,NULL),(41,NULL,NULL,1,'CMR','BRA','Kamerun','Brazylia',47,NULL,NULL),(42,NULL,NULL,1,'SRB','SUI','Serbia','Szwajcaria',46,NULL,NULL),(43,NULL,NULL,1,'POR','GHA','Portugalia','Ghana',14,NULL,NULL),(44,NULL,NULL,1,'URU','KOR','Urugwaj','Korea PoÅ‚udniowa',13,NULL,NULL),(45,NULL,NULL,1,'POR','URU','Portugalia','Urugwaj',31,NULL,NULL),(46,NULL,NULL,1,'KOR','GHA','Korea PoÅ‚udniowa','Ghana',29,NULL,NULL),(47,NULL,NULL,1,'KOR','POR','Korea PoÅ‚udniowa','Portugalia',45,NULL,NULL),(48,NULL,NULL,1,'GHA','URU','Ghana','Urugwaj',44,NULL,NULL),(49,NULL,NULL,1,'','','','',48,NULL,NULL),(50,NULL,NULL,1,'','','','',49,NULL,NULL),(51,NULL,NULL,1,'','','','',50,NULL,NULL),(52,NULL,NULL,1,'','','','',51,NULL,NULL),(53,NULL,NULL,1,'','','','',52,NULL,NULL),(54,NULL,NULL,1,'','','','',53,NULL,NULL),(55,NULL,NULL,1,'','','','',54,NULL,NULL),(56,NULL,NULL,1,'','','','',55,NULL,NULL),(57,NULL,NULL,1,'','','','',56,NULL,NULL),(58,NULL,NULL,1,'','','','',57,NULL,NULL),(59,NULL,NULL,1,'','','','',58,NULL,NULL),(60,NULL,NULL,1,'','','','',59,NULL,NULL),(61,NULL,NULL,1,'','','','',60,NULL,NULL),(62,NULL,NULL,1,'','','','',61,NULL,NULL),(63,NULL,NULL,1,'','','','',62,NULL,NULL),(64,NULL,NULL,1,'','','','',63,NULL,NULL);
 /*!40000 ALTER TABLE `single_match` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -166,7 +167,7 @@ CREATE TABLE `tournament` (
 
 LOCK TABLES `tournament` WRITE;
 /*!40000 ALTER TABLE `tournament` DISABLE KEYS */;
-INSERT INTO `tournament` VALUES (1,1,'tournament_1');
+INSERT INTO `tournament` VALUES (1,1,'turniej 1');
 /*!40000 ALTER TABLE `tournament` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -196,7 +197,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin',_binary 'PJš÷U‚H¼‹)¿4â£³4\èG\Æ|w>œö>ÜŽ','2022-06-15 21:47:06','2022-06-18 20:33:15','Jak ma na nazwisko najlepszy napastnik?',_binary 'Š»¦\ÄZ>iW\nŸ\ê¢½ \Z\0\Ì-V\ÉQ\Ö^\ÄFüçŸ®');
+INSERT INTO `user` VALUES (1,'admin',_binary 'PJš÷U‚H¼‹)¿4â£³4\èG\Æ|w>œö>ÜŽ','2022-06-15 21:47:06','2022-06-19 23:13:49','Jak ma na nazwisko najlepszy napastnik?',_binary 'Š»¦\ÄZ>iW\nŸ\ê¢½ \Z\0\Ì-V\ÉQ\Ö^\ÄFüçŸ®');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -209,4 +210,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-19 17:25:42
+-- Dump completed on 2022-06-19 23:15:33
