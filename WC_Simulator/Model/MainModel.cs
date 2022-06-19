@@ -50,12 +50,6 @@ namespace WC_Simulator.Model
                 AllUsers.Add(u);
             }
 
-            //var groups = RepositoryGroups.LoadGroup();
-            //foreach (var g in groups)
-            //{
-            //    AllGroups.Add(g);
-            //}
-
             var teams = RepositoryTeams.LoadTeam();
             foreach (var t in teams)
             {
@@ -67,10 +61,6 @@ namespace WC_Simulator.Model
             {
                 AllPlayers.Add(p);
             }
-                
-            //var matches = RepositoryMatches.LoadMatch();
-            //foreach (var m in matches)
-            //    AllMatches.Add(m);
         }
 
         #endregion
