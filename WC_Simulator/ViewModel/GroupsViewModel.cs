@@ -269,11 +269,29 @@ namespace WC_Simulator.ViewModel
             set
             {
                 _currentGroup = value;
+                OnPropertyChanged(nameof(CurrentGroup));
+
             }
         }
 
-        public ObservableCollection<ObservableCollection<Single_match>> GroupsMatches { get => _groupsMatches; set => _groupsMatches = value; }
-        public ObservableCollection<ObservableCollection<TeamInGroup>> GroupsTeams { get => _groupsTeams; set => _groupsTeams = value; }
+        public ObservableCollection<ObservableCollection<Single_match>> GroupsMatches
+        {
+            get { return _groupsMatches; }
+            set
+            {
+                _groupsMatches = value;
+                OnPropertyChanged(nameof(GroupsMatches));
+            }
+        }
+        public ObservableCollection<ObservableCollection<TeamInGroup>> GroupsTeams
+        {
+            get { return _groupsTeams; }
+            set
+            {
+                _groupsTeams = value;
+                OnPropertyChanged(nameof(GroupsTeams));
+            }
+        }
 
         #endregion
 
@@ -563,23 +581,23 @@ namespace WC_Simulator.ViewModel
             }
         }
 
-        //private ICommand _groupSelectionChanged = null;
+        private ICommand _groupSelectionChanged = null;
 
-        //public ICommand GroupSelectionChanged
-        //{
-        //    get
-        //    {
-        //        if (_groupSelectionChanged == null)
-        //        {
-        //            _groupSelectionChanged = new RelayCommand(arg =>
-        //            {
-        //                Console.WriteLine(CurrentGroup);
-        //            },
-        //            arg => true);
-        //        }
-        //        return _groupSelectionChanged;
-        //    }
-        //}
+        public ICommand GroupSelectionChanged
+        {
+            get
+            {
+                if (_groupSelectionChanged == null)
+                {
+                    _groupSelectionChanged = new RelayCommand(arg =>
+                    {
+                        Console.WriteLine(CurrentGroup);
+                    },
+                    arg => true);
+                }
+                return _groupSelectionChanged;
+            }
+        }
 
         #endregion
 
