@@ -28,8 +28,6 @@ namespace WC_Simulator.ViewModel
 
         private ObservableCollection<Team> _allTeams;
 
-        private ObservableCollection<int> _lp;
-
         //private Schedule _scheduleInfo;
 
         private ObservableCollection<Single_match> _matchesA;
@@ -62,6 +60,7 @@ namespace WC_Simulator.ViewModel
             PrepareMatchesF();
             PrepareMatchesG();
             PrepareMatchesH();
+            // prepare standing poza konstruktorem
             TeamsA = PrepareStanding(MatchesA, 0);
             TeamsB = PrepareStanding(MatchesB, 1);
             TeamsC = PrepareStanding(MatchesC, 2);
@@ -240,16 +239,6 @@ namespace WC_Simulator.ViewModel
             {
                 _matchesH = value;
                 OnPropertyChanged(nameof(MatchesH));
-            }
-        }
-
-        public ObservableCollection<int> Lp
-        {
-            get { return _lp; }
-            set
-            {
-                _lp = value;
-                OnPropertyChanged(nameof(Lp));
             }
         }
 
@@ -452,10 +441,7 @@ namespace WC_Simulator.ViewModel
             }
 
 
-            ObservableCollection<TeamInGroup> teams_to_return = new ObservableCollection<TeamInGroup>(teams_list);
-
-
-            return teams_to_return;
+            return new ObservableCollection<TeamInGroup>(teams_list);
 
         }
 

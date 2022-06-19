@@ -8,6 +8,7 @@ using WC_Simulator.Helpers.Stores;
 using System.Windows;
 using System.Windows.Media;
 using WC_Simulator.DAL.Repositories;
+using System.Collections.ObjectModel;
 
 namespace WC_Simulator.ViewModel
 {
@@ -210,6 +211,8 @@ namespace WC_Simulator.ViewModel
                         if (Model.AllTournaments.Count > 0)
                         {
                             Model.CurrentTournament = Model.AllTournaments[0];
+                            Model.CurrentTournamentGroups = new ObservableCollection<Single_group>(RepositoryGroups.LoadTournamentGroup(Model.CurrentTournament.Id_tournament));
+                            // TODO: ładowanie meczów
                         }
                         NavigationStore.MenuVisibility = Visibility.Visible;
                             NavigationStore.CurrentViewModel = new ProfileViewModel(Model, NavigationStore);

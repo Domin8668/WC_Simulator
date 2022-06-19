@@ -107,6 +107,7 @@ namespace WC_Simulator.ViewModel
                                 var group = new Single_group(null, null, (uint)Model.CurrentTournament.Id_tournament, (Enum)letter);
                                 Model.CurrentTournamentGroups.Add(group);
                                 RepositoryGroups.AddTournamentGroups(group, (uint)Model.CurrentTournament.Id_tournament);
+                                // TODO: tworzenie meczów w bazie
                             }
                             NavigationStore.CurrentViewModel = new GroupsViewModel(Model, NavigationStore);
                         }

@@ -121,10 +121,11 @@ namespace WC_Simulator.DAL.Entities
             return $"Bramki w meczu: {Goals_first_team} : {Goals_second_team}";
         }
 
-        public string ToInsert()
-        {
-            return $"('{Id_match}', '{Id_first_team}', {Id_second_team}, '{Id_tournament}', '{Short_first}', '{Short_second}', '{Name_first}', '{Name_second}', '{Match_code}', '{Goals_first_team}', '{Goals_second_team}')";
-        }
+        //public string ToInsert()
+        //{
+        //    return $"('{Id_first_team}', {Id_second_team}, '{Id_tournament}', '{Short_first}', '{Short_second}', '{Name_first}', '{Name_second}', '{Match_code}', '{Goals_first_team}', '{Goals_second_team}')";
+        //}
+
         public override bool Equals(object obj)
         {
             var match = obj as Single_match;
