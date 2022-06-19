@@ -499,7 +499,7 @@ namespace WC_Simulator.ViewModel
             teams_list.Add(new TeamInGroup(AllTeams[group * 4+2], 3, goalsfor[2], goalsagainst[2], points[2]));
             teams_list.Add(new TeamInGroup(AllTeams[group * 4+3], 3, goalsfor[3], goalsagainst[3], points[3]));
 
-            teams_list = teams_list.Select(p => p).OrderByDescending(p => p.Points).ThenBy(p => Math.Abs(p.GF-p.GA)).ThenBy(p => p.GF).ToList();
+            teams_list = teams_list.Select(p => p).OrderByDescending(p => p.Points).ThenByDescending(p => Math.Abs(p.GF-p.GA)).ThenByDescending(p => p.GF).ToList();
 
             for(int i = 0; i < teams_list.Count; i++)
             {
@@ -510,8 +510,6 @@ namespace WC_Simulator.ViewModel
             return new ObservableCollection<TeamInGroup>(teams_list);
 
         }
-
-
         public int Points_for_match(Single_match match, int who)
         {
             int goalsfirst = (int)match.Goals_first_team;
@@ -547,7 +545,6 @@ namespace WC_Simulator.ViewModel
 
         }
         #endregion
-
 
         #region Commands
 

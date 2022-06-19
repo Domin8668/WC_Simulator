@@ -28,10 +28,8 @@
             <TabItem x:Name="GroupA" Header="Grupa A" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupAUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[0], Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"
-                                   
-                                      
+                        Teams="{Binding GroupsTeams[0], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                                        
                         M1Flag_first="{Binding GroupsMatches[0][1].Flag_first, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
                         M1Flag_second="{Binding GroupsMatches[0][1].Flag_second, Mode=TwoWay, 
@@ -113,8 +111,7 @@
             <TabItem x:Name="GroupB" Header="Grupa B" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupBUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[1], Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding GroupsTeams[1], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
                         M1Flag_first="{Binding GroupsMatches[1][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         M1Flag_second="{Binding GroupsMatches[1][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -159,11 +156,11 @@
                         M6Short_second="{Binding GroupsMatches[1][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                      
                                       />
             </TabItem>
+            
             <TabItem x:Name="GroupC" Header="Grupa C" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupCUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[2], Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding GroupsTeams[2], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
                         M1Flag_first="{Binding GroupsMatches[2][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                         M1Flag_second="{Binding GroupsMatches[2][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
@@ -207,11 +204,11 @@
                         M6Short_first="{Binding GroupsMatches[2][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                         M6Short_second="{Binding GroupsMatches[2][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"      />
             </TabItem>
+            
             <TabItem x:Name="GroupD" Header="Grupa D" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupDUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[3], Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding GroupsTeams[3], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
                         M2Flag_first="{Binding GroupsMatches[3][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                         M2Flag_second="{Binding GroupsMatches[3][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
@@ -255,11 +252,11 @@
                         M5Short_first="{Binding GroupsMatches[3][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                         M5Short_second="{Binding GroupsMatches[3][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"      />
             </TabItem>
+            
             <TabItem x:Name="GroupE" Header="Grupa E" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupEUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[4], Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding GroupsTeams[4], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
                         M2Flag_first="{Binding GroupsMatches[4][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                         M2Flag_second="{Binding GroupsMatches[4][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
@@ -304,11 +301,11 @@
                         M6Short_second="{Binding GroupsMatches[4][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                           
                                       />
             </TabItem>
+            
             <TabItem x:Name="GroupF" Header="Grupa F" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupFUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[5], Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding GroupsTeams[5], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
                         M2Flag_first="{Binding GroupsMatches[5][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                         M2Flag_second="{Binding GroupsMatches[5][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
@@ -356,8 +353,7 @@
             <TabItem x:Name="GroupG" Header="Grupa G" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupGUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[6], Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding GroupsTeams[6], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
                         M2Flag_first="{Binding GroupsMatches[6][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                         M2Flag_second="{Binding GroupsMatches[6][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
@@ -405,8 +401,7 @@
             <TabItem x:Name="GroupH" Header="Grupa H" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupHUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[7], Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding GroupsTeams[7], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
                         M2Flag_first="{Binding GroupsMatches[7][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                         M2Flag_second="{Binding GroupsMatches[7][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
