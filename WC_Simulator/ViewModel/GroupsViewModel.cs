@@ -263,11 +263,17 @@ namespace WC_Simulator.ViewModel
             }
         }
 
-        public int CurrentGroup { get => _currentGroup; set => _currentGroup = value; }
+        public int CurrentGroup
+        {
+            get { return _currentGroup; }
+            set
+            {
+                _currentGroup = value;
+            }
+        }
+
         public ObservableCollection<ObservableCollection<Single_match>> GroupsMatches { get => _groupsMatches; set => _groupsMatches = value; }
         public ObservableCollection<ObservableCollection<TeamInGroup>> GroupsTeams { get => _groupsTeams; set => _groupsTeams = value; }
-
-
 
         #endregion
 
@@ -323,14 +329,14 @@ namespace WC_Simulator.ViewModel
             int i = 0 * 4;
             MatchesA = new ObservableCollection<Single_match>();
 
-            MatchesA.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1], 0, 1, 5));
-            MatchesA.Add(new Single_match(1, AllTeams[i+2], AllTeams[i+3],  1, 2, 3));
+            MatchesA.Add(new Single_match(1, AllTeams[i], AllTeams[i + 1], 0, null, null));
+            MatchesA.Add(new Single_match(1, AllTeams[i+2], AllTeams[i+3],  1, null, null));
 
-            MatchesA.Add(new Single_match(1, AllTeams[i], AllTeams[i+2],  17, 0, 0));
-            MatchesA.Add(new Single_match(1, AllTeams[i+3], AllTeams[i+1],  18, 1, 1));
+            MatchesA.Add(new Single_match(1, AllTeams[i], AllTeams[i+2],  17, null, null));
+            MatchesA.Add(new Single_match(1, AllTeams[i+3], AllTeams[i+1],  18, null, null));
 
-            MatchesA.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 35, 4, 0));
-            MatchesA.Add(new Single_match(1, AllTeams[i+1], AllTeams[i+2],  34, 3, 5));
+            MatchesA.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 35, null, null));
+            MatchesA.Add(new Single_match(1, AllTeams[i+1], AllTeams[i+2],  34, null, null));
             GroupsMatches.Add(MatchesA);
 
         }
@@ -539,9 +545,11 @@ namespace WC_Simulator.ViewModel
                         bool check = true;
                         foreach(var x in GroupsMatches[CurrentGroup])
                         {
-                            if(x.Goals_first_team== null || x.Goals_second_team == null)
+                            Console.WriteLine(x);
+                            if (x.Goals_first_team == null || x.Goals_second_team == null)
                             {
-                                check = false; break;
+                                check = false;
+                                break;
                             }
                         }
                         if (check)
@@ -555,7 +563,23 @@ namespace WC_Simulator.ViewModel
             }
         }
 
+        //private ICommand _groupSelectionChanged = null;
 
+        //public ICommand GroupSelectionChanged
+        //{
+        //    get
+        //    {
+        //        if (_groupSelectionChanged == null)
+        //        {
+        //            _groupSelectionChanged = new RelayCommand(arg =>
+        //            {
+        //                Console.WriteLine(CurrentGroup);
+        //            },
+        //            arg => true);
+        //        }
+        //        return _groupSelectionChanged;
+        //    }
+        //}
 
         #endregion
 

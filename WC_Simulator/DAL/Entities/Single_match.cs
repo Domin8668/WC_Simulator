@@ -28,9 +28,9 @@ namespace WC_Simulator.DAL.Entities
 
         public uint Match_code { get; set; }
 
-        public uint Goals_first_team { get; set; }
+        public uint? Goals_first_team { get; set; }
 
-        public uint Goals_second_team { get; set; } // zmienic na string if goals == empty.String do bazy zapis ma byc jakas najmniejsza liczba z zakresu na ktory nie pozwalamy w kodzie, np 10, if goals w bazie rowna sie 10 zmien na empty.string
+        public uint? Goals_second_team { get; set; }
 
         #endregion
 
@@ -75,7 +75,7 @@ namespace WC_Simulator.DAL.Entities
             Goals_second_team = goals_second_team;
         }
 
-        public Single_match(uint id_tournament, Team team1, Team team2 , uint match_code, uint goals_first_team, uint goals_second_team)
+        public Single_match(uint id_tournament, Team team1, Team team2 , uint match_code, uint? goals_first_team, uint? goals_second_team)
         {
             Id_match = null;
             Id_tournament = id_tournament;
