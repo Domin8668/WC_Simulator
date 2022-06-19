@@ -7,10 +7,15 @@ namespace WC_Simulator.DAL.Entities
     {
         #region Properties
         public uint? Id_group { get; set; }
+
         public uint? Id_first_pl_team { get; set; }
+
         public uint? Id_second_pl_team { get; set; }
+
         public uint Id_tournament { get; set; }
+
         public Alphabet Letter { get; set; }
+
         public enum Alphabet
         {
             A,
@@ -22,10 +27,12 @@ namespace WC_Simulator.DAL.Entities
             G,
             H
         }
+
         #endregion
 
 
         #region Constructors
+
         public Single_group(MySqlDataReader reader)
         {
             Id_group = uint.Parse(reader["id_group"].ToString());

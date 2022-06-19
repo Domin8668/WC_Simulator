@@ -1,32 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace WC_Simulator.DAL.Entities
 {
     class Single_match
     {
-
         #region Properties
+
         public uint? Id_match { get; set; }
+
         public uint Id_first_team { get; set; }
+
         public uint Id_second_team { get; set; }
+
         public uint Id_tournament { get; set; }
+
         public string Short_first { get; set; }
+
         public string Short_second { get; set; }
+
         public string Name_first { get; set; }
+
         public string Name_second { get; set; }
+
         public string Flag_first { get; set; }
+
         public string Flag_second { get; set; }
+
         public uint Match_code { get; set; }
+
         public uint Goals_first_team { get; set; }
+
         public uint Goals_second_team { get; set; } // zmienic na string if goals == empty.String do bazy zapis ma byc jakas najmniejsza liczba z zakresu na ktory nie pozwalamy w kodzie, np 10, if goals w bazie rowna sie 10 zmien na empty.string
+
         #endregion
 
+
         #region Constructors
+
         public Single_match(MySqlDataReader reader)
         {
             Id_match = uint.Parse(reader["id_match"].ToString());
@@ -84,8 +94,6 @@ namespace WC_Simulator.DAL.Entities
             Goals_second_team = goals_second_team;
         }
 
-
-
         public Single_match(Single_match match)
         {
             Id_match = match.Id_match;
@@ -104,6 +112,7 @@ namespace WC_Simulator.DAL.Entities
         }
 
         #endregion
+
 
         #region Methods
 
@@ -138,7 +147,7 @@ namespace WC_Simulator.DAL.Entities
         {
             return base.GetHashCode();
         }
-        #endregion
 
+        #endregion
     }
 }

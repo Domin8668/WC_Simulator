@@ -12,14 +12,17 @@ namespace WC_Simulator.DAL.Repositories
     class RepositoryUsers
     {
         #region QUERIES
+
         private const string ALL_USER = "SELECT * FROM `user`";
         private const string ADD_USER = "INSERT INTO `user`(`id_user`, `login`, `password`," +
             " `creation_date`, `last_log_date`, `security_question`, `security_answer`) VALUES ";
         private const string DELETE_USER = "DELETE FROM `user` WHERE id_user = ";
-        //private const string UPDATE_USER = "UPDATE `user` SET xx WHERE id_user = ";
+        
         #endregion
 
+
         #region CRUD
+
         public static List<User> LoadUser()
         {
             List<User> user = new List<User>();
@@ -102,6 +105,7 @@ namespace WC_Simulator.DAL.Repositories
             }
             return state;
         }
+
         #endregion
     }
 }

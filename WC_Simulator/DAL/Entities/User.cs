@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Text;
 using WC_Simulator.Helpers.Hashing;
 
 namespace WC_Simulator.DAL.Entities
@@ -8,6 +7,7 @@ namespace WC_Simulator.DAL.Entities
     class User
     {
         #region Properties
+
         public uint? Id_user { get; set; }
 
         public string Login { get; set; }
@@ -70,20 +70,12 @@ namespace WC_Simulator.DAL.Entities
             return $"Nazwa użytkownika: {Login}, Data założenia konta: {Creation_date}, Ostatnie logowanie: {Last_log_date}";
         }
 
-        //public string ToInsert()
-        //{
-        //    return $"('{Id_user}', '{Login}', '{Password}', '{DateTime.Now.ToString("yyyy-MM-dd")}', '{DateTime.Now.ToString("yyyy-MM-dd")}', '{Security_question}', '{Security_answer}')";
-        //}
-
         public override bool Equals(object obj)
         {
             var user = obj as User;
             if (user is null) return false;
-            //if (Id_user != user.Id_user) return false;
             if (Login.ToLower() != user.Login.ToLower()) return false;
             if (!new SHA256Hashing().MatchHashes(Password, user.Password)) return false;
-            //if (Creation_date != user.Creation_date) return false;
-            //if (Last_log_date != user.Last_log_date) return false;
             if (Security_question.ToLower() != user.Security_question.ToLower()) return false;
             if (!new SHA256Hashing().MatchHashes(Security_answer, user.Security_answer)) return false;
             return true;
@@ -93,6 +85,7 @@ namespace WC_Simulator.DAL.Entities
         {
             return base.GetHashCode();
         }
+
         #endregion
 
     }

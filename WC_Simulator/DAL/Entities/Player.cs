@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
 namespace WC_Simulator.DAL.Entities
 {
     class Player
     {
-
         #region Properties
         public uint? Id_player { get; set; }
         public uint Id_team { get; set; }
@@ -22,6 +17,7 @@ namespace WC_Simulator.DAL.Entities
             Pomocnik,
             Napastnik
         }
+
         #endregion
 
 
@@ -86,6 +82,5 @@ namespace WC_Simulator.DAL.Entities
         }
 
         #endregion
-
     }
 }
