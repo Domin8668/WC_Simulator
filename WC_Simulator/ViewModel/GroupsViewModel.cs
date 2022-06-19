@@ -467,13 +467,13 @@ namespace WC_Simulator.ViewModel
             goalsagainst[1] = (int)groupMatches[0].Goals_first_team + (int)groupMatches[3].Goals_first_team + (int)groupMatches[5].Goals_second_team;
             points[1] = Points_for_match(groupMatches[0], 1) + Points_for_match(groupMatches[3], 1) + Points_for_match(groupMatches[5], 0);
             //3
-            goalsfor[2] = (int)groupMatches[1].Goals_first_team + (int)groupMatches[3].Goals_second_team + (int)groupMatches[5].Goals_second_team;
-            goalsagainst[2] = (int)groupMatches[1].Goals_second_team + (int)groupMatches[3].Goals_first_team + (int)groupMatches[5].Goals_first_team;
-            points[2] = Points_for_match(groupMatches[1], 0) + Points_for_match(groupMatches[3], 1) + Points_for_match(groupMatches[5], 1);
+            goalsfor[2] = (int)groupMatches[1].Goals_first_team + (int)groupMatches[2].Goals_second_team + (int)groupMatches[5].Goals_second_team;
+            goalsagainst[2] = (int)groupMatches[1].Goals_second_team + (int)groupMatches[2].Goals_first_team + (int)groupMatches[5].Goals_first_team;
+            points[2] = Points_for_match(groupMatches[1], 0) + Points_for_match(groupMatches[2], 1) + Points_for_match(groupMatches[5], 1);
             //4
-            goalsfor[3] = (int)groupMatches[1].Goals_second_team + (int)groupMatches[2].Goals_first_team + (int)groupMatches[4].Goals_first_team;
-            goalsagainst[3] = (int)groupMatches[1].Goals_first_team + (int)groupMatches[2].Goals_second_team + (int)groupMatches[4].Goals_second_team;
-            points[3] = Points_for_match(groupMatches[1], 1) + Points_for_match(groupMatches[2], 0) + Points_for_match(groupMatches[4], 0);
+            goalsfor[3] = (int)groupMatches[1].Goals_second_team + (int)groupMatches[3].Goals_first_team + (int)groupMatches[4].Goals_first_team;
+            goalsagainst[3] = (int)groupMatches[1].Goals_first_team + (int)groupMatches[3].Goals_second_team + (int)groupMatches[4].Goals_second_team;
+            points[3] = Points_for_match(groupMatches[1], 1) + Points_for_match(groupMatches[3], 0) + Points_for_match(groupMatches[4], 0);
 
             var teams_list = new List<TeamInGroup>();
             teams_list.Add(new TeamInGroup(AllTeams[group * 4], 3, goalsfor[0], goalsagainst[0], points[0]));
@@ -554,7 +554,7 @@ namespace WC_Simulator.ViewModel
                         }
                         if (check)
                         {
-                            TeamsA = PrepareStanding(GroupsMatches[CurrentGroup], CurrentGroup);
+                            GroupsTeams[CurrentGroup] = PrepareStanding(GroupsMatches[CurrentGroup], CurrentGroup);
                         }
                     },
                     arg => true);
