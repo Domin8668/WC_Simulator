@@ -24,433 +24,433 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <TabControl SelectedIndex="{Binding CurrentGroup, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+        <TabControl SelectedIndex="{Binding Model.CurrentGroup, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             <TabItem x:Name="GroupA" Header="Grupa A" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupAUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[0], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding Model.GroupsTeams[0], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                                         
-                        M1Flag_first="{Binding GroupsMatches[0][1].Flag_first, Mode=TwoWay, 
+                        M1Flag_first="{Binding Model.GroupsMatches[0][1].Flag_first, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M1Flag_second="{Binding GroupsMatches[0][1].Flag_second, Mode=TwoWay, 
+                        M1Flag_second="{Binding Model.GroupsMatches[0][1].Flag_second, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M1Goals_first_team="{Binding GroupsMatches[0][1].Goals_first_team, Mode=TwoWay, 
+                        M1Goals_first_team="{Binding Model.GroupsMatches[0][1].Goals_first_team, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M1Goals_second_team="{Binding GroupsMatches[0][1].Goals_second_team, Mode=TwoWay, 
+                        M1Goals_second_team="{Binding Model.GroupsMatches[0][1].Goals_second_team, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M1Short_first="{Binding GroupsMatches[0][1].Short_first, Mode=TwoWay, 
+                        M1Short_first="{Binding Model.GroupsMatches[0][1].Short_first, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M1Short_second="{Binding GroupsMatches[0][1].Short_second, Mode=TwoWay, 
+                        M1Short_second="{Binding Model.GroupsMatches[0][1].Short_second, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"              
                                       
-                        M2Flag_first="{Binding GroupsMatches[0][0].Flag_first, Mode=TwoWay, 
+                        M2Flag_first="{Binding Model.GroupsMatches[0][0].Flag_first, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M2Flag_second="{Binding GroupsMatches[0][0].Flag_second, Mode=TwoWay, 
+                        M2Flag_second="{Binding Model.GroupsMatches[0][0].Flag_second, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M2Goals_first_team="{Binding GroupsMatches[0][0].Goals_first_team, Mode=TwoWay, 
+                        M2Goals_first_team="{Binding Model.GroupsMatches[0][0].Goals_first_team, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M2Goals_second_team="{Binding GroupsMatches[0][0].Goals_second_team, Mode=TwoWay, 
+                        M2Goals_second_team="{Binding Model.GroupsMatches[0][0].Goals_second_team, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M2Short_first="{Binding GroupsMatches[0][0].Short_first, Mode=TwoWay, 
+                        M2Short_first="{Binding Model.GroupsMatches[0][0].Short_first, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M2Short_second="{Binding GroupsMatches[0][0].Short_second, Mode=TwoWay, 
+                        M2Short_second="{Binding Model.GroupsMatches[0][0].Short_second, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
                                                                           
-                        M3Flag_first="{Binding GroupsMatches[0][2].Flag_first, Mode=TwoWay, 
+                        M3Flag_first="{Binding Model.GroupsMatches[0][2].Flag_first, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M3Flag_second="{Binding GroupsMatches[0][2].Flag_second, Mode=TwoWay, 
+                        M3Flag_second="{Binding Model.GroupsMatches[0][2].Flag_second, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M3Goals_first_team="{Binding GroupsMatches[0][2].Goals_first_team, Mode=TwoWay, 
+                        M3Goals_first_team="{Binding Model.GroupsMatches[0][2].Goals_first_team, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M3Goals_second_team="{Binding GroupsMatches[0][2].Goals_second_team, Mode=TwoWay, 
+                        M3Goals_second_team="{Binding Model.GroupsMatches[0][2].Goals_second_team, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M3Short_first="{Binding GroupsMatches[0][2].Short_first, Mode=TwoWay, 
+                        M3Short_first="{Binding Model.GroupsMatches[0][2].Short_first, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M3Short_second="{Binding GroupsMatches[0][2].Short_second, Mode=TwoWay, 
+                        M3Short_second="{Binding Model.GroupsMatches[0][2].Short_second, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
                                       
-                        M4Flag_first="{Binding GroupsMatches[0][3].Flag_first, Mode=TwoWay, 
+                        M4Flag_first="{Binding Model.GroupsMatches[0][3].Flag_first, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M4Flag_second="{Binding GroupsMatches[0][3].Flag_second, Mode=TwoWay, 
+                        M4Flag_second="{Binding Model.GroupsMatches[0][3].Flag_second, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M4Goals_first_team="{Binding GroupsMatches[0][3].Goals_first_team, Mode=TwoWay, 
+                        M4Goals_first_team="{Binding Model.GroupsMatches[0][3].Goals_first_team, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M4Goals_second_team="{Binding GroupsMatches[0][3].Goals_second_team, Mode=TwoWay, 
+                        M4Goals_second_team="{Binding Model.GroupsMatches[0][3].Goals_second_team, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M4Short_first="{Binding GroupsMatches[0][3].Short_first, Mode=TwoWay, 
+                        M4Short_first="{Binding Model.GroupsMatches[0][3].Short_first, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M4Short_second="{Binding GroupsMatches[0][3].Short_second, Mode=TwoWay, 
+                        M4Short_second="{Binding Model.GroupsMatches[0][3].Short_second, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"                                          
                                       
-                        M6Flag_first="{Binding GroupsMatches[0][4].Flag_first, Mode=TwoWay, 
+                        M6Flag_first="{Binding Model.GroupsMatches[0][4].Flag_first, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M6Flag_second="{Binding GroupsMatches[0][4].Flag_second, Mode=TwoWay, 
+                        M6Flag_second="{Binding Model.GroupsMatches[0][4].Flag_second, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M6Goals_first_team="{Binding GroupsMatches[0][4].Goals_first_team, Mode=TwoWay, 
+                        M6Goals_first_team="{Binding Model.GroupsMatches[0][4].Goals_first_team, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M6Goals_second_team="{Binding GroupsMatches[0][4].Goals_second_team, Mode=TwoWay, 
+                        M6Goals_second_team="{Binding Model.GroupsMatches[0][4].Goals_second_team, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M6Short_first="{Binding GroupsMatches[0][4].Short_first, Mode=TwoWay, 
+                        M6Short_first="{Binding Model.GroupsMatches[0][4].Short_first, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M6Short_second="{Binding GroupsMatches[0][4].Short_second, Mode=TwoWay, 
+                        M6Short_second="{Binding Model.GroupsMatches[0][4].Short_second, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"   
                                       
-                        M5Flag_first="{Binding GroupsMatches[0][5].Flag_first, Mode=TwoWay, 
+                        M5Flag_first="{Binding Model.GroupsMatches[0][5].Flag_first, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M5Flag_second="{Binding GroupsMatches[0][5].Flag_second, Mode=TwoWay, 
+                        M5Flag_second="{Binding Model.GroupsMatches[0][5].Flag_second, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M5Goals_first_team="{Binding GroupsMatches[0][5].Goals_first_team, Mode=TwoWay, 
+                        M5Goals_first_team="{Binding Model.GroupsMatches[0][5].Goals_first_team, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M5Goals_second_team="{Binding GroupsMatches[0][5].Goals_second_team, Mode=TwoWay, 
+                        M5Goals_second_team="{Binding Model.GroupsMatches[0][5].Goals_second_team, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M5Short_first="{Binding GroupsMatches[0][5].Short_first, Mode=TwoWay, 
+                        M5Short_first="{Binding Model.GroupsMatches[0][5].Short_first, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                        M5Short_second="{Binding GroupsMatches[0][5].Short_second, Mode=TwoWay, 
+                        M5Short_second="{Binding Model.GroupsMatches[0][5].Short_second, Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"/>
             </TabItem>
             <TabItem x:Name="GroupB" Header="Grupa B" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupBUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[1], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding Model.GroupsTeams[1], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
-                        M1Flag_first="{Binding GroupsMatches[1][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M1Flag_second="{Binding GroupsMatches[1][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M1Goals_first_team="{Binding GroupsMatches[1][0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M1Goals_second_team="{Binding GroupsMatches[1][0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M1Short_first="{Binding GroupsMatches[1][0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M1Short_second="{Binding GroupsMatches[1][0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M1Flag_first="{Binding Model.GroupsMatches[1][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M1Flag_second="{Binding Model.GroupsMatches[1][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M1Goals_first_team="{Binding Model.GroupsMatches[1][0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M1Goals_second_team="{Binding Model.GroupsMatches[1][0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M1Short_first="{Binding Model.GroupsMatches[1][0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M1Short_second="{Binding Model.GroupsMatches[1][0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
-                        M2Flag_first="{Binding GroupsMatches[1][1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M2Flag_second="{Binding GroupsMatches[1][1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M2Goals_first_team="{Binding GroupsMatches[1][1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M2Goals_second_team="{Binding GroupsMatches[1][1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M2Short_first="{Binding GroupsMatches[1][1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M2Short_second="{Binding GroupsMatches[1][1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M2Flag_first="{Binding Model.GroupsMatches[1][1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M2Flag_second="{Binding Model.GroupsMatches[1][1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M2Goals_first_team="{Binding Model.GroupsMatches[1][1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M2Goals_second_team="{Binding Model.GroupsMatches[1][1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M2Short_first="{Binding Model.GroupsMatches[1][1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M2Short_second="{Binding Model.GroupsMatches[1][1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
-                        M4Flag_first="{Binding GroupsMatches[1][2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M4Flag_second="{Binding GroupsMatches[1][2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M4Goals_first_team="{Binding GroupsMatches[1][2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M4Goals_second_team="{Binding GroupsMatches[1][2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M4Short_first="{Binding GroupsMatches[1][2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M4Short_second="{Binding GroupsMatches[1][2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M4Flag_first="{Binding Model.GroupsMatches[1][2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M4Flag_second="{Binding Model.GroupsMatches[1][2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M4Goals_first_team="{Binding Model.GroupsMatches[1][2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M4Goals_second_team="{Binding Model.GroupsMatches[1][2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M4Short_first="{Binding Model.GroupsMatches[1][2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M4Short_second="{Binding Model.GroupsMatches[1][2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
-                        M3Flag_first="{Binding GroupsMatches[1][3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M3Flag_second="{Binding GroupsMatches[1][3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M3Goals_first_team="{Binding GroupsMatches[1][3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M3Goals_second_team="{Binding GroupsMatches[1][3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M3Short_first="{Binding GroupsMatches[1][3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M3Short_second="{Binding GroupsMatches[1][3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                          
+                        M3Flag_first="{Binding Model.GroupsMatches[1][3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M3Flag_second="{Binding Model.GroupsMatches[1][3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M3Goals_first_team="{Binding Model.GroupsMatches[1][3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M3Goals_second_team="{Binding Model.GroupsMatches[1][3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M3Short_first="{Binding Model.GroupsMatches[1][3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M3Short_second="{Binding Model.GroupsMatches[1][3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                          
                                       
-                        M5Flag_first="{Binding GroupsMatches[1][4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M5Flag_second="{Binding GroupsMatches[1][4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M5Goals_first_team="{Binding GroupsMatches[1][4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M5Goals_second_team="{Binding GroupsMatches[1][4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M5Short_first="{Binding GroupsMatches[1][4].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M5Short_second="{Binding GroupsMatches[1][4].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   
+                        M5Flag_first="{Binding Model.GroupsMatches[1][4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M5Flag_second="{Binding Model.GroupsMatches[1][4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M5Goals_first_team="{Binding Model.GroupsMatches[1][4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M5Goals_second_team="{Binding Model.GroupsMatches[1][4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M5Short_first="{Binding Model.GroupsMatches[1][4].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M5Short_second="{Binding Model.GroupsMatches[1][4].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   
                                       
-                        M6Flag_first="{Binding GroupsMatches[1][5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M6Flag_second="{Binding GroupsMatches[1][5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M6Goals_first_team="{Binding GroupsMatches[1][5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M6Goals_second_team="{Binding GroupsMatches[1][5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M6Short_first="{Binding GroupsMatches[1][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        M6Short_second="{Binding GroupsMatches[1][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                      
+                        M6Flag_first="{Binding Model.GroupsMatches[1][5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M6Flag_second="{Binding Model.GroupsMatches[1][5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M6Goals_first_team="{Binding Model.GroupsMatches[1][5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M6Goals_second_team="{Binding Model.GroupsMatches[1][5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M6Short_first="{Binding Model.GroupsMatches[1][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        M6Short_second="{Binding Model.GroupsMatches[1][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                      
                                       />
             </TabItem>
             
             <TabItem x:Name="GroupC" Header="Grupa C" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupCUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[2], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding Model.GroupsTeams[2], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
-                        M1Flag_first="{Binding GroupsMatches[2][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Flag_second="{Binding GroupsMatches[2][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Goals_first_team="{Binding GroupsMatches[2][0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Goals_second_team="{Binding GroupsMatches[2][0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Short_first="{Binding GroupsMatches[2][0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Short_second="{Binding GroupsMatches[2][0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Flag_first="{Binding Model.GroupsMatches[2][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Flag_second="{Binding Model.GroupsMatches[2][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Goals_first_team="{Binding Model.GroupsMatches[2][0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Goals_second_team="{Binding Model.GroupsMatches[2][0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Short_first="{Binding Model.GroupsMatches[2][0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Short_second="{Binding Model.GroupsMatches[2][0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M2Flag_first="{Binding GroupsMatches[2][1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Flag_second="{Binding GroupsMatches[2][1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Goals_first_team="{Binding GroupsMatches[2][1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Goals_second_team="{Binding GroupsMatches[2][1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Short_first="{Binding GroupsMatches[2][1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Short_second="{Binding GroupsMatches[2][1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Flag_first="{Binding Model.GroupsMatches[2][1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Flag_second="{Binding Model.GroupsMatches[2][1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Goals_first_team="{Binding Model.GroupsMatches[2][1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Goals_second_team="{Binding Model.GroupsMatches[2][1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Short_first="{Binding Model.GroupsMatches[2][1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Short_second="{Binding Model.GroupsMatches[2][1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M4Flag_first="{Binding GroupsMatches[2][2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Flag_second="{Binding GroupsMatches[2][2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Goals_first_team="{Binding GroupsMatches[2][2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Goals_second_team="{Binding GroupsMatches[2][2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Short_first="{Binding GroupsMatches[2][2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Short_second="{Binding GroupsMatches[2][2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Flag_first="{Binding Model.GroupsMatches[2][2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Flag_second="{Binding Model.GroupsMatches[2][2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Goals_first_team="{Binding Model.GroupsMatches[2][2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Goals_second_team="{Binding Model.GroupsMatches[2][2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Short_first="{Binding Model.GroupsMatches[2][2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Short_second="{Binding Model.GroupsMatches[2][2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M3Flag_first="{Binding GroupsMatches[2][3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Flag_second="{Binding GroupsMatches[2][3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Goals_first_team="{Binding GroupsMatches[2][3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Goals_second_team="{Binding GroupsMatches[2][3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Short_first="{Binding GroupsMatches[2][3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Short_second="{Binding GroupsMatches[2][3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                               
+                        M3Flag_first="{Binding Model.GroupsMatches[2][3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Flag_second="{Binding Model.GroupsMatches[2][3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Goals_first_team="{Binding Model.GroupsMatches[2][3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Goals_second_team="{Binding Model.GroupsMatches[2][3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Short_first="{Binding Model.GroupsMatches[2][3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Short_second="{Binding Model.GroupsMatches[2][3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                               
                                       
-                        M5Flag_first="{Binding GroupsMatches[2][4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Flag_second="{Binding GroupsMatches[2][4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Goals_first_team="{Binding GroupsMatches[2][4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Goals_second_team="{Binding GroupsMatches[2][4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Short_first="{Binding GroupsMatches[2][4].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Short_second="{Binding GroupsMatches[2][4].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"        
+                        M5Flag_first="{Binding Model.GroupsMatches[2][4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Flag_second="{Binding Model.GroupsMatches[2][4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Goals_first_team="{Binding Model.GroupsMatches[2][4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Goals_second_team="{Binding Model.GroupsMatches[2][4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Short_first="{Binding Model.GroupsMatches[2][4].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Short_second="{Binding Model.GroupsMatches[2][4].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"        
                                       
-                        M6Flag_first="{Binding GroupsMatches[2][5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Flag_second="{Binding GroupsMatches[2][5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Goals_first_team="{Binding GroupsMatches[2][5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Goals_second_team="{Binding GroupsMatches[2][5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Short_first="{Binding GroupsMatches[2][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Short_second="{Binding GroupsMatches[2][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"      />
+                        M6Flag_first="{Binding Model.GroupsMatches[2][5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Flag_second="{Binding Model.GroupsMatches[2][5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Goals_first_team="{Binding Model.GroupsMatches[2][5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Goals_second_team="{Binding Model.GroupsMatches[2][5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Short_first="{Binding Model.GroupsMatches[2][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Short_second="{Binding Model.GroupsMatches[2][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"      />
             </TabItem>
             
             <TabItem x:Name="GroupD" Header="Grupa D" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupDUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[3], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding Model.GroupsTeams[3], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
-                        M2Flag_first="{Binding GroupsMatches[3][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Flag_second="{Binding GroupsMatches[3][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Goals_first_team="{Binding GroupsMatches[3][0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Goals_second_team="{Binding GroupsMatches[3][0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Short_first="{Binding GroupsMatches[3][0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Short_second="{Binding GroupsMatches[3][0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Flag_first="{Binding Model.GroupsMatches[3][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Flag_second="{Binding Model.GroupsMatches[3][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Goals_first_team="{Binding Model.GroupsMatches[3][0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Goals_second_team="{Binding Model.GroupsMatches[3][0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Short_first="{Binding Model.GroupsMatches[3][0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Short_second="{Binding Model.GroupsMatches[3][0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M1Flag_first="{Binding GroupsMatches[3][1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Flag_second="{Binding GroupsMatches[3][1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Goals_first_team="{Binding GroupsMatches[3][1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Goals_second_team="{Binding GroupsMatches[3][1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Short_first="{Binding GroupsMatches[3][1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Short_second="{Binding GroupsMatches[3][1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Flag_first="{Binding Model.GroupsMatches[3][1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Flag_second="{Binding Model.GroupsMatches[3][1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Goals_first_team="{Binding Model.GroupsMatches[3][1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Goals_second_team="{Binding Model.GroupsMatches[3][1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Short_first="{Binding Model.GroupsMatches[3][1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Short_second="{Binding Model.GroupsMatches[3][1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M4Flag_first="{Binding GroupsMatches[3][2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Flag_second="{Binding GroupsMatches[3][2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Goals_first_team="{Binding GroupsMatches[3][2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Goals_second_team="{Binding GroupsMatches[3][2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Short_first="{Binding GroupsMatches[3][2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Short_second="{Binding GroupsMatches[3][2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Flag_first="{Binding Model.GroupsMatches[3][2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Flag_second="{Binding Model.GroupsMatches[3][2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Goals_first_team="{Binding Model.GroupsMatches[3][2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Goals_second_team="{Binding Model.GroupsMatches[3][2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Short_first="{Binding Model.GroupsMatches[3][2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Short_second="{Binding Model.GroupsMatches[3][2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M3Flag_first="{Binding GroupsMatches[3][3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Flag_second="{Binding GroupsMatches[3][3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Goals_first_team="{Binding GroupsMatches[3][3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Goals_second_team="{Binding GroupsMatches[3][3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Short_first="{Binding GroupsMatches[3][3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Short_second="{Binding GroupsMatches[3][3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                               
+                        M3Flag_first="{Binding Model.GroupsMatches[3][3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Flag_second="{Binding Model.GroupsMatches[3][3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Goals_first_team="{Binding Model.GroupsMatches[3][3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Goals_second_team="{Binding Model.GroupsMatches[3][3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Short_first="{Binding Model.GroupsMatches[3][3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Short_second="{Binding Model.GroupsMatches[3][3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                               
                                       
-                        M6Flag_first="{Binding GroupsMatches[3][4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Flag_second="{Binding GroupsMatches[3][4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Goals_first_team="{Binding GroupsMatches[3][4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Goals_second_team="{Binding GroupsMatches[3][4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Short_first="{Binding GroupsMatches[3][4].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Short_second="{Binding GroupsMatches[3][4].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"        
+                        M6Flag_first="{Binding Model.GroupsMatches[3][4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Flag_second="{Binding Model.GroupsMatches[3][4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Goals_first_team="{Binding Model.GroupsMatches[3][4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Goals_second_team="{Binding Model.GroupsMatches[3][4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Short_first="{Binding Model.GroupsMatches[3][4].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Short_second="{Binding Model.GroupsMatches[3][4].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"        
                                       
-                        M5Flag_first="{Binding GroupsMatches[3][5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Flag_second="{Binding GroupsMatches[3][5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Goals_first_team="{Binding GroupsMatches[3][5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Goals_second_team="{Binding GroupsMatches[3][5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Short_first="{Binding GroupsMatches[3][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Short_second="{Binding GroupsMatches[3][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"      />
+                        M5Flag_first="{Binding Model.GroupsMatches[3][5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Flag_second="{Binding Model.GroupsMatches[3][5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Goals_first_team="{Binding Model.GroupsMatches[3][5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Goals_second_team="{Binding Model.GroupsMatches[3][5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Short_first="{Binding Model.GroupsMatches[3][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Short_second="{Binding Model.GroupsMatches[3][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"      />
             </TabItem>
             
             <TabItem x:Name="GroupE" Header="Grupa E" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupEUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[4], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding Model.GroupsTeams[4], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
-                        M2Flag_first="{Binding GroupsMatches[4][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Flag_second="{Binding GroupsMatches[4][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Goals_first_team="{Binding GroupsMatches[4][0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Goals_second_team="{Binding GroupsMatches[4][0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Short_first="{Binding GroupsMatches[4][0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Short_second="{Binding GroupsMatches[4][0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Flag_first="{Binding Model.GroupsMatches[4][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Flag_second="{Binding Model.GroupsMatches[4][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Goals_first_team="{Binding Model.GroupsMatches[4][0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Goals_second_team="{Binding Model.GroupsMatches[4][0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Short_first="{Binding Model.GroupsMatches[4][0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Short_second="{Binding Model.GroupsMatches[4][0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M1Flag_first="{Binding GroupsMatches[4][1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Flag_second="{Binding GroupsMatches[4][1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Goals_first_team="{Binding GroupsMatches[4][1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Goals_second_team="{Binding GroupsMatches[4][1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Short_first="{Binding GroupsMatches[4][1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Short_second="{Binding GroupsMatches[4][1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Flag_first="{Binding Model.GroupsMatches[4][1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Flag_second="{Binding Model.GroupsMatches[4][1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Goals_first_team="{Binding Model.GroupsMatches[4][1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Goals_second_team="{Binding Model.GroupsMatches[4][1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Short_first="{Binding Model.GroupsMatches[4][1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Short_second="{Binding Model.GroupsMatches[4][1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M4Flag_first="{Binding GroupsMatches[4][2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Flag_second="{Binding GroupsMatches[4][2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Goals_first_team="{Binding GroupsMatches[4][2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Goals_second_team="{Binding GroupsMatches[4][2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Short_first="{Binding GroupsMatches[4][2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Short_second="{Binding GroupsMatches[4][2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Flag_first="{Binding Model.GroupsMatches[4][2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Flag_second="{Binding Model.GroupsMatches[4][2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Goals_first_team="{Binding Model.GroupsMatches[4][2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Goals_second_team="{Binding Model.GroupsMatches[4][2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Short_first="{Binding Model.GroupsMatches[4][2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Short_second="{Binding Model.GroupsMatches[4][2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M3Flag_first="{Binding GroupsMatches[4][3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Flag_second="{Binding GroupsMatches[4][3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Goals_first_team="{Binding GroupsMatches[4][3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Goals_second_team="{Binding GroupsMatches[4][3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Short_first="{Binding GroupsMatches[4][3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Short_second="{Binding GroupsMatches[4][3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                               
+                        M3Flag_first="{Binding Model.GroupsMatches[4][3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Flag_second="{Binding Model.GroupsMatches[4][3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Goals_first_team="{Binding Model.GroupsMatches[4][3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Goals_second_team="{Binding Model.GroupsMatches[4][3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Short_first="{Binding Model.GroupsMatches[4][3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Short_second="{Binding Model.GroupsMatches[4][3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                               
                                       
-                        M5Flag_first="{Binding GroupsMatches[4][4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Flag_second="{Binding GroupsMatches[4][4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Goals_first_team="{Binding GroupsMatches[4][4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Goals_second_team="{Binding GroupsMatches[4][4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Short_first="{Binding GroupsMatches[4][4].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Short_second="{Binding GroupsMatches[4][4].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"        
+                        M5Flag_first="{Binding Model.GroupsMatches[4][4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Flag_second="{Binding Model.GroupsMatches[4][4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Goals_first_team="{Binding Model.GroupsMatches[4][4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Goals_second_team="{Binding Model.GroupsMatches[4][4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Short_first="{Binding Model.GroupsMatches[4][4].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Short_second="{Binding Model.GroupsMatches[4][4].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"        
                                       
-                        M6Flag_first="{Binding GroupsMatches[4][5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Flag_second="{Binding GroupsMatches[4][5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Goals_first_team="{Binding GroupsMatches[4][5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Goals_second_team="{Binding GroupsMatches[4][5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Short_first="{Binding GroupsMatches[4][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Short_second="{Binding GroupsMatches[4][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                           
+                        M6Flag_first="{Binding Model.GroupsMatches[4][5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Flag_second="{Binding Model.GroupsMatches[4][5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Goals_first_team="{Binding Model.GroupsMatches[4][5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Goals_second_team="{Binding Model.GroupsMatches[4][5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Short_first="{Binding Model.GroupsMatches[4][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Short_second="{Binding Model.GroupsMatches[4][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                           
                                       />
             </TabItem>
             
             <TabItem x:Name="GroupF" Header="Grupa F" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupFUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[5], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding Model.GroupsTeams[5], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
-                        M2Flag_first="{Binding GroupsMatches[5][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Flag_second="{Binding GroupsMatches[5][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Goals_first_team="{Binding GroupsMatches[5][0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Goals_second_team="{Binding GroupsMatches[5][0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Short_first="{Binding GroupsMatches[5][0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Short_second="{Binding GroupsMatches[5][0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Flag_first="{Binding Model.GroupsMatches[5][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Flag_second="{Binding Model.GroupsMatches[5][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Goals_first_team="{Binding Model.GroupsMatches[5][0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Goals_second_team="{Binding Model.GroupsMatches[5][0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Short_first="{Binding Model.GroupsMatches[5][0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Short_second="{Binding Model.GroupsMatches[5][0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M1Flag_first="{Binding GroupsMatches[5][1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Flag_second="{Binding GroupsMatches[5][1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Goals_first_team="{Binding GroupsMatches[5][1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Goals_second_team="{Binding GroupsMatches[5][1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Short_first="{Binding GroupsMatches[5][1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Short_second="{Binding GroupsMatches[5][1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Flag_first="{Binding Model.GroupsMatches[5][1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Flag_second="{Binding Model.GroupsMatches[5][1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Goals_first_team="{Binding Model.GroupsMatches[5][1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Goals_second_team="{Binding Model.GroupsMatches[5][1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Short_first="{Binding Model.GroupsMatches[5][1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Short_second="{Binding Model.GroupsMatches[5][1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                      
-                        M3Flag_first="{Binding GroupsMatches[5][2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Flag_second="{Binding GroupsMatches[5][2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Goals_first_team="{Binding GroupsMatches[5][2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Goals_second_team="{Binding GroupsMatches[5][2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Short_first="{Binding GroupsMatches[5][2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Short_second="{Binding GroupsMatches[5][2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Flag_first="{Binding Model.GroupsMatches[5][2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Flag_second="{Binding Model.GroupsMatches[5][2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Goals_first_team="{Binding Model.GroupsMatches[5][2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Goals_second_team="{Binding Model.GroupsMatches[5][2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Short_first="{Binding Model.GroupsMatches[5][2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Short_second="{Binding Model.GroupsMatches[5][2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M4Flag_first="{Binding GroupsMatches[5][3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Flag_second="{Binding GroupsMatches[5][3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Goals_first_team="{Binding GroupsMatches[5][3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Goals_second_team="{Binding GroupsMatches[5][3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Short_first="{Binding GroupsMatches[5][3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Short_second="{Binding GroupsMatches[5][3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                               
+                        M4Flag_first="{Binding Model.GroupsMatches[5][3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Flag_second="{Binding Model.GroupsMatches[5][3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Goals_first_team="{Binding Model.GroupsMatches[5][3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Goals_second_team="{Binding Model.GroupsMatches[5][3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Short_first="{Binding Model.GroupsMatches[5][3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Short_second="{Binding Model.GroupsMatches[5][3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                               
                                       
-                        M6Flag_first="{Binding GroupsMatches[5][4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Flag_second="{Binding GroupsMatches[5][4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Goals_first_team="{Binding GroupsMatches[5][4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Goals_second_team="{Binding GroupsMatches[5][4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Short_first="{Binding GroupsMatches[5][4].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Short_second="{Binding GroupsMatches[5][4].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"        
+                        M6Flag_first="{Binding Model.GroupsMatches[5][4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Flag_second="{Binding Model.GroupsMatches[5][4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Goals_first_team="{Binding Model.GroupsMatches[5][4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Goals_second_team="{Binding Model.GroupsMatches[5][4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Short_first="{Binding Model.GroupsMatches[5][4].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Short_second="{Binding Model.GroupsMatches[5][4].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"        
                                       
-                        M5Flag_first="{Binding GroupsMatches[5][5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Flag_second="{Binding GroupsMatches[5][5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Goals_first_team="{Binding GroupsMatches[5][5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Goals_second_team="{Binding GroupsMatches[5][5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Short_first="{Binding GroupsMatches[5][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Short_second="{Binding GroupsMatches[5][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"             
+                        M5Flag_first="{Binding Model.GroupsMatches[5][5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Flag_second="{Binding Model.GroupsMatches[5][5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Goals_first_team="{Binding Model.GroupsMatches[5][5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Goals_second_team="{Binding Model.GroupsMatches[5][5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Short_first="{Binding Model.GroupsMatches[5][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Short_second="{Binding Model.GroupsMatches[5][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"             
                                       />
             </TabItem>
             <TabItem x:Name="GroupG" Header="Grupa G" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupGUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[6], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding Model.GroupsTeams[6], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
-                        M2Flag_first="{Binding GroupsMatches[6][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Flag_second="{Binding GroupsMatches[6][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Goals_first_team="{Binding GroupsMatches[6][0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Goals_second_team="{Binding GroupsMatches[6][0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Short_first="{Binding GroupsMatches[6][0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Short_second="{Binding GroupsMatches[6][0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Flag_first="{Binding Model.GroupsMatches[6][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Flag_second="{Binding Model.GroupsMatches[6][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Goals_first_team="{Binding Model.GroupsMatches[6][0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Goals_second_team="{Binding Model.GroupsMatches[6][0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Short_first="{Binding Model.GroupsMatches[6][0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Short_second="{Binding Model.GroupsMatches[6][0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M1Flag_first="{Binding GroupsMatches[6][1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Flag_second="{Binding GroupsMatches[6][1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Goals_first_team="{Binding GroupsMatches[6][1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Goals_second_team="{Binding GroupsMatches[6][1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Short_first="{Binding GroupsMatches[6][1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Short_second="{Binding GroupsMatches[6][1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Flag_first="{Binding Model.GroupsMatches[6][1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Flag_second="{Binding Model.GroupsMatches[6][1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Goals_first_team="{Binding Model.GroupsMatches[6][1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Goals_second_team="{Binding Model.GroupsMatches[6][1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Short_first="{Binding Model.GroupsMatches[6][1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Short_second="{Binding Model.GroupsMatches[6][1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M4Flag_first="{Binding GroupsMatches[6][2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Flag_second="{Binding GroupsMatches[6][2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Goals_first_team="{Binding GroupsMatches[6][2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Goals_second_team="{Binding GroupsMatches[6][2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Short_first="{Binding GroupsMatches[6][2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Short_second="{Binding GroupsMatches[6][2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Flag_first="{Binding Model.GroupsMatches[6][2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Flag_second="{Binding Model.GroupsMatches[6][2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Goals_first_team="{Binding Model.GroupsMatches[6][2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Goals_second_team="{Binding Model.GroupsMatches[6][2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Short_first="{Binding Model.GroupsMatches[6][2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Short_second="{Binding Model.GroupsMatches[6][2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M3Flag_first="{Binding GroupsMatches[6][3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Flag_second="{Binding GroupsMatches[6][3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Goals_first_team="{Binding GroupsMatches[6][3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Goals_second_team="{Binding GroupsMatches[6][3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Short_first="{Binding GroupsMatches[6][3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Short_second="{Binding GroupsMatches[6][3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                               
+                        M3Flag_first="{Binding Model.GroupsMatches[6][3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Flag_second="{Binding Model.GroupsMatches[6][3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Goals_first_team="{Binding Model.GroupsMatches[6][3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Goals_second_team="{Binding Model.GroupsMatches[6][3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Short_first="{Binding Model.GroupsMatches[6][3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Short_second="{Binding Model.GroupsMatches[6][3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                               
                                       
-                        M6Flag_first="{Binding GroupsMatches[6][4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Flag_second="{Binding GroupsMatches[6][4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Goals_first_team="{Binding GroupsMatches[6][4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Goals_second_team="{Binding GroupsMatches[6][4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Short_first="{Binding GroupsMatches[6][4].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Short_second="{Binding GroupsMatches[6][4].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"        
+                        M6Flag_first="{Binding Model.GroupsMatches[6][4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Flag_second="{Binding Model.GroupsMatches[6][4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Goals_first_team="{Binding Model.GroupsMatches[6][4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Goals_second_team="{Binding Model.GroupsMatches[6][4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Short_first="{Binding Model.GroupsMatches[6][4].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Short_second="{Binding Model.GroupsMatches[6][4].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"        
                                      
-                        M5Flag_first="{Binding GroupsMatches[6][5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Flag_second="{Binding GroupsMatches[6][5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Goals_first_team="{Binding GroupsMatches[6][5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Goals_second_team="{Binding GroupsMatches[6][5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Short_first="{Binding GroupsMatches[6][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Short_second="{Binding GroupsMatches[6][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"      
+                        M5Flag_first="{Binding Model.GroupsMatches[6][5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Flag_second="{Binding Model.GroupsMatches[6][5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Goals_first_team="{Binding Model.GroupsMatches[6][5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Goals_second_team="{Binding Model.GroupsMatches[6][5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Short_first="{Binding Model.GroupsMatches[6][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Short_second="{Binding Model.GroupsMatches[6][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"      
                                      />
             </TabItem>
             <TabItem x:Name="GroupH" Header="Grupa H" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupHUC" Grid.Column="2" Grid.Row="0"
                         Grid.RowSpan="3"
-                        Teams="{Binding GroupsTeams[7], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Teams="{Binding Model.GroupsTeams[7], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                       
-                        M2Flag_first="{Binding GroupsMatches[7][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Flag_second="{Binding GroupsMatches[7][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Goals_first_team="{Binding GroupsMatches[7][0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Goals_second_team="{Binding GroupsMatches[7][0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Short_first="{Binding GroupsMatches[7][0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M2Short_second="{Binding GroupsMatches[7][0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Flag_first="{Binding Model.GroupsMatches[7][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Flag_second="{Binding Model.GroupsMatches[7][0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Goals_first_team="{Binding Model.GroupsMatches[7][0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Goals_second_team="{Binding Model.GroupsMatches[7][0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Short_first="{Binding Model.GroupsMatches[7][0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M2Short_second="{Binding Model.GroupsMatches[7][0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M1Flag_first="{Binding GroupsMatches[7][1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Flag_second="{Binding GroupsMatches[7][1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Goals_first_team="{Binding GroupsMatches[7][1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Goals_second_team="{Binding GroupsMatches[7][1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Short_first="{Binding GroupsMatches[7][1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M1Short_second="{Binding GroupsMatches[7][1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Flag_first="{Binding Model.GroupsMatches[7][1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Flag_second="{Binding Model.GroupsMatches[7][1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Goals_first_team="{Binding Model.GroupsMatches[7][1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Goals_second_team="{Binding Model.GroupsMatches[7][1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Short_first="{Binding Model.GroupsMatches[7][1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M1Short_second="{Binding Model.GroupsMatches[7][1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M4Flag_first="{Binding GroupsMatches[7][2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Flag_second="{Binding GroupsMatches[7][2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Goals_first_team="{Binding GroupsMatches[7][2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Goals_second_team="{Binding GroupsMatches[7][2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Short_first="{Binding GroupsMatches[7][2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M4Short_second="{Binding GroupsMatches[7][2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Flag_first="{Binding Model.GroupsMatches[7][2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Flag_second="{Binding Model.GroupsMatches[7][2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Goals_first_team="{Binding Model.GroupsMatches[7][2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Goals_second_team="{Binding Model.GroupsMatches[7][2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Short_first="{Binding Model.GroupsMatches[7][2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M4Short_second="{Binding Model.GroupsMatches[7][2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                       
-                        M3Flag_first="{Binding GroupsMatches[7][3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Flag_second="{Binding GroupsMatches[7][3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Goals_first_team="{Binding GroupsMatches[7][3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Goals_second_team="{Binding GroupsMatches[7][3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Short_first="{Binding GroupsMatches[7][3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M3Short_second="{Binding GroupsMatches[7][3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                               
+                        M3Flag_first="{Binding Model.GroupsMatches[7][3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Flag_second="{Binding Model.GroupsMatches[7][3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Goals_first_team="{Binding Model.GroupsMatches[7][3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Goals_second_team="{Binding Model.GroupsMatches[7][3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Short_first="{Binding Model.GroupsMatches[7][3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M3Short_second="{Binding Model.GroupsMatches[7][3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                                               
                                       
-                        M6Flag_first="{Binding GroupsMatches[7][4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Flag_second="{Binding GroupsMatches[7][4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Goals_first_team="{Binding GroupsMatches[7][4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Goals_second_team="{Binding GroupsMatches[7][4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Short_first="{Binding GroupsMatches[7][4].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M6Short_second="{Binding GroupsMatches[7][4].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"        
+                        M6Flag_first="{Binding Model.GroupsMatches[7][4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Flag_second="{Binding Model.GroupsMatches[7][4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Goals_first_team="{Binding Model.GroupsMatches[7][4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Goals_second_team="{Binding Model.GroupsMatches[7][4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Short_first="{Binding Model.GroupsMatches[7][4].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M6Short_second="{Binding Model.GroupsMatches[7][4].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"        
                                      
-                        M5Flag_first="{Binding GroupsMatches[7][5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Flag_second="{Binding GroupsMatches[7][5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Goals_first_team="{Binding GroupsMatches[7][5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Goals_second_team="{Binding GroupsMatches[7][5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Short_first="{Binding GroupsMatches[7][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
-                        M5Short_second="{Binding GroupsMatches[7][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Flag_first="{Binding Model.GroupsMatches[7][5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Flag_second="{Binding Model.GroupsMatches[7][5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Goals_first_team="{Binding Model.GroupsMatches[7][5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Goals_second_team="{Binding Model.GroupsMatches[7][5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Short_first="{Binding Model.GroupsMatches[7][5].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
+                        M5Short_second="{Binding Model.GroupsMatches[7][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                      />
             </TabItem>
-            <i:Interaction.Triggers>
+            <!--<i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
                     <i:InvokeCommandAction Command="{Binding GroupSelectionChanged}"/>
                 </i:EventTrigger>
-            </i:Interaction.Triggers>
+            </i:Interaction.Triggers>-->
         </TabControl>
     </Grid>
 </UserControl>

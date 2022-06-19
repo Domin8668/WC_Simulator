@@ -71,6 +71,7 @@ namespace WC_Simulator.Model
 
             PrepareEmptyGroupTeams();
             GroupsMatches = new ObservableCollection<ObservableCollection<Single_match>>();
+            KnockoutsMatches = new ObservableCollection<ObservableCollection<Single_match>>();
             CurrentTournamentGroups = new ObservableCollection<Single_group>();
             CurrentTournamentMatches = new ObservableCollection<Single_match>();
         }
@@ -164,6 +165,8 @@ namespace WC_Simulator.Model
 
 
         #region Methods
+
+        #region User
 
         internal bool CheckLogin()
         {
@@ -293,6 +296,10 @@ namespace WC_Simulator.Model
             }
             return false;
         }
+
+        #endregion
+
+        #region Groups
 
         public void PrepareEmptyGroupTeams()
         {
@@ -506,6 +513,100 @@ namespace WC_Simulator.Model
                 }
             }
         }
+
+        public void LoadGroupsMatches()
+        {
+            var singleGroupMatches = new ObservableCollection<Single_match>();
+            for (int i = 0; i < 6; i++)
+            {
+                singleGroupMatches.Add(CurrentTournamentMatches[i]);
+            }
+            GroupsMatches.Add(singleGroupMatches);
+            singleGroupMatches = new ObservableCollection<Single_match>();
+
+            for (int i = 6; i < 12; i++)
+            {
+                singleGroupMatches.Add(CurrentTournamentMatches[i]);
+            }
+            GroupsMatches.Add(singleGroupMatches);
+            singleGroupMatches = new ObservableCollection<Single_match>();
+
+            for (int i = 12; i < 18; i++)
+            {
+                singleGroupMatches.Add(CurrentTournamentMatches[i]);
+            }
+            GroupsMatches.Add(singleGroupMatches);
+            singleGroupMatches = new ObservableCollection<Single_match>();
+
+            for (int i = 18; i < 24; i++)
+            {
+                singleGroupMatches.Add(CurrentTournamentMatches[i]);
+            }
+            GroupsMatches.Add(singleGroupMatches);
+            singleGroupMatches = new ObservableCollection<Single_match>();
+
+            for (int i = 24; i < 30; i++)
+            {
+                singleGroupMatches.Add(CurrentTournamentMatches[i]);
+            }
+            GroupsMatches.Add(singleGroupMatches);
+            singleGroupMatches = new ObservableCollection<Single_match>();
+
+            for (int i = 30; i < 36; i++)
+            {
+                singleGroupMatches.Add(CurrentTournamentMatches[i]);
+            }
+            GroupsMatches.Add(singleGroupMatches);
+            singleGroupMatches = new ObservableCollection<Single_match>();
+
+            for (int i = 36; i < 42; i++)
+            {
+                singleGroupMatches.Add(CurrentTournamentMatches[i]);
+            }
+            GroupsMatches.Add(singleGroupMatches);
+            singleGroupMatches = new ObservableCollection<Single_match>();
+
+            for (int i = 42; i < 48; i++)
+            {
+                singleGroupMatches.Add(CurrentTournamentMatches[i]);
+            }
+            GroupsMatches.Add(singleGroupMatches);
+            singleGroupMatches = new ObservableCollection<Single_match>();
+        }
+
+        public void LoadKnockoutsMatches()
+        {
+            var singleKnockoutsMatches = new ObservableCollection<Single_match>();
+            for (int i = 48; i < 56; i++)
+            {
+                singleKnockoutsMatches.Add(CurrentTournamentMatches[i]);
+            }
+            KnockoutsMatches.Add(singleKnockoutsMatches);
+            singleKnockoutsMatches = new ObservableCollection<Single_match>();
+
+            for (int i = 56; i < 60; i++)
+            {
+                singleKnockoutsMatches.Add(CurrentTournamentMatches[i]);
+            }
+            KnockoutsMatches.Add(singleKnockoutsMatches);
+            singleKnockoutsMatches = new ObservableCollection<Single_match>();
+
+            for (int i = 60; i < 62; i++)
+            {
+                singleKnockoutsMatches.Add(CurrentTournamentMatches[i]);
+            }
+            KnockoutsMatches.Add(singleKnockoutsMatches);
+            singleKnockoutsMatches = new ObservableCollection<Single_match>();
+
+            for (int i = 62; i < 64; i++)
+            {
+                singleKnockoutsMatches.Add(CurrentTournamentMatches[i]);
+            }
+            KnockoutsMatches.Add(singleKnockoutsMatches);
+            singleKnockoutsMatches = new ObservableCollection<Single_match>();
+        }
+
+        #endregion
 
         #endregion
     }
