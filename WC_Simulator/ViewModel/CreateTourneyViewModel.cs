@@ -95,7 +95,7 @@ namespace WC_Simulator.ViewModel
                     {
                         var tourney = new Tournament(uint.Parse(Model.CurrentUser.Id_user.ToString()), NewTourney.ToString());
 
-                        if(Model.AddUserTournament(tourney))
+                        if (Model.AddUserTournament(tourney))
                         {
                             NewTourney = string.Empty;
                             NewTourneyBorder = 0;
@@ -107,8 +107,19 @@ namespace WC_Simulator.ViewModel
                                 var group = new Single_group(null, null, (uint)Model.CurrentTournament.Id_tournament, (Enum)letter);
                                 Model.CurrentTournamentGroups.Add(group);
                                 RepositoryGroups.AddTournamentGroups(group, (uint)Model.CurrentTournament.Id_tournament);
-                                // TODO: tworzenie meczów w bazie
                             }
+
+                            Model.CreateGroupMatches();
+                            Model.PrepareEmptyKnockoutsMatches();
+                            Model.JoinGroupsAndKnockouts();
+
+                            foreach (var match in Model.CurrentTournamentMatches)
+                            {
+                                RepositoryMatches.AddTournamentMatch(match);
+                            }
+
+                            Model.CurrentTournamentMatches = new ObservableCollection<Single_match>(RepositoryMatches.LoadTournamentMatch(Model.CurrentTournament));
+
                             NavigationStore.CurrentViewModel = new GroupsViewModel(Model, NavigationStore);
                         }
                     },
