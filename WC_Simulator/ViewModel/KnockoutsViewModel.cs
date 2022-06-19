@@ -32,12 +32,7 @@ namespace WC_Simulator.ViewModel
         {
             Model = model;
             NavigationStore = navigationStore;
-            Team Ph1 = new Team(0, "1A", "1A", "1A", 1, 1);
-            Team Ph2 = new Team(0, "2B", "2B", "2B", 1, 1);
-
-            Matches16 = new ObservableCollection<Single_match>() {
-                new Single_match(1, Ph1, Ph2, 100, 1, 1),
-            };
+            PrepareMatches16();
         }
 
         #endregion
@@ -87,8 +82,27 @@ namespace WC_Simulator.ViewModel
 
         #region Methods
 
-        public void PrepareMatches()
+        //zeby zrobic z matchcodes trzeba dodac kolejna tabele
+        public void PrepareMatches16()
         {
+            var groups = new string[8] { "A", "B", "C", "D", "E", "F", "G", "H" };
+
+            Matches16 = new ObservableCollection<Single_match>();
+
+            for (int i = 0; i < groups.Length-1; i++)
+            {
+                Team Ph1 = new Team(0, "1"+groups[i], "1" + groups[i], "1" + groups[i], 1, 1);
+                Team Ph2 = new Team(0, "2"+groups[i+1], "2" + groups[i + 1], "2" + groups[i + 1], 1, 1);
+                Matches16.Add(new Single_match(1, Ph1, Ph2, 100, 1, 1));
+            }
+
+            for (int i = 0; i < groups.Length - 1; i++)
+            {
+                Team Ph1 = new Team(0, "1" + groups[i + 1], "1" + groups[i + 1], "1" + groups[i + 1], 1, 1);
+                Team Ph2 = new Team(0, "2" + groups[i], "2" + groups[i], "2" + groups[i], 1, 1);
+                Matches16.Add(new Single_match(1, Ph1, Ph2, 100, 1, 1));
+            }
+
 
         }
 
