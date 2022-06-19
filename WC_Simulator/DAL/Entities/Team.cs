@@ -1,26 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace WC_Simulator.DAL.Entities
 {
     public class Team
     {
-
         #region Properties
+
         public int Id_team { get; set; }
+
         public uint Id_group { get; set; }
+
         public string Name { get; set; }
+
         public string Short_name { get; set; }
+
         public string Coach { get; set; }
+
         public float Def_factor { get; set; }
+
         public float Att_factor { get; set; }
+
         #endregion
 
+
         #region Constructors
+
         public Team(MySqlDataReader reader)
         {
             Id_team = int.Parse(reader["id_team"].ToString());
@@ -55,6 +59,7 @@ namespace WC_Simulator.DAL.Entities
 
         #endregion
 
+
         #region Methods
 
         public override string ToString()
@@ -85,7 +90,7 @@ namespace WC_Simulator.DAL.Entities
         {
             return base.GetHashCode();
         }
-        #endregion
 
+        #endregion
     }
 }

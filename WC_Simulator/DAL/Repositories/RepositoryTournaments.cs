@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using MySql.Data.MySqlClient;
+using WC_Simulator.DAL.Entities;
 
 namespace WC_Simulator.DAL.Repositories
 {
-    using MySql.Data.MySqlClient;
-    using WC_Simulator.DAL;
-    using WC_Simulator.DAL.Entities;
+    
     class RepositoryTournaments
     {
         #region QUERIES
+
         private const string ALL_TOURNAMENT = "SELECT * FROM `tournament`";
         private const string ADD_TOURNAMENT = "INSERT INTO `tournament`(`id_user`, `t_name`) VALUES ";
         private const string DELETE_TOURNAMENT = "DELETE FROM `tournament` WHERE id_tournament = ";
-        //private const string UPDATE_TOURNAMENT = "UPDATE `tournament` SET xx WHERE id_tournament = ";
+        
         #endregion
+
 
         #region CRUD
         public static List<Tournament> LoadTournament()
@@ -80,6 +78,7 @@ namespace WC_Simulator.DAL.Repositories
             }
             return state;
         }
+
         #endregion
     }
 }
