@@ -211,6 +211,7 @@ namespace WC_Simulator.ViewModel
                         if (Model.CurrentTournament != null)
                         {
                             Model.CurrentTournamentGroups = new ObservableCollection<Single_group>(RepositoryGroups.LoadTournamentGroup(Model.CurrentTournament.Id_tournament));
+                            Model.CurrentTournamentMatches = new ObservableCollection<Single_match>(RepositoryMatches.LoadTournamentMatch(Model.CurrentTournament));
                         }
                     },
                     arg => true);

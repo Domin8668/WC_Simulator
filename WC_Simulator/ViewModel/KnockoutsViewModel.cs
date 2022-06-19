@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using WC_Simulator.DAL.Entities;
 using WC_Simulator.Helpers.Stores;
@@ -43,7 +37,9 @@ namespace WC_Simulator.ViewModel
         public ObservableCollection<Single_match> Matches16
         {
             get { return _matches16; }
-            set { _matches16 = value;
+            set
+            {
+                _matches16 = value;
                 OnPropertyChanged(nameof(Matches16));
             }
         }
@@ -89,10 +85,10 @@ namespace WC_Simulator.ViewModel
 
             Matches16 = new ObservableCollection<Single_match>();
 
-            for (int i = 0; i < groups.Length-1; i++)
+            for (int i = 0; i < groups.Length - 1; i++)
             {
-                Team Ph1 = new Team(0, "1"+groups[i], "1" + groups[i], "1" + groups[i], 1, 1);
-                Team Ph2 = new Team(0, "2"+groups[i+1], "2" + groups[i + 1], "2" + groups[i + 1], 1, 1);
+                Team Ph1 = new Team(0, "1" + groups[i], "1" + groups[i], "1" + groups[i], 1, 1);
+                Team Ph2 = new Team(0, "2" + groups[i + 1], "2" + groups[i + 1], "2" + groups[i + 1], 1, 1);
                 Matches16.Add(new Single_match(1, Ph1, Ph2, 100, 1, 1));
             }
 

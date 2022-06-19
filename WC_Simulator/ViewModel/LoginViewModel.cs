@@ -212,7 +212,7 @@ namespace WC_Simulator.ViewModel
                         {
                             Model.CurrentTournament = Model.AllTournaments[0];
                             Model.CurrentTournamentGroups = new ObservableCollection<Single_group>(RepositoryGroups.LoadTournamentGroup(Model.CurrentTournament.Id_tournament));
-                            // TODO: ładowanie meczów
+                            Model.CurrentTournamentMatches = new ObservableCollection<Single_match>(RepositoryMatches.LoadTournamentMatch(Model.CurrentTournament));
                         }
                         NavigationStore.MenuVisibility = Visibility.Visible;
                             NavigationStore.CurrentViewModel = new ProfileViewModel(Model, NavigationStore);
