@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 
 namespace WC_Simulator.DAL.Entities
 {
@@ -8,9 +9,9 @@ namespace WC_Simulator.DAL.Entities
 
         public uint? Id_match { get; set; }
 
-        public uint Id_first_team { get; set; }
+        public uint? Id_first_team { get; set; }
 
-        public uint Id_second_team { get; set; }
+        public uint? Id_second_team { get; set; }
 
         public uint Id_tournament { get; set; }
 
@@ -40,21 +41,44 @@ namespace WC_Simulator.DAL.Entities
         public Single_match(MySqlDataReader reader)
         {
             Id_match = uint.Parse(reader["id_match"].ToString());
-            Id_first_team = uint.Parse(reader["id_first_team"].ToString());
-            Id_second_team = uint.Parse(reader["id_second_team"].ToString());
+
+            if (Convert.IsDBNull(reader["id_first_team"]))
+                Id_first_team = null;
+            else
+                Id_first_team = uint.Parse(reader["id_first_team"].ToString());
+            if (Convert.IsDBNull(reader["id_second_team"]))
+                Id_second_team = null;
+            else
+                Id_second_team = uint.Parse(reader["id_second_team"].ToString());
+
             Id_tournament = uint.Parse(reader["id_tournament"].ToString());
             Short_first = reader["abbr_first"].ToString();
             Short_second = reader["abbr_second"].ToString();
             Name_first = reader["name_first"].ToString();
             Name_second = reader["name_second"].ToString();
-            Flag_first = $"../../Resources/Flags/{Name_first.Split(' ')[0]}.png";
-            Flag_second = $"../../Resources/Flags/{Name_second.Split(' ')[0]}.png";
+
+            if (Convert.IsDBNull(reader["name_first"]))
+                Flag_first = $"../../Resources/Flags/placeholder.png";
+            else
+                Flag_first = $"../../Resources/Flags/{Name_first.Split(' ')[0]}.png";
+            if (Convert.IsDBNull(reader["name_second"]))
+                Flag_second = $"../../Resources/Flags/placeholder.png";
+            else
+                Flag_second = $"../../Resources/Flags/{Name_second.Split(' ')[0]}.png";
+
             Match_code = uint.Parse(reader["match_code"].ToString());
-            Goals_first_team = uint.Parse(reader["goals_first_team"].ToString());
-            Goals_second_team = uint.Parse(reader["goals_second_team"].ToString());
+
+            if (Convert.IsDBNull(reader["goals_first_team"]))
+                Goals_first_team = null;
+            else
+                Goals_first_team = uint.Parse(reader["goals_first_team"].ToString());
+            if (Convert.IsDBNull(reader["goals_second_team"]))
+                Goals_second_team = null;
+            else
+                Goals_second_team = uint.Parse(reader["goals_second_team"].ToString());
         }
 
-        public Single_match(uint id_first_team, uint id_second_team, uint id_tournament, string short_first, string short_second, string name_first, string name_second, uint match_code, uint goals_first_team, uint goals_second_team)
+        public Single_match(uint? id_first_team, uint? id_second_team, uint id_tournament, string short_first, string short_second, string name_first, string name_second, uint match_code, uint? goals_first_team, uint? goals_second_team)
         {
             Id_match = null;
             Id_first_team = id_first_team;
@@ -66,9 +90,15 @@ namespace WC_Simulator.DAL.Entities
             Name_second = name_second.Trim();
             Flag_first = $"../../Resources/Flags/{Name_first.Split(' ')[0]}.png";
             Flag_second = $"../../Resources/Flags/{Name_second.Split(' ')[0]}.png";
-            if (name_first[0] == '1' || name_first[0] == '2')
+
+            if (name_first == string.Empty)
                 Flag_first = "../../Resources/Flags/placeholder.png";
-            if (name_second[0] == '1' || name_second[0] == '2')
+            else if (name_first[0] == '1' || name_first[0] == '2')
+                Flag_first = "../../Resources/Flags/placeholder.png";
+
+            if (name_second == string.Empty)
+                Flag_second = "../../Resources/Flags/placeholder.png";
+            else if (name_second[0] == '1' || name_second[0] == '2')
                 Flag_second = "../../Resources/Flags/placeholder.png";
             Match_code = match_code;
             Goals_first_team = goals_first_team;
@@ -123,13 +153,12 @@ namespace WC_Simulator.DAL.Entities
 
         //public string ToInsert()
         //{
-        //    return $"('{Id_first_team}', {Id_second_team}, '{Id_tournament}', '{Short_first}', '{Short_second}', '{Name_first}', '{Name_second}', '{Match_code}', '{Goals_first_team}', '{Goals_second_team}')";
+        //    return $"('{Id_first_team}', {Id_second_team}, '{Id_tournament}', '{Short_first}', '{Short_second}', '{Name_first}', '{Name_second}', '{Match_code}', '{if (Goals_first_team == null) }', '{Goals_second_team}')";
         //}
 
         public override bool Equals(object obj)
         {
-            var match = obj as Single_match;
-            if (match is null) return false;
+            if (!(obj is Single_match match)) return false;
             if (Id_match != match.Id_match) return false;
             if (Id_first_team != match.Id_first_team) return false;
             if (Id_second_team != match.Id_second_team) return false;
