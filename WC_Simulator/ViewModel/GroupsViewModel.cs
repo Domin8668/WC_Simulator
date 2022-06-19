@@ -9,6 +9,7 @@ using WC_Simulator.Model;
 using WC_Simulator.Helpers.Stores;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Input;
 
 namespace WC_Simulator.ViewModel
 {
@@ -25,6 +26,11 @@ namespace WC_Simulator.ViewModel
         private ObservableCollection<TeamInGroup> _teamsF;
         private ObservableCollection<TeamInGroup> _teamsG;
         private ObservableCollection<TeamInGroup> _teamsH;
+
+        private ObservableCollection<ObservableCollection<TeamInGroup>> _groupsTeams;
+        private ObservableCollection<ObservableCollection<Single_match>> _groupsMatches;
+
+        private int _currentGroup;
 
         private ObservableCollection<Team> _allTeams;
 
@@ -50,8 +56,18 @@ namespace WC_Simulator.ViewModel
         {
             Model = model;
             NavigationStore = navigationStore;
-
+            GroupsTeams = new ObservableCollection<ObservableCollection<TeamInGroup>>();
             Prepare_Teams();
+            GroupsTeams.Add(TeamsA);
+            GroupsTeams.Add(TeamsB);
+            GroupsTeams.Add(TeamsC);
+            GroupsTeams.Add(TeamsD);
+            GroupsTeams.Add(TeamsE);
+            GroupsTeams.Add(TeamsF);
+            GroupsTeams.Add(TeamsG);
+            GroupsTeams.Add(TeamsH);
+              
+            GroupsMatches = new ObservableCollection<ObservableCollection<Single_match>>();
             PrepareMatchesA();
             PrepareMatchesB();
             PrepareMatchesC();
@@ -60,16 +76,21 @@ namespace WC_Simulator.ViewModel
             PrepareMatchesF();
             PrepareMatchesG();
             PrepareMatchesH();
-            // prepare standing poza konstruktorem
-            TeamsA = PrepareStanding(MatchesA, 0);
-            TeamsB = PrepareStanding(MatchesB, 1);
-            TeamsC = PrepareStanding(MatchesC, 2);
-            TeamsD = PrepareStanding(MatchesD, 3);
-            TeamsE = PrepareStanding(MatchesE, 4);
-            TeamsF = PrepareStanding(MatchesF, 5);
-            TeamsG = PrepareStanding(MatchesG, 6);
-            TeamsH = PrepareStanding(MatchesH, 7);
 
+
+
+
+            // prepare standing poza konstruktorem zakomentowane bo obsluguje event aktualizwanie, ale placeholdery trza dodac 
+            //TeamsA = PrepareStanding(MatchesA, 0);
+            //TeamsB = PrepareStanding(MatchesB, 1);
+            //TeamsC = PrepareStanding(MatchesC, 2);
+            //TeamsD = PrepareStanding(MatchesD, 3);
+            //TeamsE = PrepareStanding(MatchesE, 4);
+            //TeamsF = PrepareStanding(MatchesF, 5);
+            //TeamsG = PrepareStanding(MatchesG, 6);
+            //TeamsH = PrepareStanding(MatchesH, 7);
+
+            CurrentGroup = 0;
         }
 
         #endregion
@@ -242,6 +263,12 @@ namespace WC_Simulator.ViewModel
             }
         }
 
+        public int CurrentGroup { get => _currentGroup; set => _currentGroup = value; }
+        public ObservableCollection<ObservableCollection<Single_match>> GroupsMatches { get => _groupsMatches; set => _groupsMatches = value; }
+        public ObservableCollection<ObservableCollection<TeamInGroup>> GroupsTeams { get => _groupsTeams; set => _groupsTeams = value; }
+
+
+
         #endregion
 
 
@@ -304,6 +331,8 @@ namespace WC_Simulator.ViewModel
 
             MatchesA.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 35, 4, 0));
             MatchesA.Add(new Single_match(1, AllTeams[i+1], AllTeams[i+2],  34, 3, 5));
+            GroupsMatches.Add(MatchesA);
+
         }
         public void PrepareMatchesB()
         {
@@ -318,6 +347,8 @@ namespace WC_Simulator.ViewModel
 
             MatchesB.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 32, 3, 3));
             MatchesB.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 33, 2, 1));
+            GroupsMatches.Add(MatchesB);
+
         }
         public void PrepareMatchesC()
         {
@@ -332,6 +363,8 @@ namespace WC_Simulator.ViewModel
 
             MatchesC.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 38, 0, 0));
             MatchesC.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 39, 0, 0));
+            GroupsMatches.Add(MatchesC);
+
         }
         public void PrepareMatchesD()
         {
@@ -346,6 +379,8 @@ namespace WC_Simulator.ViewModel
 
             MatchesD.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 36, 0, 0));
             MatchesD.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 37, 2, 1));
+            GroupsMatches.Add(MatchesD);
+
         }
         public void PrepareMatchesE()
         {
@@ -360,6 +395,8 @@ namespace WC_Simulator.ViewModel
 
             MatchesE.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 42, 0, 0));
             MatchesE.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 43, 2, 1));
+            GroupsMatches.Add(MatchesE);
+
         }
         public void PrepareMatchesF()
         {
@@ -374,6 +411,8 @@ namespace WC_Simulator.ViewModel
 
             MatchesF.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 40, 0, 0));
             MatchesF.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 41, 2, 1));
+            GroupsMatches.Add(MatchesF);
+
         }
         public void PrepareMatchesG()
         {
@@ -388,6 +427,8 @@ namespace WC_Simulator.ViewModel
 
             MatchesG.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 47, 2, 5));
             MatchesG.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 46, 3, 3));
+            GroupsMatches.Add(MatchesG);
+
 
         }
         public void PrepareMatchesH()
@@ -403,6 +444,7 @@ namespace WC_Simulator.ViewModel
 
             MatchesH.Add(new Single_match(1, AllTeams[i + 3], AllTeams[i], 45, 0, 0));
             MatchesH.Add(new Single_match(1, AllTeams[i + 1], AllTeams[i + 2], 44, 2, 1));
+            GroupsMatches.Add(MatchesH);
         }
         public ObservableCollection<TeamInGroup> PrepareStanding(ObservableCollection<Single_match> groupMatches, int group)
         {
@@ -485,24 +527,35 @@ namespace WC_Simulator.ViewModel
 
         #region Commands
 
-        // barebone ICommand to copy:
-        //private ICommand _login = null;
+        private ICommand _checkStandings = null;
+
+        public ICommand CheckStandings
+        {
+            get
+            {
+                if (_checkStandings == null)
+                {
+                    _checkStandings = new RelayCommand(arg => {
+                        bool check = true;
+                        foreach(var x in GroupsMatches[CurrentGroup])
+                        {
+                            if(x.Goals_first_team== null || x.Goals_second_team == null)
+                            {
+                                check = false; break;
+                            }
+                        }
+                        if (check)
+                        {
+                            TeamsA = PrepareStanding(GroupsMatches[CurrentGroup], CurrentGroup);
+                        }
+                    },
+                    arg => true);
+                }
+                return _checkStandings;
+            }
+        }
 
 
-        //public ICommand Login
-        //{
-        //    get
-        //    {
-        //        if (_login == null)
-        //        {
-        //            _login = new RelayCommand(arg => {
-
-        //            },
-        //            arg => true);
-        //        }
-        //        return _login;
-        //    }
-        //}
 
         #endregion
 

@@ -6,6 +6,7 @@
              xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
              xmlns:vs="clr-namespace:WC_Simulator.View"
              xmlns:ucs="clr-namespace:WC_Simulator.View.Components"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="850" d:DesignWidth="1150">
     <UserControl.Resources>
@@ -71,8 +72,8 @@
                         M5Goals_first_team="{Binding MatchesA[5].Goals_first_team}"
                         M5Goals_second_team="{Binding MatchesA[5].Goals_second_team}"
                         M5Short_first="{Binding MatchesA[5].Short_first}"
-                        M5Short_second="{Binding MatchesA[5].Short_second}"                                         
-                                      />
+                        M5Short_second="{Binding MatchesA[5].Short_second}"/>
+
             </TabItem>
             <TabItem x:Name="GroupB" Header="Grupa B" Style="{DynamicResource tabItemStyle}">
                 <ucs:GroupUserControl x:Name="GroupBUC" Grid.Column="2" Grid.Row="0"
