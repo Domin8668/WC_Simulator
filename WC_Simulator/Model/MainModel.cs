@@ -603,10 +603,18 @@ namespace WC_Simulator.Model
                 singleKnockoutsMatches.Add(CurrentTournamentMatches[i]);
             }
             KnockoutsMatches.Add(singleKnockoutsMatches);
-            singleKnockoutsMatches = new ObservableCollection<Single_match>();
         }
 
         #endregion
+
+        #region Knockouts
+
+
+
+
+        #endregion
+
+
 
         #endregion
     }

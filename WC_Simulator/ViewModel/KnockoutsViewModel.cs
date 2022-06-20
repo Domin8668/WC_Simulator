@@ -85,22 +85,59 @@ namespace WC_Simulator.ViewModel
 
             Matches16 = new ObservableCollection<Single_match>();
 
-            for (int i = 0; i < groups.Length - 1; i++)
+            for (int i = 0; i < 4; i++)
             {
-                Team Ph1 = new Team(0, "1" + groups[i], "1" + groups[i], "1" + groups[i], 1, 1);
-                Team Ph2 = new Team(0, "2" + groups[i + 1], "2" + groups[i + 1], "2" + groups[i + 1], 1, 1);
-                Matches16.Add(new Single_match(1, Ph1, Ph2, 100, 1, 1));
+                Team Ph1 = new Team(0, "1" + groups[i*2], "1" + groups[i*2], "1" + groups[i*2], 1, 1);
+                Team Ph2 = new Team(0, "2" + groups[i*2 + 1], "2" + groups[i*2 + 1], "2" + groups[i*2+1], 1, 1);
+                Matches16.Add(new Single_match(1, Ph1, Ph2, 100, 0, 0));
             }
 
-            for (int i = 0; i < groups.Length - 1; i++)
+            for (int i = 0; i < 4; i++)
             {
-                Team Ph1 = new Team(0, "1" + groups[i + 1], "1" + groups[i + 1], "1" + groups[i + 1], 1, 1);
-                Team Ph2 = new Team(0, "2" + groups[i], "2" + groups[i], "2" + groups[i], 1, 1);
-                Matches16.Add(new Single_match(1, Ph1, Ph2, 100, 1, 1));
+                Team Ph1 = new Team(0, "1" + groups[i * 2 + 1], "1" + groups[i * 2 + 1], "1" + groups[i * 2 + 1], 1, 1);
+                Team Ph2 = new Team(0, "2" + groups[i * 2], "2" + groups[i * 2], "2" + groups[i * 2], 1, 1);
+                Matches16.Add(new Single_match(1, Ph1, Ph2, 100, 0, 0));
             }
-
-
         }
+
+        //zeby zrobic z matchcodes trzeba dodac kolejna tabele
+        //public void CheckTeamsToRoundOf16()
+        //{
+        //    var groups = new string[8] { "A", "B", "C", "D", "E", "F", "G", "H" };
+        //    var teamIdFromGroupWinnersAndRunnersUp = new List<List<uint?>>();
+
+        //    for (int i = 0; i < groups.Length; i++)
+        //    {
+        //        teamIdFromGroupWinnersAndRunnersUp.Add(RepositoryGroups.LoadTeamsInGroup((uint)i + 1, (uint)Model.CurrentTournament.Id_tournament));
+        //    }
+        //    int check;
+        //    //pierwsze 4 ćwierćfinały
+        //    for (int i = 0; i < groups.Length - 1; i++)
+        //    {
+        //        check = 0;
+        //        Team Ph1 = new Team(0, "1" + groups[i], "1" + groups[i], "1" + groups[i], 1, 1);
+        //        if (teamIdFromGroupWinnersAndRunnersUp[i][0] != null)
+        //        { Ph1 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[i][0]]; check++; }
+        //        Team Ph2 = new Team(0, "1" + groups[i + 1], "1" + groups[i + 1], "1" + groups[i + 1], 1, 1);
+        //        if (teamIdFromGroupWinnersAndRunnersUp[i + 1][1] != null)
+        //        { Ph2 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[i + 1][1]]; check++; }
+        //        if(check == 2)
+        //            RepositoryMatches.UpdateMatch(new Single_match((uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 0, null, null), 48 + (uint)i);
+        //    }
+        //    //drugie 4 ćwierćfinały
+        //    for (int i = 0; i < groups.Length - 1; i++)
+        //    {
+        //        check=0;
+        //        Team Ph1 = new Team(0, "1" + groups[i + 1], "1" + groups[i + 1], "1" + groups[i + 1], 1, 1);
+        //        if (teamIdFromGroupWinnersAndRunnersUp[i + 1][0] != null)
+        //        { Ph1 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[i + 1][0]]; check++; }
+        //        Team Ph2 = new Team(0, "2" + groups[i], "2" + groups[i], "2" + groups[i], 1, 1);
+        //        if (teamIdFromGroupWinnersAndRunnersUp[i][1] != null)
+        //        { Ph2 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[i][1]]; check++; }
+        //        if(check == 2)
+        //            RepositoryMatches.UpdateMatch(new Single_match((uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 0, null, null), 56 + (uint)i);
+        //    }
+        //}
 
         #endregion
 
