@@ -43,7 +43,7 @@ namespace WC_Simulator.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("root")]
+        [global::System.Configuration.DefaultSettingValueAttribute("test_user")]
         public string userID {
             get {
                 return ((string)(this["userID"]));
