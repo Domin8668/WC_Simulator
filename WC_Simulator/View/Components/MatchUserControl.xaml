@@ -97,7 +97,7 @@
                                 RelativeSource={
                                 RelativeSource Mode=FindAncestor,
                                 AncestorType={x:Type UserControl}}}"
-                  SelectedItem="{Binding Path=Team1Result, Mode=TwoWay,
+                  SelectedIndex="{Binding Path=Team1Result, Mode=TwoWay,
                                  UpdateSourceTrigger=PropertyChanged,
                                  RelativeSource={
                                  RelativeSource Mode=FindAncestor,
@@ -120,7 +120,7 @@
                                 RelativeSource={
                                 RelativeSource Mode=FindAncestor,
                                 AncestorType={x:Type UserControl}}}"
-                  SelectedItem="{Binding Path=Team2Result, Mode=TwoWay,
+                  SelectedIndex="{Binding Path=Team2Result, Mode=TwoWay,
                                  UpdateSourceTrigger=PropertyChanged,
                                  RelativeSource={
                                  RelativeSource Mode=FindAncestor,
