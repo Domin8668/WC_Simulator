@@ -77,7 +77,7 @@ namespace WC_Simulator.DAL.Repositories
             bool state = false;
             using (var connection = DBConnection.Instance.Connection)
             {
-                MySqlCommand command = new MySqlCommand("UPDATE Single_group SET id_first_pl_team=@Id_first_pl_team, id_second_pl_team=@Id_second_pl_team WHERE id_group=@Id_groups", connection);
+                MySqlCommand command = new MySqlCommand("UPDATE Single_group SET id_first_pl_team=@Id_first_pl_team, id_second_pl_team=@Id_second_pl_team WHERE id_group=@Id_group", connection);
                 connection.Open();
 
                 if (group.Id_first_pl_team == null)

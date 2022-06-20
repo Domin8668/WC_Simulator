@@ -17,7 +17,7 @@ namespace WC_Simulator.ViewModel
         private ObservableCollection<Single_match> _matchesQ;
         private ObservableCollection<Single_match> _matchesS;
         private ObservableCollection<Single_match> _matchesF;
-        private bool _enabled18 = true;
+        private bool _enabled18;
 
 
         #endregion
@@ -38,7 +38,7 @@ namespace WC_Simulator.ViewModel
                 PreparePlaceHolders();
             }
 
-            Enabled18 = true;
+            Enabled18 = IfAllMatchesPossible();
         }
 
         #endregion
@@ -86,10 +86,7 @@ namespace WC_Simulator.ViewModel
             }
         }
 
-
-
-
-        private bool Enabled18
+        public bool Enabled18
         {
             get { return _enabled18; }
             set
@@ -124,8 +121,6 @@ namespace WC_Simulator.ViewModel
                 Team Ph2 = new Team(0, "2" + groups[i * 2], "2" + groups[i * 2], "2" + groups[i * 2], 1, 1);
                 Matches16.Add(new Single_match(1, Ph1, Ph2, 100, 0, 0));
             }
-            Enabled18 = true;
-
         }
 
         public bool IfAllMatchesPossible()
@@ -167,7 +162,6 @@ namespace WC_Simulator.ViewModel
                 Team Ph2 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[i * 2][0]];
                 Matches16.Add(new Single_match(1, Ph1, Ph2, 100, 0, 0));
             }
-            Enabled18 = true;
         }
 
         #endregion
@@ -175,23 +169,23 @@ namespace WC_Simulator.ViewModel
 
         #region Commands
 
-        private ICommand _matchCommand = null;
+        //private ICommand _matchCommand = null;
 
-        public ICommand MatchCommand
-        {
-            get
-            {
-                if (_matchCommand == null)
-                {
-                    _matchCommand = new RelayCommand(arg =>
-                    {
-                        NavigationStore.CurrentViewModel = new MatchViewModel(Model, NavigationStore);
-                    },
-                    arg => true);
-                }
-                return _matchCommand;
-            }
-        }
+        //public ICommand MatchCommand
+        //{
+        //    get
+        //    {
+        //        if (_matchCommand == null)
+        //        {
+        //            _matchCommand = new RelayCommand(arg =>
+        //            {
+        //                NavigationStore.CurrentViewModel = new MatchViewModel(Model, NavigationStore);
+        //            },
+        //            arg => true);
+        //        }
+        //        return _matchCommand;
+        //    }
+        //}
 
         #endregion
     }

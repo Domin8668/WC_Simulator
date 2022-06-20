@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using WC_Simulator.DAL.Entities;
+using WC_Simulator.DAL.Repositories;
 using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
 using WC_Simulator.ViewModel.BaseClasses;
@@ -40,7 +41,17 @@ namespace WC_Simulator.ViewModel
         //private ObservableCollection<Single_match> _matchesF;
         //private ObservableCollection<Single_match> _matchesG;
         //private ObservableCollection<Single_match> _matchesH;
-
+        public enum Alphabet
+        {
+            A,
+            B,
+            C,
+            D,
+            E,
+            F,
+            G,
+            H
+        }
 
 
         #endregion
@@ -604,6 +615,9 @@ namespace WC_Simulator.ViewModel
                         {
                             Model.GroupsTeams[Model.CurrentGroup] = PrepareStanding(Model.GroupsMatches[Model.CurrentGroup], Model.CurrentGroup);
                             CalculateStats();
+                            //Model.CurrentTournamentGroups[Model.CurrentGroup].Id_first_pl_team = (uint?)Model.GroupsTeams[Model.CurrentGroup][0].Id;
+                            //Model.CurrentTournamentGroups[Model.CurrentGroup].Id_second_pl_team = (uint?)Model.GroupsTeams[Model.CurrentGroup][1].Id;
+                            //RepositoryGroups.UpdateGroup(Model.CurrentTournamentGroups[Model.CurrentGroup]);
                         }
                     },
                     arg => true);

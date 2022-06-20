@@ -21,6 +21,7 @@ namespace WC_Simulator.Model
         private int _points;
         private int _gf;
         private int _ga;
+        private int _id;
 
         #endregion
 
@@ -29,6 +30,7 @@ namespace WC_Simulator.Model
 
         public TeamInGroup(Team team, int matches, int gf, int ga, int points)
         {
+            _id = team.Id_team;
             _points = 0;
             _image = $"../../Resources/Flags/{team.Name.Split(' ')[0]}.png";
             _country = team.Name;
@@ -42,6 +44,12 @@ namespace WC_Simulator.Model
 
 
         #region Properties
+
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
 
         public string Position
         {
