@@ -15,9 +15,12 @@ namespace WC_Simulator.Model
         private string _image;
         private string _country;
         private int _matches;
+        private int _wins;
+        private int _losses;
+        private int _draws;
+        private int _points;
         private int _gf;
         private int _ga;
-        private int _points;
 
         #endregion
 
@@ -62,6 +65,24 @@ namespace WC_Simulator.Model
         {
             get { return _matches; }
             set { _matches = value; }
+        }
+
+        public int Draws
+        {
+            get { return _draws; }
+            set { _draws = value; }
+        }
+
+        public int Wins
+        {
+            get { return _wins; }
+            set { _wins = value; }
+        }
+
+        public int Losses
+        {
+            get { return _losses; }
+            set { _losses = value; }
         }
 
         public int GF

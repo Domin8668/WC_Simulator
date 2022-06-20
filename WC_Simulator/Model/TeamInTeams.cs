@@ -55,6 +55,9 @@ namespace WC_Simulator.Model
 
             _matches = teamInGroup.Matches;
             _points = teamInGroup.Points;
+            _wins = teamInGroup.Wins;
+            _draws = teamInGroup.Draws;
+            _losses = teamInGroup.Losses;
             _gf = teamInGroup.GF;
             _ga = teamInGroup.GA;
             _phase = phase;
