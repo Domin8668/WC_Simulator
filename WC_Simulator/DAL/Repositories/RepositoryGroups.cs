@@ -77,19 +77,20 @@ namespace WC_Simulator.DAL.Repositories
             bool state = false;
             using (var connection = DBConnection.Instance.Connection)
             {
-                MySqlCommand command = new MySqlCommand("UPDATE Single_group SET id_first_pl_team=@Id_first_pl_team, id_second_pl_team=@Id_second_pl_team, WHERE id_group=@idGroup", connection);
+                MySqlCommand command = new MySqlCommand("UPDATE Single_group SET id_first_pl_team=@Id_first_pl_team, id_second_pl_team=@Id_second_pl_team WHERE id_group=@IdGroup", connection);
                 connection.Open();
+
                 if (group.Id_first_pl_team == null)
                     command.Parameters.AddWithValue("@Id_first_pl_team", DBNull.Value);
                 else
                     command.Parameters.Add("@Id_first_pl_team", MySqlDbType.UInt64).Value = group.Id_first_pl_team;
 
-                if (group.Id_first_pl_team == null)
+                if (group.Id_second_pl_team == null)
                     command.Parameters.AddWithValue("@Id_second_pl_team", DBNull.Value);
                 else
                     command.Parameters.Add("@Id_second_pl_team", MySqlDbType.UInt64).Value = group.Id_second_pl_team;
 
-                command.Parameters.Add("@idGroup", MySqlDbType.UInt64).Value = group.Id_first_pl_team;
+                command.Parameters.Add("@IdGroup", MySqlDbType.UInt64).Value = group.Id_group;
                 var n = command.ExecuteNonQuery();
                 if (n == 1) state = true;
             }
