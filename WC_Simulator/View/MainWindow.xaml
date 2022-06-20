@@ -10,7 +10,7 @@
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" Title="Symulator Mistrzostw Świata"
-        ResizeMode="NoResize" WindowState="Maximized">
+        ResizeMode="NoResize" WindowState="Maximized" Icon="../Resources/mainIcon.png">
 
     <Window.Resources>
         <Style TargetType="Button" x:Key="btn">
