@@ -138,7 +138,7 @@
                                           Team2Result="{Binding Matches16[7].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
                                           Numbers="{Binding Model.Numbers, Mode=OneWay}"
-                                          ResultsEnabled="{Binding Enabled18, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                          ResultsEnabled="{Binding Enabled18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                 </Grid>
             </TabItem>
