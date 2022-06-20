@@ -29,7 +29,7 @@ namespace WC_Simulator.DAL.Repositories
             List<uint?> IDteams = new List<uint?>();
             using (var connection = DBConnection.Instance.Connection)
             {
-                MySqlCommand command = new MySqlCommand(TEAMS_IN_GROUP + $"{IDgroup}" + "and id_tournament=" + $"{IDtournament}", connection);
+                MySqlCommand command = new MySqlCommand(TEAMS_IN_GROUP + $"{IDgroup}" + " and id_tournament=" + $"{IDtournament}", connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())

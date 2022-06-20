@@ -67,7 +67,7 @@
                                           Team1Result="{Binding Matches16[0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2Result="{Binding Matches16[0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
-                                          ResultsEnabled="{Binding Enabled18}"
+                                          ResultsEnabled="{Binding Enabled18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Numbers="{Binding Model.Numbers, Mode=OneWay}"/>
                     <ucs:MatchUserControl x:Name="match50" Grid.Row="3" Grid.Column="0" Margin="10" FontSize="45"
                                           Team1FlagPath="{Binding Matches16[1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -77,7 +77,8 @@
                                           Team1Result="{Binding Matches16[1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2Result="{Binding Matches16[1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
-                                          ResultsEnabled="{Binding Enabled18}"/>
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"
+                                          ResultsEnabled="{Binding Enabled18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <ucs:MatchUserControl x:Name="match52" Grid.Row="2" Grid.Column="1" Margin="10" FontSize="45" 
                                           Team1FlagPath="{Binding Matches16[2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2FlagPath="{Binding Matches16[2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -86,8 +87,9 @@
                                           Team1Result="{Binding Matches16[2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2Result="{Binding Matches16[2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
-                                          ResultsEnabled="{Binding Enabled18}"/>
-                        <ucs:MatchUserControl x:Name="match51" Grid.Row="3" Grid.Column="1" Margin="10" FontSize="45"
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"
+                                          ResultsEnabled="{Binding Enabled18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <ucs:MatchUserControl x:Name="match51" Grid.Row="3" Grid.Column="1" Margin="10" FontSize="45"
                                           Team1FlagPath="{Binding Matches16[3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2FlagPath="{Binding Matches16[3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team1ShortName="{Binding Matches16[3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -95,7 +97,8 @@
                                           Team1Result="{Binding Matches16[3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2Result="{Binding Matches16[3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
-                                          ResultsEnabled="{Binding Enabled18}"/>
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"
+                                          ResultsEnabled="{Binding Enabled18, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <ucs:MatchUserControl x:Name="match53" Grid.Row="2" Grid.Column="2" Margin="10" FontSize="45"
                                           Team1FlagPath="{Binding Matches16[4].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2FlagPath="{Binding Matches16[4].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -104,7 +107,8 @@
                                           Team1Result="{Binding Matches16[4].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2Result="{Binding Matches16[4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
-                                          ResultsEnabled="{Binding Enabled18}"/>
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"                                   
+                                          ResultsEnabled="{Binding Enabled18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <ucs:MatchUserControl x:Name="match54" Grid.Row="3" Grid.Column="2" Margin="10" FontSize="45"
                                           Team1FlagPath="{Binding Matches16[5].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2FlagPath="{Binding Matches16[5].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -113,7 +117,8 @@
                                           Team1Result="{Binding Matches16[5].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2Result="{Binding Matches16[5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
-                                          ResultsEnabled="{Binding Enabled18}"/>
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"
+                                          ResultsEnabled="{Binding Enabled18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <ucs:MatchUserControl x:Name="match55" Grid.Row="2" Grid.Column="3" Margin="10" FontSize="45"
                                           Team1FlagPath="{Binding Matches16[6].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2FlagPath="{Binding Matches16[6].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -122,7 +127,8 @@
                                           Team1Result="{Binding Matches16[6].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2Result="{Binding Matches16[6].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
-                                          ResultsEnabled="{Binding Enabled18}"/>
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"
+                                          ResultsEnabled="{Binding Enabled18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <ucs:MatchUserControl x:Name="match56" Grid.Row="3" Grid.Column="3" Margin="10" FontSize="45"
                                           Team1FlagPath="{Binding Matches16[7].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2FlagPath="{Binding Matches16[7].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -131,7 +137,8 @@
                                           Team1Result="{Binding Matches16[7].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2Result="{Binding Matches16[7].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
-                                          ResultsEnabled="{Binding Enabled18}"/>
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"
+                                          ResultsEnabled="{Binding Enabled18, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                 </Grid>
             </TabItem>
