@@ -575,12 +575,12 @@ namespace WC_Simulator.ViewModel
 
         public void UpdateGroupInDB()
         {
-            RepositoryMatches.UpdateMatch(Model.GroupsMatches[0][0]);
-            RepositoryMatches.UpdateMatch(Model.GroupsMatches[0][1]);
-            RepositoryMatches.UpdateMatch(Model.GroupsMatches[0][2]);
-            RepositoryMatches.UpdateMatch(Model.GroupsMatches[0][3]);
-            RepositoryMatches.UpdateMatch(Model.GroupsMatches[0][4]);
-            RepositoryMatches.UpdateMatch(Model.GroupsMatches[0][5]);
+            RepositoryMatches.UpdateMatch(Model.GroupsMatches[Model.CurrentGroup][0]);
+            RepositoryMatches.UpdateMatch(Model.GroupsMatches[Model.CurrentGroup][1]);
+            RepositoryMatches.UpdateMatch(Model.GroupsMatches[Model.CurrentGroup][2]);
+            RepositoryMatches.UpdateMatch(Model.GroupsMatches[Model.CurrentGroup][3]);
+            RepositoryMatches.UpdateMatch(Model.GroupsMatches[Model.CurrentGroup][4]);
+            RepositoryMatches.UpdateMatch(Model.GroupsMatches[Model.CurrentGroup][5]);
         }
 
 
