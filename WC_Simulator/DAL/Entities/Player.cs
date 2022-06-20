@@ -29,7 +29,7 @@ namespace WC_Simulator.DAL.Entities
             Id_player = uint.Parse(reader["id_player"].ToString());
             Id_team = uint.Parse(reader["id_team"].ToString());
             Name = reader["name"].ToString();
-            Position = (PositionTypes)Enum.Parse(typeof(PositionTypes),reader["position"].ToString());
+            Position = (PositionTypes)Enum.Parse(typeof(PositionTypes), reader["position"].ToString());
         }
 
         //konstruktor tworzacy obiekt nie dodany jeszcze do bazy z id pustym

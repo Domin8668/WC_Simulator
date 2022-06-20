@@ -108,6 +108,8 @@ namespace WC_Simulator.DAL.Entities
         public Single_match(uint id_tournament, Team team1, Team team2 , uint match_code, uint? goals_first_team, uint? goals_second_team)
         {
             Id_match = null;
+            Id_first_team = (uint)team1.Id_team;
+            Id_second_team = (uint)team2.Id_team;
             Id_tournament = id_tournament;
             Short_first = team1.Short_name.Trim();
             Short_second = team2.Short_name.Trim();

@@ -604,7 +604,6 @@ namespace WC_Simulator.ViewModel
                         bool check = true;
                         foreach (var x in Model.GroupsMatches[Model.CurrentGroup])
                         {
-                            Console.WriteLine(x);
                             if (x.Goals_first_team == null || x.Goals_second_team == null)
                             {
                                 check = false;
@@ -615,9 +614,9 @@ namespace WC_Simulator.ViewModel
                         {
                             Model.GroupsTeams[Model.CurrentGroup] = PrepareStanding(Model.GroupsMatches[Model.CurrentGroup], Model.CurrentGroup);
                             CalculateStats();
-                            //Model.CurrentTournamentGroups[Model.CurrentGroup].Id_first_pl_team = (uint?)Model.GroupsTeams[Model.CurrentGroup][0].Id;
-                            //Model.CurrentTournamentGroups[Model.CurrentGroup].Id_second_pl_team = (uint?)Model.GroupsTeams[Model.CurrentGroup][1].Id;
-                            //RepositoryGroups.UpdateGroup(Model.CurrentTournamentGroups[Model.CurrentGroup]);
+                            Model.CurrentTournamentGroups[Model.CurrentGroup].Id_first_pl_team = (uint?)Model.GroupsTeams[Model.CurrentGroup][0].Id;
+                            Model.CurrentTournamentGroups[Model.CurrentGroup].Id_second_pl_team = (uint?)Model.GroupsTeams[Model.CurrentGroup][1].Id;
+                            RepositoryGroups.UpdateGroup(Model.CurrentTournamentGroups[Model.CurrentGroup]);
                         }
                     },
                     arg => true);
