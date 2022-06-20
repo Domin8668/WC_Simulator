@@ -33,10 +33,13 @@ namespace WC_Simulator.ViewModel
             Model = model;
             NavigationStore = navigationStore;
 
+
+
             EnabledR16 = false;
             EnabledQ = false;
             EnabledS = false;
             EnabledF = false;
+
             //sprawdzanie gdzie mozna a gdzie nie mozna comboboxow uzyc
             if (IfAllMatchesR16Possible())
             {
@@ -273,7 +276,8 @@ namespace WC_Simulator.ViewModel
         }
         public void PrepareMatchesQ()
         {
-            MatchesQ = new ObservableCollection<Single_match>();
+
+            MatchesQ = new ObservableCollection<Single_match>() { };
             MatchesQ.Add(new Single_match(Model.KnockoutsMatches[1][0].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamWins(Matches16[0]), 
                 WhichTeamWins(Matches16[1]), 100, Model.KnockoutsMatches[1][0].Goals_first_team, Model.KnockoutsMatches[1][0].Goals_second_team));
 
@@ -344,7 +348,7 @@ namespace WC_Simulator.ViewModel
                     break;
             }
         }
-        public void UpdateRoundof16()
+        private void UpdateRoundof16()
         {
             Model.KnockoutsMatches[0][0] = Matches16[0];
             RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][0]);
@@ -387,18 +391,18 @@ namespace WC_Simulator.ViewModel
         public void UpdateSemifinals()
         {
             Model.KnockoutsMatches[2][0] = MatchesS[0];
-            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[1][0]);
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[2][0]);
 
             Model.KnockoutsMatches[2][1] = MatchesS[1];
-            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[1][1]);
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[2][1]);
         }
         public void UpdateFinals()
         {
             Model.KnockoutsMatches[3][0] = MatchesF[0];
-            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[1][0]);
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[3][0]);
 
             Model.KnockoutsMatches[3][1] = MatchesF[1];
-            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[1][1]);
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[3][1]);
         }
 
         #endregion

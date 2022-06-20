@@ -164,7 +164,6 @@ namespace WC_Simulator.DAL.Entities
             Goals_first_team = match.Goals_first_team;
             Goals_second_team = match.Goals_second_team;
         }
-
         #endregion
 
 
