@@ -544,6 +544,37 @@ namespace WC_Simulator.ViewModel
 
 
         }
+
+        public void CalculateStats()
+        {
+            foreach (var team in Model.GroupsTeams[Model.CurrentGroup])
+            {
+                foreach (var match in Model.GroupsMatches[Model.CurrentGroup])
+                {
+                    if (match.Name_first == team.Country)
+                    {
+                        var points = Points_for_match(match, 0);
+                        if (points == 3)
+                            team.Wins += 1;
+                        else if (points == 1)
+                            team.Draws += 1;
+                        else
+                            team.Losses += 1;
+                    }
+                    else if (match.Name_second == team.Country)
+                    {
+                        var points = Points_for_match(match, 1);
+                        if (points == 3)
+                            team.Wins += 1;
+                        else if (points == 1)
+                            team.Draws += 1;
+                        else
+                            team.Losses += 1;
+                    }
+                }
+            }
+        }
+
         #endregion
 
 
@@ -572,6 +603,7 @@ namespace WC_Simulator.ViewModel
                         if (check)
                         {
                             Model.GroupsTeams[Model.CurrentGroup] = PrepareStanding(Model.GroupsMatches[Model.CurrentGroup], Model.CurrentGroup);
+                            CalculateStats();
                         }
                     },
                     arg => true);
@@ -580,23 +612,23 @@ namespace WC_Simulator.ViewModel
             }
         }
 
-        private ICommand _groupSelectionChanged = null;
+        //private ICommand _groupSelectionChanged = null;
 
-        public ICommand GroupSelectionChanged
-        {
-            get
-            {
-                if (_groupSelectionChanged == null)
-                {
-                    _groupSelectionChanged = new RelayCommand(arg =>
-                    {
-                        Console.WriteLine(Model.CurrentGroup);
-                    },
-                    arg => true);
-                }
-                return _groupSelectionChanged;
-            }
-        }
+        //public ICommand GroupSelectionChanged
+        //{
+        //    get
+        //    {
+        //        if (_groupSelectionChanged == null)
+        //        {
+        //            _groupSelectionChanged = new RelayCommand(arg =>
+        //            {
+        //                Console.WriteLine(Model.CurrentGroup);
+        //            },
+        //            arg => true);
+        //        }
+        //        return _groupSelectionChanged;
+        //    }
+        //}
 
         #endregion
     }
