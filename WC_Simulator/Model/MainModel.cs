@@ -32,7 +32,6 @@ namespace WC_Simulator.Model
         private ObservableCollection<ObservableCollection<Single_match>> _knockoutsMatches;
 
         private int _currentGroup;
-        private int _currentKonckout;
 
 
         #endregion
@@ -143,11 +142,6 @@ namespace WC_Simulator.Model
         {
             get { return _currentGroup; }
             set { _currentGroup = value; }
-        }
-        public int CurrentKnockout
-        {
-            get { return _currentKonckout; }
-            set { _currentKonckout = value; }
         }
 
         public ObservableCollection<ObservableCollection<Single_match>> GroupsMatches

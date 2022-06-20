@@ -126,6 +126,28 @@ namespace WC_Simulator.DAL.Entities
             Goals_second_team = goals_second_team;
         }
 
+        public Single_match(uint? id_match, uint id_tournament, Team team1, Team team2, uint match_code, uint? goals_first_team, uint? goals_second_team)
+        {
+            Id_match = id_match;
+            Id_first_team = (uint)team1.Id_team;
+            Id_second_team = (uint)team2.Id_team;
+            Id_tournament = id_tournament;
+            Short_first = team1.Short_name.Trim();
+            Short_second = team2.Short_name.Trim();
+            Name_first = team1.Name.Trim();
+            Name_second = team2.Name.Trim();
+            Flag_first = $"../../Resources/Flags/{Name_first.Split(' ')[0]}.png";
+            Flag_second = $"../../Resources/Flags/{Name_second.Split(' ')[0]}.png";
+            if (team1.Name[0] == '1' || team1.Name[0] == '2')
+                Flag_first = "../../Resources/Flags/placeholder.png";
+            if (team2.Name[0] == '1' || team2.Name[0] == '2')
+                Flag_second = "../../Resources/Flags/placeholder.png";
+            Match_code = match_code;
+            Goals_first_team = goals_first_team;
+            Goals_second_team = goals_second_team;
+        }
+
+
         public Single_match(Single_match match)
         {
             Id_match = match.Id_match;

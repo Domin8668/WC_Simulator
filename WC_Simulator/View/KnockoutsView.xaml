@@ -43,7 +43,7 @@
     </UserControl.Resources>
 
     <Grid Background="Transparent">
-        <TabControl Background="Transparent" SelectedIndex="{Binding Model.CurrentKnockout, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+        <TabControl Background="Transparent">
             <TabItem x:Name="finals1_8" Header="1/8 Finału" Style="{DynamicResource tabItemStyle}">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -69,14 +69,14 @@
                                           Team1Result="{Binding Matches16[0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Team2Result="{Binding Matches16[0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
-                                          ResultsEnabled="{Binding Enabled18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          ResultsEnabled="{Binding EnabledR16, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           Numbers="{Binding Model.Numbers, Mode=OneWay}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Team1ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                             <i:EventTrigger EventName="Team2ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </ucs:MatchUserControl>
@@ -89,13 +89,13 @@
                                           Team2Result="{Binding Matches16[1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
                                           Numbers="{Binding Model.Numbers, Mode=OneWay}"
-                                          ResultsEnabled="{Binding Enabled18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                          ResultsEnabled="{Binding EnabledR16, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Team1ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                             <i:EventTrigger EventName="Team2ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </ucs:MatchUserControl>
@@ -108,13 +108,13 @@
                                           Team2Result="{Binding Matches16[2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
                                           Numbers="{Binding Model.Numbers, Mode=OneWay}"
-                                          ResultsEnabled="{Binding Enabled18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                          ResultsEnabled="{Binding EnabledR16, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Team1ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                             <i:EventTrigger EventName="Team2ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </ucs:MatchUserControl>
@@ -127,13 +127,13 @@
                                           Team2Result="{Binding Matches16[3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
                                           Numbers="{Binding Model.Numbers, Mode=OneWay}"
-                                          ResultsEnabled="{Binding Enabled18, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                                          ResultsEnabled="{Binding EnabledR16, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Team1ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                             <i:EventTrigger EventName="Team2ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </ucs:MatchUserControl>
@@ -146,13 +146,13 @@
                                           Team2Result="{Binding Matches16[4].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
                                           Numbers="{Binding Model.Numbers, Mode=OneWay}"                                   
-                                          ResultsEnabled="{Binding Enabled18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                          ResultsEnabled="{Binding EnabledR16, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Team1ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                             <i:EventTrigger EventName="Team2ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </ucs:MatchUserControl>
@@ -165,13 +165,13 @@
                                           Team2Result="{Binding Matches16[5].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
                                           Numbers="{Binding Model.Numbers, Mode=OneWay}"
-                                          ResultsEnabled="{Binding Enabled18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                          ResultsEnabled="{Binding EnabledR16, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Team1ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                             <i:EventTrigger EventName="Team2ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </ucs:MatchUserControl>
@@ -184,13 +184,13 @@
                                           Team2Result="{Binding Matches16[6].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
                                           Numbers="{Binding Model.Numbers, Mode=OneWay}"
-                                          ResultsEnabled="{Binding Enabled18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                          ResultsEnabled="{Binding EnabledR16, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Team1ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                             <i:EventTrigger EventName="Team2ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </ucs:MatchUserControl>
@@ -203,13 +203,13 @@
                                           Team2Result="{Binding Matches16[7].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                           MatchCommand="{Binding MatchCommand}"
                                           Numbers="{Binding Model.Numbers, Mode=OneWay}"
-                                          ResultsEnabled="{Binding Enabled18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                          ResultsEnabled="{Binding EnabledR16, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Team1ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                             <i:EventTrigger EventName="Team2ResultChanged">
-                                <i:InvokeCommandAction Command="{Binding CheckRoundOf16}"/>
+                                <i:InvokeCommandAction Command="{Binding CheckRound}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </ucs:MatchUserControl>
@@ -237,12 +237,82 @@
 
                     <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Text="Mecze o wejście do półfinałów" Style="{StaticResource labels}" Margin="134,12"/>
                     <ucs:MatchUserControl x:Name="match58" Grid.Row="2" Grid.Column="2" Margin="10"
-                                          ResultsEnabled="{Binding Enabled14}"/>
-                    <ucs:MatchUserControl x:Name="match57" Grid.Row="3" Grid.Column="2" Margin="10"/>
-                    <ucs:MatchUserControl x:Name="match60" Grid.Row="2" Grid.Column="3" Margin="10"/>
-                    <ucs:MatchUserControl x:Name="match59" Grid.Row="3" Grid.Column="3" Margin="10"/>
+                                          Team1FlagPath="{Binding MatchesQ[0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2FlagPath="{Binding MatchesQ[0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1ShortName="{Binding MatchesQ[0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2ShortName="{Binding MatchesQ[0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1Result="{Binding MatchesQ[0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2Result="{Binding MatchesQ[0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          MatchCommand="{Binding MatchCommand}"
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"
+                                          ResultsEnabled="{Binding EnabledQ, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Team1ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckQ}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Team2ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckQ}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ucs:MatchUserControl>
+                    <ucs:MatchUserControl x:Name="match57" Grid.Row="3" Grid.Column="2" Margin="10" 
+                                          Team1FlagPath="{Binding MatchesQ[1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2FlagPath="{Binding MatchesQ[1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1ShortName="{Binding MatchesQ[1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2ShortName="{Binding MatchesQ[1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1Result="{Binding MatchesQ[1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2Result="{Binding MatchesQ[1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          MatchCommand="{Binding MatchCommand}"
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"
+                                          ResultsEnabled="{Binding EnabledQ, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Team1ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckQ}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Team2ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckQ}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ucs:MatchUserControl>
+                    <ucs:MatchUserControl x:Name="match60" Grid.Row="2" Grid.Column="3" Margin="10"
+                                          Team1FlagPath="{Binding MatchesQ[2].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2FlagPath="{Binding MatchesQ[2].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1ShortName="{Binding MatchesQ[2].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2ShortName="{Binding MatchesQ[2].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1Result="{Binding MatchesQ[2].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2Result="{Binding MatchesQ[2].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          MatchCommand="{Binding MatchCommand}"
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"
+                                          ResultsEnabled="{Binding EnabledQ, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Team1ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckQ}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Team2ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckQ}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ucs:MatchUserControl>
+                    <ucs:MatchUserControl x:Name="match59" Grid.Row="3" Grid.Column="3" Margin="10"
+                                          Team1FlagPath="{Binding MatchesQ[3].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2FlagPath="{Binding MatchesQ[3].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1ShortName="{Binding MatchesQ[3].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2ShortName="{Binding MatchesQ[3].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1Result="{Binding MatchesQ[3].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2Result="{Binding MatchesQ[3].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          MatchCommand="{Binding MatchCommand}"
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"
+                                          ResultsEnabled="{Binding EnabledQ, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Team1ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckQ}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Team2ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckQ}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ucs:MatchUserControl>
                 </Grid>
-
             </TabItem>
 
 
@@ -263,8 +333,43 @@
 
                     <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Mecze o wejście do finału" Style="{StaticResource labels}"/>
                     <ucs:MatchUserControl x:Name="match61" Grid.Row="2" Grid.Column="1" Margin="10"
-                                          ResultsEnabled="{Binding Enabled12}"/>
-                    <ucs:MatchUserControl x:Name="match62" Grid.Row="2" Grid.Column="2" Margin="10"/>
+                                          Team1FlagPath="{Binding MatchesS[0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2FlagPath="{Binding MatchesS[0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1ShortName="{Binding MatchesS[0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2ShortName="{Binding MatchesS[0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1Result="{Binding MatchesS[0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2Result="{Binding MatchesS[0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          MatchCommand="{Binding MatchCommand}"
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"
+                                          ResultsEnabled="{Binding EnabledS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Team1ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckS}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Team2ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckS}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ucs:MatchUserControl>
+                    <ucs:MatchUserControl x:Name="match62" Grid.Row="2" Grid.Column="2" Margin="10" 
+                                          Team1FlagPath="{Binding MatchesS[1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2FlagPath="{Binding MatchesS[1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1ShortName="{Binding MatchesS[1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2ShortName="{Binding MatchesS[1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1Result="{Binding MatchesS[1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2Result="{Binding MatchesS[1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          MatchCommand="{Binding MatchCommand}"
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"
+                                          ResultsEnabled="{Binding EnabledS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Team1ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckS}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Team2ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckS}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ucs:MatchUserControl>
                 </Grid>
 
             </TabItem>
@@ -286,9 +391,44 @@
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="1" Grid.Column="1" Text="Mecz o 1. miejsce" Style="{StaticResource labels}"/>
                     <ucs:MatchUserControl x:Name="match64" Grid.Row="2" Grid.Column="1" Margin="10"
-                                          ResultsEnabled="{Binding Enabled1}"/>
+                                          Team1FlagPath="{Binding MatchesF[0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2FlagPath="{Binding MatchesF[0].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1ShortName="{Binding MatchesF[0].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2ShortName="{Binding MatchesF[0].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1Result="{Binding MatchesF[0].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2Result="{Binding MatchesF[0].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          MatchCommand="{Binding MatchCommand}"
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"
+                                          ResultsEnabled="{Binding EnabledF, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Team1ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckF}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Team2ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckF}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ucs:MatchUserControl>
                     <TextBlock Grid.Row="1" Grid.Column="2" Text="Mecz o 3. miejsce" Style="{StaticResource labels}"/>
-                    <ucs:MatchUserControl x:Name="match63" Grid.Row="2" Grid.Column="2" Margin="10"/>
+                    <ucs:MatchUserControl x:Name="match63" Grid.Row="2" Grid.Column="2" Margin="10"
+                                          Team1FlagPath="{Binding MatchesF[1].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2FlagPath="{Binding MatchesF[1].Flag_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1ShortName="{Binding MatchesF[1].Short_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2ShortName="{Binding MatchesF[1].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team1Result="{Binding MatchesF[1].Goals_first_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          Team2Result="{Binding MatchesF[1].Goals_second_team, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                          MatchCommand="{Binding MatchCommand}"
+                                          Numbers="{Binding Model.Numbers, Mode=OneWay}"
+                                          ResultsEnabled="{Binding EnabledF, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Team1ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckF}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Team2ResultChanged">
+                                <i:InvokeCommandAction Command="{Binding CheckF}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ucs:MatchUserControl>
                 </Grid>
 
             </TabItem>

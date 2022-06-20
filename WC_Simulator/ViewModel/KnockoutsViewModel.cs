@@ -17,7 +17,10 @@ namespace WC_Simulator.ViewModel
         private ObservableCollection<Single_match> _matchesQ;
         private ObservableCollection<Single_match> _matchesS;
         private ObservableCollection<Single_match> _matchesF;
-        private bool _enabled18;
+        private bool _enabledR16;
+        private bool _enabledQ;
+        private bool _enabledS;
+        private bool _enabledF;
 
 
         #endregion
@@ -29,16 +32,38 @@ namespace WC_Simulator.ViewModel
         {
             Model = model;
             NavigationStore = navigationStore;
-            if (IfAllMatchesPossible())
+
+            EnabledR16 = false;
+            EnabledQ = false;
+            EnabledS = false;
+            EnabledF = false;
+            //sprawdzanie gdzie mozna a gdzie nie mozna comboboxow uzyc
+            if (IfAllMatchesR16Possible())
             {
-                RealTeamsRoundOf16();  
+                RealTeamsRoundOf16();
+                EnabledR16 = true;
             }
             else
             {
                 PreparePlaceHolders();
             }
+            if (IfAllMatchesQPossible())
+            {
+                PrepareMatchesQ();
+                EnabledQ = true;
+                if (IfAllMatchesSPossible())
+                {
+                    PrepareMatchesS();
+                    EnabledS = true;
+                    if (IfAllMatchesFPossible())
+                    {
+                        PrepareMatchesF();
+                        EnabledF = true;
+                    }
+                }
+            }
 
-            Enabled18 = IfAllMatchesPossible();
+
         }
 
         #endregion
@@ -86,13 +111,40 @@ namespace WC_Simulator.ViewModel
             }
         }
 
-        public bool Enabled18
+        public bool EnabledR16
         {
-            get { return _enabled18; }
+            get { return _enabledR16; }
             set
             {
-                _enabled18 = value;
-                OnPropertyChanged(nameof(Enabled18));
+                _enabledR16 = value;
+                OnPropertyChanged(nameof(EnabledR16));
+            }
+        }
+        public bool EnabledS
+        {
+            get { return _enabledS; }
+            set
+            {
+                _enabledS = value;
+                OnPropertyChanged(nameof(EnabledS));
+            }
+        }
+        public bool EnabledQ
+        {
+            get { return _enabledQ; }
+            set
+            {
+                _enabledQ = value;
+                OnPropertyChanged(nameof(EnabledQ));
+            }
+        }
+        public bool EnabledF
+        {
+            get { return _enabledF; }
+            set
+            {
+                _enabledF = value;
+                OnPropertyChanged(nameof(EnabledF));
             }
         }
 
@@ -101,7 +153,61 @@ namespace WC_Simulator.ViewModel
 
         #region Methods
 
-        //zeby zrobic z matchcodes trzeba dodac kolejna tabele
+
+        public bool IfAllMatchesR16Possible()
+        {
+            var teamIdFromGroupWinnersAndRunnersUp = new List<List<uint?>>();
+            bool check = true;
+            for (int i = 0; i < 8; i++)
+            {
+                teamIdFromGroupWinnersAndRunnersUp.Add(RepositoryGroups.LoadTeamsInGroup((uint)i + 1, (uint)Model.CurrentTournament.Id_tournament));
+                if (teamIdFromGroupWinnersAndRunnersUp[i][0] == null || teamIdFromGroupWinnersAndRunnersUp[i][1] == null)
+                {
+                    check = false;
+                    break;
+                }
+            }
+            return check;
+        }
+        public bool IfAllMatchesQPossible()
+        {
+            bool check = true;
+            foreach (var x in Matches16)
+            {
+                if (x.Goals_first_team == null || x.Goals_second_team == null || x.Goals_second_team == x.Goals_first_team)
+                {
+                    check = false;
+                    break;
+                }
+            }
+            return check;
+        }
+        public bool IfAllMatchesSPossible()
+        {
+            bool check = true;
+            foreach (var x in MatchesQ)
+            {
+                if (x.Goals_first_team == null || x.Goals_second_team == null || x.Goals_second_team == x.Goals_first_team)
+                {
+                    check = false;
+                    break;
+                }
+            }
+            return check;
+        }
+        public bool IfAllMatchesFPossible()
+        {
+            bool check = true;
+            foreach (var x in MatchesS)
+            {
+                if (x.Goals_first_team == null || x.Goals_second_team == null || x.Goals_second_team == x.Goals_first_team)
+                {
+                    check = false;
+                    break;
+                }
+            }
+            return check;
+        }
         public void PreparePlaceHolders()
         {
             var groups = new string[8] { "A", "B", "C", "D", "E", "F", "G", "H" };
@@ -122,27 +228,9 @@ namespace WC_Simulator.ViewModel
                 Matches16.Add(new Single_match((uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, null, null));
             }
         }
-
-        public bool IfAllMatchesPossible()
-        {
-            var teamIdFromGroupWinnersAndRunnersUp = new List<List<uint?>>();
-            bool check = true;
-            for (int i = 0; i < 8; i++)
-            {
-                teamIdFromGroupWinnersAndRunnersUp.Add(RepositoryGroups.LoadTeamsInGroup((uint)i + 1, (uint)Model.CurrentTournament.Id_tournament));
-                if (teamIdFromGroupWinnersAndRunnersUp[i][0] == null || teamIdFromGroupWinnersAndRunnersUp[i][1] == null)
-                {
-                    check = false;
-                    break;
-                }
-            }
-            return check;
-        }
-
-
-        //zeby zrobic z matchcodes trzeba dodac kolejna tabele
         public void RealTeamsRoundOf16()
         {
+            //zeby zrobic z matchcodes trzeba dodac kolejna tabele
             Matches16 = new ObservableCollection<Single_match>();
             var teamIdFromGroupWinnersAndRunnersUp = new List<List<uint?>>();
             for (int i = 1; i < 9; i++)
@@ -153,51 +241,164 @@ namespace WC_Simulator.ViewModel
 
             Team Ph1 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[0][0]-1];
             Team Ph2 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[1][1]-1];
-            Matches16.Add(new Single_match((uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, null, null));
-            Model.KnockoutsMatches[0][0] = Matches16[0];
-            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][0]);
+            Matches16.Add(new Single_match(Model.KnockoutsMatches[0][0].Id_match, (uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, Model.KnockoutsMatches[0][0].Goals_first_team, Model.KnockoutsMatches[0][0].Goals_second_team));
 
             Ph1 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[2][0] - 1];
             Ph2 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[3][1] - 1];
-            Matches16.Add(new Single_match((uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, null, null));
-            Model.KnockoutsMatches[0][1] = Matches16[1];
-            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][1]);
+            Matches16.Add(new Single_match(Model.KnockoutsMatches[0][1].Id_match, (uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, Model.KnockoutsMatches[0][1].Goals_first_team, Model.KnockoutsMatches[0][1].Goals_second_team));
 
             Ph1 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[4][0] - 1];
             Ph2 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[5][1] - 1];
-            Matches16.Add(new Single_match((uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, null, null));
-            Model.KnockoutsMatches[0][0] = Matches16[0];
-            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][0]);
-
+            Matches16.Add(new Single_match(Model.KnockoutsMatches[0][2].Id_match, (uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, Model.KnockoutsMatches[0][2].Goals_first_team, Model.KnockoutsMatches[0][2].Goals_second_team));
 
             Ph1 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[6][0] - 1];
             Ph2 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[7][1] - 1];
-            Matches16.Add(new Single_match((uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, null, null));
-            Model.KnockoutsMatches[0][0] = Matches16[0];
-            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][0]);
+            Matches16.Add(new Single_match(Model.KnockoutsMatches[0][3].Id_match, (uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, Model.KnockoutsMatches[0][3].Goals_first_team, Model.KnockoutsMatches[0][3].Goals_second_team));
 
             Ph1 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[1][0] - 1];
             Ph2 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[0][1] - 1];
-            Matches16.Add(new Single_match((uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, null, null));
-            Model.KnockoutsMatches[0][0] = Matches16[0];
-            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][0]);
+            Matches16.Add(new Single_match(Model.KnockoutsMatches[0][4].Id_match, (uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, Model.KnockoutsMatches[0][4].Goals_first_team, Model.KnockoutsMatches[0][4].Goals_second_team));
 
             Ph1 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[3][0] - 1];
             Ph2 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[2][1] - 1];
-            Matches16.Add(new Single_match((uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, null, null));
-            Model.KnockoutsMatches[0][0] = Matches16[0];
-            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][0]);
+            Matches16.Add(new Single_match(Model.KnockoutsMatches[0][5].Id_match, (uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, Model.KnockoutsMatches[0][5].Goals_first_team, Model.KnockoutsMatches[0][5].Goals_second_team));
 
             Ph1 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[5][0] - 1];
             Ph2 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[4][1] - 1];
-            Matches16.Add(new Single_match((uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, null, null));
-            Model.KnockoutsMatches[0][0] = Matches16[0];
-            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][0]);
+            Matches16.Add(new Single_match(Model.KnockoutsMatches[0][6].Id_match, (uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, Model.KnockoutsMatches[0][6].Goals_first_team, Model.KnockoutsMatches[0][6].Goals_second_team));
 
             Ph1 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[7][0] - 1];
             Ph2 = Model.AllTeams[(int)teamIdFromGroupWinnersAndRunnersUp[6][1] - 1];
-            Matches16.Add(new Single_match((uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, null, null));
+            Matches16.Add(new Single_match(Model.KnockoutsMatches[0][7].Id_match, (uint)Model.CurrentTournament.Id_tournament, Ph1, Ph2, 100, Model.KnockoutsMatches[0][7].Goals_first_team, Model.KnockoutsMatches[0][7].Goals_second_team));
+        }
+        public void PrepareMatchesQ()
+        {
+            MatchesQ = new ObservableCollection<Single_match>();
+            MatchesQ.Add(new Single_match(Model.KnockoutsMatches[1][0].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamWins(Matches16[0]), 
+                WhichTeamWins(Matches16[1]), 100, Model.KnockoutsMatches[1][0].Goals_first_team, Model.KnockoutsMatches[1][0].Goals_second_team));
 
+            MatchesQ.Add(new Single_match(Model.KnockoutsMatches[1][1].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamWins(Matches16[2]), 
+                WhichTeamWins(Matches16[3]), 100, Model.KnockoutsMatches[1][1].Goals_first_team, Model.KnockoutsMatches[1][1].Goals_second_team));
+
+            MatchesQ.Add(new Single_match(Model.KnockoutsMatches[1][2].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamWins(Matches16[4]), 
+                WhichTeamWins(Matches16[5]), 100, Model.KnockoutsMatches[1][2].Goals_first_team, Model.KnockoutsMatches[1][2].Goals_second_team));
+
+            MatchesQ.Add(new Single_match(Model.KnockoutsMatches[1][3].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamWins(Matches16[6]), 
+                WhichTeamWins(Matches16[7]), 100, Model.KnockoutsMatches[1][3].Goals_first_team, Model.KnockoutsMatches[1][3].Goals_second_team));
+        }
+
+        public void PrepareMatchesS() 
+        {
+            MatchesS = new ObservableCollection<Single_match>();
+            MatchesS.Add(new Single_match(Model.KnockoutsMatches[2][0].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamWins(MatchesQ[0]),
+                WhichTeamWins(MatchesQ[1]), 100, Model.KnockoutsMatches[2][0].Goals_first_team, Model.KnockoutsMatches[2][0].Goals_second_team));
+
+            MatchesS.Add(new Single_match(Model.KnockoutsMatches[2][1].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamWins(MatchesQ[2]),
+                WhichTeamWins(MatchesQ[3]), 100, Model.KnockoutsMatches[2][1].Goals_first_team, Model.KnockoutsMatches[2][1].Goals_second_team));
+        }
+
+        public void PrepareMatchesF()
+        {
+            MatchesF = new ObservableCollection<Single_match>();
+            MatchesF.Add(new Single_match(Model.KnockoutsMatches[3][0].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamWins(MatchesS[0]),
+                WhichTeamWins(MatchesS[1]), 100, Model.KnockoutsMatches[3][0].Goals_first_team, Model.KnockoutsMatches[3][0].Goals_second_team));
+
+            MatchesF.Add(new Single_match(Model.KnockoutsMatches[3][1].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamLose(MatchesS[0]),
+                WhichTeamLose(MatchesS[1]), 100, Model.KnockoutsMatches[3][1].Goals_first_team, Model.KnockoutsMatches[3][1].Goals_second_team));
+        }
+
+        public Team WhichTeamWins(Single_match match)
+        {
+            if (match.Goals_first_team > match.Goals_second_team)
+                return Model.AllTeams[(int)match.Id_first_team - 1];
+            else
+                return Model.AllTeams[(int)match.Id_second_team - 1];
+        }
+
+        public Team WhichTeamLose(Single_match match)
+        {
+            if (match.Goals_first_team < match.Goals_second_team)
+                return Model.AllTeams[(int)match.Id_first_team - 1];
+            else
+                return Model.AllTeams[(int)match.Id_second_team - 1];
+        }
+
+        public void UpdateAndEnableSwitch(int i)
+        {
+            switch (i)
+            {
+                case 0:
+                    UpdateRoundof16();
+                    EnabledQ = true;
+                    break;
+                case 1:
+                    UpdateQuarterfinals();
+                    EnabledS = true;
+                    break;
+                case 2:
+                    UpdateSemifinals();
+                    EnabledF = true;
+                    break;
+                case 3:
+                    UpdateFinals();
+                    break;
+            }
+        }
+        public void UpdateRoundof16()
+        {
+            Model.KnockoutsMatches[0][0] = Matches16[0];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][0]);
+
+            Model.KnockoutsMatches[0][1] = Matches16[1];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][1]);
+
+            Model.KnockoutsMatches[0][2] = Matches16[2];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][2]);
+
+            Model.KnockoutsMatches[0][3] = Matches16[3];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][3]);
+
+            Model.KnockoutsMatches[0][4] = Matches16[4];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][4]);
+
+            Model.KnockoutsMatches[0][5] = Matches16[5];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][5]);
+
+            Model.KnockoutsMatches[0][6] = Matches16[6];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][6]);
+
+            Model.KnockoutsMatches[0][7] = Matches16[7];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[0][7]);
+        }
+        public void UpdateQuarterfinals()
+        {
+            Model.KnockoutsMatches[1][0] = MatchesQ[0];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[1][0]);
+
+            Model.KnockoutsMatches[1][1] = MatchesQ[1];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[1][1]);
+
+            Model.KnockoutsMatches[1][2] = MatchesQ[2];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[1][2]);
+
+            Model.KnockoutsMatches[1][3] = MatchesQ[3];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[1][3]);
+        }
+        public void UpdateSemifinals()
+        {
+            Model.KnockoutsMatches[2][0] = MatchesS[0];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[1][0]);
+
+            Model.KnockoutsMatches[2][1] = MatchesS[1];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[1][1]);
+        }
+        public void UpdateFinals()
+        {
+            Model.KnockoutsMatches[3][0] = MatchesF[0];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[1][0]);
+
+            Model.KnockoutsMatches[3][1] = MatchesF[1];
+            RepositoryMatches.UpdateMatch(Model.KnockoutsMatches[1][1]);
         }
 
         #endregion
@@ -205,37 +406,125 @@ namespace WC_Simulator.ViewModel
 
         #region Commands
 
-        //private ICommand _checkRoundOf16 = null;
+        private ICommand _checkRound = null;
+        public ICommand CheckRound
+        {
+            get
+            {
+                if (_checkRound == null)
+                {
+                    _checkRound = new RelayCommand(arg =>
+                    {
+                        bool check = true;
+                        foreach (var x in Matches16)
+                        {
+                            if (x.Goals_first_team == null || x.Goals_second_team == null || x.Goals_second_team == x.Goals_first_team)
+                            {
+                                check = false;
+                                break;
+                            }
+                        }
+                        if (check)
+                        {
+                            UpdateAndEnableSwitch(0);
+                            PrepareMatchesQ();
+                        }
+                    },
+                    arg => true);
+                }
+                return _checkRound;
+            }
+        }
 
-        //public ICommand CheckRoundOf16
-        //{
-        //    get
-        //    {
-        //        if (_checkRoundOf16 == null)
-        //        {
-        //            _checkRoundOf16 = new RelayCommand(arg =>
-        //            {
-        //                bool check = true;
-        //                foreach (var x in Model.GroupsMatches[Model.CurrentGroup])
-        //                {
-        //                    if (x.Goals_first_team == null || x.Goals_second_team == null)
-        //                    {
-        //                        check = false;
-        //                        break;
-        //                    }
-        //                }
-        //                if (check)
-        //                {
-        //                    Model.CurrentTournamentGroups[Model.CurrentGroup].Id_first_pl_team = (uint?)Model.GroupsTeams[Model.CurrentGroup][0].Id;
-        //                    Model.CurrentTournamentGroups[Model.CurrentGroup].Id_second_pl_team = (uint?)Model.GroupsTeams[Model.CurrentGroup][1].Id;
-        //                    RepositoryGroups.UpdateGroup(Model.CurrentTournamentGroups[Model.CurrentGroup]);
-        //                }
-        //            },
-        //            arg => true);
-        //        }
-        //        return _checkRoundOf16;
-        //    }
-        //}
+        private ICommand _checkQ = null;
+        public ICommand CheckQ
+        {
+            get
+            {
+                if (_checkQ == null)
+                {
+                    _checkQ = new RelayCommand(arg =>
+                    {
+                        bool check = true;
+                        foreach (var x in MatchesQ)
+                        {
+                            if (x.Goals_first_team == null || x.Goals_second_team == null || x.Goals_second_team == x.Goals_first_team)
+                            {
+                                check = false;
+                                break;
+                            }
+                        }
+                        if (check)
+                        {
+                            UpdateAndEnableSwitch(1);
+                            PrepareMatchesS();
+                        }
+                    },
+                    arg => true);
+                }
+                return _checkQ;
+            }
+        }
+
+        private ICommand _checkS = null;
+        public ICommand CheckS
+        {
+            get
+            {
+                if (_checkS == null)
+                {
+                    _checkS = new RelayCommand(arg =>
+                    {
+                        bool check = true;
+                        foreach (var x in MatchesS)
+                        {
+                            if (x.Goals_first_team == null || x.Goals_second_team == null || x.Goals_second_team == x.Goals_first_team)
+                            {
+                                check = false;
+                                break;
+                            }
+                        }
+                        if (check)
+                        {
+                            UpdateAndEnableSwitch(2);
+                            PrepareMatchesF();
+                        }
+                    },
+                    arg => true);
+                }
+                return _checkS;
+            }
+        }
+
+        private ICommand _checkF = null;
+        public ICommand CheckF
+        {
+            get
+            {
+                if (_checkF == null)
+                {
+                    _checkF = new RelayCommand(arg =>
+                    {
+                        bool check = true;
+                        foreach (var x in MatchesF)
+                        {
+                            if (x.Goals_first_team == null || x.Goals_second_team == null || x.Goals_second_team == x.Goals_first_team)
+                            {
+                                check = false;
+                                break;
+                            }
+                        }
+                        if (check)
+                        {
+                            UpdateAndEnableSwitch(3);
+                        }
+                    },
+                    arg => true);
+                }
+                return _checkF;
+            }
+        }
+
 
         #endregion
     }
