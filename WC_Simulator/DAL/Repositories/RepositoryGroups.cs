@@ -14,6 +14,7 @@ namespace WC_Simulator.DAL.Repositories
         private const string ADD_GROUP = "INSERT INTO `single_group`(`id_group`, `id_first_pl_team`, `id_second_pl_team`, `id_tournament`, `letter`) VALUES ";
         private const string DELETE_GROUP = "DELETE FROM `single_group` WHERE id_group = ";
 
+        private const string TEAMS_IN_GROUP = "SELECT * FROM `single_group` WHERE id_group = ";
         #endregion
 
 
@@ -23,6 +24,23 @@ namespace WC_Simulator.DAL.Repositories
         /// CRUD - create, read, update, delete
         /// </summary>
         /// <returns></returns>
+        public static List<uint?> LoadTeamsInGroup(uint? IDgroup)
+        {
+            List<uint?> IDteams = new List<uint?>();
+            using (var connection = DBConnection.Instance.Connection)
+            {
+                MySqlCommand command = new MySqlCommand(TEAMS_IN_GROUP + $"{IDgroup}", connection);
+                connection.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    IDteams.Add(new Single_group(reader).Id_first_pl_team);
+                    IDteams.Add(new Single_group(reader).Id_second_pl_team);
+                }
+                connection.Close();
+            }
+            return IDteams;
+        }
 
         public static List<Single_group> LoadTournamentGroup(uint? tournament_id)
         {
