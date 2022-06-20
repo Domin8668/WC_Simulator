@@ -51,18 +51,56 @@ namespace WC_Simulator.DAL.Repositories
         //    return state;
         //}
 
-        public static bool UpdateMatch(Single_match match, uint idMatch)
+        public static bool UpdateMatch(Single_match match)
         {
             bool state = false;
             using (var connection = DBConnection.Instance.Connection)
             {
-                string UPDATE_MATCH = $"UPDATE Single_match SET id_match='{match.Id_match}', id_first_team='{match.Id_first_team}', " +
-                    $"id_second_team={match.Id_second_team}, id_tournament='{match.Id_tournament}', abbr_first='{match.Short_first}', " +
-                    $"abbr_second='{match.Short_second}', name_first='{match.Name_first}', name_second='{match.Name_second}', " +
-                    $"match_code='{match.Match_code}', goals_first_team='{match.Goals_first_team}', goals_second_team='{match.Goals_second_team}' WHERE id_match={idMatch}";
-
-                MySqlCommand command = new MySqlCommand(UPDATE_MATCH, connection);
+                MySqlCommand command = new MySqlCommand("UPDATE Single_match SET id_first_team=@Id_first_team, id_second_team=@Id_second_team, abbr_first=@Abbr_first, abbr_second=@Abbr_second, name_first=@Name_first, name_second=@Name_second, match_code=@Match_code, goals_first_team=@Goals_first_team, goals_second_team=@Goals_second_team WHERE id_match=@Id_match", connection);
                 connection.Open();
+
+                if (match.Id_first_team == null)
+                    command.Parameters.AddWithValue("@Id_first_team", DBNull.Value);
+                else
+                    command.Parameters.Add("@Id_first_team", MySqlDbType.UInt64).Value = match.Id_first_team;
+                if (match.Id_second_team == null)
+                    command.Parameters.AddWithValue("@Id_second_team", DBNull.Value);
+                else
+                    command.Parameters.Add("@Id_second_team", MySqlDbType.UInt64).Value = match.Id_second_team;
+
+                command.Parameters.Add("@Id_tournament", MySqlDbType.UInt64).Value = match.Id_tournament;
+
+                if (match.Short_first == null)
+                    command.Parameters.AddWithValue("@Abbr_first", DBNull.Value);
+                else
+                    command.Parameters.Add("@Abbr_first", MySqlDbType.VarChar).Value = match.Short_first;
+                if (match.Short_second == null)
+                    command.Parameters.AddWithValue("@Abbr_second", DBNull.Value);
+                else
+                    command.Parameters.Add("@Abbr_second", MySqlDbType.VarChar).Value = match.Short_second;
+
+                if (match.Name_first == null)
+                    command.Parameters.AddWithValue("@Name_first", DBNull.Value);
+                else
+                    command.Parameters.Add("@Name_first", MySqlDbType.VarChar).Value = match.Name_first;
+                if (match.Name_second == null)
+                    command.Parameters.AddWithValue("@Name_second", DBNull.Value);
+                else
+                    command.Parameters.Add("@Name_second", MySqlDbType.VarChar).Value = match.Name_second;
+
+                command.Parameters.Add("@Match_code", MySqlDbType.UInt64).Value = match.Match_code;
+
+                if (match.Goals_first_team == null)
+                    command.Parameters.AddWithValue("@Goals_first_team", DBNull.Value);
+                else
+                    command.Parameters.Add("@Goals_first_team", MySqlDbType.UInt64).Value = match.Goals_first_team;
+                if (match.Goals_second_team == null)
+                    command.Parameters.AddWithValue("@Goals_second_team", DBNull.Value);
+                else
+                    command.Parameters.Add("@Goals_second_team", MySqlDbType.UInt64).Value = match.Goals_second_team;
+
+                command.Parameters.Add("@Id_match", MySqlDbType.UInt64).Value = match.Id_match;
+
                 var n = command.ExecuteNonQuery();
                 if (n == 1) state = true;
 
