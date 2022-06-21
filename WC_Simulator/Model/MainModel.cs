@@ -319,6 +319,7 @@ namespace WC_Simulator.Model
 
         public void CreateGroupMatches()
         {
+            GroupsMatches.Clear();
             PrepareMatchesA();
             PrepareMatchesB();
             PrepareMatchesC();

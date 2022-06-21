@@ -102,6 +102,8 @@ namespace WC_Simulator.ViewModel
                             NewTourneyWarning = string.Empty;
                             Model.CurrentTournament = tourney;
                             Model.CurrentTournamentGroups = new ObservableCollection<Single_group>();
+                            Model.CurrentTournamentMatches = new ObservableCollection<Single_match>();
+
                             foreach (var letter in Enum.GetValues(typeof(Single_group.Alphabet)))
                             {
                                 var group = new Single_group(null, null, (uint)Model.CurrentTournament.Id_tournament, (Enum)letter);
