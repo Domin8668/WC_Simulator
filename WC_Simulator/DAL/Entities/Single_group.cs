@@ -84,8 +84,7 @@ namespace WC_Simulator.DAL.Entities
         public override bool Equals(object obj)
         {
             //nie porównujemy ID
-            var group = obj as Single_group;
-            if (group is null) return false;
+            if (!(obj is Single_group group)) return false;
             if (Id_group != group.Id_group) return false;
             if (Id_first_pl_team != group.Id_first_pl_team) return false;
             if (Id_second_pl_team != group.Id_second_pl_team) return false;

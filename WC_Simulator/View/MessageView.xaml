@@ -10,7 +10,7 @@
         <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
             <LinearGradientBrush.GradientStops>
                 <GradientStop Offset="0.1" Color="#c9f3c6" />
-                <GradientStop Offset="1" Color="#fdaad5" />
+                <GradientStop Offset="1" Color="#fcffb4" />
             </LinearGradientBrush.GradientStops>
         </LinearGradientBrush>
     </UserControl.Background>
