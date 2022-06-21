@@ -100,9 +100,10 @@ namespace WC_Simulator.ViewModel
                             NewTourney = string.Empty;
                             NewTourneyBorder = 0;
                             NewTourneyWarning = string.Empty;
-                            Model.CurrentTournament = tourney;
+
                             Model.CurrentTournamentGroups = new ObservableCollection<Single_group>();
                             Model.CurrentTournamentMatches = new ObservableCollection<Single_match>();
+                            Model.CurrentTournament = tourney;
 
                             foreach (var letter in Enum.GetValues(typeof(Single_group.Alphabet)))
                             {

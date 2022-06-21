@@ -152,6 +152,8 @@
 
                 <ListBox Margin="5,5,5,230" FontSize="17" Background="Transparent" BorderBrush="#c4c5c4" BorderThickness="1"
                          ItemsSource="{Binding Tournaments}"
+                         IsSynchronizedWithCurrentItem="True"
+                         SelectedIndex="{Binding Model.CurrentTournamentIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                          SelectedItem="{Binding Model.CurrentTournament, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                     <ListBox.Resources>
                         <SolidColorBrush x:Key="ItemContainerSelectedBackground" Color="#5532CD32"/>

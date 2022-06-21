@@ -209,11 +209,10 @@ namespace WC_Simulator.ViewModel
                     _tournamentSelectionChanged = new RelayCommand(arg => {
                         if (Model.CurrentTournament != null)
                         {
-                            NavigationStore.CurrentTournament = Model.CurrentTournament;
                             Model.CurrentTournamentGroups = new ObservableCollection<Single_group>(RepositoryGroups.LoadTournamentGroup(Model.CurrentTournament.Id_tournament));
                             Model.CurrentTournamentMatches = new ObservableCollection<Single_match>(RepositoryMatches.LoadTournamentMatch(Model.CurrentTournament));
-                            Model.LoadGroupsMatches();
-                            Model.LoadKnockoutsMatches();
+                            GroupsViewModel groups = new GroupsViewModel(Model, NavigationStore);
+                            NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, groups, Visibility.Visible, "Turniej został zmieniony.");
                         }
                     },
                     arg => true);

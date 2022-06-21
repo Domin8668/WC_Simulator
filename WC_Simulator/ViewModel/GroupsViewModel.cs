@@ -53,7 +53,21 @@ namespace WC_Simulator.ViewModel
 
             Model.CurrentGroup = 0;
             Model.PreviousGroup = 0;
-            CheckStandings.Execute(null);
+            if (Model.GroupsMatches.Count > 0)
+                CheckStandings.Execute(null);
+
+            //NavigationStore.CurrentTournamentChanged += OnCurrentTournamentChanged;
+        }
+
+        #endregion
+
+
+        #region Subscribers
+
+        private void OnCurrentTournamentChanged()
+        {
+            OnPropertyChanged(nameof(Model.GroupsMatches));
+            OnPropertyChanged(nameof(Model.GroupsTeams));
         }
 
         #endregion

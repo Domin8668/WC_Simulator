@@ -34,8 +34,6 @@ namespace WC_Simulator.ViewModel
             Model = model;
             NavigationStore = navigationStore;
 
-
-
             EnabledR16 = false;
             EnabledQ = false;
             EnabledS = false;
@@ -67,7 +65,7 @@ namespace WC_Simulator.ViewModel
                 }
             }
 
-
+            //NavigationStore.CurrentTournamentChanged += OnCurrentTournamentChanged;
         }
 
         #endregion
@@ -155,6 +153,17 @@ namespace WC_Simulator.ViewModel
         #endregion
 
 
+        #region Subscribers
+
+        ////private void OnCurrentTournamentChanged()
+        ////{
+        ////    OnPropertyChanged(nameof(Model.KnockoutsMatches));
+        ////    OnPropertyChanged(nameof(Model.GroupsTeams));
+        ////}
+
+        #endregion
+
+
         #region Methods
 
 
@@ -164,7 +173,8 @@ namespace WC_Simulator.ViewModel
             bool check = true;
             for (int i = 0; i < 8; i++)
             {
-                teamIdFromGroupWinnersAndRunnersUp.Add(RepositoryGroups.LoadTeamsInGroup((uint)i + 1, (uint)Model.CurrentTournament.Id_tournament));
+                var temp = RepositoryGroups.LoadTeamsInGroup((uint)i + 1, (uint)Model.CurrentTournament.Id_tournament);
+                teamIdFromGroupWinnersAndRunnersUp.Add(temp);
                 if (teamIdFromGroupWinnersAndRunnersUp[i][0] == null || teamIdFromGroupWinnersAndRunnersUp[i][1] == null)
                 {
                     check = false;
@@ -536,6 +546,7 @@ namespace WC_Simulator.ViewModel
                 return _checkF;
             }
         }
+
 
 
         #endregion

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using WC_Simulator.DAL.Entities;
 using WC_Simulator.DAL.Repositories;
@@ -17,6 +13,7 @@ namespace WC_Simulator.Model
         private UserShort _currentUserShort;
         private User _currentUser;
         private Tournament _currentTournament;
+        private int _currentTournamentIndex;
         private ObservableCollection<Single_group> _currentTournamentGroups;
         private ObservableCollection<Single_match> _currentTournamentMatches;
 
@@ -116,7 +113,25 @@ namespace WC_Simulator.Model
         public Tournament CurrentTournament
         {
             get { return _currentTournament; }
-            set { _currentTournament = value; }
+            set
+            {
+                _currentTournament = value;
+                if (CurrentTournamentMatches.Count > 0 && CurrentTournamentGroups.Count > 0)
+                {
+                    CurrentTournamentGroups = new ObservableCollection<Single_group>(RepositoryGroups.LoadTournamentGroup(CurrentTournament.Id_tournament));
+                    CurrentTournamentMatches = new ObservableCollection<Single_match>(RepositoryMatches.LoadTournamentMatch(CurrentTournament));
+                    GroupsMatches.Clear();
+                    KnockoutsMatches.Clear();
+                    LoadGroupsMatches();
+                    LoadKnockoutsMatches();
+                }
+            }
+        }
+
+        public int CurrentTournamentIndex
+        {
+            get { return _currentTournamentIndex; }
+            set { _currentTournamentIndex = value; }
         }
 
         public ObservableCollection<Single_group> CurrentTournamentGroups
@@ -177,7 +192,7 @@ namespace WC_Simulator.Model
             }
             return false;
         }
-        
+
         internal bool ValidateUserShort()
         {
             foreach (var us in AllUsersShort)
@@ -283,12 +298,12 @@ namespace WC_Simulator.Model
                 {
                     AllTournaments.Add(t);
                 }
-            }    
+            }
         }
 
         public bool AddUserTournament(Tournament tournament)
         {
-            
+
             if (RepositoryTournaments.AddTournament(tournament))
             {
                 AllTournaments.Add(tournament);
@@ -333,7 +348,7 @@ namespace WC_Simulator.Model
         public void PrepareMatchesA()
         {
             int i = 0 * 4;
-            ObservableCollection<Single_match>  MatchesA = new ObservableCollection<Single_match>
+            ObservableCollection<Single_match> MatchesA = new ObservableCollection<Single_match>
             {
                 new Single_match((uint)CurrentTournament.Id_tournament, AllTeams[i], AllTeams[i + 1], 0, null, null),
                 new Single_match((uint)CurrentTournament.Id_tournament, AllTeams[i + 2], AllTeams[i + 3], 1, null, null),
@@ -572,7 +587,6 @@ namespace WC_Simulator.Model
                 singleGroupMatches.Add(CurrentTournamentMatches[i]);
             }
             GroupsMatches.Add(singleGroupMatches);
-            singleGroupMatches = new ObservableCollection<Single_match>();
         }
 
         public void LoadKnockoutsMatches()
