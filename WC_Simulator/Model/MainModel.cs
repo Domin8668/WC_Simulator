@@ -12,13 +12,6 @@ namespace WC_Simulator.Model
 {
     class MainModel
     {
-        /// <summary>
-        /// Mechanizm w Modelu zapewnia możliwość wykonywania operacji na obiektach z automatycznym
-        /// aktualizowaniem ich odpowiedników w bazie danych. Edycja np. Usera powoduje aktualizację
-        /// bazy danych oraz aktualizuje obiekt tego Usera w kolekcji obiektów.
-        /// </summary>
-
-
         #region Variables
 
         private UserShort _currentUserShort;
@@ -32,7 +25,7 @@ namespace WC_Simulator.Model
         private ObservableCollection<ObservableCollection<Single_match>> _knockoutsMatches;
 
         private int _currentGroup;
-
+        private int _previousGroup;
 
         #endregion
 
@@ -142,6 +135,12 @@ namespace WC_Simulator.Model
         {
             get { return _currentGroup; }
             set { _currentGroup = value; }
+        }
+
+        public int PreviousGroup
+        {
+            get { return _previousGroup; }
+            set { _previousGroup = value; }
         }
 
         public ObservableCollection<ObservableCollection<Single_match>> GroupsMatches
@@ -614,8 +613,6 @@ namespace WC_Simulator.Model
 
 
         #endregion
-
-
 
         #endregion
     }
