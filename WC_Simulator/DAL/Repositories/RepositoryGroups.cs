@@ -27,14 +27,17 @@ namespace WC_Simulator.DAL.Repositories
         public static List<uint?> LoadTeamsInGroup(uint? IDgroup, uint IDtournament)
         {
             List<uint?> IDteams = new List<uint?>();
+            IDgroup += 8 * (IDtournament - 1);
             using (var connection = DBConnection.Instance.Connection)
             {
+                Console.WriteLine(TEAMS_IN_GROUP + $"{IDgroup}" + " and id_tournament=" + $"{IDtournament}");
                 MySqlCommand command = new MySqlCommand(TEAMS_IN_GROUP + $"{IDgroup}" + " and id_tournament=" + $"{IDtournament}", connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     IDteams.Add(new Single_group(reader).Id_first_pl_team);
+                    IDteams.Add(new Single_group(reader).Id_second_pl_team);
                     IDteams.Add(new Single_group(reader).Id_second_pl_team);
                 }
                 connection.Close();
