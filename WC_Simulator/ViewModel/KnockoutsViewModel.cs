@@ -528,7 +528,7 @@ namespace WC_Simulator.ViewModel
                         if (check)
                         {
                             UpdateFinals();
-                            //NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, this, Visibility.Visible, $"Mistrzem Świata jest:{WhichTeamWins(MatchesF[0]).Name}");
+                            //NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, this, Visibility.Visible, $"Mistrzem Świata jest:{WhichTeamWins(Model.KnockoutsMatches[3][0]).Name}");
                         }
                     },
                     arg => true);
