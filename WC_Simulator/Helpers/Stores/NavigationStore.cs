@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using WC_Simulator.DAL.Entities;
 using WC_Simulator.ViewModel.BaseClasses;
 
 namespace WC_Simulator.Helpers.Stores
@@ -10,6 +11,7 @@ namespace WC_Simulator.Helpers.Stores
 
         private BaseViewModel _currentViewModel;
         private Visibility _menuVisibility;
+        private Tournament _currentTournament;
 
         #endregion
 
@@ -32,6 +34,16 @@ namespace WC_Simulator.Helpers.Stores
             }
         }
 
+        public Tournament CurrentTournament
+        {
+            get { return _currentTournament; }
+            set
+            {
+                _currentTournament = value;
+                OnCurrentTournamentChanged();
+            }
+        }
+
         #endregion
 
 
@@ -47,6 +59,11 @@ namespace WC_Simulator.Helpers.Stores
             MenuVisibilityChanged?.Invoke();
         }
 
+        private void OnCurrentTournamentChanged()
+        {
+            CurrentTournamentChanged?.Invoke();
+        }
+
         #endregion
 
 
@@ -54,6 +71,7 @@ namespace WC_Simulator.Helpers.Stores
 
         public event Action CurrentViewModelChanged;
         public event Action MenuVisibilityChanged;
+        public event Action CurrentTournamentChanged;
 
         #endregion
 

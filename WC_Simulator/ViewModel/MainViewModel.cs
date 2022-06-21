@@ -14,8 +14,7 @@ namespace WC_Simulator.ViewModel
     {
         #region Variables
 
-        //private MainModel Model;
-        //private NavigationStore NavigationStore;
+
 
         #endregion
 
@@ -210,6 +209,7 @@ namespace WC_Simulator.ViewModel
                     _tournamentSelectionChanged = new RelayCommand(arg => {
                         if (Model.CurrentTournament != null)
                         {
+                            NavigationStore.CurrentTournament = Model.CurrentTournament;
                             Model.CurrentTournamentGroups = new ObservableCollection<Single_group>(RepositoryGroups.LoadTournamentGroup(Model.CurrentTournament.Id_tournament));
                             Model.CurrentTournamentMatches = new ObservableCollection<Single_match>(RepositoryMatches.LoadTournamentMatch(Model.CurrentTournament));
                             Model.LoadGroupsMatches();
