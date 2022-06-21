@@ -446,11 +446,11 @@
                         M5Short_second="{Binding Model.GroupsMatches[7][5].Short_second, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"     
                                      />
             </TabItem>
-            <!--<i:Interaction.Triggers>
+            <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
                     <i:InvokeCommandAction Command="{Binding GroupSelectionChanged}"/>
                 </i:EventTrigger>
-            </i:Interaction.Triggers>-->
+            </i:Interaction.Triggers>
         </TabControl>
     </Grid>
 </UserControl>
