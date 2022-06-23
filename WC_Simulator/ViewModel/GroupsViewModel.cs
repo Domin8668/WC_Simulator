@@ -64,11 +64,11 @@ namespace WC_Simulator.ViewModel
 
         #region Subscribers
 
-        private void OnCurrentTournamentChanged()
-        {
-            OnPropertyChanged(nameof(Model.GroupsMatches));
-            OnPropertyChanged(nameof(Model.GroupsTeams));
-        }
+        //private void OnCurrentTournamentChanged()
+        //{
+        //    OnPropertyChanged(nameof(Model.GroupsMatches));
+        //    OnPropertyChanged(nameof(Model.GroupsTeams));
+        //}
 
         #endregion
 
@@ -216,22 +216,25 @@ namespace WC_Simulator.ViewModel
                     _checkStandings = new RelayCommand(arg =>
                     {
                         bool check = true;
-                        foreach (var x in Model.GroupsMatches[Model.CurrentGroup])
+                        if (Model.GroupsMatches.Count > 0)
                         {
-                            if (x.Goals_first_team == null || x.Goals_second_team == null)
+                            foreach (var x in Model.GroupsMatches[Model.CurrentGroup])
                             {
-                                check = false;
-                                break;
+                                if (x.Goals_first_team == null || x.Goals_second_team == null)
+                                {
+                                    check = false;
+                                    break;
+                                }
                             }
-                        }
-                        if (check)
-                        {
-                            Model.GroupsTeams[Model.CurrentGroup] = PrepareStanding(Model.GroupsMatches[Model.CurrentGroup], Model.CurrentGroup);
-                            CalculateStats();
-                            Model.CurrentTournamentGroups[Model.CurrentGroup].Id_first_pl_team = (uint?)Model.GroupsTeams[Model.CurrentGroup][0].Id;
-                            Model.CurrentTournamentGroups[Model.CurrentGroup].Id_second_pl_team = (uint?)Model.GroupsTeams[Model.CurrentGroup][1].Id;
-                            RepositoryGroups.UpdateGroup(Model.CurrentTournamentGroups[Model.CurrentGroup]);
-                            UpdateGroupInDB(Model.CurrentGroup);
+                            if (check)
+                            {
+                                Model.GroupsTeams[Model.CurrentGroup] = PrepareStanding(Model.GroupsMatches[Model.CurrentGroup], Model.CurrentGroup);
+                                CalculateStats();
+                                Model.CurrentTournamentGroups[Model.CurrentGroup].Id_first_pl_team = (uint?)Model.GroupsTeams[Model.CurrentGroup][0].Id;
+                                Model.CurrentTournamentGroups[Model.CurrentGroup].Id_second_pl_team = (uint?)Model.GroupsTeams[Model.CurrentGroup][1].Id;
+                                RepositoryGroups.UpdateGroup(Model.CurrentTournamentGroups[Model.CurrentGroup]);
+                                UpdateGroupInDB(Model.CurrentGroup);
+                            }
                         }
                     },
                     arg => true);
@@ -250,8 +253,11 @@ namespace WC_Simulator.ViewModel
                 {
                     _groupSelectionChanged = new RelayCommand(arg =>
                     {
-                        UpdateGroupInDB(Model.PreviousGroup);
-                        Model.PreviousGroup = Model.CurrentGroup;
+                        if (Model.GroupsMatches.Count > 0)
+                        {
+                            UpdateGroupInDB(Model.PreviousGroup);
+                            Model.PreviousGroup = Model.CurrentGroup;
+                        }
                     },
                     arg => true);
                 }

@@ -211,8 +211,10 @@ namespace WC_Simulator.ViewModel
                         {
                             Model.CurrentTournamentGroups = new ObservableCollection<Single_group>(RepositoryGroups.LoadTournamentGroup(Model.CurrentTournament.Id_tournament));
                             Model.CurrentTournamentMatches = new ObservableCollection<Single_match>(RepositoryMatches.LoadTournamentMatch(Model.CurrentTournament));
-                            GroupsViewModel groups = new GroupsViewModel(Model, NavigationStore);
-                            NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, groups, Visibility.Visible, "Turniej został zmieniony.");
+                            //GroupsViewModel groups = new GroupsViewModel(Model, NavigationStore);
+                            //NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, groups, Visibility.Visible, "Turniej został zmieniony.");
+                            ProfileViewModel profile = new ProfileViewModel(Model, NavigationStore);
+                            NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, profile, Visibility.Visible, "Turniej został zmieniony.");
                         }
                     },
                     arg => true);
