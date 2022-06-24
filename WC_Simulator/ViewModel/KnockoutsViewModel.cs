@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Input;
 using WC_Simulator.DAL.Entities;
 using WC_Simulator.DAL.Repositories;
@@ -527,7 +528,7 @@ namespace WC_Simulator.ViewModel
                         if (IfAllMatchesQSFPossible(3))
                         {
                             UpdateRound(3);
-                            //NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, this, Visibility.Visible, $"Mistrzem Świata jest:{WhichTeamWins(Model.KnockoutsMatches[3][0]).Name}");
+                            NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, this, Visibility.Visible, $"1. miejsce: {WhichTeamWins(Model.KnockoutsMatches[3][0]).Name}\n2. miejsce: {WhichTeamLoses(Model.KnockoutsMatches[3][0]).Name}\n3. miejsce: {WhichTeamWins(Model.KnockoutsMatches[3][1]).Name}");
                         }
                     },
                     arg => true);
