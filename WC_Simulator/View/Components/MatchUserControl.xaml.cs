@@ -92,12 +92,12 @@ namespace WC_Simulator.View.Components
                 new FrameworkPropertyMetadata(null)
             );
 
-        public static readonly DependencyProperty MatchCommandProperty = DependencyProperty.Register(
-                "MatchCommand",
-                typeof(ICommand),
-                typeof(MatchUserControl),
-                new FrameworkPropertyMetadata(null)
-            );
+        //public static readonly DependencyProperty MatchCommandProperty = DependencyProperty.Register(
+        //        "MatchCommand",
+        //        typeof(ICommand),
+        //        typeof(MatchUserControl),
+        //        new FrameworkPropertyMetadata(null)
+        //    );
 
         #endregion
 
@@ -154,11 +154,11 @@ namespace WC_Simulator.View.Components
             set { SetValue(ResultsEnabledProperty, value); }
         }
 
-        public ICommand MatchCommand
-        {
-            get { return (ICommand)GetValue(MatchCommandProperty); }
-            set { SetValue(MatchCommandProperty, value); }
-        }
+        //public ICommand MatchCommand
+        //{
+        //    get { return (ICommand)GetValue(MatchCommandProperty); }
+        //    set { SetValue(MatchCommandProperty, value); }
+        //}
 
         #endregion
 
