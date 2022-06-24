@@ -115,7 +115,7 @@ namespace WC_Simulator.Model
 
         public override string ToString()
         {
-            return "test";
+            return Country;
         }
     }
 }
