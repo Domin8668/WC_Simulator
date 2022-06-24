@@ -87,19 +87,22 @@ namespace WC_Simulator.DAL.Entities
             Short_first = short_first.Trim();
             Short_second = short_second.Trim();
             Name_first = name_first.Trim();
-            Name_second = name_second.Trim();
-            Flag_first = $"../../Resources/Flags/{Name_first.Split(' ')[0]}.png";
-            Flag_second = $"../../Resources/Flags/{Name_second.Split(' ')[0]}.png";
+            Name_second = name_second.Trim();        
 
-            if (name_first == string.Empty)
+            if (name_first == string.Empty || name_first == null)
                 Flag_first = "../../Resources/Flags/placeholder.png";
             else if (name_first[0] == '1' || name_first[0] == '2')
                 Flag_first = "../../Resources/Flags/placeholder.png";
+            else
+                Flag_first = $"../../Resources/Flags/{Name_first.Split(' ')[0]}.png";
 
-            if (name_second == string.Empty)
+            if (name_second == string.Empty || name_second == null)
                 Flag_second = "../../Resources/Flags/placeholder.png";
             else if (name_second[0] == '1' || name_second[0] == '2')
                 Flag_second = "../../Resources/Flags/placeholder.png";
+            else
+                Flag_second = $"../../Resources/Flags/{Name_second.Split(' ')[0]}.png";
+
             Match_code = match_code;
             Goals_first_team = goals_first_team;
             Goals_second_team = goals_second_team;
@@ -115,12 +118,21 @@ namespace WC_Simulator.DAL.Entities
             Short_second = team2.Short_name.Trim();
             Name_first = team1.Name.Trim();
             Name_second = team2.Name.Trim();
-            Flag_first = $"../../Resources/Flags/{Name_first.Split(' ')[0]}.png";
-            Flag_second = $"../../Resources/Flags/{Name_second.Split(' ')[0]}.png";
-            if(team1.Name[0]== '1' || team1.Name[0]== '2')
+
+            if (team1.Name == string.Empty || team1.Name == null)
                 Flag_first = "../../Resources/Flags/placeholder.png";
-            if (team2.Name[0] == '1' || team2.Name[0] == '2')
+            else if (team1.Name[0] == '1' || team1.Name[0] == '2')
+                Flag_first = "../../Resources/Flags/placeholder.png";
+            else
+                Flag_first = $"../../Resources/Flags/{Name_first.Split(' ')[0]}.png";
+
+            if (team2.Name == string.Empty || team2.Name == null)
                 Flag_second = "../../Resources/Flags/placeholder.png";
+            else if (team2.Name[0] == '1' || team2.Name[0] == '2')
+                Flag_second = "../../Resources/Flags/placeholder.png";
+            else
+                Flag_second = $"../../Resources/Flags/{Name_second.Split(' ')[0]}.png";
+
             Match_code = match_code;
             Goals_first_team = goals_first_team;
             Goals_second_team = goals_second_team;
@@ -136,12 +148,21 @@ namespace WC_Simulator.DAL.Entities
             Short_second = team2.Short_name.Trim();
             Name_first = team1.Name.Trim();
             Name_second = team2.Name.Trim();
-            Flag_first = $"../../Resources/Flags/{Name_first.Split(' ')[0]}.png";
-            Flag_second = $"../../Resources/Flags/{Name_second.Split(' ')[0]}.png";
-            if (team1.Name[0] == '1' || team1.Name[0] == '2')
+
+            if (team1.Name == string.Empty || team1.Name == null)
                 Flag_first = "../../Resources/Flags/placeholder.png";
-            if (team2.Name[0] == '1' || team2.Name[0] == '2')
+            else if (team1.Name[0] == '1' || team1.Name[0] == '2')
+                Flag_first = "../../Resources/Flags/placeholder.png";
+            else
+                Flag_first = $"../../Resources/Flags/{Name_first.Split(' ')[0]}.png";
+
+            if (team2.Name == string.Empty || team2.Name == null)
                 Flag_second = "../../Resources/Flags/placeholder.png";
+            else if (team2.Name[0] == '1' || team2.Name[0] == '2')
+                Flag_second = "../../Resources/Flags/placeholder.png";
+            else
+                Flag_second = $"../../Resources/Flags/{Name_second.Split(' ')[0]}.png";
+
             Match_code = match_code;
             Goals_first_team = goals_first_team;
             Goals_second_team = goals_second_team;
