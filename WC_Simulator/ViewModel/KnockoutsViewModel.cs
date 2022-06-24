@@ -321,8 +321,8 @@ namespace WC_Simulator.ViewModel
                 Model.KnockoutsMatches[3][0] = new Single_match(Model.KnockoutsMatches[3][0].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamWins(Model.KnockoutsMatches[2][0]),
                     WhichTeamWins(Model.KnockoutsMatches[2][1]), 100, Model.KnockoutsMatches[3][0].Goals_first_team, Model.KnockoutsMatches[3][0].Goals_second_team);
 
-                Model.KnockoutsMatches[3][1] = new Single_match(Model.KnockoutsMatches[3][1].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamLose(Model.KnockoutsMatches[2][0]),
-                    WhichTeamLose(Model.KnockoutsMatches[2][1]), 100, Model.KnockoutsMatches[3][1].Goals_first_team, Model.KnockoutsMatches[3][1].Goals_second_team);
+                Model.KnockoutsMatches[3][1] = new Single_match(Model.KnockoutsMatches[3][1].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamLoses(Model.KnockoutsMatches[2][0]),
+                    WhichTeamLoses(Model.KnockoutsMatches[2][1]), 100, Model.KnockoutsMatches[3][1].Goals_first_team, Model.KnockoutsMatches[3][1].Goals_second_team);
             //}
         }
 
@@ -334,7 +334,7 @@ namespace WC_Simulator.ViewModel
                 return Model.AllTeams[(int)match.Id_second_team - 1];
         }
 
-        public Team WhichTeamLose(Single_match match)
+        public Team WhichTeamLoses(Single_match match)
         {
             if (match.Goals_first_team < match.Goals_second_team)
                 return Model.AllTeams[(int)match.Id_first_team - 1];
