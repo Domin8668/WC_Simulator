@@ -53,7 +53,7 @@ namespace WC_Simulator.ViewModel
 
             Model.CurrentGroup = 0;
             Model.PreviousGroup = 0;
-            if (Model.GroupsMatches.Count > 0)
+            if (Model.GroupsMatches.Count == 8)
                 CheckStandings.Execute(null);
 
             //NavigationStore.CurrentTournamentChanged += OnCurrentTournamentChanged;
@@ -216,7 +216,7 @@ namespace WC_Simulator.ViewModel
                     _checkStandings = new RelayCommand(arg =>
                     {
                         bool check = true;
-                        if (Model.GroupsMatches.Count > 0)
+                        if (Model.GroupsMatches.Count == 8)
                         {
                             foreach (var x in Model.GroupsMatches[Model.CurrentGroup])
                             {
@@ -253,10 +253,11 @@ namespace WC_Simulator.ViewModel
                 {
                     _groupSelectionChanged = new RelayCommand(arg =>
                     {
-                        if (Model.GroupsMatches.Count > 0)
+                        if (Model.GroupsMatches.Count == 8)
                         {
                             UpdateGroupInDB(Model.PreviousGroup);
                             Model.PreviousGroup = Model.CurrentGroup;
+                            CheckStandings.Execute(null);
                         }
                     },
                     arg => true);

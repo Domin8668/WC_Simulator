@@ -210,7 +210,6 @@ namespace WC_Simulator.ViewModel
                         Model.LoadUserTournaments();
                         if (Model.AllTournaments.Count > 0)
                         {
-                            Model.CurrentTournament = Model.AllTournaments[0];
                             Model.CurrentTournamentIndex = 0;
                             Model.CurrentTournamentGroups = new ObservableCollection<Single_group>(RepositoryGroups.LoadTournamentGroup(Model.CurrentTournament.Id_tournament));
                             Model.CurrentTournamentMatches = new ObservableCollection<Single_match>(RepositoryMatches.LoadTournamentMatch(Model.CurrentTournament));
