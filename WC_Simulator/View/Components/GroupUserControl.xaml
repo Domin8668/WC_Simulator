@@ -337,7 +337,7 @@
 
         <ListView x:Name="GroupTable" Grid.Column="0" Grid.ColumnSpan="3" FontSize="18"
                   Margin="10"
-                  Width="722"
+                  Width="737"
                   HorizontalAlignment="Center"
                   Background="Transparent"
                   BorderThickness="0"
@@ -368,7 +368,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Kraj" Width="205">
+                    <GridViewColumn Header="Kraj" Width="220">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Country}" TextDecorations="Underline" Foreground="#815eff" 
