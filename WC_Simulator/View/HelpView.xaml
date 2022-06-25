@@ -132,8 +132,8 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0">
-                <TextBlock Text="Ustawienia" Style="{StaticResource label}"/>
-                <Image Source="../Resources/settings.png" Style="{StaticResource icon}"/>
+                <TextBlock Text="Profil" Style="{StaticResource label}"/>
+                <Image Source="../Resources/profile.png" Style="{StaticResource icon}"/>
             </StackPanel>
 
             <TextBox Grid.Row="1" Style="{StaticResource opis}"
@@ -151,7 +151,7 @@
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0">
                 <TextBlock Text="O autorach" Style="{StaticResource label}"/>
-                <Image Source="../Resources/author.png" Style="{StaticResource icon}"/>
+                <Image Source="../Resources/authors.png" Style="{StaticResource icon}"/>
             </StackPanel>
 
             <TextBox Grid.Row="1" Style="{StaticResource opis}"

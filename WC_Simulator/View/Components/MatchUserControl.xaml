@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WC_Simulator.View.Components"
              xmlns:vms="clr-namespace:WC_Simulator.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="240" MaxHeight="200" MaxWidth="270">
+             d:DesignHeight="125" d:DesignWidth="240" MaxHeight="125" MaxWidth="270">
     <UserControl.Background>
         <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
             <LinearGradientBrush.GradientStops>
@@ -53,7 +53,6 @@
             <ColumnDefinition Width="0.7*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
