@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Collections.ObjectModel;
 using WC_Simulator.DAL.Entities;
 using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
@@ -30,8 +24,18 @@ namespace WC_Simulator.ViewModel
             NavigationStore = navigationStore;
 
             _teams = new ObservableCollection<TeamInTeams>();
+            //group stage
             CalculateStats();
+            //after group
             LoadTeamsInTeams();
+            //after 1/8
+            StatsForStage(0, "1/8 finału");
+            //after 1/4
+            StatsForStage(1, "1/4 finału");
+            //after 1/2
+            StatsForStage(2, "");
+            //after finals
+            StatsOfFinalStage();
             _selectedTeam = Teams[0];
         }
 
@@ -64,6 +68,85 @@ namespace WC_Simulator.ViewModel
 
 
         #region Methods
+        private void StatsOfFinalStage()
+        {
+                if (Model.KnockoutsMatches[3][0].Goals_first_team != null || Model.KnockoutsMatches[3][0].Goals_second_team != null)
+                {
+                    Teams[(int)Model.KnockoutsMatches[3][0].Id_first_team - 1].GF += (int)Model.KnockoutsMatches[3][0].Goals_first_team;
+                    Teams[(int)Model.KnockoutsMatches[3][0].Id_first_team - 1].GA += (int)Model.KnockoutsMatches[3][0].Goals_second_team;
+                    Teams[(int)Model.KnockoutsMatches[3][0].Id_first_team - 1].Matches += 1;
+                    Teams[(int)Model.KnockoutsMatches[3][0].Id_second_team - 1].GF += (int)Model.KnockoutsMatches[3][0].Goals_second_team;
+                    Teams[(int)Model.KnockoutsMatches[3][0].Id_second_team - 1].GA += (int)Model.KnockoutsMatches[3][0].Goals_first_team;
+                    Teams[(int)Model.KnockoutsMatches[3][0].Id_second_team - 1].Matches += 1;
+                    if ((int)Model.KnockoutsMatches[3][0].Goals_first_team > (int)Model.KnockoutsMatches[3][0].Goals_second_team)
+                    {
+                        Teams[(int)Model.KnockoutsMatches[3][0].Id_first_team - 1].Wins += 1;
+                        Teams[(int)Model.KnockoutsMatches[3][0].Id_second_team - 1].Losses += 1;
+                        Teams[(int)Model.KnockoutsMatches[3][0].Id_first_team - 1].Phase = "1 miejsce";
+                        Teams[(int)Model.KnockoutsMatches[3][0].Id_second_team - 1].Phase = "2 miejsce";
+                    }
+                    else
+                    {
+                        Teams[(int)Model.KnockoutsMatches[3][0].Id_second_team - 1].Wins += 1;
+                        Teams[(int)Model.KnockoutsMatches[3][0].Id_first_team - 1].Losses += 1;
+                        Teams[(int)Model.KnockoutsMatches[3][0].Id_first_team - 1].Phase = "2 miejsce";
+                        Teams[(int)Model.KnockoutsMatches[3][0].Id_second_team - 1].Phase = "1 miejsce";
+                    }
+                }
+            if (Model.KnockoutsMatches[3][1].Goals_first_team != null || Model.KnockoutsMatches[3][1].Goals_second_team != null)
+            {
+                Teams[(int)Model.KnockoutsMatches[3][1].Id_first_team - 1].GF += (int)Model.KnockoutsMatches[3][1].Goals_first_team;
+                Teams[(int)Model.KnockoutsMatches[3][1].Id_first_team - 1].GA += (int)Model.KnockoutsMatches[3][1].Goals_second_team;
+                Teams[(int)Model.KnockoutsMatches[3][1].Id_first_team - 1].Matches += 1;
+                Teams[(int)Model.KnockoutsMatches[3][1].Id_second_team - 1].GF += (int)Model.KnockoutsMatches[3][1].Goals_second_team;
+                Teams[(int)Model.KnockoutsMatches[3][1].Id_second_team - 1].GA += (int)Model.KnockoutsMatches[3][1].Goals_first_team;
+                Teams[(int)Model.KnockoutsMatches[3][1].Id_second_team - 1].Matches += 1;
+                if ((int)Model.KnockoutsMatches[3][1].Goals_first_team > (int)Model.KnockoutsMatches[3][1].Goals_second_team)
+                {
+                    Teams[(int)Model.KnockoutsMatches[3][1].Id_first_team - 1].Wins += 1;
+                    Teams[(int)Model.KnockoutsMatches[3][1].Id_second_team - 1].Losses += 1;
+                    Teams[(int)Model.KnockoutsMatches[3][1].Id_first_team - 1].Phase = "3 miejsce";
+                    Teams[(int)Model.KnockoutsMatches[3][1].Id_second_team - 1].Phase = "4 miejsce";
+                }
+                else
+                {
+                    Teams[(int)Model.KnockoutsMatches[3][1].Id_second_team - 1].Wins += 1;
+                    Teams[(int)Model.KnockoutsMatches[3][1].Id_first_team - 1].Losses += 1;
+                    Teams[(int)Model.KnockoutsMatches[3][1].Id_first_team - 1].Phase = "4 miejsce";
+                    Teams[(int)Model.KnockoutsMatches[3][1].Id_second_team - 1].Phase = "3 miejsce";
+                }
+            }
+        }
+
+        private void StatsForStage(int phaseInt, string phaseString)
+        {
+            foreach (var match in Model.KnockoutsMatches[phaseInt])
+            {
+                if (match.Goals_first_team != null || match.Goals_second_team != null)
+                {
+                    Teams[(int)match.Id_first_team - 1].GF += (int)match.Goals_first_team;
+                    Teams[(int)match.Id_first_team - 1].GA += (int)match.Goals_second_team;
+                    Teams[(int)match.Id_first_team - 1].Matches += 1;
+                    Teams[(int)match.Id_first_team - 1].Phase = phaseString;
+
+                    Teams[(int)match.Id_second_team - 1].GF += (int)match.Goals_second_team;
+                    Teams[(int)match.Id_second_team - 1].GA += (int)match.Goals_first_team;
+                    Teams[(int)match.Id_second_team - 1].Matches += 1;
+                    Teams[(int)match.Id_second_team - 1].Phase = phaseString;
+
+                    if ((int)match.Goals_first_team > (int)match.Goals_second_team)
+                    {
+                        Teams[(int)match.Id_first_team - 1].Wins += 1;
+                        Teams[(int)match.Id_second_team - 1].Losses += 1;
+                    }
+                    else
+                    {
+                        Teams[(int)match.Id_second_team - 1].Wins += 1;
+                        Teams[(int)match.Id_first_team - 1].Losses += 1;
+                    }
+                }
+            }
+        }
 
         private void LoadTeamsInTeams()
         {
@@ -71,7 +154,7 @@ namespace WC_Simulator.ViewModel
             {
                 ObservableCollection<string> players = new ObservableCollection<string>();
                 foreach (var player in Model.AllPlayers)
-                {   
+                {
                     if (player.Id_team == team.Id_team)
                     {
                         players.Add(player.ToString());
@@ -111,7 +194,7 @@ namespace WC_Simulator.ViewModel
                             if (match.Goals_first_team != null || match.Goals_second_team != null)
                             {
                                 team.Matches += 1;
-                                team.GF +=   (int)match.Goals_first_team;
+                                team.GF += (int)match.Goals_first_team;
                                 team.GA += (int)match.Goals_second_team;
                                 var points = Points_for_match(match, 0);
                                 if (points == 3)
@@ -120,6 +203,7 @@ namespace WC_Simulator.ViewModel
                                     team.Draws += 1;
                                 else
                                     team.Losses += 1;
+                                team.Points += points;
                             }
                         }
                         else if (match.Name_second == team.Country)
@@ -136,6 +220,7 @@ namespace WC_Simulator.ViewModel
                                     team.Draws += 1;
                                 else
                                     team.Losses += 1;
+                                team.Points += points;
                             }
                         }
                     }
