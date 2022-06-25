@@ -97,12 +97,22 @@ namespace WC_Simulator.ViewModel
             {
                 foreach (var team in Model.GroupsTeams[i])
                 {
+                    team.GF = 0;
+                    team.GA = 0;
+                    team.Matches = 0;
+                    team.Wins = 0;
+                    team.Draws = 0;
+                    team.Losses = 0;
+                    team.Points = 0;
                     foreach (var match in Model.GroupsMatches[i])
                     {
                         if (match.Name_first == team.Country)
                         {
                             if (match.Goals_first_team != null || match.Goals_second_team != null)
                             {
+                                team.Matches += 1;
+                                team.GF +=   (int)match.Goals_first_team;
+                                team.GA += (int)match.Goals_second_team;
                                 var points = Points_for_match(match, 0);
                                 if (points == 3)
                                     team.Wins += 1;
@@ -116,6 +126,9 @@ namespace WC_Simulator.ViewModel
                         {
                             if (match.Goals_first_team != null || match.Goals_second_team != null)
                             {
+                                team.Matches += 1;
+                                team.GF += (int)match.Goals_second_team;
+                                team.GA += (int)match.Goals_first_team;
                                 var points = Points_for_match(match, 1);
                                 if (points == 3)
                                     team.Wins += 1;
