@@ -1,12 +1,11 @@
-﻿using WC_Simulator.ViewModel.BaseClasses;
-using WC_Simulator.Model;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
-using WC_Simulator.DAL.Entities;
-using System;
-using WC_Simulator.Helpers.Stores;
 using System.Windows.Input;
-using System.Collections.ObjectModel;
+using WC_Simulator.DAL.Entities;
 using WC_Simulator.DAL.Repositories;
+using WC_Simulator.Helpers.Stores;
+using WC_Simulator.Model;
+using WC_Simulator.ViewModel.BaseClasses;
 
 namespace WC_Simulator.ViewModel
 {
@@ -68,7 +67,9 @@ namespace WC_Simulator.ViewModel
         public ObservableCollection<Tournament> Tournaments
         {
             get { return Model.AllTournaments; }
-            set { Model.AllTournaments = value;
+            set
+            {
+                Model.AllTournaments = value;
                 OnPropertyChanged(nameof(Tournaments));
             }
         }
@@ -206,7 +207,8 @@ namespace WC_Simulator.ViewModel
             {
                 if (_tournamentSelectionChanged == null)
                 {
-                    _tournamentSelectionChanged = new RelayCommand(arg => {
+                    _tournamentSelectionChanged = new RelayCommand(arg =>
+                    {
                         if (Model.CurrentTournament != null)
                         {
                             Model.CurrentTournamentGroups = new ObservableCollection<Single_group>(RepositoryGroups.LoadTournamentGroup(Model.CurrentTournament.Id_tournament));
