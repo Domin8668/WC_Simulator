@@ -1,23 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using WC_Simulator.DAL.Entities;
 
 namespace WC_Simulator.DAL.Repositories
 {
-    using MySql.Data.MySqlClient;
-    using WC_Simulator.DAL;
-    using WC_Simulator.DAL.Entities;
     class RepositoryUsers
     {
         #region QUERIES
 
         private const string ALL_USER = "SELECT * FROM `user`";
-        private const string ADD_USER = "INSERT INTO `user`(`id_user`, `login`, `password`," +
-            " `creation_date`, `last_log_date`, `security_question`, `security_answer`) VALUES ";
-        private const string DELETE_USER = "DELETE FROM `user` WHERE id_user = ";
-        
+
         #endregion
 
 
@@ -87,20 +80,6 @@ namespace WC_Simulator.DAL.Repositories
                 command.Parameters.Add("@login", MySqlDbType.VarChar).Value = user.Login;
                 var n = command.ExecuteNonQuery();
                 if (n == 1) state = true;
-                connection.Close();
-            }
-            return state;
-        }
-
-        public static bool DeleteUser(User user)
-        {
-            bool state = false;
-            using (var connection = DBConnection.Instance.Connection)
-            {
-                MySqlCommand command = new MySqlCommand($"{DELETE_USER} {user.Id_user}", connection);
-                connection.Open();
-                var id = command.ExecuteNonQuery();
-                state = true;
                 connection.Close();
             }
             return state;
