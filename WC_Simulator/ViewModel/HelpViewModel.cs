@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WC_Simulator.Helpers.Stores;
+﻿using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
 using WC_Simulator.ViewModel.BaseClasses;
 
@@ -13,8 +8,6 @@ namespace WC_Simulator.ViewModel
     {
 
         #region Variables
-
-
 
         #endregion
 
@@ -27,26 +20,10 @@ namespace WC_Simulator.ViewModel
             NavigationStore = navigationStore;
         }
 
-        public HelpViewModel()
-        {
-        }
-
         #endregion
 
 
         #region Properties
-
-        //public MainModel Model
-        //{
-        //    get { return Model; }
-        //    set { Model = value; }
-        //}
-
-        //public NavigationStore NavigationStore
-        //{
-        //    get { return NavigationStore; }
-        //    set { NavigationStore = value; }
-        //}
 
         #endregion
 

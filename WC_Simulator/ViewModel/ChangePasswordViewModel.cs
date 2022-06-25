@@ -1,11 +1,9 @@
-﻿using WC_Simulator.ViewModel.BaseClasses;
-using WC_Simulator.Model;
-using System;
-using WC_Simulator.DAL.Entities;
-using WC_Simulator.Helpers.Stores;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows;
 using WC_Simulator.Helpers.Hashing;
+using WC_Simulator.Helpers.Stores;
+using WC_Simulator.Model;
+using WC_Simulator.ViewModel.BaseClasses;
 
 namespace WC_Simulator.ViewModel
 {
@@ -62,7 +60,7 @@ namespace WC_Simulator.ViewModel
                 OnPropertyChanged(OldPassword);
             }
         }
-        
+
         public string NewPassword
         {
             get { return _newPassword; }
@@ -82,7 +80,7 @@ namespace WC_Simulator.ViewModel
                 OnPropertyChanged(nameof(NewPassword));
             }
         }
-        
+
         public string RepeatNewPassword
         {
             get { return _repeatNewPassword; }
@@ -122,7 +120,7 @@ namespace WC_Simulator.ViewModel
                 OnPropertyChanged(nameof(NewPasswordBorder));
             }
         }
-        
+
         public double RepeatNewPasswordBorder
         {
             get { return _repeatNewPasswordBorder; }
@@ -296,7 +294,7 @@ namespace WC_Simulator.ViewModel
                     _return = new RelayCommand(arg =>
                     {
                         NavigationStore.CurrentViewModel = new ProfileViewModel(Model, NavigationStore);
-                    },  
+                    },
                     arg => true);
                 }
                 return _return;

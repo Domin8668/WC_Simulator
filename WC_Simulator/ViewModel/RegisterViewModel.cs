@@ -1,13 +1,11 @@
-﻿using WC_Simulator.ViewModel.BaseClasses;
-using WC_Simulator.Model;
-using System;
-using WC_Simulator.DAL.Entities;
-using WC_Simulator.Helpers.Stores;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows;
-using WC_Simulator.Helpers.Hashing;
-using System.Collections.ObjectModel;
+using WC_Simulator.DAL.Entities;
 using WC_Simulator.DAL.Repositories;
+using WC_Simulator.Helpers.Hashing;
+using WC_Simulator.Helpers.Stores;
+using WC_Simulator.Model;
+using WC_Simulator.ViewModel.BaseClasses;
 
 namespace WC_Simulator.ViewModel
 {

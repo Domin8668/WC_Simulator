@@ -29,21 +29,6 @@ namespace WC_Simulator.Model
 
         #region Constructor
 
-        public TeamInTeams(int wins, int losses ,int draws, string image, string country, string coach,  int matches, int points, ObservableCollection<string> players, string phase)
-        {
-            _image = image;
-            _country = country;
-
-            _losses = losses;
-            _wins = wins;
-            _draws = draws;
-            _matches = matches;
-            _points = points;
-            _phase = phase;
-            _coach = coach;
-            _players = players;
-        }
-
         public TeamInTeams(Team team, TeamInGroup teamInGroup, ObservableCollection<string> players, string phase)
         {
             _teamId = team.Id_team;

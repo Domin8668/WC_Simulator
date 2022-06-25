@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Collections.ObjectModel;
 using WC_Simulator.DAL.Entities;
 using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
@@ -71,7 +65,7 @@ namespace WC_Simulator.ViewModel
             {
                 ObservableCollection<string> players = new ObservableCollection<string>();
                 foreach (var player in Model.AllPlayers)
-                {   
+                {
                     if (player.Id_team == team.Id_team)
                     {
                         players.Add(player.ToString());
@@ -111,7 +105,7 @@ namespace WC_Simulator.ViewModel
                             if (match.Goals_first_team != null || match.Goals_second_team != null)
                             {
                                 team.Matches += 1;
-                                team.GF +=   (int)match.Goals_first_team;
+                                team.GF += (int)match.Goals_first_team;
                                 team.GA += (int)match.Goals_second_team;
                                 var points = Points_for_match(match, 0);
                                 if (points == 3)

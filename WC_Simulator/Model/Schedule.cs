@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WC_Simulator.Model
 {
-     class Schedule
+    class Schedule
     {
         #region Variables
         private int[] _matchCodes = new int[64];
@@ -117,7 +114,7 @@ namespace WC_Simulator.Model
         private void Prepare_matchlocations()
         {
             // na zielono cyfra w schedule match 
-            int[] al_bayt = new int[9] { 0, 11, 19, 27, 35,43,50,58, 61}; // 0
+            int[] al_bayt = new int[9] { 0, 11, 19, 27, 35, 43, 50, 58, 61 }; // 0
             foreach (int i in al_bayt)
             {
                 MatchLocations[i] = 0;
@@ -141,7 +138,7 @@ namespace WC_Simulator.Model
                 MatchLocations[i] = 3;
             }
 
-            int[] education = new int[8] { 5, 13, 21, 29, 37, 45, 54, 57}; //4
+            int[] education = new int[8] { 5, 13, 21, 29, 37, 45, 54, 57 }; //4
             foreach (int i in education)
             {
                 MatchLocations[i] = 4;
@@ -153,7 +150,7 @@ namespace WC_Simulator.Model
                 MatchLocations[i] = 5;
             }
 
-            int[] khalifa_inter = new int[8] { 2, 10, 18, 26, 34, 42, 48, 62}; //6
+            int[] khalifa_inter = new int[8] { 2, 10, 18, 26, 34, 42, 48, 62 }; //6
             foreach (int i in khalifa_inter)
             {
                 MatchLocations[i] = 6;
@@ -168,32 +165,32 @@ namespace WC_Simulator.Model
         private void Prepare_matchdates()
         {
             int[] eleven = new int[8] { 1, 7, 11, 12, 16, 20, 24, 28 }; //matchcode o 11, grupa
-            int[] fourteen = new int[8] { 2, 5, 10, 13, 17, 21, 25, 29}; //matchcode o 14, grupa
-            int[] sixteen = new int[8] { 48, 51, 52, 54, 57, 59, 62, 63}; //matchcode o 16
-            int[] seventeen = new int[8] { 0, 6, 9, 14, 18, 22, 26, 30}; //matchcode o 17, grupa
+            int[] fourteen = new int[8] { 2, 5, 10, 13, 17, 21, 25, 29 }; //matchcode o 14, grupa
+            int[] sixteen = new int[8] { 48, 51, 52, 54, 57, 59, 62, 63 }; //matchcode o 16
+            int[] seventeen = new int[8] { 0, 6, 9, 14, 18, 22, 26, 30 }; //matchcode o 17, grupa
             int[] twenty = new int[10] { 3, 4, 8, 15, 19, 23, 27, 31, 60, 61 }; //matchcode o 20
             // wylaczone sa dwie ostatnie kolejki fazy grupowej
 
             #region pierwsze dwie kolejki fazy grupwej
             // 11
             int day = 21;
-            foreach(int element in eleven)
+            foreach (int element in eleven)
             {
-                MatchDates[element] = new DateTime(2022, 11, day, 11,0,0);
+                MatchDates[element] = new DateTime(2022, 11, day, 11, 0, 0);
                 day++;
             }
             // 14
             day = 21;
             foreach (int element in fourteen)
             {
-                MatchDates[element] = new DateTime(2022, 11, day, 14,0,0);
+                MatchDates[element] = new DateTime(2022, 11, day, 14, 0, 0);
                 day++;
             }
             // 17
             day = 21;
             foreach (var element in seventeen)
             {
-                MatchDates[element] = new DateTime(2022, 11, day,17,0,0);
+                MatchDates[element] = new DateTime(2022, 11, day, 17, 0, 0);
                 day++;
             }
             // 20
@@ -237,7 +234,7 @@ namespace WC_Simulator.Model
             day = 5;
             for (int i = 52; i < 56; i += 2)
             {
-                MatchDates[i] = new DateTime(2022, 12, day, 16,0,0);
+                MatchDates[i] = new DateTime(2022, 12, day, 16, 0, 0);
                 MatchDates[i + 1] = new DateTime(2022, 12, day, 20, 0, 0);
                 day++;
             }
@@ -250,13 +247,13 @@ namespace WC_Simulator.Model
             for (int i = 56; i < 60; i++)
             {
                 MatchDates[i] = new DateTime(2022, 12, day, hour, 0, 0);
-                MatchDates[i + 2] = new DateTime(2022, 12, day+1, hour, 0, 0);
-                hour = 16;  
+                MatchDates[i + 2] = new DateTime(2022, 12, day + 1, hour, 0, 0);
+                hour = 16;
             }
             #endregion
 
             #region strefa finałowa
-            for (int i = 8; i <10; i++)
+            for (int i = 8; i < 10; i++)
             {
                 MatchDates[twenty[i]] = new DateTime(2022, 12, 5 + i, 20, 0, 0);
             }
