@@ -124,6 +124,7 @@ namespace WC_Simulator.Model
                     KnockoutsMatches.Clear();
                     LoadGroupsMatches();
                     LoadKnockoutsMatches();
+                    PrepareEmptyGroupTeams();
                 }
             }
         }
