@@ -120,11 +120,11 @@ namespace WC_Simulator.Model
                 {
                     CurrentTournamentGroups = new ObservableCollection<Single_group>(RepositoryGroups.LoadTournamentGroup(CurrentTournament.Id_tournament));
                     CurrentTournamentMatches = new ObservableCollection<Single_match>(RepositoryMatches.LoadTournamentMatch(CurrentTournament));
+                    PrepareEmptyGroupTeams();
                     GroupsMatches.Clear();
                     KnockoutsMatches.Clear();
                     LoadGroupsMatches();
-                    LoadKnockoutsMatches();
-                    PrepareEmptyGroupTeams();
+                    LoadKnockoutsMatches();           
                 }
             }
         }
