@@ -30,6 +30,7 @@ namespace WC_Simulator.ViewModel
             NavigationStore = navigationStore;
 
             _teams = new ObservableCollection<TeamInTeams>();
+            CalculateStats();
             LoadTeamsInTeams();
             _selectedTeam = Teams[0];
         }
@@ -88,6 +89,80 @@ namespace WC_Simulator.ViewModel
                 }
                 Teams.Add(new TeamInTeams(team, tig, players, "Faza grupowa"));
             }
+        }
+
+        public void CalculateStats()
+        {
+            for (int i = 0; i < Model.CurrentTournamentGroups.Count; i++)
+            {
+                foreach (var team in Model.GroupsTeams[i])
+                {
+                    foreach (var match in Model.GroupsMatches[i])
+                    {
+                        if (match.Name_first == team.Country)
+                        {
+                            if (match.Goals_first_team != null || match.Goals_second_team != null)
+                            {
+                                var points = Points_for_match(match, 0);
+                                if (points == 3)
+                                    team.Wins += 1;
+                                else if (points == 1)
+                                    team.Draws += 1;
+                                else
+                                    team.Losses += 1;
+                            }
+                        }
+                        else if (match.Name_second == team.Country)
+                        {
+                            if (match.Goals_first_team != null || match.Goals_second_team != null)
+                            {
+                                var points = Points_for_match(match, 1);
+                                if (points == 3)
+                                    team.Wins += 1;
+                                else if (points == 1)
+                                    team.Draws += 1;
+                                else
+                                    team.Losses += 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public int Points_for_match(Single_match match, int who)
+        {
+            int goalsfirst = (int)match.Goals_first_team;
+            int goalssecond = (int)match.Goals_second_team;
+
+            if (goalsfirst == goalssecond)
+            {
+                return 1;
+            }
+            else if (goalsfirst > goalssecond)
+            {
+                if (who == 0)
+                {
+                    return 3;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            else
+            {
+                if (who == 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return 3;
+                }
+            }
+
+
         }
 
         #endregion
