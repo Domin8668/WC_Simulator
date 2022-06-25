@@ -77,17 +77,6 @@ namespace WC_Simulator.DAL.Entities
             Att_factor = att_factor;
         }
 
-        public Team(Team team)
-        {
-            Id_team =  team.Id_team;
-            Group_letter = team.Group_letter;
-            Name = team.Name;
-            Short_name = team.Short_name;
-            Coach = team.Coach;
-            Def_factor = team.Def_factor;
-            Att_factor = team.Att_factor;
-        }
-
         #endregion
 
 
@@ -96,30 +85,6 @@ namespace WC_Simulator.DAL.Entities
         public override string ToString()
         {
             return Name;
-        }
-
-        public string ToInsert()
-        {
-            return $"('{Id_team}', '{Group_letter}', '{Name}', '{Short_name}', '{Coach}', '{Def_factor}', '{Att_factor}')";
-        }
-
-        public override bool Equals(object obj)
-        {
-            var team = obj as Team;
-            if (team is null) return false;
-            if (Id_team != team.Id_team) return false;
-            if (Group_letter != team.Group_letter) return false;
-            if (Name.ToLower() != team.Name.ToLower()) return false;
-            if (Short_name.ToLower() != team.Short_name.ToLower()) return false;
-            if (Coach.ToLower() != team.Coach.ToLower()) return false;
-            if (Def_factor != team.Def_factor) return false;
-            if (Att_factor != team.Att_factor) return false;
-            return true;
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
         }
 
         #endregion

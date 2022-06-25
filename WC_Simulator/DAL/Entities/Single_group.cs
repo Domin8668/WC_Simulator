@@ -6,6 +6,7 @@ namespace WC_Simulator.DAL.Entities
     class Single_group
     {
         #region Properties
+
         public uint? Id_group { get; set; }
 
         public uint? Id_first_pl_team { get; set; }
@@ -57,15 +58,6 @@ namespace WC_Simulator.DAL.Entities
             Letter = (Alphabet)letter;
         }
 
-        public Single_group(Single_group group)
-        {
-            Id_group = group.Id_group;
-            Id_first_pl_team = group.Id_first_pl_team;
-            Id_second_pl_team = group.Id_second_pl_team;
-            Id_tournament = group.Id_tournament;
-            Letter = group.Letter;
-        }
-
         #endregion
 
 
@@ -79,22 +71,6 @@ namespace WC_Simulator.DAL.Entities
         public string ToInsert()
         {
             return $"('{Id_group}', '{Id_first_pl_team}', {Id_second_pl_team}, '{Id_tournament}', '{Letter}')";
-        }
-
-        public override bool Equals(object obj)
-        {
-            //nie porównujemy ID
-            if (!(obj is Single_group group)) return false;
-            if (Id_group != group.Id_group) return false;
-            if (Id_first_pl_team != group.Id_first_pl_team) return false;
-            if (Id_second_pl_team != group.Id_second_pl_team) return false;
-            if (Letter != group.Letter) return false;
-            return true;
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
         }
 
         #endregion

@@ -87,7 +87,7 @@ namespace WC_Simulator.DAL.Entities
             Short_first = short_first.Trim();
             Short_second = short_second.Trim();
             Name_first = name_first.Trim();
-            Name_second = name_second.Trim();        
+            Name_second = name_second.Trim();
 
             if (name_first == string.Empty || name_first == null)
                 Flag_first = "../../Resources/Flags/placeholder.png";
@@ -108,7 +108,7 @@ namespace WC_Simulator.DAL.Entities
             Goals_second_team = goals_second_team;
         }
 
-        public Single_match(uint id_tournament, Team team1, Team team2 , uint match_code, uint? goals_first_team, uint? goals_second_team)
+        public Single_match(uint id_tournament, Team team1, Team team2, uint match_code, uint? goals_first_team, uint? goals_second_team)
         {
             Id_match = null;
             Id_first_team = (uint)team1.Id_team;
@@ -168,23 +168,6 @@ namespace WC_Simulator.DAL.Entities
             Goals_second_team = goals_second_team;
         }
 
-
-        public Single_match(Single_match match)
-        {
-            Id_match = match.Id_match;
-            Id_first_team = match.Id_first_team;
-            Id_second_team = match.Id_second_team;
-            Id_tournament = match.Id_tournament;
-            Short_first = match.Short_first;
-            Short_second = match.Short_second;
-            Name_first = match.Name_first;
-            Name_second = match.Name_second;
-            Match_code = match.Match_code;
-            Flag_first = match.Flag_first;
-            Flag_second = match.Flag_second;
-            Goals_first_team = match.Goals_first_team;
-            Goals_second_team = match.Goals_second_team;
-        }
         #endregion
 
 
@@ -193,33 +176,6 @@ namespace WC_Simulator.DAL.Entities
         public override string ToString()
         {
             return $"Bramki w meczu: {Goals_first_team} : {Goals_second_team}";
-        }
-
-        //public string ToInsert()
-        //{
-        //    return $"('{Id_first_team}', {Id_second_team}, '{Id_tournament}', '{Short_first}', '{Short_second}', '{Name_first}', '{Name_second}', '{Match_code}', '{if (Goals_first_team == null) }', '{Goals_second_team}')";
-        //}
-
-        public override bool Equals(object obj)
-        {
-            if (!(obj is Single_match match)) return false;
-            if (Id_match != match.Id_match) return false;
-            if (Id_first_team != match.Id_first_team) return false;
-            if (Id_second_team != match.Id_second_team) return false;
-            if (Id_tournament != match.Id_tournament) return false;
-            if (Short_first.ToLower() != match.Short_first.ToLower()) return false;
-            if (Short_second.ToLower() != match.Short_second.ToLower()) return false;
-            if (Name_first.ToLower() != match.Name_first.ToLower()) return false;
-            if (Name_second.ToLower() != match.Name_second.ToLower()) return false;
-            if (Match_code != match.Match_code) return false;
-            if (Goals_first_team != match.Goals_first_team) return false;
-            if (Goals_second_team != match.Goals_second_team) return false;
-            return true;
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
         }
 
         #endregion
