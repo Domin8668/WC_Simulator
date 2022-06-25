@@ -1,5 +1,4 @@
-﻿using System.Security;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 
 namespace WC_Simulator.Helpers.Hashing

@@ -1,6 +1,4 @@
-﻿using System.Security;
-
-namespace WC_Simulator.Helpers.Hashing
+﻿namespace WC_Simulator.Helpers.Hashing
 {
     internal interface IHashing
     {
