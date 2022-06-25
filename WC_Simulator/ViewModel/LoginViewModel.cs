@@ -1,21 +1,19 @@
-﻿using WC_Simulator.DAL.Entities;
-using WC_Simulator.ViewModel.BaseClasses;
-using WC_Simulator.Model;
-using System;
-using WC_Simulator.Helpers.Hashing;
-using System.Windows.Input;
-using WC_Simulator.Helpers.Stores;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Media;
+using System.Windows.Input;
+using WC_Simulator.DAL.Entities;
 using WC_Simulator.DAL.Repositories;
-using System.Collections.ObjectModel;
+using WC_Simulator.Helpers.Hashing;
+using WC_Simulator.Helpers.Stores;
+using WC_Simulator.Model;
+using WC_Simulator.ViewModel.BaseClasses;
 
 namespace WC_Simulator.ViewModel
 {
     internal class LoginViewModel : BaseViewModel
     {
         #region Variables
- 
+
         private string _username;
         private string _password;
         private double _usernameBorder;
@@ -69,7 +67,7 @@ namespace WC_Simulator.ViewModel
                 {
                     PasswordBorder = 0.7;
                     PasswordWarning = "Hasło nie może być puste";
-                } 
+                }
                 else
                 {
                     PasswordBorder = 0;
@@ -132,7 +130,8 @@ namespace WC_Simulator.ViewModel
             {
                 if (_login == null)
                 {
-                    _login = new RelayCommand(arg => {
+                    _login = new RelayCommand(arg =>
+                    {
                         SHA256Hashing myHash = new SHA256Hashing();
                         Model.CurrentUserShort.Login = Username;
                         Model.CurrentUserShort.Password = myHash.GetHash(Username, Password);
@@ -162,16 +161,6 @@ namespace WC_Simulator.ViewModel
                             Password = null;
                             UsernameBorder = 0.7;
                             UsernameWarning = "Login musi mieć min. 5 znaków";
-                            Model.CurrentUserShort.Login = string.Empty;
-                            Model.CurrentUserShort.Password = new byte[32];
-                            return;
-                        }
-                        if (Model.CurrentUserShort.Login.Contains("`"))
-                        {
-                            Username = null;
-                            Password = null;
-                            UsernameBorder = 0.7;
-                            UsernameWarning = "Login nie może zawierać '`'";
                             Model.CurrentUserShort.Login = string.Empty;
                             Model.CurrentUserShort.Password = new byte[32];
                             return;
@@ -217,7 +206,7 @@ namespace WC_Simulator.ViewModel
                             Model.LoadKnockoutsMatches();
                         }
                         NavigationStore.MenuVisibility = Visibility.Visible;
-                            NavigationStore.CurrentViewModel = new ProfileViewModel(Model, NavigationStore);
+                        NavigationStore.CurrentViewModel = new ProfileViewModel(Model, NavigationStore);
                     },
                     arg => true);
                 }

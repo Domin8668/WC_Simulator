@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Input;
 using WC_Simulator.DAL.Entities;
 using WC_Simulator.DAL.Repositories;
-using System.Windows.Input;
 using WC_Simulator.Helpers.Stores;
 using WC_Simulator.Model;
 using WC_Simulator.ViewModel.BaseClasses;
-using System.Collections.ObjectModel;
 
 namespace WC_Simulator.ViewModel
 {
@@ -103,7 +100,8 @@ namespace WC_Simulator.ViewModel
 
                             Model.CurrentTournamentGroups = new ObservableCollection<Single_group>();
                             Model.CurrentTournamentMatches = new ObservableCollection<Single_match>();
-                            Model.CurrentTournament = tourney;
+                            //Model.CurrentTournament = tourney;
+                            Model.CurrentTournamentIndex = Model.AllTournaments.Count - 1;
 
                             foreach (var letter in Enum.GetValues(typeof(Single_group.Alphabet)))
                             {
@@ -123,6 +121,7 @@ namespace WC_Simulator.ViewModel
 
                             Model.CurrentTournamentMatches = new ObservableCollection<Single_match>(RepositoryMatches.LoadTournamentMatch(Model.CurrentTournament));
 
+                            NavigationStore.MenuVisibility = Visibility.Visible;
                             NavigationStore.CurrentViewModel = new GroupsViewModel(Model, NavigationStore);
                         }
                     },

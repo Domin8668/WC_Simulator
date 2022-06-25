@@ -1,6 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
-using MySql.Data.MySqlClient;
 using WC_Simulator.DAL.Entities;
 
 namespace WC_Simulator.DAL.Repositories
@@ -11,10 +11,8 @@ namespace WC_Simulator.DAL.Repositories
         #region QUERIES
 
         private const string ALL_GROUP = "SELECT * FROM `single_group` WHERE id_tournament = ";
-        private const string ADD_GROUP = "INSERT INTO `single_group`(`id_group`, `id_first_pl_team`, `id_second_pl_team`, `id_tournament`, `letter`) VALUES ";
-        private const string DELETE_GROUP = "DELETE FROM `single_group` WHERE id_group = ";
-
         private const string TEAMS_IN_GROUP = "SELECT * FROM `single_group` WHERE id_group = ";
+
         #endregion
 
 
@@ -24,6 +22,7 @@ namespace WC_Simulator.DAL.Repositories
         /// CRUD - create, read, update, delete
         /// </summary>
         /// <returns></returns>
+
         public static List<uint?> LoadTeamsInGroup(uint? IDgroup, uint IDtournament)
         {
             List<uint?> IDteams = new List<uint?>();
@@ -59,21 +58,6 @@ namespace WC_Simulator.DAL.Repositories
             return group;
         }
 
-        public static bool AddGroup(Single_group group)
-        {
-            bool state = false;
-            using (var connection = DBConnection.Instance.Connection)
-            {
-                MySqlCommand command = new MySqlCommand($"{ADD_GROUP} {group.ToInsert()}", connection);
-                connection.Open();
-                var id = command.ExecuteNonQuery();
-                state = true;
-                group.Id_group = (uint)command.LastInsertedId;
-                connection.Close();
-            }
-            return state;
-        }
-
         public static bool UpdateGroup(Single_group group)
         {
             bool state = false;
@@ -95,20 +79,6 @@ namespace WC_Simulator.DAL.Repositories
                 command.Parameters.Add("@Id_group", MySqlDbType.UInt64).Value = group.Id_group;
                 var n = command.ExecuteNonQuery();
                 if (n == 1) state = true;
-            }
-            return state;
-        }
-
-        public static bool DeleteGroup(Single_group group)
-        {
-            bool state = false;
-            using (var connection = DBConnection.Instance.Connection)
-            {
-                MySqlCommand command = new MySqlCommand($"{DELETE_GROUP} {group.Id_group}", connection);
-                connection.Open();
-                var id = command.ExecuteNonQuery();
-                state = true;
-                connection.Close();
             }
             return state;
         }

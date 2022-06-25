@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 using WC_Simulator.DAL.Entities;
 
 namespace WC_Simulator.DAL.Repositories
@@ -9,7 +9,7 @@ namespace WC_Simulator.DAL.Repositories
         #region QUERIES
 
         private const string ALL_USERSHORT = "SELECT `login`, `password` FROM `user`";
-        
+
         #endregion
 
 

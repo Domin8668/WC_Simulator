@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Input;
 using WC_Simulator.DAL.Entities;
 using WC_Simulator.Helpers.Hashing;

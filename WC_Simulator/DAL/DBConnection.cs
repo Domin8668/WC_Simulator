@@ -21,7 +21,7 @@ namespace WC_Simulator.DAL
         public MySqlConnection Connection => new MySqlConnection(stringBuilder.ToString());
 
         private DBConnection()
-        { 
+        {
             stringBuilder.UserID = Properties.Settings.Default.userID;
             stringBuilder.Server = Properties.Settings.Default.server;
             stringBuilder.Database = Properties.Settings.Default.database;

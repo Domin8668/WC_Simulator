@@ -132,7 +132,9 @@ namespace WC_Simulator.Model
         public int CurrentTournamentIndex
         {
             get { return _currentTournamentIndex; }
-            set { _currentTournamentIndex = value; }
+            set { _currentTournamentIndex = value;
+                _currentTournament = AllTournaments[CurrentTournamentIndex];
+            }
         }
 
         public ObservableCollection<Single_group> CurrentTournamentGroups
@@ -620,13 +622,6 @@ namespace WC_Simulator.Model
             }
             KnockoutsMatches.Add(singleKnockoutsMatches);
         }
-
-        #endregion
-
-        #region Knockouts
-
-
-
 
         #endregion
 
