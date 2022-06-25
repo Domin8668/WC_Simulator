@@ -53,7 +53,7 @@ namespace WC_Simulator.DAL.Repositories
             using (var connection = DBConnection.Instance.Connection)
             {
                 string UPDATE_TOURNAMENT = $"UPDATE Tournament SET id_tournament='{tournament.Id_tournament}', id_user='{tournament.Id_user}', " +
-                    $"t_name='{tournament.T_name}' WHERE id_tournament={idTournament}";
+                    $"t_name='{tournament.Tourney_name}' WHERE id_tournament={idTournament}";
 
                 MySqlCommand command = new MySqlCommand(UPDATE_TOURNAMENT, connection);
                 connection.Open();
