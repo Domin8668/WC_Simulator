@@ -49,17 +49,6 @@ namespace WC_Simulator.DAL.Entities
             Security_answer = (byte[])reader["security_answer"];
         }
 
-        public User(uint id_user, string login, byte[] password, DateTime creation_date, DateTime last_log_date, string security_question, byte[] security_answer)
-        {
-            Id_user = id_user;
-            Login = login;
-            Password = password;
-            Creation_date = creation_date;
-            Last_log_date = last_log_date;
-            Security_question = security_question;
-            Security_answer = security_answer;
-        }
-
         #endregion
 
 

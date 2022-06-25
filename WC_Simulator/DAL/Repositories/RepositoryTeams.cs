@@ -1,19 +1,16 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
 using System.Collections.Generic;
-using System.Linq;
-using MySql.Data.MySqlClient;
-using WC_Simulator.DAL;
 using WC_Simulator.DAL.Entities;
 
 namespace WC_Simulator.DAL.Repositories
 {
-    
+
     class RepositoryTeams
     {
         #region QUERIES
 
         private const string ALL_TEAM = "SELECT * FROM `team`";
-        
+
         #endregion
 
 

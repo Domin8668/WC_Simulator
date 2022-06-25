@@ -1,20 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using WC_Simulator.DAL.Entities;
 
 namespace WC_Simulator.DAL.Repositories
 {
-    using MySql.Data.MySqlClient;
-    using System;
-    using WC_Simulator.DAL;
-    using WC_Simulator.DAL.Entities;
     class RepositoryMatches
     {
         #region QUERIES
 
         private const string ALL_MATCH = "SELECT * FROM `single_match` where id_tournament = ";
-        private const string ADD_MATCH = "INSERT INTO `single_match`(`id_first_team`, `id_second_team`," +
-            " `id_tournament`, `abbr_first`, `abbr_second`, `name_first`, `name_second`, `match_code`, `goals_first_team`, `goals_second_team`) VALUES ";
-        private const string DELETE_MATCH = "DELETE FROM `single_match` WHERE id_match = ";
-        //private const string UPDATE_MATCH = "UPDATE `single_match` SET xx WHERE id_match = ";
 
         #endregion
 
@@ -35,21 +30,6 @@ namespace WC_Simulator.DAL.Repositories
             }
             return match;
         }
-
-        //public static bool AddMatch(Single_match match)
-        //{
-        //    bool state = false;
-        //    using (var connection = DBConnection.Instance.Connection)
-        //    {
-        //        MySqlCommand command = new MySqlCommand($"{ADD_MATCH} {match.ToInsert()}", connection);
-        //        connection.Open();
-        //        var id = command.ExecuteNonQuery();
-        //        state = true;
-        //        match.Id_match = (uint)command.LastInsertedId;
-        //        connection.Close();
-        //    }
-        //    return state;
-        //}
 
         public static bool UpdateMatch(Single_match match)
         {
@@ -109,20 +89,6 @@ namespace WC_Simulator.DAL.Repositories
             return state;
         }
 
-        public static bool DeleteMatch(Single_match match)
-        {
-            bool state = false;
-            using (var connection = DBConnection.Instance.Connection)
-            {
-                MySqlCommand command = new MySqlCommand($"{DELETE_MATCH} {match.Id_match}", connection);
-                connection.Open();
-                var id = command.ExecuteNonQuery();
-                state = true;
-                connection.Close();
-            }
-            return state;
-        }
-
         internal static bool AddTournamentMatch(Single_match match)
         {
             bool state = false;
@@ -177,7 +143,7 @@ namespace WC_Simulator.DAL.Repositories
                 match.Id_match = (uint)command.LastInsertedId;
                 connection.Close();
             }
-            return state;            
+            return state;
         }
 
         #endregion
