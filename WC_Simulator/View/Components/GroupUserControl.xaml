@@ -357,21 +357,21 @@
                     <GridViewColumn Header="Lp." Width="30">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Position}" Margin="0,0,0,0"/>
+                                <TextBlock Text="{Binding Position, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,0"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Flaga" Width="85" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding Image}" Height="50"/>
+                                <Image Source="{Binding Image, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Height="50"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Kraj" Width="220">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Country}" TextDecorations="Underline" Foreground="#815eff" 
+                                <TextBlock Text="{Binding Country, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" TextDecorations="Underline" Foreground="#815eff" 
                                            Cursor="Hand" Margin="45,0,0,0"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -379,28 +379,28 @@
                     <GridViewColumn Header="Mecze" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Matches}" Margin="45,0,0,0"/>
+                                <TextBlock Text="{Binding Matches, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Margin="45,0,0,0"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="BZ" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding GF}" Margin="45,0,0,0"/>
+                                <TextBlock Text="{Binding GF, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Margin="45,0,0,0"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="BS" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding GA}" Margin="45,0,0,0"/>
+                                <TextBlock Text="{Binding GA, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Margin="45,0,0,0"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Punkty" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Points}" Margin="45,0,0,0" />
+                                <TextBlock Text="{Binding Points, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Margin="45,0,0,0" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
