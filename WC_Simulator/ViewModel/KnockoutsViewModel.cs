@@ -22,7 +22,7 @@ namespace WC_Simulator.ViewModel
         private bool _enabledQ;
         private bool _enabledS;
         private bool _enabledF;
-
+        private int _currentPhase;
 
         #endregion
 
@@ -39,32 +39,35 @@ namespace WC_Simulator.ViewModel
             EnabledS = false;
             EnabledF = false;
 
+            CurrentPhase = 0;
+
             //sprawdzanie gdzie mozna a gdzie nie mozna comboboxow uzyc
             if (IfAllMatchesR16Possible())
             {
                 RealTeamsRoundOf16();
                 EnabledR16 = true;
+                if (IfAllMatchesQSFPossible(0))
+                {
+                    PrepareMatchesQ();
+                    EnabledQ = true;
+                    if (IfAllMatchesQSFPossible(1))
+                    {
+                        PrepareMatchesS();
+                        EnabledS = true;
+                        if (IfAllMatchesQSFPossible(2))
+                        {
+                            PrepareMatchesF();
+                            EnabledF = true;
+                            if (IfAllMatchesQSFPossible(3))
+                                CurrentPhase = 3;
+                        }
+                    }
+                }
             }
             else
             {
                 PreparePlaceHolders();
             }
-            if (IfAllMatchesQSFPossible(0))
-            {
-                PrepareMatchesQ();
-                EnabledQ = true;
-                if (IfAllMatchesQSFPossible(1))
-                {
-                    PrepareMatchesS();
-                    EnabledS = true;
-                    if (IfAllMatchesQSFPossible(2))
-                    {
-                        PrepareMatchesF();
-                        EnabledF = true;
-                    }
-                }
-            }
-
             //NavigationStore.CurrentTournamentChanged += OnCurrentTournamentChanged;
         }
 
@@ -122,6 +125,7 @@ namespace WC_Simulator.ViewModel
                 OnPropertyChanged(nameof(EnabledR16));
             }
         }
+
         public bool EnabledS
         {
             get { return _enabledS; }
@@ -131,6 +135,7 @@ namespace WC_Simulator.ViewModel
                 OnPropertyChanged(nameof(EnabledS));
             }
         }
+
         public bool EnabledQ
         {
             get { return _enabledQ; }
@@ -140,6 +145,7 @@ namespace WC_Simulator.ViewModel
                 OnPropertyChanged(nameof(EnabledQ));
             }
         }
+
         public bool EnabledF
         {
             get { return _enabledF; }
@@ -147,6 +153,16 @@ namespace WC_Simulator.ViewModel
             {
                 _enabledF = value;
                 OnPropertyChanged(nameof(EnabledF));
+            }
+        }
+
+        public int CurrentPhase
+        {
+            get { return _currentPhase; }
+            set
+            {
+                _currentPhase = value;
+                OnPropertyChanged(nameof(CurrentPhase));
             }
         }
 
@@ -185,16 +201,22 @@ namespace WC_Simulator.ViewModel
         }
         public bool IfAllMatchesQSFPossible(int phase)
         {
-            bool check = true;
-            foreach (var x in Model.KnockoutsMatches[phase])
+            if (Model.KnockoutsMatches.Count != 0)
             {
-                if (x.Goals_first_team == null || x.Goals_second_team == null || x.Goals_second_team == x.Goals_first_team)
+                //bool check = true;
+                foreach (var x in Model.KnockoutsMatches[phase])
                 {
-                    check = false;
-                    break;
+                    if (x.Goals_first_team == null || x.Goals_second_team == null || x.Goals_second_team == x.Goals_first_team)
+                    {
+                        //check = false;
+                        //break;
+                        return false;
+                    }
                 }
+                //return check;
+                return true;
             }
-            return check;
+            return false;
         }
 
         public void PreparePlaceHolders()

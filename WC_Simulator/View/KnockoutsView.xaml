@@ -42,7 +42,7 @@
     </UserControl.Resources>
 
     <Grid Background="Transparent">
-        <TabControl Background="Transparent">
+        <TabControl Background="Transparent" SelectedIndex="{Binding CurrentPhase}">
             <TabItem x:Name="finals1_8" Header="1/8 Finału" Style="{DynamicResource tabItemStyle}">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -58,7 +58,7 @@
                         <RowDefinition Height="1.1*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    
+
                     <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Mecze o wejście do ćwierćfinałów" Style="{StaticResource labels}"/>
                     <ucs:MatchUserControl x:Name="match49" Grid.Row="2" Grid.Column="0" Margin="10" FontSize="45"
                                           Team1FlagPath="{Binding Model.KnockoutsMatches[0][0].Flag_first, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
