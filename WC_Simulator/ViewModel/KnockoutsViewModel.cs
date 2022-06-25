@@ -303,6 +303,7 @@ namespace WC_Simulator.ViewModel
         {
             //if (Matches16.Count == 8)
             //{
+            if(Model.KnockoutsMatches.Count > 1)
                 for (int i = 0; i < 4; i++)
                 {
                     Model.KnockoutsMatches[1][i] = new Single_match(Model.KnockoutsMatches[1][i].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamWins(Model.KnockoutsMatches[0][i * 2]),
@@ -329,11 +330,15 @@ namespace WC_Simulator.ViewModel
         {
             //if (MatchesQ.Count == 4)
             //{
+            if (Model.KnockoutsMatches.Count > 2)
+            {
                 Model.KnockoutsMatches[2][0] = new Single_match(Model.KnockoutsMatches[2][0].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamWins(Model.KnockoutsMatches[1][0]),
-                    WhichTeamWins(Model.KnockoutsMatches[1][1]), 100, Model.KnockoutsMatches[2][0].Goals_first_team, Model.KnockoutsMatches[2][0].Goals_second_team);
+                   WhichTeamWins(Model.KnockoutsMatches[1][1]), 100, Model.KnockoutsMatches[2][0].Goals_first_team, Model.KnockoutsMatches[2][0].Goals_second_team);
 
                 Model.KnockoutsMatches[2][1] = new Single_match(Model.KnockoutsMatches[2][1].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamWins(Model.KnockoutsMatches[1][2]),
                     WhichTeamWins(Model.KnockoutsMatches[1][3]), 100, Model.KnockoutsMatches[2][1].Goals_first_team, Model.KnockoutsMatches[2][1].Goals_second_team);
+            }
+               
             //}
         }
 
@@ -341,11 +346,14 @@ namespace WC_Simulator.ViewModel
         {
             //if (MatchesS.Count == 2)
             //{
+            if (Model.KnockoutsMatches.Count > 3)
+            {
                 Model.KnockoutsMatches[3][0] = new Single_match(Model.KnockoutsMatches[3][0].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamWins(Model.KnockoutsMatches[2][0]),
                     WhichTeamWins(Model.KnockoutsMatches[2][1]), 100, Model.KnockoutsMatches[3][0].Goals_first_team, Model.KnockoutsMatches[3][0].Goals_second_team);
 
                 Model.KnockoutsMatches[3][1] = new Single_match(Model.KnockoutsMatches[3][1].Id_match, (uint)Model.CurrentTournament.Id_tournament, WhichTeamLoses(Model.KnockoutsMatches[2][0]),
                     WhichTeamLoses(Model.KnockoutsMatches[2][1]), 100, Model.KnockoutsMatches[3][1].Goals_first_team, Model.KnockoutsMatches[3][1].Goals_second_team);
+            }    
             //}
         }
 
@@ -547,7 +555,7 @@ namespace WC_Simulator.ViewModel
                         //        break;
                         //    }
                         //}
-                        if (IfAllMatchesQSFPossible(3))
+                        if (IfAllMatchesQSFPossible(3) && NavigationStore.CurrentViewModel.GetType() == GetType())
                         {
                             UpdateRound(3);
                             NavigationStore.CurrentViewModel = new MessageViewModel(Model, NavigationStore, this, Visibility.Visible, $"1. miejsce: {WhichTeamWins(Model.KnockoutsMatches[3][0]).Name}\n2. miejsce: {WhichTeamLoses(Model.KnockoutsMatches[3][0]).Name}\n3. miejsce: {WhichTeamWins(Model.KnockoutsMatches[3][1]).Name}");
