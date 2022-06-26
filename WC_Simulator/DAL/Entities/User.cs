@@ -32,7 +32,7 @@ namespace WC_Simulator.DAL.Entities
             Id_user = null;
             Login = string.Empty;
             Password = new byte[0];
-            Creation_date = new DateTime();
+            Creation_date = DateTime.Now;
             Last_log_date = new DateTime();
             Security_question = string.Empty;
             Security_answer = new byte[32];
